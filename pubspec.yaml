@@ -1,0 +1,86 @@
+name: baber
+description: A new Flutter project.
+
+
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=2.19.3 <3.0.0'
+dependencies:
+  flutter_localizations:
+    sdk: flutter
+  flutter:
+    sdk: flutter
+  flutter_clean_architecture:
+  dio:
+  internet_connection_checker:
+  dartz:
+  shared_preferences:
+  get_it:
+  http:
+#  firebase_messaging:
+  provider:
+  flutter_staggered_animations:
+  connectivity:
+  image_picker:
+  cached_network_image:
+  flutter_styled_toast:
+  flutter_animated_dialog:
+  flutter_animate:
+  url_launcher:
+  readmore:
+  flutter_svg:
+#  flutter_native_splash:
+  flutter_form_builder:
+  equatable:
+  pin_code_fields:
+  cupertino_icons: ^1.0.2
+  modal_bottom_sheet: ^2.1.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/
+    - assets/fonts/
+    - assets/svgs/
+    - assets/images/
+    - assets/langs/
+
+  fonts:
+    - family: Roboto
+      fonts:
+        - asset: assets/fonts/en/Roboto-Thin.ttf
+          weight: 300
+        - asset: assets/fonts/en/Roboto-Regular.ttf
+          weight: 500
+        - asset: assets/fonts/en/Roboto-Medium.ttf
+          weight: 600
+        - asset: assets/fonts/en/Roboto-Light.ttf
+          weight: 600
+        - asset: assets/fonts/en/Roboto-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/en/Roboto-Black.ttf
+          weight: 800
+
+    - family: Cairo
+      fonts:
+        - asset: assets/fonts/ar/Cairo-ExtraLight.ttf
+          weight: 300
+        - asset: assets/fonts/ar/Cairo-Regular.ttf
+          weight: 500
+        - asset: assets/fonts/ar/Cairo-Medium.ttf
+          weight: 600
+        - asset: assets/fonts/ar/Cairo-Light.ttf
+          weight: 400
+        - asset: assets/fonts/ar/Cairo-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/ar/Cairo-Black.ttf
+          weight: 800

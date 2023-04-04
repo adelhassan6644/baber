@@ -1,0 +1,18 @@
+{
+  "city": "city",
+  "user_name": "user name",
+  "sign_in": "sign in",
+  "verify_the_phone": "verify the phone",
+  "submit": "submit",
+  "proceed_to_check_out": "proceed to check out",
+  "required": "Required",
+  "please_enter_valid_number": "please,enter valid number",
+  "please_enter_valid_code": "please,enter valid code",
+  "please_enter_your_name": "please,enter your name",
+  "please_choose_city": "please,choose city",
+  "resend_code": "Resend code",
+  "edit": "edit",
+  "attachment": "attachment"
+
+
+}
