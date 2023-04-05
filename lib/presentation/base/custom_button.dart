@@ -1,4 +1,6 @@
+import 'package:baber/app/core/utils/dimensions.dart';
 import 'package:baber/app/core/utils/extensions.dart';
+import 'package:baber/app/core/utils/text_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import '../../app/core/utils/color_resources.dart';
@@ -40,8 +42,8 @@ class CustomButton extends StatelessWidget {
       child: GestureDetector(
         onTap: onTap,
         child: AnimatedContainer(
-          width: isLoading ? 90 :context.width,
-          height: 55,
+          width: isLoading ? 90.w :context.width,
+          height: height??55.h,
           decoration: BoxDecoration(
             color: Theme.of(context).primaryColor,
             borderRadius: const BorderRadius.all(Radius.circular(15)),
@@ -56,19 +58,15 @@ class CustomButton extends StatelessWidget {
                     padding: EdgeInsets.all(8.0),
                     child: CircularProgressIndicator(
                       backgroundColor: Colors.white,
-                      color: ColorResources.PENDING,
+                      color: ColorResources.WHITE_COLOR,
                     ),
                   )
-                : Text(
-              text,
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
+                : Text(text, style: AppTextStyles.w500.copyWith(
+                      fontSize: 16,
                       color: onTap == null
                           ? ColorResources.DISABLED
                           : Colors.white,
-                    ),
-                  ),
+                    ),),
           ),
         ).animate(target:  isLoading ? 1 : 0)
            .scaleXY(end: .8).flip(end: 1),

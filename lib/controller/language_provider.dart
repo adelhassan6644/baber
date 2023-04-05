@@ -24,7 +24,7 @@ class LanguageProvider with ChangeNotifier {
 
   void initializeAllLanguages() {
     if (_languages.isEmpty) {
-      _languages = AppStorageKey.languages as List<LanguageModel>;
+      _languages = AppStorageKey.languages;
       notifyListeners();
     }
   }

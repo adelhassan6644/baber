@@ -29,7 +29,6 @@ class LocalizationProvider extends ChangeNotifier {
   }
 
   void setLanguage(Locale locale) {
-    // updateLocale(locale);
     _locale = locale;
     if(_locale.languageCode == 'ar') {
       _isLtr = false;
@@ -42,8 +41,8 @@ class LocalizationProvider extends ChangeNotifier {
   }
 
   _loadCurrentLanguage() async {
-    _locale = Locale(sharedPreferences.getString(AppStorageKey.languageCode) ?? 'en',
-        sharedPreferences.getString(AppStorageKey.countryCode) ?? 'US');
+    _locale = Locale(sharedPreferences.getString(AppStorageKey.languageCode) ?? 'ar',
+        sharedPreferences.getString(AppStorageKey.countryCode) ?? 'SA');
     _isLtr = _locale.languageCode == 'en' ;
     notifyListeners();
   }

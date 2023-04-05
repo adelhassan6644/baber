@@ -48,12 +48,12 @@ class _CountDownState extends State<CountDown> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const Text(
-                  "Don't get the code ?",
-                  style: TextStyle(
-                      color: Colors.grey,
-                      fontSize: 14,
-                      fontWeight: FontWeight.w400),
+                Text(
+                  getTranslated("don't_get_the_code", context),
+                  style: AppTextStyles.w500.copyWith(
+                    color: ColorResources.SUBTITLE,
+                    fontSize: 14,
+                  ),
                 ),
                 SizedBox(width: 8.w),
                 InkWell(
@@ -63,11 +63,12 @@ class _CountDownState extends State<CountDown> {
                       widget.onCount!();
                     }
                   },
-                  child:  Text(
+                  child: Text(
                     getTranslated("resend_code", context),
-                    style: AppTextStyles.w500.copyWith(
-                        color: ColorResources.PRIMARY_COLOR,
-                        fontSize: 14,),
+                    style: AppTextStyles.w700.copyWith(
+                      color: ColorResources.PRIMARY_COLOR,
+                      fontSize: 14,
+                    ),
                   ),
                 ),
               ],
@@ -76,12 +77,16 @@ class _CountDownState extends State<CountDown> {
         : Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-               const Text("code expires in: ", style: AppTextStyles.w500),
-              Text(format(Duration(seconds: _count)),
-                  style: AppTextStyles.w500.copyWith(color: Colors.red)),
+              Text(getTranslated("code_expires_in", context),
+                  style: AppTextStyles.w500.copyWith(
+                    color: ColorResources.SUBTITLE,
+                    fontSize: 13,
+                  )),
+              Text(
+                  " ${Duration(seconds: _count).inMinutes.remainder(60).toString().padLeft(2, '0')}:${Duration(seconds: _count).inSeconds.remainder(60).toString().padLeft(2, '0')}",
+                  style: AppTextStyles.w500.copyWith(
+                      color: ColorResources.PRIMARY_COLOR, fontSize: 14)),
             ],
           );
   }
-
-  String format(Duration d) => d.toString().split('.').first.padLeft(8, "0");
 }

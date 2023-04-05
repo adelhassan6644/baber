@@ -22,8 +22,7 @@ class AuthRepo {
     sharedPreferences.setBool(AppStorageKey.isLogin, true);
   }
 
-  Future<Either<ServerFailure, Response>> logIn(
-      {required String phone, }) async {
+  Future<Either<ServerFailure, Response>> logIn({required String phone, }) async {
     try {
       Response response = await dioClient.post(
           uri: EndPoints.logIn, data: {"phone": phone, });

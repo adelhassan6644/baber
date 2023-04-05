@@ -21,7 +21,7 @@ class AppLocalization {
   }
 
   String translate(String key) {
-    return localizedValues![key]!;
+    return localizedValues![key]??"$key translate not found";
   }
 
   static const LocalizationsDelegate<AppLocalization> delegate = _DemoLocalizationsDelegate();

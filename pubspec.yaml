@@ -38,6 +38,7 @@ dependencies:
   pin_code_fields:
   cupertino_icons: ^1.0.2
   modal_bottom_sheet: ^2.1.2
+  rxdart:
 
 dev_dependencies:
   flutter_test:
@@ -52,7 +53,7 @@ flutter:
     - assets/fonts/
     - assets/svgs/
     - assets/images/
-    - assets/langs/
+    - assets/language/
 
   fonts:
     - family: Roboto

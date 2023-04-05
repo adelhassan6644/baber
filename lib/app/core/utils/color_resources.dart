@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 abstract class ColorResources {
-  static const Color BORDER_COLOR = Color(0xffDBDBDB);
+  static const Color BORDER_COLOR = Color(0xffCECECE);
   static const Color PRIMARY_COLOR = Color(0xffED7212);
   static const Color BACKGROUND_COLOR = Color(0xfff4f4f4);
   static const Color ACCENT_PRIMARY_COLOR = Color(0xffF7F1FC);
@@ -20,8 +20,8 @@ abstract class ColorResources {
   static const Color FAILED_COLOR = Color(0xffE61D27);
   static const Color PROGRASS_BACKGROUND = Color(0xffE7E7E7);
   static const Color TITLE = Color(0xFF000000);
-  static const Color SUBTITLE = Color(0xff737373);
-  static const Color DETAILS_COLOR = Color(0xff373737);
-  static const Color HINT_COLOR = Color(0xffCCCCCC);
+  static const Color SUBTITLE = Color(0xff373737);
+  static const Color DETAILS_COLOR = Color(0xff737373);
+  static const Color HINT_COLOR = Color(0xff828282);
 
 }

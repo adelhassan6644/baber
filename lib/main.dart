@@ -1,3 +1,5 @@
+import 'package:baber/controller/auth_provider.dart';
+import 'package:baber/presentation/auth/login_page.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:provider/provider.dart';
 import 'app/core/utils/app_storage_keys.dart';
@@ -24,6 +26,7 @@ Future<void> main() async {
   runApp(MultiProvider(providers: [
     ChangeNotifierProvider(create: (context) => di.sl<ThemeProvider>()),
     ChangeNotifierProvider(create: (context) => di.sl<LocalizationProvider>()),
+    ChangeNotifierProvider(create: (context) => di.sl<AuthProvider>()),
   ], child: const MyApp()));
   SystemChrome.setPreferredOrientations(
       [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
@@ -33,8 +36,21 @@ Future<void> main() async {
       statusBarBrightness: Brightness.light));
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({super.key});
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -60,20 +76,16 @@ class MyApp extends StatelessWidget {
       supportedLocales: locals,
       scaffoldMessengerKey: CustomNavigator.scaffoldState,
       debugShowCheckedModeBanner: false,
-      theme: Provider.of<ThemeProvider>(
-        context,
-      ).darkTheme
-          ? dark
-          : light,
-      locale: Provider.of<LocalizationProvider>(
-        context,
-      ).locale,
+      theme: Provider.of<ThemeProvider>(context,).darkTheme ? dark : light,
+      locale: Provider.of<LocalizationProvider>(context,).locale,
       localizationsDelegates: const [
         AppLocalization.delegate,
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,
       ],
+      home: const LoginPage(),
+
     );
   }
 }

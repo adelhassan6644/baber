@@ -23,10 +23,8 @@ class Validations {
   }
 
 
-  static String? code(String value) {
-    if (value.isEmpty) {
-      return getTranslated ("required",CustomNavigator.navigatorState.currentContext!);
-    } else if (value.length < 4) {
+  static String? code(String? value) {
+    if (value!.isEmpty||value.length < 4) {
       return getTranslated ("please_enter_valid_code",CustomNavigator.navigatorState.currentContext!);
     } else {
       return null;

@@ -4,11 +4,13 @@ import 'package:flutter_form_builder/flutter_form_builder.dart';
 import '../../app/core/utils/color_resources.dart';
 import '../../app/core/utils/dimensions.dart';
 import '../../app/core/utils/text_styles.dart';
+import 'custom_images.dart';
 
 class CustomDropDownButton extends StatefulWidget {
   final List<dynamic> items;
   final Widget? icon;
-  final String? pIcon;
+  final String? pAssetIcon;
+  final String? pSvgIcon;
   final Color? pIconColor;
   final double iconSize;
   final String? label;
@@ -20,14 +22,15 @@ class CustomDropDownButton extends StatefulWidget {
   const CustomDropDownButton({
     required this.items,
     this.value,
-    this.pIcon,
+    this.pAssetIcon,
+    this.pSvgIcon,
     this.pIconColor,
     this.onChange,
     this.validation,
     this.icon,
     this.label,
     required this.name,
-    this.iconSize = 25,
+    this.iconSize = 22,
     Key? key,
   }) : super(key: key);
 
@@ -46,10 +49,8 @@ class _CustomDropDownButtonState extends State<CustomDropDownButton> {
             value: item,
             child: Text(
               item,
-              style:  AppTextStyles.w500.copyWith(
-                  color: ColorResources.HINT_COLOR,
-                  fontSize: 11
-              ),
+              style: AppTextStyles.w500
+                  .copyWith(color: ColorResources.TITLE, fontSize: 13),
             ),
           );
         }).toList(),
@@ -60,91 +61,111 @@ class _CustomDropDownButtonState extends State<CustomDropDownButton> {
         isExpanded: true,
         dropdownColor: ColorResources.FILL_COLOR,
         itemHeight: 50,
-        icon: widget.icon ?? const Icon(Icons.arrow_drop_down,color:ColorResources.HINT_COLOR,),
+        icon: widget.icon ??
+            const Icon(
+              Icons.arrow_drop_down,
+              color: ColorResources.HINT_COLOR,
+            ),
         iconSize: widget.iconSize,
-        hint: Row(
-          children: [
-            if( widget.pIcon != null )  Image.asset(
-              widget.pIcon!,
-              height: 20.w,
-              width: 20.w,
-              color: widget.pIconColor,
-            ),
-            SizedBox(width: 15.w,),
-            Text(
-              widget.name,
-              style: AppTextStyles.w500.copyWith(
-                  color: ColorResources.HINT_COLOR,
-                  fontSize: 11
-              ),
-            ),
-          ],
-        ),
-        borderRadius:   BorderRadius.all(
-            Radius.circular(12.w)),
+        hint: Text(widget.name,
+            style: AppTextStyles.w400
+                .copyWith(color: ColorResources.HINT_COLOR, fontSize: 11)),
+        borderRadius:
+            const BorderRadius.all(Radius.circular(Dimensions.RADIUS_DEFAULT)),
         decoration: InputDecoration(
+          prefixIcon: Padding(
+            padding: EdgeInsets.symmetric(
+              horizontal: 15.w,
+            ),
+            child: widget.pAssetIcon != null
+                ? Image.asset(
+                    widget.pAssetIcon!,
+                    height: 22.h,
+                    width: 22.w,
+                    color: widget.pIconColor ?? Colors.black,
+                  )
+                : widget.pSvgIcon != null
+                    ? customImageIconSVG(
+                        imageName: widget.pSvgIcon!,
+                        color: widget.pIconColor ?? Colors.black,
+                        height: 22.h,
+                      )
+                    : null,
+          ),
           fillColor: ColorResources.FILL_COLOR,
           filled: true,
-          contentPadding: EdgeInsets.symmetric(vertical: 20.h, horizontal: 15.w),
           focusedBorder: const OutlineInputBorder(
               borderRadius: BorderRadius.all(
-                Radius.circular(Dimensions.PADDING_SIZE_DEFAULT,),
+                Radius.circular(
+                  Dimensions.PADDING_SIZE_DEFAULT,
+                ),
               ),
               borderSide: BorderSide(
-                  color: ColorResources.DISABLED,
-                  width: 0
-              )) ,
+                  color: ColorResources.LIGHT_GREY_BORDER,
+                  width: 1,
+                  style: BorderStyle.solid)),
           enabledBorder: const OutlineInputBorder(
               borderRadius: BorderRadius.all(
-                Radius.circular(Dimensions.PADDING_SIZE_DEFAULT,),
+                Radius.circular(
+                  Dimensions.RADIUS_DEFAULT,
+                ),
               ),
               borderSide: BorderSide(
-                  color: Colors.transparent,
-                  width: 0
-              )),
+                  color: ColorResources.LIGHT_GREY_BORDER,
+                  width: 1,
+                  style: BorderStyle.solid)),
           disabledBorder: const OutlineInputBorder(
               borderRadius: BorderRadius.all(
-                Radius.circular(Dimensions.PADDING_SIZE_DEFAULT,),
+                Radius.circular(
+                  Dimensions.RADIUS_DEFAULT,
+                ),
               ),
               borderSide: BorderSide(
-                  color: ColorResources.DISABLED,
-                  width: 0
-              )),
-          focusedErrorBorder:const OutlineInputBorder(
+                  color: ColorResources.LIGHT_GREY_BORDER,
+                  width: 1,
+                  style: BorderStyle.solid)),
+          focusedErrorBorder: const OutlineInputBorder(
               borderRadius: BorderRadius.all(
-                Radius.circular(Dimensions.PADDING_SIZE_DEFAULT,),
+                Radius.circular(
+                  Dimensions.RADIUS_DEFAULT,
+                ),
               ),
               borderSide: BorderSide(
                   color: ColorResources.FAILED_COLOR,
-                  width: 0.5
-              )),
-          errorBorder:const OutlineInputBorder(
+                  width: 0.5,
+                  style: BorderStyle.solid)),
+          errorBorder: const OutlineInputBorder(
               borderRadius: BorderRadius.all(
-                Radius.circular(Dimensions.PADDING_SIZE_DEFAULT,),
+                Radius.circular(
+                  Dimensions.RADIUS_DEFAULT,
+                ),
               ),
               borderSide: BorderSide(
                   color: ColorResources.FAILED_COLOR,
-                  width: 0.5
-              )),
+                  width: 0.5,
+                  style: BorderStyle.solid)),
+          contentPadding: EdgeInsets.symmetric(vertical: 15.w, horizontal: 5.h),
           border: const OutlineInputBorder(
-              borderRadius: BorderRadius.all(
-                Radius.circular(Dimensions.PADDING_SIZE_DEFAULT,),
+            borderRadius: BorderRadius.all(
+              Radius.circular(
+                Dimensions.RADIUS_DEFAULT,
               ),
-              borderSide: BorderSide(
-                  color: Colors.transparent,
-                  width: 0
-              )),
+            ),
+            borderSide: BorderSide(
+                color: ColorResources.LIGHT_GREY_BORDER,
+                width: 1,
+                style: BorderStyle.solid),
+          ),
           labelText: widget.label,
-          errorStyle: AppTextStyles.w500.copyWith(
-              color: ColorResources.FAILED_COLOR,
-              fontSize: 11
-          ),
-          labelStyle: AppTextStyles.w500.copyWith(
-              color: ColorResources.HINT_COLOR,
-              fontSize: 11
-          ),
+          errorStyle: AppTextStyles.w500
+              .copyWith(color: ColorResources.FAILED_COLOR, fontSize: 11),
+          labelStyle: AppTextStyles.w500
+              .copyWith(color: ColorResources.HINT_COLOR, fontSize: 11),
         ),
+        style: AppTextStyles.w500
+            .copyWith(color: ColorResources.PRIMARY_COLOR, fontSize: 14),
         name: widget.name,
+        elevation: 1,
       ),
     );
   }

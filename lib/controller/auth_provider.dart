@@ -13,18 +13,35 @@ import 'base_vm.dart';
 
 class AuthProvider extends ChangeNotifier with BaseViewModel {
   final AuthRepo authRepo;
-  AuthProvider({
-    required this.authRepo,
-  });
+  AuthProvider({required this.authRepo,});
   final TextEditingController _phoneTEC =
-      TextEditingController(text: kDebugMode ? "44455666":'');
+  TextEditingController(text: kDebugMode ? "44455666":'');
+   TextEditingController get phoneTEC=>_phoneTEC;
 
   String _verificationCode = "";
   String get verificationCode => _verificationCode;
 
+  bool _isRememberMe = false;
+  bool get isRememberMe => _isRememberMe;
+  bool _isAgree = false;
+  bool get isAgree => _isAgree;
+
+  void onRememberMe(bool value) {
+    _isRememberMe = value;
+    notifyListeners();
+  }
+
+  void onAgree(bool value) {
+    _isAgree = value;
+    notifyListeners();
+  }
+
   bool _isLoading = false;
+  bool _isSubmit = false;
   bool isError = false;
+  bool isErrorOnSubmit = false;
   bool get isLoading => _isLoading;
+  bool get isSubmit => _isSubmit;
 
   bool get isLogin => authRepo.isLoggedIn();
 
@@ -46,7 +63,7 @@ class AuthProvider extends ChangeNotifier with BaseViewModel {
           isError = true;
           notifyListeners();
         }, (success) {
-          CustomNavigator.push(Routes.VERIFICATION_CODE, clean: true);
+          CustomNavigator.push(Routes.VERIFICATION,);
         });
         _isLoading = false;
         notifyListeners();
@@ -68,9 +85,8 @@ class AuthProvider extends ChangeNotifier with BaseViewModel {
 
   sendOTP() async {
     try {
-      {
-        isError = false;
-        _isLoading = true;
+      isErrorOnSubmit = false;
+        _isSubmit = true;
         notifyListeners();
         Either<ServerFailure, Response> response =
             await authRepo.sendOTP(
@@ -83,20 +99,18 @@ class AuthProvider extends ChangeNotifier with BaseViewModel {
                   isFloating: true,
                   backgroundColor: ColorResources.IN_ACTIVE,
                   borderColor: Colors.transparent));
-          isError = true;
+          isErrorOnSubmit = true;
           notifyListeners();
         }, (success) {
           _verificationCode ="";
           CustomNavigator.push(Routes.DASHBOARD, replace: true);
         });
-        _isLoading = false;
+        _isSubmit = false;
         notifyListeners();
-      }
     } catch (e) {
-      isError = true;
-      _isLoading = false;
-      CustomSnackBar.showSnackBar(
-          notification: AppNotification(
+      isErrorOnSubmit = true;
+      _isSubmit = false;
+      CustomSnackBar.showSnackBar(notification: AppNotification(
               message: e.toString(),
               isFloating: true,
               backgroundColor: ColorResources.IN_ACTIVE,
