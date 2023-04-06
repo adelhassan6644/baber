@@ -38,6 +38,12 @@
       "languageVersion": "2.18"
     },
     {
+      "name": "carousel_slider",
+      "rootUri": "file:///C:/Users/moham/AppData/Local/Pub/Cache/hosted/pub.dev/carousel_slider-4.2.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "characters",
       "rootUri": "file:///C:/Users/moham/AppData/Local/Pub/Cache/hosted/pub.dev/characters-1.2.1",
       "packageUri": "lib/",
@@ -488,6 +494,12 @@
       "languageVersion": "2.17"
     },
     {
+      "name": "shimmer",
+      "rootUri": "file:///C:/Users/moham/AppData/Local/Pub/Cache/hosted/pub.dev/shimmer-2.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "sky_engine",
       "rootUri": "file:///C:/Adel/src/flutter/bin/cache/pkg/sky_engine",
       "packageUri": "lib/",
@@ -656,7 +668,7 @@
       "languageVersion": "2.19"
     }
   ],
-  "generated": "2023-04-04T17:51:43.869542Z",
+  "generated": "2023-04-05T20:30:04.212286Z",
   "generator": "pub",
   "generatorVersion": "2.19.3"
 }

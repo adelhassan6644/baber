@@ -3,11 +3,11 @@ import 'package:baber/app/core/utils/extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:provider/provider.dart';
-import 'app/core/utils/color_resources.dart';
-import 'app/core/utils/images.dart';
-import 'controller/auth_provider.dart';
-import 'navigation/custom_navigation.dart';
-import 'navigation/routes.dart';
+import '../../app/core/utils/color_resources.dart';
+import '../../app/core/utils/images.dart';
+import '../../controller/auth_provider.dart';
+import '../../navigation/custom_navigation.dart';
+import '../../navigation/routes.dart';
 
 class Splash extends StatefulWidget {
   const Splash({Key? key}) : super(key: key);

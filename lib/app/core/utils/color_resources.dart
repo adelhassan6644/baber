@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 
 abstract class ColorResources {
   static const Color BORDER_COLOR = Color(0xffCECECE);
+  static const Color LIGHT_BORDER_COLOR = Color(0xffEDEDED);
   static const Color PRIMARY_COLOR = Color(0xffED7212);
   static const Color BACKGROUND_COLOR = Color(0xfff4f4f4);
+  static const Color NAV_BAR_BACKGROUND_COLOR = Color(0xFFFFFFFF);
   static const Color ACCENT_PRIMARY_COLOR = Color(0xffF7F1FC);
   static const Color ACTIVE = Color(0xff209370);
   static const Color IN_ACTIVE = Color(0xFFDB5353);

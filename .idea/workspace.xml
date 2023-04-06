@@ -9,51 +9,48 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0f32153c-20a2-462c-b0aa-469fbaabcdc6" name="Changes" comment="on(commit):&#10;-first commit">
-      <change afterPath="$PROJECT_DIR$/assets/images/choose_city.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/city.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/phone.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/splash.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/svgs/arrow_right.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/svgs/back_icon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/svgs/city.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/svgs/phone.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/app/core/utils/svg_images.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/presentation/auth/choose_city_page.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/presentation/auth/widget/guest_button.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/presentation/auth/widget/welcome_widget.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/presentation/base/chekbox_listtile.dart" afterDir="false" />
+    <list default="true" id="0f32153c-20a2-462c-b0aa-469fbaabcdc6" name="Changes" comment="update(base):&#10;- update custom dropdown button&#10;- update custom text field&#10;- update custom appbar&#10;&#10;feat(auth):&#10;- add sign in page &#10;- add verification page &#10;- add choose city page">
+      <change afterPath="$PROJECT_DIR$/assets/svgs/cart.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/svgs/delicious.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/svgs/home_search.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/controller/banner_provider.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/controller/categories_provider.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/controller/home_vendor_provider.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/controller/vendors_by_category_provider.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/data/model/home_model.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/domain/repositery/category_repo.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/domain/repositery/home_repo.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/presentation/cart/cart_page.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/presentation/category/category_page.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/presentation/category/widget/category_selection_bar.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/presentation/dashboard/dashbboard.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/presentation/dashboard/widget/nav_bar_bar.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/presentation/home/home_page.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/presentation/home/widget/banner_view.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/presentation/home/widget/categories_section.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/presentation/home/widget/home_app_bar.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/presentation/home/widget/our_table.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/presentation/main_widgets/Item_card.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/presentation/profile/profile_page.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.dart_tool/package_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/package_config_subset" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config_subset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/android/local.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/app_icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/langs/ar.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/language/ar.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/langs/en.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/language/en.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/language/ar.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/language/ar.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/language/en.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/language/en.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/logo.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/splash.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app/core/api/end_points.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/core/api/end_points.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/app/core/utils/color_resources.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/core/utils/color_resources.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/app/core/utils/dimensions.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/core/utils/dimensions.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/app/core/utils/images.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/core/utils/images.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/app/core/utils/validation.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/core/utils/validation.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/app/theme/light_theme.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/theme/light_theme.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/controller/auth_provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/controller/auth_provider.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/controller/language_provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/controller/language_provider.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/controller/localization_provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/controller/localization_provider.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app/core/utils/svg_images.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/core/utils/svg_images.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/di.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/di.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/domain/localization/app_localization.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/domain/localization/app_localization.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/domain/repositery/auth_repo.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/domain/repositery/auth_repo.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/navigation/custom_navigation.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/navigation/custom_navigation.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/navigation/routes.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/navigation/routes.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/auth/login_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/auth/login_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/auth/verification_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/auth/verification_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/base/count_down.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/base/count_down.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/base/custom_app_bar.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/base/custom_app_bar.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/base/custom_button.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/base/custom_button.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/base/custom_drop_down_button.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/base/custom_drop_down_button.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/base/custom_text_form_field.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/base/custom_text_form_field.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/splash.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/splash.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/auth/choose_city_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/auth/choose_city_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/base/custom_images.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/base/custom_images.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/base/custom_network_image.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/base/custom_network_image.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/splash.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/splash/splash.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
@@ -99,17 +96,20 @@
     <property name="cidr.known.project.marker" value="true" />
     <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/assets/svgs" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/assets" />
     <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\My projects\baber\assets\svgs" />
-      <recent name="C:\My projects\baber\assets\images" />
       <recent name="C:\My projects\baber\assets" />
-      <recent name="C:\My projects\baber\lib\presentation\base" />
-      <recent name="C:\My projects\baber\lib\presentation\auth" />
+      <recent name="C:\My projects\baber\lib\data\model" />
+      <recent name="C:\My projects\baber\lib\domain\repositery" />
+      <recent name="C:\My projects\baber\lib\controller" />
+      <recent name="C:\My projects\baber\assets\svgs" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\My projects\baber\lib\presentation\splash" />
     </key>
   </component>
   <component name="RunManager">
@@ -134,7 +134,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680567538227</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="update(base):&#10;- update custom dropdown button&#10;- update custom text field&#10;- update custom appbar&#10;&#10;feat(auth):&#10;- add sign in page &#10;- add verification page &#10;- add choose city page">
+      <created>1680658764387</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1680658764387</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -150,7 +157,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="on(commit):&#10;-first commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="on(commit):&#10;-first commit" />
+    <MESSAGE value="update(base):&#10;- update custom dropdown button&#10;- update custom text field&#10;- update custom appbar&#10;&#10;feat(auth):&#10;- add sign in page &#10;- add verification page &#10;- add choose city page" />
+    <option name="LAST_COMMIT_MESSAGE" value="update(base):&#10;- update custom dropdown button&#10;- update custom text field&#10;- update custom appbar&#10;&#10;feat(auth):&#10;- add sign in page &#10;- add verification page &#10;- add choose city page" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

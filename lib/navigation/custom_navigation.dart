@@ -1,9 +1,12 @@
+import 'package:baber/presentation/category/category_page.dart';
 import 'package:flutter/material.dart';
+import '../data/model/home_model.dart';
 import '../main.dart';
 import '../presentation/auth/choose_city_page.dart';
 import '../presentation/auth/login_page.dart';
 import '../presentation/auth/verification_page.dart';
-import '../splash.dart';
+import '../presentation/dashboard/dashbboard.dart';
+import '../presentation/splash/splash.dart';
 import 'routes.dart';
 
 abstract class CustomNavigator {
@@ -26,6 +29,14 @@ abstract class CustomNavigator {
         return _pageRoute(const VerificationPage());
       case Routes.CHOOSE_CITY:
         return _pageRoute(const ChooseCityPage());
+      case Routes.DASHBOARD:
+        return _pageRoute(DashBoard(
+          index: settings.arguments != null ? settings.arguments as int : null,
+        ));
+      case Routes.CATEGORIES:
+        return _pageRoute(CategoryPage(
+          categories: settings.arguments as  List<HomeCategoryModel>,
+        ));
 
       default:
         return MaterialPageRoute(builder: (_) => const MyApp());

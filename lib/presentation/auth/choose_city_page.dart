@@ -1,4 +1,5 @@
 import 'package:baber/app/core/utils/text_styles.dart';
+import 'package:baber/navigation/custom_navigation.dart';
 import 'package:baber/presentation/base/custom_app_bar.dart';
 import 'package:baber/presentation/base/custom_drop_down_button.dart';
 import 'package:flutter/material.dart';
@@ -8,6 +9,7 @@ import '../../app/core/utils/dimensions.dart';
 import '../../app/core/utils/images.dart';
 import '../../controller/auth_provider.dart';
 import '../../domain/localization/language_constant.dart';
+import '../../navigation/routes.dart';
 import '../base/custom_button.dart';
 
 class ChooseCityPage extends StatefulWidget {
@@ -66,7 +68,9 @@ class _ChooseCityPageState extends State<ChooseCityPage> {
                         isLoading: authProvider.isSubmit,
                         isError: authProvider.isErrorOnSubmit,
                         height: 46.h,
-                        onTap: () {},
+                        onTap: () {
+                          CustomNavigator.push(Routes.DASHBOARD);
+                        },
                         textColor: ColorResources.WHITE_COLOR,
                         text: getTranslated("confirm", context),
                         backgroundColor: ColorResources.PRIMARY_COLOR),

@@ -2,6 +2,8 @@ import 'package:baber/app/core/utils/dimensions.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
+import '../../app/core/utils/images.dart';
+
 class CustomNetworkImage {
   static const key = 'customCacheKey';
   static var cacheManger;
@@ -43,11 +45,11 @@ class CustomNetworkImage {
           image: DecorationImage(
             fit: fit ?? BoxFit.contain,
             image: Image.asset(
-              defaultImage ?? "assets/app_icon.png",
+              defaultImage ?? Images.splash,
               fit: fit ?? BoxFit.contain,
             ).image,
           ),
-          
+
         ),
         padding: padding,
         child: imageWidget,
@@ -62,7 +64,7 @@ class CustomNetworkImage {
                   image: DecorationImage(
                     fit: fit ?? BoxFit.contain,
                     image: Image.asset(
-                      defaultImage ?? "assets/app_icon.png",
+                      defaultImage ?? Images.splash,
                       fit: fit??BoxFit.contain,
                     ).image,
                   ),

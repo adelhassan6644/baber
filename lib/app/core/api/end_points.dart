@@ -5,7 +5,10 @@ class EndPoints {
   static const String logIn = '';
   static const String sendOTP = '';
   static const String getProfileInfo = '';
+  static const String getBanners= '';
   static const String getCategories= '';
+  static const String getHomeVendors= '';
+  static const String getVendorsByCategory= '';
   static const String search = '';
 
 }
