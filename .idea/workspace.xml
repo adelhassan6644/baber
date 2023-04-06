@@ -9,50 +9,20 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0f32153c-20a2-462c-b0aa-469fbaabcdc6" name="Changes" comment="update(base):&#10;- update custom dropdown button&#10;- update custom text field&#10;- update custom appbar&#10;&#10;feat(auth):&#10;- add sign in page &#10;- add verification page &#10;- add choose city page">
-      <change afterPath="$PROJECT_DIR$/assets/svgs/cart.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/svgs/delicious.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/svgs/home_search.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/controller/banner_provider.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/controller/categories_provider.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/controller/home_vendor_provider.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/controller/vendors_by_category_provider.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/data/model/home_model.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/domain/repositery/category_repo.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/domain/repositery/home_repo.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/presentation/cart/cart_page.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/presentation/category/category_page.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/presentation/category/widget/category_selection_bar.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/presentation/dashboard/dashbboard.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/presentation/dashboard/widget/nav_bar_bar.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/presentation/home/home_page.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/presentation/home/widget/banner_view.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/presentation/home/widget/categories_section.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/presentation/home/widget/home_app_bar.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/presentation/home/widget/our_table.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/presentation/main_widgets/Item_card.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/presentation/profile/profile_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/package_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/package_config_subset" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config_subset" afterDir="false" />
+    <list default="true" id="0f32153c-20a2-462c-b0aa-469fbaabcdc6" name="Changes" comment="feat(dashboard):&#10;- add home screen&#10;feat(category page):&#10;- add category screen">
+      <change afterPath="$PROJECT_DIR$/assets/images/empty_cart.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/empty_search.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/presentation/base/empty_widget.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/presentation/category/widget/grid_list_animator.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/language/ar.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/language/ar.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/language/en.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/language/en.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/logo.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/app/core/api/end_points.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/core/api/end_points.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/app/core/utils/color_resources.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/core/utils/color_resources.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/app/core/utils/svg_images.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/core/utils/svg_images.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/di.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/di.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/navigation/custom_navigation.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/navigation/custom_navigation.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/navigation/routes.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/navigation/routes.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/auth/choose_city_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/auth/choose_city_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/base/custom_images.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/base/custom_images.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/base/custom_network_image.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/base/custom_network_image.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/splash.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/splash/splash.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app/core/utils/images.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/core/utils/images.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/controller/vendors_by_category_provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/controller/vendors_by_category_provider.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/base/tab_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/base/tab_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/category/category_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/category/category_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/category/widget/category_selection_bar.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/category/widget/category_selection_bar.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/home/widget/our_table.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/home/widget/our_table.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/main_widgets/Item_card.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main_widgets/Item_card.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,6 +40,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitSEFilterConfiguration">
@@ -96,19 +71,20 @@
     <property name="cidr.known.project.marker" value="true" />
     <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/assets" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/assets/images" />
     <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\My projects\baber\assets\images" />
       <recent name="C:\My projects\baber\assets" />
       <recent name="C:\My projects\baber\lib\data\model" />
       <recent name="C:\My projects\baber\lib\domain\repositery" />
       <recent name="C:\My projects\baber\lib\controller" />
-      <recent name="C:\My projects\baber\assets\svgs" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\My projects\baber\lib" />
       <recent name="C:\My projects\baber\lib\presentation\splash" />
     </key>
   </component>
@@ -141,7 +117,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680658764387</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="feat(dashboard):&#10;- add home screen&#10;feat(category page):&#10;- add category screen">
+      <created>1680747168835</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1680747168835</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -158,7 +141,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="on(commit):&#10;-first commit" />
     <MESSAGE value="update(base):&#10;- update custom dropdown button&#10;- update custom text field&#10;- update custom appbar&#10;&#10;feat(auth):&#10;- add sign in page &#10;- add verification page &#10;- add choose city page" />
-    <option name="LAST_COMMIT_MESSAGE" value="update(base):&#10;- update custom dropdown button&#10;- update custom text field&#10;- update custom appbar&#10;&#10;feat(auth):&#10;- add sign in page &#10;- add verification page &#10;- add choose city page" />
+    <MESSAGE value="feat(dashboard):&#10;- add home screen&#10;feat(category page):&#10;- add category screen" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(dashboard):&#10;- add home screen&#10;feat(category page):&#10;- add category screen" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

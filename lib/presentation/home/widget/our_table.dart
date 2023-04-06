@@ -6,10 +6,10 @@ import 'package:provider/provider.dart';
 import 'package:shimmer/shimmer.dart';
 import '../../../controller/home_vendor_provider.dart';
 import '../../../domain/localization/language_constant.dart';
+import '../../../main_widgets/Item_card.dart';
 import '../../../navigation/custom_navigation.dart';
 import '../../../navigation/routes.dart';
 import '../../base/custom_network_image.dart';
-import '../../main_widgets/Item_card.dart';
 
 class OurTable extends StatelessWidget {
   const OurTable({
@@ -48,6 +48,7 @@ class OurTable extends StatelessWidget {
                             children: [
                               const ItemCard(
                                 fromHome: true,
+                                isVendor: true,
                               ),
                               SizedBox(
                                 width: Dimensions.PADDING_SIZE_DEFAULT.w,
