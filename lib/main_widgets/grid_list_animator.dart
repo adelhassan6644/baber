@@ -1,9 +1,10 @@
 import 'package:flutter/cupertino.dart';
-import '../../../app/core/utils/dimensions.dart';
+import '../app/core/utils/dimensions.dart';
 
 class GridListAnimatorWidget extends StatelessWidget {
-  const GridListAnimatorWidget({required this.items,Key? key}) : super(key: key);
+  const GridListAnimatorWidget({ this.aspectRatio,required this.items,Key? key}) : super(key: key);
 final List<Widget> items;
+final double? aspectRatio;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -16,7 +17,7 @@ final List<Widget> items;
         shrinkWrap: true,
         addAutomaticKeepAlives: true,
         mainAxisSpacing: 8.h,
-        childAspectRatio: 0.957,
+        childAspectRatio:aspectRatio?? 0.957,
         crossAxisSpacing: 15.w,
         children: items,
       ),

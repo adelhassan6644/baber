@@ -32,4 +32,13 @@ class Validations {
   }
 
 
+  static String? city(Object? value) {
+    if (value!.toString().isEmpty) {
+      return getTranslated ("please_choose_city",CustomNavigator.navigatorState.currentContext!);
+    } else {
+      return null;
+    }
+  }
+
+
 }

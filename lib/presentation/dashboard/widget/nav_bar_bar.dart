@@ -2,7 +2,6 @@ import 'package:baber/app/core/utils/dimensions.dart';
 import 'package:baber/presentation/base/custom_images.dart';
 import 'package:flutter/material.dart';
 import '../../../app/core/utils/color_resources.dart';
-import '../../../domain/localization/language_constant.dart';
 
 class BottomNavBarItem extends StatelessWidget {
 final String? imageIcon;

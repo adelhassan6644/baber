@@ -12,7 +12,7 @@ class CategoryRepo {
 
   Future<Either<ServerFailure, Response>> getVendorsByCategoryList() async {
     try {
-      Response response = await dioClient.get( uri: EndPoints.getVendorsByCategory);
+      Response response = await dioClient.get( uri: EndPoints.vendorsByCategory);
       if (response.statusCode == 200) {
         return Right(response);
       } else {

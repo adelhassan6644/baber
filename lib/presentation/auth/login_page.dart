@@ -25,7 +25,6 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
-  bool isValid = true;
 
   @override
   Widget build(BuildContext context) {

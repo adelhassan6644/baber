@@ -19,7 +19,9 @@
   "please_enter_your_name": "من فضلك ادخل اسمك",
   "please_choose_city": "من فضلك اختر مدينة",
   "choose_your_city": "اختر مدينتك",
+  "choose_your_new_city": "اختر مدينتك الجديدة",
   "city": "المدينة",
+  "change_city": "تغيير المدينة",
   "delivery_to": "تسليم إلي",
   "sections": "الأقسام",
   "our_dining_table": "سفرتنا",
@@ -29,7 +31,13 @@
   "edit": "تعديل",
   "next": "التالي",
   "attachment": "ارفاق",
-  "home": "الصفحة الرئيسية",
+  "home": "الرئيسية",
   "cart": "السلة",
-  "profile": "الملف الشخصي"
+  "profile": "الملف الشخصي",
+  "notifications": "الاشعارات",
+  "contact_with_us": "تواصل معانا",
+  "about_baber":"عن Baber",
+  "privacy_policy": "سياسة الخصوصية",
+  "log_out": "تسجيل الخروج",
+  "write_your_massage": "اكتب رسالتك"
 }

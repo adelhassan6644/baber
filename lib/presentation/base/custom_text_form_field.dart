@@ -35,12 +35,14 @@ class CustomTextFormField extends StatefulWidget {
   final int? maxLength;
   final Color? fieldColor;
   final int? maxLine;
+  final int? minLine;
   final bool isValidat;
 
   const CustomTextFormField({
     super.key,
     this.isValidat = true,
     this.maxLine = 1,
+    this.minLine = 1,
     this.hint,
     this.sufWidget,
     this.onSave,
@@ -93,6 +95,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
         focusNode: widget.focus,
         readOnly: widget.read == true ? true : false,
         maxLines: widget.maxLine,
+        minLines: widget.minLine??1,
         obscureText: widget.icon == Icons.lock_outline ? _isHidden : false,
         keyboardType: widget.inputType,
         inputFormatters: widget.inputType == TextInputType.phone ? <TextInputFormatter>[

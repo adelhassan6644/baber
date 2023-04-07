@@ -6,7 +6,7 @@ import '../app/core/error/api_error_handler.dart';
 import '../app/core/error/failures.dart';
 import '../app/core/utils/app_snack_bar.dart';
 import '../app/core/utils/color_resources.dart';
-import '../data/model/home_model.dart';
+import '../data/model/item_model.dart';
 import '../domain/repositery/home_repo.dart';
 
 class HomeVendorProvider extends ChangeNotifier {

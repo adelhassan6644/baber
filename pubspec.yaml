@@ -37,7 +37,7 @@ dependencies:
   equatable:
   pin_code_fields:
   cupertino_icons: ^1.0.2
-  modal_bottom_sheet: ^2.1.2
+  modal_bottom_sheet: ^3.0.0-pre
   rxdart:
   shimmer:
   carousel_slider:

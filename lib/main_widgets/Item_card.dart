@@ -1,12 +1,17 @@
 import 'package:baber/app/core/utils/color_resources.dart';
 import 'package:baber/app/core/utils/dimensions.dart';
+import 'package:baber/app/core/utils/svg_images.dart';
+import 'package:baber/presentation/base/custom_images.dart';
 import 'package:baber/presentation/base/custom_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:shimmer/shimmer.dart';
 import '../../app/core/utils/text_styles.dart';
-import '../../data/model/home_model.dart';
 import '../../navigation/custom_navigation.dart';
 import '../../navigation/routes.dart';
+import '../controller/item_provider.dart';
+import '../controller/vednor_prvider.dart';
+import '../data/model/item_model.dart';
 
 
 class ItemCard extends StatefulWidget {
@@ -25,11 +30,13 @@ class _ItemCardState extends State<ItemCard> {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        // if(widget.isVendor) {
-        //   CustomNavigator.push(Routes.VENDOR,);
-        // }else{
-        //   CustomNavigator.push(Routes.ITEM_DETAILS,);
-        // }
+        if(widget.isVendor) {
+          Provider.of<VendorProvider>(context, listen: false).getVendorDetails(id: widget.itemModel?.id??0);
+          CustomNavigator.push(Routes.VENDOR,);
+        }else{
+          Provider.of<ItemProvider>(context, listen: false).getItemDetails(id: widget.itemModel?.id??0);
+          CustomNavigator.push(Routes.ITEM_DETAILS,);
+        }
       },
       child: Padding(
         padding:  EdgeInsets.symmetric(vertical:8.h),
@@ -75,6 +82,30 @@ class _ItemCardState extends State<ItemCard> {
                         maxLines: 2,
                         overflow: TextOverflow.ellipsis,
                         style: AppTextStyles.w500.copyWith(fontSize: 12,)),
+                  if(!widget.isVendor)  Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text("${widget.itemModel?.price??10} ر.س",
+                            maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
+                            style: AppTextStyles.w500.copyWith(fontSize: 14,color: ColorResources.PRIMARY_COLOR)),
+                        Container(
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(150.w),
+                              boxShadow: const [
+                                BoxShadow(
+                                    color: Color.fromRGBO(0, 0, 0, .1),
+                                    blurRadius: 0.05,
+                                    spreadRadius:0.05,
+                                    offset: Offset(0, 1)
+                                )
+                              ],
+                              color: ColorResources.WHITE_COLOR,
+                            ),
+                            child: customImageIconSVG(imageName: SvgImages.stackCartIcon,width: 28.w,height: 28.h))
+                      ],
+                    ),
                   ],
                 ),
               )

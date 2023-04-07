@@ -57,6 +57,7 @@ class _SplashState extends State<Splash> with WidgetsBindingObserver {
                 child:const SizedBox()),
               Image.asset(
                 Images.logo,
+                color: Colors.black,
               ).animate()
                   .scale(duration: 500.ms)
                   .then(delay: 200.ms) // baseline=800ms

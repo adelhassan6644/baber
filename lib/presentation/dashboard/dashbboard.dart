@@ -121,7 +121,9 @@ class _DashBoardState extends State<DashBoard> {
                     children: [
                       Expanded(
                         child: BottomNavBarItem(
-                          imageIcon: Images.logo,
+                          imageIcon: Images.homeLogo,
+                          height: 25.h,
+                          width: 20.w,
                           isSelected: _selectedIndex == 0,
                           onTap: () => _setPage(0),
                           name: getTranslated("home", context),

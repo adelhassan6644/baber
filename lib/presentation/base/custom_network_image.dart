@@ -1,7 +1,6 @@
 import 'package:baber/app/core/utils/dimensions.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-
 import '../../app/core/utils/images.dart';
 
 class CustomNetworkImage {
@@ -43,10 +42,10 @@ class CustomNetworkImage {
                   topLeft: Radius.circular(radius ?? 10))
               : BorderRadius.all(Radius.circular(radius ?? 10.0)),
           image: DecorationImage(
-            fit: fit ?? BoxFit.contain,
+            fit: fit ?? BoxFit.cover,
             image: Image.asset(
               defaultImage ?? Images.splash,
-              fit: fit ?? BoxFit.contain,
+              fit: fit ?? BoxFit.cover,
             ).image,
           ),
 
@@ -62,10 +61,10 @@ class CustomNetworkImage {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(radius ??15.w),
                   image: DecorationImage(
-                    fit: fit ?? BoxFit.contain,
+                    fit: fit ?? BoxFit.cover,
                     image: Image.asset(
                       defaultImage ?? Images.splash,
-                      fit: fit??BoxFit.contain,
+                      fit: fit??BoxFit.cover,
                     ).image,
                   ),
                 ),
@@ -84,7 +83,7 @@ class CustomNetworkImage {
                     topRight: Radius.circular(radius ?? 10),
                     topLeft: Radius.circular(radius ?? 10))
                 : BorderRadius.all(Radius.circular(radius ?? 10.0)),
-            image: DecorationImage(fit: fit ?? BoxFit.contain, image: provider),
+            image: DecorationImage(fit: fit ?? BoxFit.cover, image: provider),
           ),
           child: imageWidget,
         );

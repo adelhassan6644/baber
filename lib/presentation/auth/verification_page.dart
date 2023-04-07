@@ -2,7 +2,6 @@ import 'package:baber/app/core/utils/extensions.dart';
 import 'package:baber/app/core/utils/text_styles.dart';
 import 'package:baber/app/core/utils/validation.dart';
 import 'package:baber/navigation/custom_navigation.dart';
-import 'package:baber/presentation/base/custom_images.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
@@ -10,12 +9,12 @@ import 'package:provider/provider.dart';
 import '../../app/core/utils/color_resources.dart';
 import '../../app/core/utils/dimensions.dart';
 import '../../app/core/utils/images.dart';
-import '../../app/core/utils/svg_images.dart';
 import '../../controller/auth_provider.dart';
 import '../../domain/localization/language_constant.dart';
 import '../../navigation/routes.dart';
 import '../base/count_down.dart';
 import '../base/custom_button.dart';
+import '../base/custom_stack_app_bar.dart';
 
 class VerificationPage extends StatefulWidget {
   const VerificationPage({Key? key}) : super(key: key);
@@ -65,16 +64,7 @@ class _VerificationPageState extends State<VerificationPage> {
                       ],
                     ),
                   ),
-                 Padding(
-                   padding:  EdgeInsets.symmetric(vertical:Dimensions.PADDING_SIZE_DEFAULT.h,horizontal: Dimensions.PADDING_SIZE_DEFAULT.w),
-                   child: Column(
-                     children: [
-                       SizedBox(height: context.toPadding,),
-                       GestureDetector(onTap: ()=>CustomNavigator.pop(),
-                           child: customImageIconSVG(imageName: SvgImages.backIcon)),
-                     ],
-                   ),
-                 )
+                  const CustomStackAppBar()
                 ],
               ),
               Expanded(
@@ -161,7 +151,7 @@ class _VerificationPageState extends State<VerificationPage> {
                             // } else {
                             //   isValid = false;
                             // }
-                            CustomNavigator.push(Routes.CHOOSE_CITY,replace: true);
+                            CustomNavigator.push(Routes.Location,replace: true);
                           },
                           textColor: ColorResources.WHITE_COLOR,
                           text: getTranslated("submit", context),

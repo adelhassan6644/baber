@@ -10,9 +10,11 @@ import 'custom_images.dart';
 class CustomAppBar extends StatelessWidget {
   final String? title;
   final Widget? actionChild;
-  final bool showLeading ;
+  final bool withCart ;
+  final bool withBack ;
+  final bool withSearch ;
 
-  const CustomAppBar({Key? key, this.title ,this.showLeading = false, this.actionChild}) : super(key: key);
+  const CustomAppBar({Key? key, this.title ,this.withCart = false, this.withSearch =false,this.withBack=false,this.actionChild}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -33,11 +35,15 @@ class CustomAppBar extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
-              actionChild??const SizedBox(),
-            Text(title??"",style: AppTextStyles.w700.copyWith(color: Colors.black,fontSize: 18),),
-              SizedBox(width: 115.w,),
-              showLeading?  GestureDetector(onTap: ()=>CustomNavigator.pop(),
-                  child: customImageIconSVG(imageName: SvgImages.arrowRightIcon,color: Colors.black)):SizedBox(width: 24.w,),
+              withCart? GestureDetector(onTap: (){},
+                  child: customImageIconSVG(imageName: SvgImages.cartIcon,color: Colors.black)):
+              withSearch ?GestureDetector(onTap: (){},
+                  child: customImageIconSVG(imageName: SvgImages.searchIcon,color: Colors.black)):const SizedBox(width: 24,),
+              const Expanded(child: SizedBox()),
+              Text(title??"",style: AppTextStyles.w600.copyWith(color: Colors.black,fontSize: 16),),
+              const Expanded(child: SizedBox()),
+              withBack?  GestureDetector(onTap: ()=>CustomNavigator.pop(),
+                  child: customImageIconSVG(imageName: SvgImages.arrowRightIcon,color: Colors.black)):const SizedBox(width: 24,),
           ],),
           SizedBox(height: Dimensions.PADDING_SIZE_SMALL.h),
 

@@ -19,6 +19,7 @@
   "please_enter_your_name": "please,enter your name",
   "please_choose_city": "please,choose city",
   "choose_your_city": "choose your city",
+  "choose_your_new_city": "choose your new city",
   "city": "city",
   "delivery_to": "Delivery to",
   "sections": "Sections",
@@ -31,6 +32,14 @@
   "attachment": "attachment",
   "home": "home",
   "cart": "cart",
-  "profile": "profile"
+  "profile": "profile",
+  "notifications": "notifications",
+  "change_city": "change city",
+  "contact_with_us": "contact with us",
+  "about_baber":"about Baber",
+  "privacy_policy": "privacy policy",
+  "log_out": "log out",
+  "write_your_massage": "write your massage"
+
 
 }

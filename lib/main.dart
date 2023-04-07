@@ -9,8 +9,11 @@ import 'app/theme/light_theme.dart';
 import 'controller/banner_provider.dart';
 import 'controller/categories_provider.dart';
 import 'controller/home_vendor_provider.dart';
+import 'controller/item_provider.dart';
 import 'controller/localization_provider.dart';
+import 'controller/location_provider.dart';
 import 'controller/theme_provider.dart';
+import 'controller/vednor_prvider.dart';
 import 'controller/vendors_by_category_provider.dart';
 import 'di.dart' as di;
 import 'package:flutter/material.dart';
@@ -31,10 +34,13 @@ Future<void> main() async {
     ChangeNotifierProvider(create: (context) => di.sl<ThemeProvider>()),
     ChangeNotifierProvider(create: (context) => di.sl<LocalizationProvider>()),
     ChangeNotifierProvider(create: (context) => di.sl<AuthProvider>()),
+    ChangeNotifierProvider(create: (context) => di.sl<LocationProvider>()),
     ChangeNotifierProvider(create: (context) => di.sl<BannerProvider>()),
     ChangeNotifierProvider(create: (context) => di.sl<CategoryProvider>()),
     ChangeNotifierProvider(create: (context) => di.sl<HomeVendorProvider>()),
     ChangeNotifierProvider(create: (context) => di.sl<VendorsByCategoryProvider>()),
+    ChangeNotifierProvider(create: (context) => di.sl<VendorProvider>()),
+    ChangeNotifierProvider(create: (context) => di.sl<ItemProvider>()),
   ], child: const MyApp()));
   SystemChrome.setPreferredOrientations(
       [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);

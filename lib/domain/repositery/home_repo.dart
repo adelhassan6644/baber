@@ -12,7 +12,7 @@ class HomeRepo {
 
   Future<Either<ServerFailure, Response>> getBannerList() async {
       try {
-        Response response = await dioClient.get( uri: EndPoints.getBanners);
+        Response response = await dioClient.get( uri: EndPoints.banners);
         if (response.statusCode == 200) {
           return Right(response);
         } else {
@@ -25,7 +25,7 @@ class HomeRepo {
 
   Future<Either<ServerFailure, Response>> getCategoryList() async {
       try {
-        Response response = await dioClient.get( uri: EndPoints.getCategories);
+        Response response = await dioClient.get( uri: EndPoints.categories);
         if (response.statusCode == 200) {
           return Right(response);
         } else {
@@ -38,7 +38,7 @@ class HomeRepo {
 
   Future<Either<ServerFailure, Response>> getHomeVendorList() async {
       try {
-        Response response = await dioClient.get( uri: EndPoints.getHomeVendors);
+        Response response = await dioClient.get( uri: EndPoints.homeVendors);
         if (response.statusCode == 200) {
           return Right(response);
         } else {

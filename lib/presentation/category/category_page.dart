@@ -1,6 +1,6 @@
 import 'package:baber/app/core/utils/dimensions.dart';
 import 'package:baber/presentation/category/widget/category_selection_bar.dart';
-import 'package:baber/presentation/category/widget/grid_list_animator.dart';
+import 'package:baber/main_widgets/grid_list_animator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:provider/provider.dart';
@@ -22,8 +22,9 @@ class CategoryPage extends StatelessWidget {
       body: Column(
         children: [
           CustomAppBar(
-            title: getTranslated("sections", context),
-            showLeading: true,
+            title: getTranslated("our_dining_table", context),
+            withBack: true,
+            withSearch: true,
           ),
           CategorySelectionBar(
             categories: categories,
@@ -70,7 +71,10 @@ class CategoryPage extends StatelessWidget {
                         },
                       ),
                     )) :
-               Expanded(child: EmptyWidget(img: Images.emptyItems,imgWidth: 138.w,imgHeight: 85.h,));
+               Expanded(child: EmptyWidget(  img: Images.emptyDish,
+                 imgWidth: 215.w,
+                 imgHeight: 220.h,
+                 txt: "نعتذر , لا يوجد اسر متاحة الان",));
             },
           ),
         ],
