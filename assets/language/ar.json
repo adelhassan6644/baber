@@ -39,5 +39,8 @@
   "about_baber":"عن Baber",
   "privacy_policy": "سياسة الخصوصية",
   "log_out": "تسجيل الخروج",
-  "write_your_massage": "اكتب رسالتك"
+  "write_your_massage": "اكتب رسالتك",
+  "your_message_send_successfully": "تم ارسال رسالتك بنجاح",
+  "your_logged_out_successfully": "تم تسجيل خروجك بنجاح"
+
 }

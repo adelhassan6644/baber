@@ -14,7 +14,7 @@ import '../base/empty_widget.dart';
 
 class CategoryPage extends StatelessWidget {
   const CategoryPage({required this.categories, Key? key}) : super(key: key);
-  final List<HomeCategoryModel> categories;
+  final  List<HomeCategory> categories;
 
   @override
   Widget build(BuildContext context) {

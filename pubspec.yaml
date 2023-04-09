@@ -20,7 +20,7 @@ dependencies:
   shared_preferences:
   get_it:
   http:
-#  firebase_messaging:
+  firebase_messaging:
   provider:
   flutter_staggered_animations:
   connectivity:

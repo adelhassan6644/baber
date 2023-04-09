@@ -15,7 +15,8 @@ class BannersView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Consumer<BannerProvider>(
       builder: (context, bannerProvider, child) {
-        return bannerProvider.bannerList != null && bannerProvider.bannerList!.isNotEmpty ? Column(
+        return bannerProvider.bannerModel != null &&bannerProvider.bannerModel!.banners != null&&bannerProvider.bannerModel!.banners!.isNotEmpty?
+        Column(
           children: [
             CarouselSlider.builder(
               options: CarouselOptions(
@@ -26,10 +27,10 @@ class BannersView extends StatelessWidget {
                 disableCenter: true,
                 onPageChanged: (index, reason) {bannerProvider.setCurrentIndex(index);},
               ),
-              itemCount: bannerProvider.bannerList!.length,
+              itemCount: bannerProvider.bannerModel!.banners!.length,
               itemBuilder: (context, index, _) {
                 return CustomNetworkImage.containerNewWorkImage(
-                  image: bannerProvider.bannerList![index].image!,
+                  image: bannerProvider.bannerModel!.banners![index].image!,
                   width: context.width,
                   height: 165.h,
                   fit: BoxFit.cover,
@@ -46,8 +47,8 @@ class BannersView extends StatelessWidget {
               child: Row(
                 mainAxisSize: MainAxisSize.min,
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: bannerProvider.bannerList!.map((banner) {
-                  int index = bannerProvider.bannerList!.indexOf(banner);
+                children: bannerProvider.bannerModel!.banners!.map((banner) {
+                  int index =  bannerProvider.bannerModel!.banners!.indexOf(banner);
                   return TabPageSelectorIndicator(
                     backgroundColor: index == bannerProvider.currentIndex ? ColorResources.PRIMARY_COLOR : ColorResources.WHITE_COLOR,
                     borderColor: Theme.of(context).primaryColor,
@@ -57,8 +58,8 @@ class BannersView extends StatelessWidget {
               ),
             ),
           ],
-        ) :
-        Padding(
+        )
+            : Padding(
           padding: EdgeInsets.symmetric(horizontal: Dimensions.PADDING_SIZE_DEFAULT.w),
           child: Shimmer.fromColors(
             baseColor: Colors.grey[300]!,

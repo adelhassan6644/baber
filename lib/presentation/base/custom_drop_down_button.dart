@@ -16,7 +16,7 @@ class CustomDropDownButton extends StatefulWidget {
   final String? label;
   final String name;
   final String? value;
-  final void Function(Object?)? onChange;
+  final void Function(dynamic)? onChange;
   final String? Function(Object?)? validation;
 
   const CustomDropDownButton({
@@ -44,11 +44,11 @@ class _CustomDropDownButtonState extends State<CustomDropDownButton> {
     return SizedBox(
       width: context.width,
       child: FormBuilderDropdown(
-        items: widget.items.map((item) {
+        items: widget.items.map((dynamic item) {
           return DropdownMenuItem(
             value: item,
             child: Text(
-              item,
+              item.name,
               style: AppTextStyles.w500
                   .copyWith(color: ColorResources.TITLE, fontSize: 13),
             ),

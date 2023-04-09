@@ -1,7 +1,7 @@
 import 'package:baber/app/core/utils/color_resources.dart';
 import 'package:baber/app/core/utils/dimensions.dart';
 import 'package:baber/app/core/utils/text_styles.dart';
-import 'package:baber/controller/categories_provider.dart';
+import 'package:baber/controller/home_categories_provider.dart';
 import 'package:baber/controller/vendors_by_category_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -20,7 +20,7 @@ class CategoriesSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Consumer<CategoryProvider>(
+    return Consumer<HomeCategoryProvider>(
       builder: (context, categoriesProvider, child) {
         return Column(
           children: [
@@ -48,16 +48,16 @@ class CategoriesSection extends StatelessWidget {
                 runSpacing: 14.h,
                 alignment: WrapAlignment.spaceBetween,
                 children: List.generate(
-                  categoriesProvider.categoryList != null &&
-                          categoriesProvider.categoryList!.isNotEmpty
-                      ? categoriesProvider.categoryList!.length
+                  categoriesProvider.homeCategory != null &&
+                          categoriesProvider.homeCategory!.homeCategories!.isNotEmpty
+                      ? categoriesProvider.homeCategory!.homeCategories!.length
                       : 4,
-                  (index) => categoriesProvider.categoryList != null &&
-                          categoriesProvider.categoryList!.isNotEmpty
+                  (index) => categoriesProvider.homeCategory != null &&
+                      categoriesProvider.homeCategory!.homeCategories!.isNotEmpty
                       ? InkWell(
                           onTap: () {
                             CustomNavigator.push(Routes.CATEGORIES,
-                                arguments: categoriesProvider.categoryList!);
+                                arguments: categoriesProvider.homeCategory!.homeCategories);
                             Provider.of<VendorsByCategoryProvider>(context,
                                     listen: false)
                                 .setCurrentIndex(index);
@@ -65,13 +65,12 @@ class CategoriesSection extends StatelessWidget {
                                     listen: false)
                                 .getVendorByCategoryList(
                                     id: categoriesProvider
-                                        .categoryList![index].id);
+                                        .homeCategory!.homeCategories![index].id!);
                           },
                           child: Stack(
                             children: [
                               CustomNetworkImage.containerNewWorkImage(
-                                  image: categoriesProvider
-                                      .categoryList![index].image,
+                                  image:categoriesProvider.homeCategory!.homeCategories![index].image??"",
                                   width: 163.h,
                                   height: 80.h,
                                   fit: BoxFit.cover,
@@ -80,10 +79,10 @@ class CategoriesSection extends StatelessWidget {
                                 top: 12.h,
                                 left: 14.w,
                                 child: Text(
-                                  categoriesProvider.categoryList![index].title,
+                                  categoriesProvider.homeCategory!.homeCategories![index].name??"",
                                   style: AppTextStyles.w500.copyWith(
                                       fontSize: 15,
-                                      color: ColorResources.TITLE),
+                                      color: ColorResources.WHITE_COLOR),
                                 ),
                               ),
                             ],

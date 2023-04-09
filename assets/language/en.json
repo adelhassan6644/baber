@@ -39,7 +39,10 @@
   "about_baber":"about Baber",
   "privacy_policy": "privacy policy",
   "log_out": "log out",
-  "write_your_massage": "write your massage"
+  "write_your_massage": "write your massage",
+  "your_message_send_successfully": "your message send successfully !",
+  "your_logged_out_successfully": "You logged out successfully !"
+
 
 
 }

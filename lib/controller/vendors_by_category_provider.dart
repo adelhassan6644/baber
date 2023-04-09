@@ -7,10 +7,10 @@ import '../app/core/error/failures.dart';
 import '../app/core/utils/app_snack_bar.dart';
 import '../app/core/utils/color_resources.dart';
 import '../data/model/item_model.dart';
-import '../domain/repositery/category_repo.dart';
+import '../domain/repository/vendors_repo.dart';
 
 class VendorsByCategoryProvider extends ChangeNotifier {
-  final CategoryRepo categoryRepo;
+  final VendorsRepo categoryRepo;
   VendorsByCategoryProvider({required this.categoryRepo});
 
   late int _currentIndex = 0;
@@ -59,7 +59,7 @@ class VendorsByCategoryProvider extends ChangeNotifier {
         _isLoading = true;
         notifyListeners();
         Either<ServerFailure, Response> response =
-            await categoryRepo.getVendorsByCategoryList();
+            await categoryRepo.getVendorsByCategory(categoryId: id);
         response.fold((fail) {
           _isLoading = false;
           CustomSnackBar.showSnackBar(

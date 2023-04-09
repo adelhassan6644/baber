@@ -1,31 +1,20 @@
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-
 import '../../app/core/api/end_points.dart';
 import '../../app/core/error/api_error_handler.dart';
 import '../../app/core/error/failures.dart';
 import '../../app/core/utils/app_storage_keys.dart';
 import '../../data/dio/dio_client.dart';
 
-class AuthRepo {
-  final SharedPreferences sharedPreferences;
+class CityRepo {
   final DioClient dioClient;
-  AuthRepo({required this.sharedPreferences, required this.dioClient});
+  final SharedPreferences sharedPreferences;
+  CityRepo({required this.dioClient, required this.sharedPreferences});
 
-
-  bool isLoggedIn() {
-    return sharedPreferences.containsKey(AppStorageKey.isLogin);
-  }
-
-  setLoggedIn() {
-    sharedPreferences.setBool(AppStorageKey.isLogin, true);
-  }
-
-  Future<Either<ServerFailure, Response>> logIn({required String phone, }) async {
+  Future<Either<ServerFailure, Response>> getCities() async {
     try {
-      Response response = await dioClient.post(
-          uri: EndPoints.logIn, data: {"phone": phone, });
+      Response response = await dioClient.get(uri: EndPoints.cities);
       if (response.statusCode == 200) {
         return Right(response);
       } else {
@@ -36,12 +25,14 @@ class AuthRepo {
     }
   }
 
-
-  Future<Either<ServerFailure, Response>> sendOTP(
-      {required String code, }) async {
+  Future<Either<ServerFailure, Response>> setCity({
+    required int cityId,
+  }) async {
     try {
-      Response response = await dioClient.post(
-          uri: EndPoints.sendOTP, data: {"code": code, });
+      Response response = await dioClient.post(uri: EndPoints.setCity, data: {
+        "city_id": cityId,
+      });
+
       if (response.statusCode == 200) {
         return Right(response);
       } else {
@@ -52,10 +43,14 @@ class AuthRepo {
     }
   }
 
+  saveCity({required String cityId,required String cityName,}) {
+    sharedPreferences.setString(AppStorageKey.cityName, cityName);
+    sharedPreferences.setString(AppStorageKey.cityId, cityId);
+  }
 
-  Future<bool> clearSharedData() async {
-    await sharedPreferences.remove(AppStorageKey.userId);
-    await sharedPreferences.remove(AppStorageKey.isLogin);
-    return true;
+  getCityName() {
+    if (sharedPreferences.containsKey(AppStorageKey.cityName,)) {
+     return sharedPreferences.getString(AppStorageKey.cityName,);
+    }
   }
 }

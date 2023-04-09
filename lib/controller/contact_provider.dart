@@ -1,58 +1,53 @@
-import 'package:baber/domain/repository/vendor_repo.dart';
+import 'package:baber/domain/localization/language_constant.dart';
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-
+import '../../app/core/error/failures.dart';
+import '../../navigation/custom_navigation.dart';
 import '../app/core/error/api_error_handler.dart';
-import '../app/core/error/failures.dart';
 import '../app/core/utils/app_snack_bar.dart';
 import '../app/core/utils/color_resources.dart';
-import '../data/model/vendor_model.dart';
+import '../domain/repository/contact_repo.dart';
 
-class VendorProvider extends ChangeNotifier {
-  final VendorRepo vendorRepo;
-  VendorProvider({required this.vendorRepo});
+class ContactProvider extends ChangeNotifier {
+  final ContactRepo contactRepo;
+  ContactProvider({required this.contactRepo,});
 
-
-
-  late int _currentIndex = 0;
-  int get currentIndex => _currentIndex;
-
-  void setCurrentIndex(int index) {
-    _currentIndex = index;
-    notifyListeners();
-  }
+  String? message;
 
   bool _isLoading = false;
   bool get isLoading => _isLoading;
 
 
-   VendorModel? _vendor ;
-   VendorModel? get vendor => _vendor;
-
-  getVendorDetails({required int id}) async {
+  sendMessage() async {
     try {
       {
         _isLoading = true;
         notifyListeners();
-        Either<ServerFailure, Response> response =
-        await vendorRepo.getVendorDetails(id: id);
+        Either<ServerFailure, Response> response = await contactRepo.contact(message:message??"" ,
+        );
         response.fold((fail) {
-          _isLoading = false;
           CustomSnackBar.showSnackBar(
               notification: AppNotification(
-                  message: ApiErrorHandler.getMessage(fail.error),
+                  message: fail.error,
                   isFloating: true,
                   backgroundColor: ColorResources.IN_ACTIVE,
                   borderColor: Colors.transparent));
           notifyListeners();
         }, (success) {
-          _isLoading = false;
-          _vendor = success.data;
-          notifyListeners();
+          CustomNavigator.pop();
+          CustomSnackBar.showSnackBar(
+              notification: AppNotification(
+                  message: getTranslated("your_message_send_successfully", CustomNavigator.navigatorState.currentContext!),
+                  isFloating: true,
+                  backgroundColor: ColorResources.ACTIVE,
+                  borderColor: Colors.transparent));
         });
+        _isLoading = false;
+        notifyListeners();
       }
     } catch (e) {
+      CustomNavigator.pop();
       CustomSnackBar.showSnackBar(
           notification: AppNotification(
               message: ApiErrorHandler.getMessage(e),
@@ -63,6 +58,5 @@ class VendorProvider extends ChangeNotifier {
       notifyListeners();
     }
   }
-
 
 }

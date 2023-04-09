@@ -4,6 +4,7 @@ import 'package:baber/presentation/auth/widget/welcome_widget.dart';
 import 'package:baber/presentation/base/custom_text_form_field.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import '../../app/core/utils/app_snack_bar.dart';
 import '../../app/core/utils/color_resources.dart';
 import '../../app/core/utils/dimensions.dart';
 import '../../app/core/utils/images.dart';
@@ -11,8 +12,6 @@ import '../../app/core/utils/svg_images.dart';
 import '../../app/core/utils/validation.dart';
 import '../../controller/auth_provider.dart';
 import '../../domain/localization/language_constant.dart';
-import '../../navigation/custom_navigation.dart';
-import '../../navigation/routes.dart';
 import '../base/chekbox_listtile.dart';
 import '../base/custom_button.dart';
 
@@ -98,6 +97,7 @@ class _LoginPageState extends State<LoginPage> {
                         title:getTranslated("agree_to_the_terms_and_conditions", context),
                         onChange:authProvider.onAgree ,
                         check: authProvider.isAgree,
+
                       ),
                     ),
                     Padding(
@@ -108,12 +108,19 @@ class _LoginPageState extends State<LoginPage> {
                           isError: authProvider.isError,
                           height: 46.h,
                           onTap: () {
-                            // if (formKey.currentState!.validate()) {
-                            //   authProvider.logIn();
-                            // } else {
-                            //   isValid = false;
-                            // }
-                            CustomNavigator.push(Routes.VERIFICATION,);
+                            if(authProvider.isAgree) {
+                              if (formKey.currentState!.validate()) {
+                                authProvider.logIn();
+                              }
+                            }else{
+                              CustomSnackBar.showSnackBar(
+                                  notification: AppNotification(
+                                      message: "يجب الموافقة علي الشروط والاحكام اولا!",
+                                      isFloating: true,
+                                      backgroundColor: ColorResources
+                                          .IN_ACTIVE,
+                                      borderColor: Colors.transparent));
+                            }
 
                           },
                           textColor: ColorResources.WHITE_COLOR,

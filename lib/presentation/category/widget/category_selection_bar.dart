@@ -9,7 +9,7 @@ import '../../../data/model/home_model.dart';
 class CategorySelectionBar extends StatefulWidget {
   const CategorySelectionBar({required this.categories, Key? key})
       : super(key: key);
-  final List<HomeCategoryModel> categories;
+  final List<HomeCategory> categories;
 
   @override
   State<CategorySelectionBar> createState() => _CategorySelectionBarState();
@@ -60,7 +60,7 @@ class _CategorySelectionBarState extends State<CategorySelectionBar> {
                           onTap: () {
                             animatedRowScroll(_globalKeys[index].currentContext!);
                             provider.setCurrentIndex(index);
-                            provider.getVendorByCategoryList(id: widget.categories[index].id);
+                            provider.getVendorByCategoryList(id: widget.categories[index].id!);
                           },
                           child: Column(
                             children: [
@@ -69,7 +69,7 @@ class _CategorySelectionBarState extends State<CategorySelectionBar> {
                                 width: 100.w,
                                 padding: EdgeInsets.symmetric(horizontal: 12.w),
                                 child: Center(
-                                  child: Text(widget.categories[index].title,
+                                  child: Text(widget.categories[index].name!,
                                       style: TextStyle(
                                           fontSize: 14,
                                           fontWeight: provider.currentIndex == index

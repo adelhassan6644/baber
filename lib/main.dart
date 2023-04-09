@@ -7,11 +7,14 @@ import 'app/core/utils/un_focus.dart';
 import 'app/theme/dark_theme.dart';
 import 'app/theme/light_theme.dart';
 import 'controller/banner_provider.dart';
-import 'controller/categories_provider.dart';
+import 'controller/home_categories_provider.dart';
+import 'controller/city_provider.dart';
+import 'controller/contact_provider.dart';
 import 'controller/home_vendor_provider.dart';
 import 'controller/item_provider.dart';
 import 'controller/localization_provider.dart';
-import 'controller/location_provider.dart';
+import 'controller/notifications_provider.dart';
+import 'controller/profile_provider.dart';
 import 'controller/theme_provider.dart';
 import 'controller/vednor_prvider.dart';
 import 'controller/vendors_by_category_provider.dart';
@@ -34,13 +37,16 @@ Future<void> main() async {
     ChangeNotifierProvider(create: (context) => di.sl<ThemeProvider>()),
     ChangeNotifierProvider(create: (context) => di.sl<LocalizationProvider>()),
     ChangeNotifierProvider(create: (context) => di.sl<AuthProvider>()),
-    ChangeNotifierProvider(create: (context) => di.sl<LocationProvider>()),
+    ChangeNotifierProvider(create: (context) => di.sl<ProfileProvider>()),
+    ChangeNotifierProvider(create: (context) => di.sl<CityProvider>()),
     ChangeNotifierProvider(create: (context) => di.sl<BannerProvider>()),
-    ChangeNotifierProvider(create: (context) => di.sl<CategoryProvider>()),
+    ChangeNotifierProvider(create: (context) => di.sl<HomeCategoryProvider>()),
     ChangeNotifierProvider(create: (context) => di.sl<HomeVendorProvider>()),
     ChangeNotifierProvider(create: (context) => di.sl<VendorsByCategoryProvider>()),
     ChangeNotifierProvider(create: (context) => di.sl<VendorProvider>()),
     ChangeNotifierProvider(create: (context) => di.sl<ItemProvider>()),
+    ChangeNotifierProvider(create: (context) => di.sl<ContactProvider>()),
+    ChangeNotifierProvider(create: (context) => di.sl<NotificationProvider>()),
   ], child: const MyApp()));
   SystemChrome.setPreferredOrientations(
       [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);

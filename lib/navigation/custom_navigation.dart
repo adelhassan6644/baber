@@ -5,8 +5,8 @@ import '../main.dart';
 import '../presentation/about/about_page.dart';
 import '../presentation/auth/login_page.dart';
 import '../presentation/auth/verification_page.dart';
+import '../presentation/city/city_page.dart';
 import '../presentation/dashboard/dashbboard.dart';
-import '../presentation/location/location_page.dart';
 import '../presentation/notifications/pages/notification_page.dart';
 import '../presentation/privacy/privacy_page.dart';
 import '../presentation/splash/splash.dart';
@@ -31,8 +31,8 @@ abstract class CustomNavigator {
         return _pageRoute(const LoginPage());
       case Routes.VERIFICATION:
         return _pageRoute(const VerificationPage());
-      case Routes.Location:
-        return _pageRoute(LocationPage(
+      case Routes.CITY:
+        return _pageRoute(CityPage(
           fromProfile:
               settings.arguments != null ? settings.arguments as bool : false,
         ));
@@ -42,7 +42,7 @@ abstract class CustomNavigator {
         ));
       case Routes.CATEGORIES:
         return _pageRoute(CategoryPage(
-          categories: settings.arguments as List<HomeCategoryModel>,
+          categories: settings.arguments as List<HomeCategory>,
         ));
       case Routes.VENDOR:
         return _pageRoute(const VendorPage());

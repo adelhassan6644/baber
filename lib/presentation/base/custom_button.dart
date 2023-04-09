@@ -36,7 +36,10 @@ class CustomButton extends StatelessWidget {
     return Animate(
       effects: isError?[const ShakeEffect(), ]:[],
       child: GestureDetector(
-        onTap: onTap,
+        onTap: (){
+          FocusScope.of(context).requestFocus(FocusNode());
+          onTap!();
+        },
         child: AnimatedContainer(
           width: isLoading ? 90.w :context.width,
           height: height??55.h,

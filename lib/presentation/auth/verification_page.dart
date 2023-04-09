@@ -1,7 +1,6 @@
 import 'package:baber/app/core/utils/extensions.dart';
 import 'package:baber/app/core/utils/text_styles.dart';
 import 'package:baber/app/core/utils/validation.dart';
-import 'package:baber/navigation/custom_navigation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
@@ -11,7 +10,6 @@ import '../../app/core/utils/dimensions.dart';
 import '../../app/core/utils/images.dart';
 import '../../controller/auth_provider.dart';
 import '../../domain/localization/language_constant.dart';
-import '../../navigation/routes.dart';
 import '../base/count_down.dart';
 import '../base/custom_button.dart';
 import '../base/custom_stack_app_bar.dart';
@@ -26,7 +24,6 @@ class VerificationPage extends StatefulWidget {
 class _VerificationPageState extends State<VerificationPage> {
 
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
-  bool isValid = true;
 
   @override
   Widget build(BuildContext context) {
@@ -146,12 +143,9 @@ class _VerificationPageState extends State<VerificationPage> {
                           isError: authProvider.isErrorOnSubmit,
                           height: 46.h,
                           onTap: () {
-                            // if (formKey.currentState!.validate()) {
-                            //   authProvider.sendOTP();
-                            // } else {
-                            //   isValid = false;
-                            // }
-                            CustomNavigator.push(Routes.Location,replace: true);
+                            if (formKey.currentState!.validate()) {
+                              authProvider.verifyPhone();
+                            }
                           },
                           textColor: ColorResources.WHITE_COLOR,
                           text: getTranslated("submit", context),

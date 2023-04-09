@@ -3,7 +3,7 @@ class Routes {
   static const SPLASH = "SPLASH";
   static const LOGIN = "LOGIN";
   static const VERIFICATION = "VERIFICATION_CODE";
-  static const Location = "CHOOSE_CITY";
+  static const CITY = "CITY";
   static const DASHBOARD = "DASHBOARD";
   static const CATEGORIES = "CATEGORIES";
   static const VENDOR = "VENDOR";

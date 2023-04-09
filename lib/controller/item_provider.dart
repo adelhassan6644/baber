@@ -6,7 +6,7 @@ import '../app/core/error/failures.dart';
 import '../app/core/utils/app_snack_bar.dart';
 import '../app/core/utils/color_resources.dart';
 import '../data/model/item_model.dart';
-import '../domain/repositery/item_repo.dart';
+import '../domain/repository/item_repo.dart';
 
 class ItemProvider extends ChangeNotifier {
   final ItemRepo itemRepo;

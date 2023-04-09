@@ -1,20 +1,36 @@
 import 'package:baber/app/core/utils/color_resources.dart';
 import 'package:baber/app/core/utils/dimensions.dart';
 import 'package:baber/app/core/utils/svg_images.dart';
+import 'package:baber/controller/auth_provider.dart';
 import 'package:baber/domain/localization/language_constant.dart';
 import 'package:baber/presentation/base/custom_app_bar.dart';
-import 'package:baber/presentation/base/custom_images.dart';
 import 'package:baber/presentation/profile/widget/contact_with_us.dart';
+import 'package:baber/presentation/profile/widget/profile_card.dart';
 import 'package:baber/presentation/profile/widget/profile_option.dart';
 import 'package:flutter/cupertino.dart';
-import '../../app/core/utils/text_styles.dart';
+import 'package:provider/provider.dart';
+import '../../controller/profile_provider.dart';
 import '../../navigation/custom_navigation.dart';
 import '../../navigation/routes.dart';
 import '../base/custom_show_model_bottom_sheet.dart';
 
-class ProfilePage extends StatelessWidget {
+class ProfilePage extends StatefulWidget {
   const ProfilePage({Key? key}) : super(key: key);
 
+  @override
+  State<ProfilePage> createState() => _ProfilePageState();
+}
+
+class _ProfilePageState extends State<ProfilePage> {
+
+
+  @override
+  void initState() {
+    Future.delayed(Duration.zero, () {
+      Provider.of<ProfileProvider>(context, listen: false).getProfileInfo();
+    });
+    super.initState();
+  }
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -25,38 +41,12 @@ class ProfilePage extends StatelessWidget {
         SizedBox(
           height: 24.h,
         ),
-        Padding(
-          padding: EdgeInsets.symmetric(
-              horizontal: Dimensions.PADDING_SIZE_DEFAULT.w),
-          child: Row(
-            children: [
-              Stack(
-                alignment: Alignment.bottomCenter,
-                children: [
-                  Container(
-                    width: 70.w,
-                    height: 70.h,
-                    decoration: BoxDecoration(
-                        color: const Color(0xFFD9D9D9),
-                        borderRadius: BorderRadius.circular(100)),
-                  ),
-                  customImageIconSVG(imageName: SvgImages.maleAvatar),
-                ],
-              ),
-              SizedBox(
-                width: 24.h,
-              ),
-              Text("60055005 (966+)",
-                  style: AppTextStyles.w500.copyWith(
-                      fontSize: 14, color: ColorResources.HINT_COLOR)),
-            ],
-          ),
-        ),
+        const ProfileCard(),
         SizedBox(
           height: 40.h,
         ),
         ProfileOption(
-            onTap: () => CustomNavigator.push(Routes.Location, arguments: true),
+            onTap: () => CustomNavigator.push(Routes.CITY, arguments: true),
             title: getTranslated("change_city", context),
             iconName: SvgImages.edit),
         ProfileOption(
@@ -77,7 +67,7 @@ class ProfilePage extends StatelessWidget {
             title: getTranslated("privacy_policy", context),
             iconName: SvgImages.security),
         ProfileOption(
-            onTap: () {},
+            onTap: () =>Provider.of<AuthProvider>(context,listen: false).logOut(),
             showIcon: false,
             showDivider: false,
             iconColor: ColorResources.FAILED_COLOR,

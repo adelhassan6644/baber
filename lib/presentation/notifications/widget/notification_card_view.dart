@@ -5,12 +5,19 @@ import 'package:flutter/material.dart';
 
 import '../../../app/core/utils/images.dart';
 import '../../../app/core/utils/text_styles.dart';
+import 'package:baber/data/model/notification_model.dart';
 
 class NotificationCardView extends StatelessWidget {
-  const NotificationCardView({Key? key, required this.isOpened,this.isFirst=false})
+  const NotificationCardView(
+      {Key? key,
+      required this.notification,
+      required this.isOpened,
+      this.isFirst = false})
       : super(key: key);
   final bool isOpened;
   final bool isFirst;
+  final NotificationData notification;
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -20,8 +27,9 @@ class NotificationCardView extends StatelessWidget {
               left: Dimensions.PADDING_SIZE_DEFAULT.w,
               right: Dimensions.PADDING_SIZE_DEFAULT.w,
               bottom: Dimensions.PADDING_SIZE_DEFAULT.h,
-              top:isFirst?0: Dimensions.PADDING_SIZE_DEFAULT.h),
-          color: isOpened ? ColorResources.PRIMARY_COLOR.withOpacity(0.1) : null,
+              top: isFirst ? 0 : Dimensions.PADDING_SIZE_DEFAULT.h),
+          color:
+              isOpened ? ColorResources.PRIMARY_COLOR.withOpacity(0.1) : null,
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
@@ -40,10 +48,11 @@ class NotificationCardView extends StatelessWidget {
                 children: [
                   Padding(
                     padding: EdgeInsets.symmetric(vertical: 4.h),
-                    child: Text("Your order is on the way, Get ready!",
+                    child: Text(notification.body??"",
                         style: AppTextStyles.w500.copyWith(
                             fontSize: 12,
-                            color: !isOpened ? ColorResources.HINT_COLOR : null)),
+                            color:
+                                !isOpened ? ColorResources.HINT_COLOR : null)),
                   ),
                   Text("Wednesday, 08, 02:00 Am",
                       style: AppTextStyles.w500.copyWith(

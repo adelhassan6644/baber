@@ -9,32 +9,23 @@ import '../app/core/utils/color_resources.dart';
 import '../data/model/home_model.dart';
 import '../domain/repository/home_repo.dart';
 
-class BannerProvider extends ChangeNotifier {
+class HomeCategoryProvider extends ChangeNotifier {
   final HomeRepo homeRepo;
-  BannerProvider({required this.homeRepo});
+  HomeCategoryProvider({required this.homeRepo});
 
-  late int _currentIndex=0;
-  int get currentIndex => _currentIndex;
+  HomeCategoryModel? _homeCategory ;
+  HomeCategoryModel? get homeCategory => _homeCategory;
 
-  void setCurrentIndex(int index) {
-    _currentIndex = index;
-    notifyListeners();
-  }
-
-   BannerModel? bannerModel;
-
-  getBannerList() async {
+  getHomeCategories() async {
     try {
-      {
-        notifyListeners();
-        Either<ServerFailure, Response> response = await homeRepo.getBannerList();
+        Either<ServerFailure, Response> response =
+        await homeRepo.getCategoryList();
         response.fold((fail) {
           notifyListeners();
         }, (success) {
-          bannerModel = BannerModel.fromJson(success.data);
+          _homeCategory = HomeCategoryModel.fromJson(success.data);
           notifyListeners();
         });
-      }
     } catch (e) {
       CustomSnackBar.showSnackBar(
           notification: AppNotification(

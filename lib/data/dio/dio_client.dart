@@ -2,7 +2,7 @@ import 'dart:developer';
 import 'dart:io';
 import 'package:dio/dio.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import '../../app/core/api/end_points.dart';
+import '../../app/core/utils/app_storage_keys.dart';
 import 'api_clinet.dart';
 import 'logging_interceptor.dart';
 
@@ -13,7 +13,6 @@ class DioClient extends ApiClient {
 
   final Dio dio;
 
-  String? token;
 
   DioClient(
     this.baseUrl, {
@@ -21,20 +20,28 @@ class DioClient extends ApiClient {
     required this.loggingInterceptor,
      required this.sharedPreferences,
   }) {
-    // token = sharedPreferences.getString(AppStorageKey.token);
     dio
       ..options.baseUrl = baseUrl
       ..options.connectTimeout = const Duration(seconds: 60)
       ..options.receiveTimeout = const Duration(seconds: 60)
       ..httpClientAdapter
       ..options.headers = {
-        'Content-Type': 'application/json; charset=UTF-8',
+        'Content-Type': 'application/json',
         "Accept": " application/json",
-        'X-Api-Key': EndPoints.apiKey,
-        // 'language_code': sharedPreferences.getString("languageCode")
+        'Authorization': 'Bearer ${sharedPreferences.getString(AppStorageKey.token)}',
       };
     dio.interceptors.add(loggingInterceptor);
   }
+
+
+  void updateHeader({required String token}) {
+    dio.options.headers = {
+      'Content-Type': 'application/json',
+      "Accept": " application/json",
+      'Authorization': 'Bearer $token',
+    };
+  }
+
 
   @override
   Future<Response> get({
