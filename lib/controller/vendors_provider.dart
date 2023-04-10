@@ -6,12 +6,12 @@ import '../app/core/error/api_error_handler.dart';
 import '../app/core/error/failures.dart';
 import '../app/core/utils/app_snack_bar.dart';
 import '../app/core/utils/color_resources.dart';
-import '../data/model/item_model.dart';
+import '../data/model/base_model.dart';
 import '../domain/repository/vendors_repo.dart';
 
-class VendorsByCategoryProvider extends ChangeNotifier {
+class VendorsProvider extends ChangeNotifier {
   final VendorsRepo categoryRepo;
-  VendorsByCategoryProvider({required this.categoryRepo});
+  VendorsProvider({required this.categoryRepo});
 
   late int _currentIndex = 0;
   int get currentIndex => _currentIndex;
@@ -24,38 +24,10 @@ class VendorsByCategoryProvider extends ChangeNotifier {
   bool _isLoading = false;
   bool get isLoading => _isLoading;
 
-  // = [
-  // ItemModel(
-  // id: 1,
-  // title: "اكل شعبي",
-  // address: "المدينة ",
-  // image:
-  // "https://images.unsplash.com/photo-1575936123452-b67c3203c357?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8&w=1000&q=80"),
-  // ItemModel(
-  // id: 1,
-  // title: "معجنات",
-  // address: "الرياض ",
-  // image:
-  // "https://images.unsplash.com/photo-1575936123452-b67c3203c357?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8&w=1000&q=80"),
-  // ItemModel(
-  // id: 1,
-  // address: "جدة ",
-  // title: "حلي",
-  // image:
-  // "https://images.unsplash.com/photo-1575936123452-b67c3203c357?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8&w=1000&q=80"),
-  // ItemModel(
-  // id: 2,
-  // address: "مكة ",
-  // title: "محاشي",
-  // image:
-  // "https://images.unsplash.com/photo-1566438480900-0609be27a4be?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1894&q=80"),
-  // ]
-  late List<ItemModel>? _vendorsByCategoryList =[];
-  List<ItemModel>? get vendorsByCategoryList => _vendorsByCategoryList;
+  BaseModel? vendorsModel;
 
-  getVendorByCategoryList({required int id}) async {
+  getVendorsByCategory({required String id}) async {
     try {
-      {
         _isLoading = true;
         notifyListeners();
         Either<ServerFailure, Response> response =
@@ -71,10 +43,9 @@ class VendorsByCategoryProvider extends ChangeNotifier {
           notifyListeners();
         }, (success) {
           _isLoading = false;
-          _vendorsByCategoryList = success.data;
+          vendorsModel = BaseModel.fromJson(success.data);
           notifyListeners();
         });
-      }
     } catch (e) {
       CustomSnackBar.showSnackBar(
           notification: AppNotification(

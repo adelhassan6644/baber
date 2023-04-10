@@ -23,8 +23,9 @@ class _CityPageState extends State<CityPage> {
   void initState() {
     Future.delayed(
         Duration.zero,
-        () => Provider.of<CityProvider>(context, listen: false)
-            .getCities());
+        () { Provider.of<CityProvider>(context, listen: false).getCities();
+        Provider.of<CityProvider>(context, listen: false).getYourCity();
+        });
     super.initState();
   }
 
@@ -73,7 +74,7 @@ class _CityPageState extends State<CityPage> {
                       child: CustomDropDownButton(
                         items: provider.cityModel?.cities != null &&
                                 provider.cityModel!.cities!.isNotEmpty ? provider.cityModel!.cities! : [],
-                        name: getTranslated("city", context),
+                        name:  provider.city?.name ?? getTranslated("city", context),
                         onChange: (location) {
                           provider.onSelectLocation(location: location);
                         },

@@ -2,6 +2,7 @@ import 'package:baber/app/core/utils/color_resources.dart';
 import 'package:baber/app/core/utils/dimensions.dart';
 import 'package:flutter/cupertino.dart';
 
+import '../../app/core/utils/images.dart';
 import 'custom_images.dart';
 
 class EmptyWidget extends StatelessWidget {
@@ -41,7 +42,7 @@ class EmptyWidget extends StatelessWidget {
                       imageName: img ?? "",
                       width: imgWidth,
                       height:imgHeight) //width: MediaQueryHelper.width*.8,),
-                  : customImageIconSVG(imageName: img ?? "empty"),
+                  : customImageIconSVG(imageName: img ?? Images.emptyDish),
               SizedBox(height: spaceBtw ?? 35.h),
               Text(txt ?? "نعتذر , لا يوجد اسر الان !",
                   textAlign: TextAlign.center,

@@ -8,14 +8,14 @@ import 'package:shimmer/shimmer.dart';
 import '../../../app/core/utils/color_resources.dart';
 import '../../../controller/banner_provider.dart';
 
-class BannersView extends StatelessWidget {
-  const BannersView({super.key});
+class BannerView extends StatelessWidget {
+  const BannerView({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Consumer<BannerProvider>(
       builder: (context, bannerProvider, child) {
-        return bannerProvider.bannerModel != null &&bannerProvider.bannerModel!.banners != null&&bannerProvider.bannerModel!.banners!.isNotEmpty?
+        return bannerProvider.bannerModel != null &&bannerProvider.bannerModel!.items != null&&bannerProvider.bannerModel!.items!.isNotEmpty?
         Column(
           children: [
             CarouselSlider.builder(
@@ -27,10 +27,10 @@ class BannersView extends StatelessWidget {
                 disableCenter: true,
                 onPageChanged: (index, reason) {bannerProvider.setCurrentIndex(index);},
               ),
-              itemCount: bannerProvider.bannerModel!.banners!.length,
+              itemCount: bannerProvider.bannerModel!.items!.length,
               itemBuilder: (context, index, _) {
                 return CustomNetworkImage.containerNewWorkImage(
-                  image: bannerProvider.bannerModel!.banners![index].image!,
+                  image: bannerProvider.bannerModel!.items![index].image!,
                   width: context.width,
                   height: 165.h,
                   fit: BoxFit.cover,
@@ -47,8 +47,8 @@ class BannersView extends StatelessWidget {
               child: Row(
                 mainAxisSize: MainAxisSize.min,
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: bannerProvider.bannerModel!.banners!.map((banner) {
-                  int index =  bannerProvider.bannerModel!.banners!.indexOf(banner);
+                children: bannerProvider.bannerModel!.items!.map((banner) {
+                  int index =  bannerProvider.bannerModel!.items!.indexOf(banner);
                   return TabPageSelectorIndicator(
                     backgroundColor: index == bannerProvider.currentIndex ? ColorResources.PRIMARY_COLOR : ColorResources.WHITE_COLOR,
                     borderColor: Theme.of(context).primaryColor,

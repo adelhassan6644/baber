@@ -3,13 +3,13 @@ import 'package:baber/app/core/utils/dimensions.dart';
 import 'package:baber/app/core/utils/extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../../../controller/vendors_by_category_provider.dart';
-import '../../../data/model/home_model.dart';
+import '../../../controller/vendors_provider.dart';
+import '../../../data/model/item_model.dart';
 
 class CategorySelectionBar extends StatefulWidget {
   const CategorySelectionBar({required this.categories, Key? key})
       : super(key: key);
-  final List<HomeCategory> categories;
+  final List<ItemModel> categories;
 
   @override
   State<CategorySelectionBar> createState() => _CategorySelectionBarState();
@@ -39,7 +39,7 @@ class _CategorySelectionBarState extends State<CategorySelectionBar> {
         child: SingleChildScrollView(
           scrollDirection: Axis.horizontal,
           physics: const BouncingScrollPhysics(),
-          child: Consumer<VendorsByCategoryProvider>(
+          child: Consumer<VendorsProvider>(
             builder: (context, provider, child) {
               return Row(
                 children: [
@@ -60,7 +60,7 @@ class _CategorySelectionBarState extends State<CategorySelectionBar> {
                           onTap: () {
                             animatedRowScroll(_globalKeys[index].currentContext!);
                             provider.setCurrentIndex(index);
-                            provider.getVendorByCategoryList(id: widget.categories[index].id!);
+                            provider.getVendorsByCategory(id: widget.categories[index].id!);
                           },
                           child: Column(
                             children: [

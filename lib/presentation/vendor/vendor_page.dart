@@ -9,7 +9,8 @@ import 'package:provider/provider.dart';
 import 'package:shimmer/shimmer.dart';
 import '../../app/core/utils/color_resources.dart';
 import '../../app/core/utils/images.dart';
-import '../../controller/vednor_prvider.dart';
+import '../../controller/products_provider.dart';
+import '../../controller/vendor_provider.dart';
 import '../../main_widgets/Item_card.dart';
 import '../base/custom_stack_app_bar.dart';
 import '../base/empty_widget.dart';
@@ -27,7 +28,7 @@ class VendorPage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               CustomNetworkImage.containerNewWorkImage(
-                  image: provider.vendor?.image ?? "",
+                  image: provider.vendor?.logo ?? "",
                   radius: 0,
                   width: context.width,
                   height: 250.h,
@@ -42,39 +43,28 @@ class VendorPage extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    provider.isLoading?Shimmer.fromColors(
-                      baseColor: Colors.grey[300]!,
-                      highlightColor: Colors.grey[100]!,
-                      enabled: true,
-                      child: Container(
-                        width: 80.w,
-                        height: 12.h,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(5),),
-                      ),
-                    ):
-                    Text(
-                      provider.vendor?.title ?? "Baber",
-                      style: AppTextStyles.w600.copyWith(
-                        fontSize: 16,
-                      ),
-                    ),
-                    provider.isLoading?Shimmer.fromColors(
-                      baseColor: Colors.grey[300]!,
-                      highlightColor: Colors.grey[100]!,
-                      enabled: true,
-                      child: Container(
-                        width: 150.w,
-                        height: 12.h,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(5),),
-                      ),
-                    ):  Text(
-                      provider.vendor?.address ?? "الرياض",
-                      style: AppTextStyles.w500.copyWith(
-                        fontSize: 11,
-                      ),
+                    provider.isLoading
+                        ?  TextShimmer(
+                      width: 150.w,
                     )
+                        : Text(
+                            provider.vendor?.name ?? "Baber",
+                            style: AppTextStyles.w600.copyWith(
+                              fontSize: 16,
+                            ),
+                          ),
+                   if (provider.isLoading)SizedBox(height: 10.h,),
+
+                    provider.isLoading
+                        ? TextShimmer(
+                      width: 100.w,
+                    )
+                        : Text(
+                            provider.vendor?.cityName ?? "الرياض",
+                            style: AppTextStyles.w500.copyWith(
+                              fontSize: 11,
+                            ),
+                          )
                   ],
                 ),
               ),
@@ -94,54 +84,67 @@ class VendorPage extends StatelessWidget {
                           width: Dimensions.PADDING_SIZE_DEFAULT.w,
                         ),
                         ...List.generate(
-                          provider.isLoading?5 : provider.vendor?.menus?.length ?? 6,
+                          provider.isLoading
+                              ? 5
+                              : provider.vendor?.menus?.length ?? 6,
                           (index) {
-                            return
-                              Padding(
+                            return Padding(
                               padding: EdgeInsets.only(
                                   left: Dimensions.PADDING_SIZE_DEFAULT.w),
-                              child:
-                             provider.isLoading?Shimmer.fromColors(
-                               baseColor: Colors.grey[300]!,
-                               highlightColor: Colors.grey[100]!,
-                               enabled: true,
-                               child: Container(
-                            width: 80.w,
-                                 height: 27.h,
-                                 decoration: BoxDecoration(
-                                     borderRadius: BorderRadius.circular(100),),
-                               ),
-                             ) : InkWell(
-                                focusColor: Colors.transparent,
-                                hoverColor: Colors.transparent,
-                                highlightColor: Colors.transparent,
-                                splashColor: Colors.transparent,
-                                onTap: () => provider.setCurrentIndex(index),
+                              child: provider.isLoading
+                                  ? Shimmer.fromColors(
+                                baseColor: Colors.grey[300]!,
+                                highlightColor: Colors.grey[100]!,
+                                enabled: true,
                                 child: Container(
-                                  padding: EdgeInsets.symmetric(
-                                      horizontal: 12.w, vertical: 4.h),
-                                  decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(100),
-                                      border: Border.all(
-                                          color: ColorResources.PRIMARY_COLOR,
-                                          width: 1.h),
-                                      color: provider.currentIndex == index
-                                          ? ColorResources.PRIMARY_COLOR
-                                          : null),
-                                  child: Text(
-                                      provider.vendor?.menus?[index].title ??
-                                          "Babar",
-                                      style: TextStyle(
-                                          fontSize: 12,
-                                          fontWeight:
-                                              provider.currentIndex == index
-                                                  ? FontWeight.w600
-                                                  : FontWeight.w400,
-                                          color: provider.currentIndex == index
-                                              ? ColorResources.WHITE_COLOR
-                                              : ColorResources.PRIMARY_COLOR)),
-                                ),
-                              ),
+                                    width: 100.w,
+                                    height: 30.h,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(100.w),
+                                      color: ColorResources.WHITE_COLOR,
+                                    )),
+                              )
+                                  : InkWell(
+                                      focusColor: Colors.transparent,
+                                      hoverColor: Colors.transparent,
+                                      highlightColor: Colors.transparent,
+                                      splashColor: Colors.transparent,
+                                      onTap: () => provider.getMenusData(
+                                          index: index,
+                                          menuId: provider.vendor!.menus![index].id.toString(),
+                                      context: context),
+                                      child: Container(
+                                        padding: EdgeInsets.symmetric(
+                                            horizontal: 12.w, vertical: 4.h),
+                                        decoration: BoxDecoration(
+                                            borderRadius:
+                                                BorderRadius.circular(100),
+                                            border: Border.all(
+                                                color: ColorResources
+                                                    .PRIMARY_COLOR,
+                                                width: 1.h),
+                                            color: provider.currentIndex ==
+                                                    index
+                                                ? ColorResources.PRIMARY_COLOR
+                                                : null),
+                                        child: Text(
+                                            provider.vendor?.menus?[index]
+                                                    .name ??
+                                                "Babar",
+                                            style: TextStyle(
+                                                fontSize: 12,
+                                                fontWeight:
+                                                    provider.currentIndex ==
+                                                            index
+                                                        ? FontWeight.w600
+                                                        : FontWeight.w400,
+                                                color: provider.currentIndex ==
+                                                        index
+                                                    ? ColorResources.WHITE_COLOR
+                                                    : ColorResources
+                                                        .PRIMARY_COLOR)),
+                                      ),
+                                    ),
                             );
                           },
                         )
@@ -152,62 +155,58 @@ class VendorPage extends StatelessWidget {
                 height: 1.h,
                 color: ColorResources.BORDER_COLOR,
               ),
-              provider.isLoading
-                  ? Expanded(
-                      child: GridListAnimatorWidget(
-                        items: List.generate(
-                          8,
+              Consumer<ProductsProvider>( builder: (context, provider, child){
+                return  provider.isLoading
+                    ? Expanded(
+                  child: GridListAnimatorWidget(
+                    items: List.generate(
+                      8,
                           (int index) {
-                            return AnimationConfiguration.staggeredGrid(
-                                columnCount: 2,
-                                position: index,
-                                duration: const Duration(milliseconds: 375),
-                                child: const ScaleAnimation(
-                                    child: FadeInAnimation(
-                                        child: ItemShimmerCard(
-                                  fromHome: false,
-                                  isVendor: true,
-                                ))));
-                          },
-                        ),
-                      ),
-                    )
-                  : provider.vendor?.menus?[provider.currentIndex].product !=
-                              null &&
-                          provider.vendor!.menus![provider.currentIndex]
-                              .product!.isNotEmpty
-                      ? Expanded(
-                          child: GridListAnimatorWidget(
-                            aspectRatio: 0.8216,
-                            items: List.generate(
-                              provider.vendor!.menus![provider.currentIndex]
-                                  .product!.length,
-                              (int index) {
-                                return AnimationConfiguration.staggeredGrid(
-                                    columnCount: 2,
-                                    position: index,
-                                    duration: const Duration(milliseconds: 375),
-                                    child: ScaleAnimation(
-                                        child: FadeInAnimation(
-                                            child: ItemCard(
+                        return AnimationConfiguration.staggeredGrid(
+                            columnCount: 2,
+                            position: index,
+                            duration: const Duration(milliseconds: 375),
+                            child: const ScaleAnimation(
+                                child: FadeInAnimation(
+                                    child: ItemShimmerCard(
+                                      fromHome: false,
+                                      isVendor: true,
+                                    ))));
+                      },
+                    ),
+                  ),
+                )
+                    : provider.productsModel?.items != null &&
+                    provider.productsModel!.items!.isNotEmpty
+                    ? Expanded(
+                  child: GridListAnimatorWidget(
+                    aspectRatio: 0.90,
+                    items: List.generate(
+                      provider.productsModel!.items!.length,
+                          (int index) {
+                        return AnimationConfiguration.staggeredGrid(
+                            columnCount: 2,
+                            position: index,
+                            duration: const Duration(milliseconds: 375),
+                            child: ScaleAnimation(
+                                child: FadeInAnimation(
+                                    child: ItemCard(
                                       fromHome: false,
                                       isVendor: false,
-                                      itemModel: provider
-                                          .vendor
-                                          ?.menus?[provider.currentIndex]
-                                          .product?[index],
+                                      itemModel:provider.productsModel!.items![index],
                                     ))));
-                              },
-                            ),
-                          ),
-                        )
-                      : Expanded(
-                          child: EmptyWidget(
-                          img: Images.emptyDish,
-                          imgWidth: 215.w,
-                          imgHeight: 220.h,
-                          txt: "نعتذر , لا يوجد اصناف الان",
-                        ))
+                      },
+                    ),
+                  ),
+                )
+                    : Expanded(
+                    child: EmptyWidget(
+                      img: Images.emptyDish,
+                      imgWidth: 215.w,
+                      imgHeight: 220.h,
+                      txt: "نعتذر , لا يوجد اصناف الان",
+                    ));
+              }),
             ],
           );
         },

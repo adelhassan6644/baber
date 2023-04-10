@@ -1,5 +1,6 @@
 import 'package:baber/app/core/utils/dimensions.dart';
 import 'package:baber/app/core/utils/extensions.dart';
+import 'package:baber/navigation/custom_navigation.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -8,6 +9,7 @@ import '../../../app/core/utils/svg_images.dart';
 import '../../../app/core/utils/text_styles.dart';
 import '../../../controller/city_provider.dart';
 import '../../../domain/localization/language_constant.dart';
+import '../../../navigation/routes.dart';
 import '../../base/custom_images.dart';
 
 class HomeAppBar extends StatelessWidget {
@@ -76,7 +78,7 @@ class HomeAppBar extends StatelessWidget {
                 ],
               ),
               GestureDetector(
-                  onTap: () {},
+                  onTap: ()=>CustomNavigator.push(Routes.SEARCH),
                   child: customImageIconSVG(
                     imageName: SvgImages.homeSearchIcon,
                   )),

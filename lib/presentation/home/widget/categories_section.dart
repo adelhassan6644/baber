@@ -2,11 +2,11 @@ import 'package:baber/app/core/utils/color_resources.dart';
 import 'package:baber/app/core/utils/dimensions.dart';
 import 'package:baber/app/core/utils/text_styles.dart';
 import 'package:baber/controller/home_categories_provider.dart';
-import 'package:baber/controller/vendors_by_category_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shimmer/shimmer.dart';
 import '../../../app/core/utils/svg_images.dart';
+import '../../../controller/vendors_provider.dart';
 import '../../../domain/localization/language_constant.dart';
 import '../../../navigation/custom_navigation.dart';
 import '../../../navigation/routes.dart';
@@ -48,29 +48,21 @@ class CategoriesSection extends StatelessWidget {
                 runSpacing: 14.h,
                 alignment: WrapAlignment.spaceBetween,
                 children: List.generate(
-                  categoriesProvider.homeCategory != null &&
-                          categoriesProvider.homeCategory!.homeCategories!.isNotEmpty
-                      ? categoriesProvider.homeCategory!.homeCategories!.length
+                  categoriesProvider.homeCategoryModel != null &&
+                          categoriesProvider.homeCategoryModel!.items!.isNotEmpty
+                      ? categoriesProvider.homeCategoryModel!.items!.length
                       : 4,
-                  (index) => categoriesProvider.homeCategory != null &&
-                      categoriesProvider.homeCategory!.homeCategories!.isNotEmpty
+                  (index) => categoriesProvider.homeCategoryModel != null &&
+                      categoriesProvider.homeCategoryModel!.items!.isNotEmpty
                       ? InkWell(
                           onTap: () {
-                            CustomNavigator.push(Routes.CATEGORIES,
-                                arguments: categoriesProvider.homeCategory!.homeCategories);
-                            Provider.of<VendorsByCategoryProvider>(context,
-                                    listen: false)
-                                .setCurrentIndex(index);
-                            Provider.of<VendorsByCategoryProvider>(context,
-                                    listen: false)
-                                .getVendorByCategoryList(
-                                    id: categoriesProvider
-                                        .homeCategory!.homeCategories![index].id!);
+                            CustomNavigator.push(Routes.CATEGORIES, arguments: categoriesProvider.homeCategoryModel!.items);
+                            Provider.of<VendorsProvider>(context, listen: false).setCurrentIndex(index);
+                            Provider.of<VendorsProvider>(context, listen: false).getVendorsByCategory(id: categoriesProvider.homeCategoryModel!.items![index].id!);
                           },
-                          child: Stack(
-                            children: [
+                          child: Stack(children: [
                               CustomNetworkImage.containerNewWorkImage(
-                                  image:categoriesProvider.homeCategory!.homeCategories![index].image??"",
+                                  image:categoriesProvider.homeCategoryModel!.items![index].image??"",
                                   width: 163.h,
                                   height: 80.h,
                                   fit: BoxFit.cover,
@@ -79,14 +71,13 @@ class CategoriesSection extends StatelessWidget {
                                 top: 12.h,
                                 left: 14.w,
                                 child: Text(
-                                  categoriesProvider.homeCategory!.homeCategories![index].name??"",
+                                  categoriesProvider.homeCategoryModel!.items![index].name??"",
                                   style: AppTextStyles.w500.copyWith(
                                       fontSize: 15,
                                       color: ColorResources.WHITE_COLOR),
                                 ),
                               ),
-                            ],
-                          ))
+                            ],))
                       : Stack(
                           children: [
                             Shimmer.fromColors(

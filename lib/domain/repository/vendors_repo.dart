@@ -14,10 +14,12 @@ class VendorsRepo {
 
   VendorsRepo({required this.dioClient,required this.sharedPreferences});
 
-  Future<Either<ServerFailure, Response>> getVendorsByCategory({required int categoryId}) async {
+  Future<Either<ServerFailure, Response>> getVendorsByCategory({required String categoryId}) async {
     try {
-      Response response = await dioClient.get( uri:
-          "${EndPoints.vendorsByCategory}/$categoryId/${sharedPreferences.getString(AppStorageKey.cityId)}");
+      Response response = await dioClient.get( uri:EndPoints.vendors,queryParameters: {
+        "category_id":categoryId,
+        "city_id":sharedPreferences.getString(AppStorageKey.cityId),
+      });
       if (response.statusCode == 200) {
         return Right(response);
       } else {

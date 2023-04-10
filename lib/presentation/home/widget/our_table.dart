@@ -4,21 +4,17 @@ import 'package:baber/app/core/utils/text_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shimmer/shimmer.dart';
-import '../../../controller/home_vendor_provider.dart';
+import '../../../controller/home_vendors_provider.dart';
 import '../../../domain/localization/language_constant.dart';
 import '../../../main_widgets/Item_card.dart';
-import '../../../navigation/custom_navigation.dart';
-import '../../../navigation/routes.dart';
-import '../../base/custom_network_image.dart';
+
 
 class OurTable extends StatelessWidget {
-  const OurTable({
-    Key? key,
-  }) : super(key: key);
+  const OurTable({Key? key,}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Consumer<HomeVendorProvider>(
+    return Consumer<HomeVendorsProvider>(
       builder: (context, vendorProvider, child) {
         return Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -40,8 +36,7 @@ class OurTable extends StatelessWidget {
                   SizedBox(width: 24.w),
                   ...List.generate(
                     vendorProvider.homeVendorList != null && vendorProvider.homeVendorList!.isNotEmpty
-                        ? vendorProvider.homeVendorList!.length
-                        : 4,
+                        ? vendorProvider.homeVendorList!.length : 4,
                     (index) => vendorProvider.homeVendorList != null &&
                             vendorProvider.homeVendorList!.isNotEmpty
                         ? Row(
@@ -63,7 +58,6 @@ class OurTable extends StatelessWidget {
                                 enabled: true,
                                 child:  ClipRRect(
                                   borderRadius: BorderRadius.circular(8.w),
-
                                   child: Padding(
                                     padding:  EdgeInsets.symmetric(vertical:8.h),
                                     child: Container(
@@ -79,54 +73,7 @@ class OurTable extends StatelessWidget {
                                         ],
                                         color: ColorResources.WHITE_COLOR,
                                       ),
-                                      child: Column(
-                                        crossAxisAlignment: CrossAxisAlignment.start,
-                                        mainAxisSize: MainAxisSize.min,
-                                        children: [
-                                          // Card Image
-                                         SizedBox(
-                                            height:90.h,
-                                            width:130.w,
-                                          ),
-                                          // Text Content
-                                          Padding(
-                                            padding: EdgeInsets.symmetric(horizontal:12.w ,vertical:6.h),
-                                            child: Expanded(
-                                              child: Column(
-                                                mainAxisAlignment: MainAxisAlignment.center,
-                                                crossAxisAlignment: CrossAxisAlignment.start,
-                                                children: [
-                                                  // Meal name
-                                                  Shimmer.fromColors(
-                                                    baseColor: Colors.grey[300]!,
-                                                    highlightColor: Colors.grey[100]!,
-                                                    enabled: true,
-                                                    child: Container(
-                                                        width: 60.h,
-                                                        height: 10.h,
-                                                        decoration: BoxDecoration(
-                                                          borderRadius: BorderRadius.circular(8.w),
-                                                          color: ColorResources.WHITE_COLOR,
-                                                        )),
-                                                  ),
-                                                  Shimmer.fromColors(
-                                                    baseColor: Colors.grey[300]!,
-                                                    highlightColor: Colors.grey[100]!,
-                                                    enabled: true,
-                                                    child: Container(
-                                                        width: 130.h,
-                                                        height: 8.h,
-                                                        decoration: BoxDecoration(
-                                                          borderRadius: BorderRadius.circular(8.w),
-                                                          color: ColorResources.WHITE_COLOR,
-                                                        )),
-                                                  ),
-                                                ],
-                                              ),
-                                            ),
-                                          )
-                                        ],
-                                      ),
+                                      child: SizedBox(width: 130.w,height: 138.h,),
                                     ),
                                   ),
                                 ),

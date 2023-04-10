@@ -7,6 +7,8 @@ class Routes {
   static const DASHBOARD = "DASHBOARD";
   static const CATEGORIES = "CATEGORIES";
   static const VENDOR = "VENDOR";
+  static const SEARCH = "SEARCH";
+  static const CART = "CART";
   static const ITEM_DETAILS = "ITEM_DETAILS";
   static const EDIT_PROFILE = "EDIT_PROFILE";
   static const NOTIFICATION = "NOTIFICATION";

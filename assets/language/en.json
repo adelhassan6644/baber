@@ -41,8 +41,15 @@
   "log_out": "log out",
   "write_your_massage": "write your massage",
   "your_message_send_successfully": "your message send successfully !",
-  "your_logged_out_successfully": "You logged out successfully !"
-
-
+  "your_logged_out_successfully": "You logged out successfully !",
+  "item_description": "Item Description",
+  "addons": "Addons",
+  "item_details": "Item Details",
+  "add_to_cart": "Add to cart",
+  "added_to_cart":"Added to cart",
+  "delete": "Delete",
+  "search": "search here",
+  "products": "products",
+  "vendors": "vendors"
 
 }

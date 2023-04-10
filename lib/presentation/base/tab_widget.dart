@@ -19,6 +19,14 @@ class TabWidget extends StatelessWidget {
       onTap: onTab,
       child: Container(
         padding: EdgeInsets.symmetric(horizontal: 24.w),
+        decoration: const BoxDecoration(
+          border: Border(
+            bottom: BorderSide(
+              color: ColorResources.LIGHT_GREY_BORDER,
+              width: 1
+            )
+          )
+        ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [

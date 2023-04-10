@@ -10,10 +10,11 @@ class EndPoints {
   static const String banners= 'slider';
   static const String categories= 'categories';
   static const String homeVendors= '';
-  static const String vendorsByCategory= 'stores';
-  static const String vendorDetails= '';
-  static const String itemDetails= '';
-  static const String search = '';
+  static const String vendors= 'stores';
+  static const String products= 'products';
+  static const String vendorDetails= 'store';
+  static const String itemDetails= 'product';
+  static const String search = 'search';
   static const String contact = 'contact';
   static const String notifications = 'notifications';
 

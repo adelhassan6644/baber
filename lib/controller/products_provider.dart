@@ -7,31 +7,36 @@ import '../app/core/error/failures.dart';
 import '../app/core/utils/app_snack_bar.dart';
 import '../app/core/utils/color_resources.dart';
 import '../data/model/base_model.dart';
-import '../domain/repository/home_repo.dart';
+import '../domain/repository/products_repo.dart';
 
-class BannerProvider extends ChangeNotifier {
-  final HomeRepo homeRepo;
-  BannerProvider({required this.homeRepo});
+class ProductsProvider extends ChangeNotifier {
+  final ProductsRepo productsRepo;
+  ProductsProvider({required this.productsRepo});
 
-  late int _currentIndex = 0;
-  int get currentIndex => _currentIndex;
 
-  void setCurrentIndex(int index) {
-    _currentIndex = index;
-    notifyListeners();
-  }
+  bool _isLoading = false;
+  bool get isLoading => _isLoading;
 
-  BaseModel? bannerModel;
+  BaseModel? productsModel;
 
-  getBannerList() async {
+  getProductsByMenu({required String menuId}) async {
     try {
+      _isLoading = true;
       notifyListeners();
       Either<ServerFailure, Response> response =
-          await homeRepo.getHomeBanners();
+      await productsRepo.getProductsByMenu(menuId: menuId);
       response.fold((fail) {
+        _isLoading = false;
+        CustomSnackBar.showSnackBar(
+            notification: AppNotification(
+                message: ApiErrorHandler.getMessage(fail.error),
+                isFloating: true,
+                backgroundColor: ColorResources.IN_ACTIVE,
+                borderColor: Colors.transparent));
         notifyListeners();
       }, (success) {
-        bannerModel = BaseModel.fromJson(success.data);
+        _isLoading = false;
+        productsModel = BaseModel.fromJson(success.data);
         notifyListeners();
       });
     } catch (e) {
@@ -41,6 +46,7 @@ class BannerProvider extends ChangeNotifier {
               isFloating: true,
               backgroundColor: ColorResources.IN_ACTIVE,
               borderColor: Colors.transparent));
+      _isLoading = false;
       notifyListeners();
     }
   }

@@ -3,6 +3,7 @@ import 'package:baber/app/core/utils/extensions.dart';
 import 'package:flutter/material.dart';
 import '../../app/core/utils/svg_images.dart';
 import '../../navigation/custom_navigation.dart';
+import '../../navigation/routes.dart';
 import '../base/custom_images.dart';
 
 class CustomStackAppBar extends StatelessWidget {
@@ -18,7 +19,7 @@ class CustomStackAppBar extends StatelessWidget {
           SizedBox(height: context.toPadding,),
           Row(
             children: [
-              if(withCart)  GestureDetector(onTap: (){}, child: customImageIconSVG(imageName: SvgImages.stackCartIcon,)),
+              if(withCart)  GestureDetector(onTap: ()=>CustomNavigator.push(Routes.CART), child: customImageIconSVG(imageName: SvgImages.stackCartIcon,)),
               const Expanded(child: SizedBox()),
               GestureDetector(onTap: ()=>CustomNavigator.pop(),
                   child: customImageIconSVG(imageName: SvgImages.backIcon)),

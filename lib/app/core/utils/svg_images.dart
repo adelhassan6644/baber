@@ -5,6 +5,7 @@ class SvgImages {
   static const String backIcon = 'assets/svgs/back_icon.svg';
   static const String cityIcon = 'assets/svgs/city.svg';
   static const String profileIcon = 'assets/svgs/profile.svg';
+  static const String tickCircleIcon = 'assets/svgs/tick_circle.svg';
   static const String maleAvatar = 'assets/svgs/Male_Avatar.svg';
   static const String cartIcon = 'assets/svgs/cart.svg';
   static const String stackCartIcon = 'assets/svgs/stack_cart.svg';
@@ -20,4 +21,5 @@ class SvgImages {
   static const String edit = 'assets/svgs/edit.svg';
   static const String logout = 'assets/svgs/logout.svg';
   static const String send = 'assets/svgs/send.svg';
+  static const String delete = 'assets/svgs/delete.svg';
 }

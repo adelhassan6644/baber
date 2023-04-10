@@ -7,17 +7,20 @@ import 'app/core/utils/un_focus.dart';
 import 'app/theme/dark_theme.dart';
 import 'app/theme/light_theme.dart';
 import 'controller/banner_provider.dart';
+import 'controller/cart_provider.dart';
 import 'controller/home_categories_provider.dart';
 import 'controller/city_provider.dart';
 import 'controller/contact_provider.dart';
-import 'controller/home_vendor_provider.dart';
-import 'controller/item_provider.dart';
+import 'controller/home_vendors_provider.dart';
+import 'controller/item_details_provider.dart';
 import 'controller/localization_provider.dart';
 import 'controller/notifications_provider.dart';
+import 'controller/products_provider.dart';
 import 'controller/profile_provider.dart';
+import 'controller/search_provider.dart';
 import 'controller/theme_provider.dart';
-import 'controller/vednor_prvider.dart';
-import 'controller/vendors_by_category_provider.dart';
+import 'controller/vendor_provider.dart';
+import 'controller/vendors_provider.dart';
 import 'di.dart' as di;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -41,12 +44,15 @@ Future<void> main() async {
     ChangeNotifierProvider(create: (context) => di.sl<CityProvider>()),
     ChangeNotifierProvider(create: (context) => di.sl<BannerProvider>()),
     ChangeNotifierProvider(create: (context) => di.sl<HomeCategoryProvider>()),
-    ChangeNotifierProvider(create: (context) => di.sl<HomeVendorProvider>()),
-    ChangeNotifierProvider(create: (context) => di.sl<VendorsByCategoryProvider>()),
+    ChangeNotifierProvider(create: (context) => di.sl<HomeVendorsProvider>()),
+    ChangeNotifierProvider(create: (context) => di.sl<VendorsProvider>()),
     ChangeNotifierProvider(create: (context) => di.sl<VendorProvider>()),
-    ChangeNotifierProvider(create: (context) => di.sl<ItemProvider>()),
+    ChangeNotifierProvider(create: (context) => di.sl<ItemDetailsProvider>()),
     ChangeNotifierProvider(create: (context) => di.sl<ContactProvider>()),
     ChangeNotifierProvider(create: (context) => di.sl<NotificationProvider>()),
+    ChangeNotifierProvider(create: (context) => di.sl<ProductsProvider>()),
+    ChangeNotifierProvider(create: (context) => di.sl<CartProvider>()),
+    ChangeNotifierProvider(create: (context) => di.sl<SearchProvider>()),
   ], child: const MyApp()));
   SystemChrome.setPreferredOrientations(
       [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);

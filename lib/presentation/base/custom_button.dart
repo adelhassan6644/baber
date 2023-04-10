@@ -44,7 +44,7 @@ class CustomButton extends StatelessWidget {
           width: isLoading ? 90.w :context.width,
           height: height??55.h,
           decoration: BoxDecoration(
-            color: Theme.of(context).primaryColor,
+            color: backgroundColor,
             borderRadius: const BorderRadius.all(Radius.circular(15)),
           ),
           duration: const Duration(

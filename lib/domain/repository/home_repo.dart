@@ -10,7 +10,7 @@ class HomeRepo {
   final DioClient dioClient;
   HomeRepo({required this.dioClient});
 
-  Future<Either<ServerFailure, Response>> getBannerList() async {
+  Future<Either<ServerFailure, Response>> getHomeBanners() async {
       try {
         Response response = await dioClient.get( uri: EndPoints.banners);
         if (response.statusCode == 200) {
@@ -23,7 +23,7 @@ class HomeRepo {
       }
   }
 
-  Future<Either<ServerFailure, Response>> getCategoryList() async {
+  Future<Either<ServerFailure, Response>> getHomeCategories() async {
       try {
         Response response = await dioClient.get( uri: EndPoints.categories);
         if (response.statusCode == 200) {
@@ -36,7 +36,7 @@ class HomeRepo {
       }
   }
 
-  Future<Either<ServerFailure, Response>> getHomeVendorList() async {
+  Future<Either<ServerFailure, Response>> getHomeVendors() async {
       try {
         Response response = await dioClient.get( uri: EndPoints.homeVendors);
         if (response.statusCode == 200) {

@@ -6,11 +6,11 @@ import '../app/core/error/failures.dart';
 import '../app/core/utils/app_snack_bar.dart';
 import '../app/core/utils/color_resources.dart';
 import '../data/model/item_model.dart';
-import '../domain/repository/item_repo.dart';
+import '../domain/repository/item_details_repo.dart';
 
-class ItemProvider extends ChangeNotifier {
-  final ItemRepo itemRepo;
-  ItemProvider({required this.itemRepo});
+class ItemDetailsProvider extends ChangeNotifier {
+  final ItemDetailsRepo itemRepo;
+  ItemDetailsProvider({required this.itemRepo});
 
 
   bool _isLoading = false;
@@ -20,7 +20,7 @@ class ItemProvider extends ChangeNotifier {
   ItemModel? _item ;
   ItemModel? get item => _item;
 
-  getItemDetails({required int id}) async {
+  getItemDetails({required String id}) async {
     try {
       {
         _isLoading = true;
@@ -38,7 +38,7 @@ class ItemProvider extends ChangeNotifier {
           notifyListeners();
         }, (success) {
           _isLoading = false;
-          _item = success.data;
+          _item =ItemModel.fromJson(success.data["data"]) ;
           notifyListeners();
         });
       }
@@ -52,6 +52,11 @@ class ItemProvider extends ChangeNotifier {
       _isLoading = false;
       notifyListeners();
     }
+  }
+
+  updateQty({required int qty}) async {
+    item!.qty=qty;
+    notifyListeners();
   }
 
 

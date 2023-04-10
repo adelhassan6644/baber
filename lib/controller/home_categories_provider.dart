@@ -6,24 +6,23 @@ import '../app/core/error/api_error_handler.dart';
 import '../app/core/error/failures.dart';
 import '../app/core/utils/app_snack_bar.dart';
 import '../app/core/utils/color_resources.dart';
-import '../data/model/home_model.dart';
+import '../data/model/base_model.dart';
 import '../domain/repository/home_repo.dart';
 
 class HomeCategoryProvider extends ChangeNotifier {
   final HomeRepo homeRepo;
   HomeCategoryProvider({required this.homeRepo});
 
-  HomeCategoryModel? _homeCategory ;
-  HomeCategoryModel? get homeCategory => _homeCategory;
+  BaseModel? homeCategoryModel ;
 
   getHomeCategories() async {
     try {
         Either<ServerFailure, Response> response =
-        await homeRepo.getCategoryList();
+        await homeRepo.getHomeCategories();
         response.fold((fail) {
           notifyListeners();
         }, (success) {
-          _homeCategory = HomeCategoryModel.fromJson(success.data);
+          homeCategoryModel = BaseModel.fromJson(success.data);
           notifyListeners();
         });
     } catch (e) {

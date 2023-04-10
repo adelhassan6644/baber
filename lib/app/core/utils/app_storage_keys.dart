@@ -6,6 +6,7 @@ class AppStorageKey {
   static const String phone = "phone";
   static const String cityName = "city_name";
   static const String cityId = "city_id";
+  static String cartItems = "cart_items";
   static String firstTimeOnApp = "first_time";
   static const String languageCode = "languageCode";
   static const String countryCode = "countryCode";

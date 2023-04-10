@@ -6,13 +6,13 @@ import '../../app/core/error/api_error_handler.dart';
 import '../../app/core/error/failures.dart';
 import '../../data/dio/dio_client.dart';
 
-class VendorRepo {
+class ItemDetailsRepo {
   final DioClient dioClient;
-  VendorRepo({required this.dioClient});
+  ItemDetailsRepo({required this.dioClient});
 
-  Future<Either<ServerFailure, Response>> getVendorDetails({required String id}) async {
+  Future<Either<ServerFailure, Response>> getItemDetails({required String id}) async {
     try {
-      Response response = await dioClient.get( uri:"${EndPoints.vendorDetails}/$id");
+      Response response = await dioClient.get( uri:"${EndPoints.itemDetails}/$id");
       if (response.statusCode == 200) {
         return Right(response);
       } else {

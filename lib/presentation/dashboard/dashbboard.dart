@@ -18,7 +18,7 @@ class DashBoard extends StatefulWidget {
 }
 
 class _DashBoardState extends State<DashBoard> {
-  late final PageController _pageController = PageController();
+  late final PageController _pageController = PageController(initialPage:_selectedIndex );
   late int _selectedIndex;
   _setPage(int index) {
     setState(() {
@@ -32,7 +32,6 @@ class _DashBoardState extends State<DashBoard> {
   @override
   void initState() {
     _selectedIndex = widget.index ?? 0;
-    _pageController.initialPage;
     super.initState();
   }
 

@@ -5,6 +5,7 @@ import '../../app/core/utils/color_resources.dart';
 import '../../app/core/utils/dimensions.dart';
 import '../../app/core/utils/svg_images.dart';
 import '../../navigation/custom_navigation.dart';
+import '../../navigation/routes.dart';
 import 'custom_images.dart';
 
 class CustomAppBar extends StatelessWidget {
@@ -35,14 +36,14 @@ class CustomAppBar extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
-              withCart? GestureDetector(onTap: (){},
+              withCart? GestureDetector(onTap: ()=> CustomNavigator.push(Routes.CART,),
                   child: customImageIconSVG(imageName: SvgImages.cartIcon,color: Colors.black)):
-              withSearch ?GestureDetector(onTap: (){},
+              withSearch ?GestureDetector(onTap: ()=>CustomNavigator.push(Routes.SEARCH),
                   child: customImageIconSVG(imageName: SvgImages.searchIcon,color: Colors.black)):const SizedBox(width: 24,),
               const Expanded(child: SizedBox()),
               Text(title??"",style: AppTextStyles.w600.copyWith(color: Colors.black,fontSize: 16),),
               const Expanded(child: SizedBox()),
-              withBack?  GestureDetector(onTap: ()=>CustomNavigator.pop(),
+              withBack?  GestureDetector(onTap: (){CustomNavigator.pop();},
                   child: customImageIconSVG(imageName: SvgImages.arrowRightIcon,color: Colors.black)):const SizedBox(width: 24,),
           ],),
           SizedBox(height: Dimensions.PADDING_SIZE_SMALL.h),
