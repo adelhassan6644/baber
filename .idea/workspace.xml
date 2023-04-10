@@ -9,67 +9,11 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0f32153c-20a2-462c-b0aa-469fbaabcdc6" name="Changes" comment="&#10;feat(search page):&#10;-add search page and logic&#10;feat(cart page):&#10;-add cart page and logic">
-      <change afterPath="$PROJECT_DIR$/assets/svgs/delete.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/svgs/tick_circle.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/controller/cart_provider.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/controller/products_provider.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/controller/search_provider.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/data/model/base_model.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/data/model/search_model.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/domain/repository/cart_repo.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/domain/repository/products_repo.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/domain/repository/search_repo.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/presentation/cart/widget/cart_item_card.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/presentation/item_details/page/item_details_page.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/presentation/item_details/widget/addons_card.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/presentation/search/search_page.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/presentation/search/widgets/search_item_card.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/package_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config.json" afterDir="false" />
+    <list default="true" id="0f32153c-20a2-462c-b0aa-469fbaabcdc6" name="Changes" comment="&#10;feat(vendor page):&#10;-shimmer when loading in menu">
       <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/language/ar.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/language/ar.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/language/en.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/language/en.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/app/core/api/end_points.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/core/api/end_points.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/app/core/utils/app_storage_keys.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/core/utils/app_storage_keys.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/app/core/utils/color_resources.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/core/utils/color_resources.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/app/core/utils/svg_images.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/core/utils/svg_images.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/controller/banner_provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/controller/banner_provider.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/controller/home_categories_provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/controller/home_categories_provider.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/controller/home_vendor_provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/controller/home_vendors_provider.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/controller/item_provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/controller/item_details_provider.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/controller/vednor_prvider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/controller/vendor_provider.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/controller/vendors_by_category_provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/controller/vendors_provider.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/data/model/home_model.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/data/model/item_detials_model.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/data/model/item_model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/model/item_model.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/data/model/vendor_model.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/di.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/di.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/domain/repository/home_repo.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/domain/repository/home_repo.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/domain/repository/item_repo.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/domain/repository/item_details_repo.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/domain/repository/vendor_repo.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/domain/repository/vendor_repo.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/domain/repository/vendors_repo.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/domain/repository/vendors_repo.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/main_widgets/Item_card.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main_widgets/item_card.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/navigation/custom_navigation.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/navigation/custom_navigation.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/navigation/routes.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/navigation/routes.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/base/custom_app_bar.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/base/custom_app_bar.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/base/custom_button.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/base/custom_button.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/presentation/base/custom_stack_app_bar.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/base/custom_stack_app_bar.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/base/custom_text_form_field.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/base/custom_text_form_field.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/base/empty_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/base/empty_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/base/tab_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/base/tab_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/cart/cart_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/cart/cart_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/category/category_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/vendors/vendors_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/category/widget/category_selection_bar.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/vendors/widget/category_selection_bar.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/city/city_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/city/city_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/dashboard/dashbboard.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/dashboard/dashbboard.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/home/home_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/home/home_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/home/widget/banner_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/home/widget/banner_view.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/home/widget/categories_section.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/home/widget/categories_section.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/home/widget/home_app_bar.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/home/widget/home_app_bar.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/home/widget/our_table.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/home/widget/our_table.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/vendor/vendor_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/vendor/vendor_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/item_details/page/item_details_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/item_details/page/item_details_page.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -195,7 +139,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681006248959</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="&#10;feat(vendor page):&#10;-shimmer when loading in menu">
+      <created>1681167794579</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1681167794579</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -217,7 +168,8 @@
     <MESSAGE value="&#10;faet(profile page):&#10;-add all screens" />
     <MESSAGE value="&#10;feat(profile page):" />
     <MESSAGE value="&#10;feat(search page):&#10;-add search page and logic&#10;feat(cart page):&#10;-add cart page and logic" />
-    <option name="LAST_COMMIT_MESSAGE" value="&#10;feat(search page):&#10;-add search page and logic&#10;feat(cart page):&#10;-add cart page and logic" />
+    <MESSAGE value="&#10;feat(vendor page):&#10;-shimmer when loading in menu" />
+    <option name="LAST_COMMIT_MESSAGE" value="&#10;feat(vendor page):&#10;-shimmer when loading in menu" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -357,12 +357,12 @@ class ItemDetailsPage extends StatelessWidget {
           padding: EdgeInsets.symmetric(
               horizontal: Dimensions.PADDING_SIZE_DEFAULT.w,
               vertical: Dimensions.PADDING_SIZE_DEFAULT.h),
-          child: Row(
-            children: [
-              Expanded(
-                child: Consumer<CartProvider>(
-                  builder: (_, provider, widget) {
-                    return CustomButton(
+          child: Consumer<CartProvider>(
+            builder: (_, provider, widget) {
+              return Row(
+                children: [
+                  Expanded(
+                    child: CustomButton(
                         isLoading: false,
                         height: 46.h,
                         onTap: () => provider.addToCart(item: Provider.of<ItemDetailsProvider>(context, listen: false).item!,),
@@ -372,38 +372,70 @@ class ItemDetailsPage extends StatelessWidget {
                             : getTranslated("add_to_cart", context),
                         backgroundColor: provider.isAdded
                             ? ColorResources.OFFER_COLOR
-                            : ColorResources.PRIMARY_COLOR);
-                  },
-                ),
-              ),
-              SizedBox(
-                width: 12.w,
-              ),
-              GestureDetector(
-                onTap: () => CustomNavigator.push(Routes.CART),
-                child: Container(
-                  width: 60.h,
-                  height: 46.h,
-                  decoration: BoxDecoration(
-                      color: ColorResources.WHITE_COLOR,
-                      borderRadius: BorderRadius.circular(15.w),
-                      boxShadow: const [
-                        BoxShadow(
-                            color: Color.fromRGBO(0, 0, 0, .1),
-                            blurRadius: 0.05,
-                            spreadRadius: 0.05,
-                            offset: Offset(0, 1))
-                      ],
-                      border:
-                          Border.all(color: ColorResources.LIGHT_GREY_BORDER)),
-                  padding: const EdgeInsets.all(8),
-                  child: customImageIconSVG(
-                    imageName: SvgImages.cartIcon,
-                    color: ColorResources.PRIMARY_COLOR,
+                            : ColorResources.PRIMARY_COLOR),
                   ),
-                ),
-              )
-            ],
+                  SizedBox(
+                    width: 12.w,
+                  ),
+                  GestureDetector(
+                    onTap: () => CustomNavigator.push(Routes.CART),
+                    child: Container(
+                      width: 60.h,
+                      height: 46.h,
+                      decoration: BoxDecoration(
+                          color: ColorResources.WHITE_COLOR,
+                          borderRadius: BorderRadius.circular(15.w),
+                          boxShadow: const [
+                            BoxShadow(
+                                color: Color.fromRGBO(0, 0, 0, .1),
+                                blurRadius: 0.05,
+                                spreadRadius: 0.05,
+                                offset: Offset(0, 1))
+                          ],
+                          border: Border.all(color: ColorResources.LIGHT_GREY_BORDER)),
+                      child: Center(
+                        child: Stack(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.all(10.0),
+                              child: customImageIconSVG(
+                                imageName: SvgImages.cartIcon,
+                                color: ColorResources.PRIMARY_COLOR,
+                              ),
+                            ),
+                            Visibility(
+                              visible: provider.cartList.isNotEmpty,
+                              child: Positioned(
+                                right: 8.w,
+                                top: 5.h,
+                                child: Container(
+                                  height: 13.h,
+                                  padding:  EdgeInsets.symmetric(horizontal: 4.w,),
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(50),
+                                      color: ColorResources.FAILED_COLOR),
+                                  child: Center(
+                                    child: Text(
+                                     provider.cartList.length.toString(),
+                                      textAlign: TextAlign.center,
+                                      style: AppTextStyles.w500.copyWith(
+                                        fontSize: 10,
+                                        height: 1.3,
+                                        color: Colors.white,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
+                    ),
+                  )
+                ],
+              );
+            },
           ),
         ),
       ),
