@@ -11,6 +11,7 @@ import '../../app/core/utils/images.dart';
 import '../../app/core/utils/svg_images.dart';
 import '../../app/core/utils/validation.dart';
 import '../../controller/auth_provider.dart';
+import '../../controller/firebase_auth_provider.dart';
 import '../../domain/localization/language_constant.dart';
 import '../base/chekbox_listtile.dart';
 import '../base/custom_button.dart';
@@ -29,7 +30,7 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: ColorResources.BACKGROUND_COLOR,
-      body: Consumer<AuthProvider>(builder: (child, authProvider, _) {
+      body: Consumer<FirebaseAuthProvider>(builder: (child, provider, _) {
         return Form(
           key: formKey,
           child: Column(
@@ -72,31 +73,30 @@ class _LoginPageState extends State<LoginPage> {
                         vertical:  Dimensions.PADDING_SIZE_DEFAULT.h,
                           horizontal: Dimensions.PADDING_SIZE_DEFAULT.w),
                       child: CustomTextFormField(
-                        controller: authProvider.phoneTEC,
+                        controller: provider.phoneTEC,
                         pIconColor: Colors.black,
                         pSvgIcon: SvgImages.phoneIcon,
-                        isValidat: formKey.currentState?.validate() ?? true,
                         hint: getTranslated("phone_number", context),
                         valid: Validations.phone,
                         inputType: TextInputType.phone,
                         label: true,
-                        maxLength: 9,
+                        // maxLength: 9,
                       ),
                     ),
                     Padding(
                       padding:  EdgeInsets.symmetric(horizontal: Dimensions.PADDING_SIZE_DEFAULT.w),
                       child: CheckBoxListTile(
                         title: getTranslated("remember_me", context),
-                        onChange:authProvider.onRememberMe ,
-                        check: authProvider.isRememberMe,
+                        onChange:provider.onRememberMe ,
+                        check: provider.isRememberMe,
                       ),
                     ),
                     Padding(
                       padding:  EdgeInsets.symmetric(horizontal: Dimensions.PADDING_SIZE_DEFAULT.w),
                       child: CheckBoxListTile(
                         title:getTranslated("agree_to_the_terms_and_conditions", context),
-                        onChange:authProvider.onAgree ,
-                        check: authProvider.isAgree,
+                        onChange:provider.onAgree ,
+                        check: provider.isAgree,
 
                       ),
                     ),
@@ -104,13 +104,12 @@ class _LoginPageState extends State<LoginPage> {
                       padding: EdgeInsets.symmetric(
                           horizontal: Dimensions.PADDING_SIZE_DEFAULT.w,vertical:Dimensions.PADDING_SIZE_DEFAULT.h ),
                       child: CustomButton(
-                          isLoading: authProvider.isLoading,
-                          isError: authProvider.isError,
+                          isLoading: provider.isLoading,
                           height: 46.h,
                           onTap: () {
-                            if(authProvider.isAgree) {
+                            if(provider.isAgree) {
                               if (formKey.currentState!.validate()) {
-                                authProvider.logIn();
+                                provider.signInWithMobileNo();
                               }
                             }else{
                               CustomSnackBar.showSnackBar(

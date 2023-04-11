@@ -1,5 +1,4 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../../app/core/utils/app_storage_keys.dart';
 import '../../data/dio/dio_client.dart';
@@ -28,6 +27,7 @@ class FirebaseAuthRepo {
   remember({required String phone}) {
     sharedPreferences.setString(AppStorageKey.phone, phone);
   }
+
   forget() {
     sharedPreferences.remove(AppStorageKey.phone);
   }

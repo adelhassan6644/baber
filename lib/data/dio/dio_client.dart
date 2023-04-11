@@ -38,7 +38,8 @@ class DioClient extends ApiClient {
     dio.options.headers = {
       'Content-Type': 'application/json',
       "Accept": " application/json",
-      'Authorization': 'Bearer $token',
+      'Authorization': 'Bearer sstiSBvCOeFzIvbqzfRy8neP9aPB0QGr325XPD1sQGWWywB3qj',
+      // 'Authorization': 'Bearer $token',
     };
   }
 

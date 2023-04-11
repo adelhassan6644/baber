@@ -6,6 +6,7 @@ import '../../../app/core/utils/color_resources.dart';
 import '../../../app/core/utils/dimensions.dart';
 import '../../../app/core/utils/svg_images.dart';
 import '../../../app/core/utils/text_styles.dart';
+import '../../../controller/firebase_auth_provider.dart';
 import '../../../controller/profile_provider.dart';
 import '../../base/custom_images.dart';
 
@@ -14,9 +15,9 @@ class ProfileCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Consumer<ProfileProvider>(
+    return Consumer<FirebaseAuthProvider>(
       builder: (context, provider, child) {
-        return provider.profileModel != null?  Padding(
+        return provider.phone != null?  Padding(
           padding: EdgeInsets.symmetric(
               horizontal: Dimensions.PADDING_SIZE_DEFAULT.w),
           child: Row(
@@ -37,7 +38,7 @@ class ProfileCard extends StatelessWidget {
               SizedBox(
                 width: 24.h,
               ),
-              Text("${provider.profileModel!.phone}+",
+              Text("${provider.phone}",
                   style: AppTextStyles.w500.copyWith(
                       fontSize: 14, color: ColorResources.HINT_COLOR)),
             ],

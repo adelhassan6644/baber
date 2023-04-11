@@ -5,6 +5,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'app/core/api/end_points.dart';
 import 'controller/banner_provider.dart';
 import 'controller/cart_provider.dart';
+import 'controller/firebase_auth_provider.dart';
 import 'controller/home_categories_provider.dart';
 import 'controller/city_provider.dart';
 import 'controller/contact_provider.dart';
@@ -68,6 +69,7 @@ Future<void> init() async {
   sl.registerLazySingleton(() => LanguageProvider());
    sl.registerLazySingleton(() => ThemeProvider(sharedPreferences: sl()));
    sl.registerLazySingleton(() => AuthProvider(authRepo: sl()));
+   sl.registerLazySingleton(() => FirebaseAuthProvider(firebaseAuthRepo: sl()));
    sl.registerLazySingleton(() => ProfileProvider(profileRepo: sl()));
    sl.registerLazySingleton(() => CityProvider(cityRepo: sl()));
    sl.registerLazySingleton(() => BannerProvider(homeRepo: sl()));

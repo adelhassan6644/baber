@@ -10,6 +10,7 @@ import 'app/theme/dark_theme.dart';
 import 'app/theme/light_theme.dart';
 import 'controller/banner_provider.dart';
 import 'controller/cart_provider.dart';
+import 'controller/firebase_auth_provider.dart';
 import 'controller/home_categories_provider.dart';
 import 'controller/city_provider.dart';
 import 'controller/contact_provider.dart';
@@ -43,6 +44,7 @@ Future<void> main() async {
     ChangeNotifierProvider(create: (context) => di.sl<ThemeProvider>()),
     ChangeNotifierProvider(create: (context) => di.sl<LocalizationProvider>()),
     ChangeNotifierProvider(create: (context) => di.sl<AuthProvider>()),
+    ChangeNotifierProvider(create: (context) => di.sl<FirebaseAuthProvider>()),
     ChangeNotifierProvider(create: (context) => di.sl<ProfileProvider>()),
     ChangeNotifierProvider(create: (context) => di.sl<CityProvider>()),
     ChangeNotifierProvider(create: (context) => di.sl<BannerProvider>()),

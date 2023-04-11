@@ -9,7 +9,7 @@ import 'package:baber/presentation/profile/widget/profile_card.dart';
 import 'package:baber/presentation/profile/widget/profile_option.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:provider/provider.dart';
-import '../../controller/profile_provider.dart';
+import '../../controller/firebase_auth_provider.dart';
 import '../../navigation/custom_navigation.dart';
 import '../../navigation/routes.dart';
 import '../base/custom_show_model_bottom_sheet.dart';
@@ -27,7 +27,8 @@ class _ProfilePageState extends State<ProfilePage> {
   @override
   void initState() {
     Future.delayed(Duration.zero, () {
-      Provider.of<ProfileProvider>(context, listen: false).getProfileInfo();
+      // Provider.of<ProfileProvider>(context, listen: false).getProfileInfo();
+      Provider.of<FirebaseAuthProvider>(context, listen: false).getUserData();
     });
     super.initState();
   }
@@ -67,7 +68,7 @@ class _ProfilePageState extends State<ProfilePage> {
             title: getTranslated("privacy_policy", context),
             iconName: SvgImages.security),
         ProfileOption(
-            onTap: () =>Provider.of<AuthProvider>(context,listen: false).logOut(),
+            onTap: () =>Provider.of<FirebaseAuthProvider>(context,listen: false).logOut(),
             showIcon: false,
             showDivider: false,
             iconColor: ColorResources.FAILED_COLOR,

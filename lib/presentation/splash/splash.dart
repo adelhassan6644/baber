@@ -6,6 +6,7 @@ import 'package:provider/provider.dart';
 import '../../app/core/utils/color_resources.dart';
 import '../../app/core/utils/images.dart';
 import '../../controller/auth_provider.dart';
+import '../../controller/firebase_auth_provider.dart';
 import '../../navigation/custom_navigation.dart';
 import '../../navigation/routes.dart';
 
@@ -22,7 +23,7 @@ class _SplashState extends State<Splash> with WidgetsBindingObserver {
 
     WidgetsBinding.instance.addObserver(this);
     Future.delayed(const Duration(milliseconds: 4500), () {
-      if (Provider.of<AuthProvider>(CustomNavigator.navigatorState.currentContext!, listen: false).isLogin) {
+      if (Provider.of<FirebaseAuthProvider>(CustomNavigator.navigatorState.currentContext!, listen: false).isLogin) {
         CustomNavigator.push(Routes.DASHBOARD,replace: true);
       }else{
         CustomNavigator.push(Routes.LOGIN,replace: true);
