@@ -25,6 +25,7 @@ import 'domain/repository/auth_repo.dart';
 import 'domain/repository/cart_repo.dart';
 import 'domain/repository/city_repo.dart';
 import 'domain/repository/contact_repo.dart';
+import 'domain/repository/firebase_auth_repo.dart';
 import 'domain/repository/home_repo.dart';
 import 'domain/repository/item_details_repo.dart';
 import 'domain/repository/notification_repo.dart';
@@ -47,6 +48,7 @@ Future<void> init() async {
 
   // Repository
   sl.registerLazySingleton(() => AuthRepo(sharedPreferences: sl(), dioClient: sl() ));
+  sl.registerLazySingleton(() => FirebaseAuthRepo(sharedPreferences: sl(),dioClient: sl() ));
   sl.registerLazySingleton(() => ProfileRepo(dioClient: sl() ));
   sl.registerLazySingleton(() => CityRepo(dioClient: sl(),sharedPreferences: sl() ));
   sl.registerLazySingleton(() => HomeRepo(dioClient: sl() ));

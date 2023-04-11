@@ -21,6 +21,7 @@ dependencies:
   get_it:
   http:
   firebase_messaging:
+  firebase_core:
   provider:
   flutter_staggered_animations:
   connectivity:
@@ -41,6 +42,7 @@ dependencies:
   rxdart:
   shimmer:
   carousel_slider:
+  firebase_auth: ^4.4.0
 
 dev_dependencies:
   flutter_test:
