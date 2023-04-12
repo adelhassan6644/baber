@@ -31,7 +31,7 @@ abstract class CustomNavigator {
       case Routes.SPLASH:
         return _pageRoute(const Splash());
       case Routes.LOGIN:
-        return _pageRoute(const LoginPage());
+        return _pageRoute( LoginPage(fromProfile:settings.arguments != null? settings.arguments as bool:false,));
       case Routes.VERIFICATION:
         return _pageRoute(const VerificationPage());
       case Routes.CITY:

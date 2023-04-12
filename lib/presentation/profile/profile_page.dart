@@ -1,7 +1,6 @@
 import 'package:baber/app/core/utils/color_resources.dart';
 import 'package:baber/app/core/utils/dimensions.dart';
 import 'package:baber/app/core/utils/svg_images.dart';
-import 'package:baber/controller/auth_provider.dart';
 import 'package:baber/domain/localization/language_constant.dart';
 import 'package:baber/presentation/base/custom_app_bar.dart';
 import 'package:baber/presentation/profile/widget/contact_with_us.dart';
@@ -24,14 +23,14 @@ class ProfilePage extends StatefulWidget {
 class _ProfilePageState extends State<ProfilePage> {
 
 
-  @override
-  void initState() {
-    Future.delayed(Duration.zero, () {
-      // Provider.of<ProfileProvider>(context, listen: false).getProfileInfo();
-      Provider.of<FirebaseAuthProvider>(context, listen: false).getUserData();
-    });
-    super.initState();
-  }
+  // @override
+  // void initState() {
+  //   Future.delayed(Duration.zero, () {
+  //     // Provider.of<ProfileProvider>(context, listen: false).getProfileInfo();
+  //     Provider.of<FirebaseAuthProvider>(context, listen: false).getUserData();
+  //   });
+  //   super.initState();
+  // }
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -50,7 +49,7 @@ class _ProfilePageState extends State<ProfilePage> {
             onTap: () => CustomNavigator.push(Routes.CITY, arguments: true),
             title: getTranslated("change_city", context),
             iconName: SvgImages.edit),
-        ProfileOption(
+       if(Provider.of<FirebaseAuthProvider>(context, listen: false).isLogin) ProfileOption(
             onTap: () => CustomNavigator.push(Routes.NOTIFICATION),
             title: getTranslated("notifications", context),
             iconName: SvgImages.notification),
@@ -67,6 +66,7 @@ class _ProfilePageState extends State<ProfilePage> {
             onTap: () => CustomNavigator.push(Routes.PRIVACY),
             title: getTranslated("privacy_policy", context),
             iconName: SvgImages.security),
+        (Provider.of<FirebaseAuthProvider>(context, listen: false).isLogin)?
         ProfileOption(
             onTap: () =>Provider.of<FirebaseAuthProvider>(context,listen: false).logOut(),
             showIcon: false,
@@ -74,7 +74,15 @@ class _ProfilePageState extends State<ProfilePage> {
             iconColor: ColorResources.FAILED_COLOR,
             title: getTranslated("log_out", context),
             txtColor: ColorResources.FAILED_COLOR,
-            iconName: SvgImages.logout),
+            iconName: SvgImages.logout):
+        ProfileOption(
+            onTap: ()=>CustomNavigator.push(Routes.LOGIN,arguments: true),
+            showIcon: false,
+            showDivider: false,
+            iconColor: ColorResources.ACTIVE,
+            title: getTranslated("sign_in", context),
+            txtColor: ColorResources.ACTIVE,
+            iconName: SvgImages.login),
       ],
     );
   }

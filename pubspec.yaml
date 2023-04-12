@@ -33,6 +33,7 @@ dependencies:
   url_launcher:
   readmore:
   flutter_svg:
+  flutter_local_notifications: ^9.8.0+1
 #  flutter_native_splash:
   flutter_form_builder:
   equatable:

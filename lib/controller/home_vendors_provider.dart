@@ -1,3 +1,4 @@
+import 'package:baber/data/model/base_model.dart';
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
@@ -15,32 +16,30 @@ class HomeVendorsProvider extends ChangeNotifier {
 
 
 
-  late List<ItemModel>? _homeVendorList = [];
-  List<ItemModel>? get homeVendorList => _homeVendorList;
+  late BaseModel _homeVendorList ;
+  BaseModel? get homeVendorList => _homeVendorList;
 
   getVendorList() async {
-    // try {
+    try {
 
         notifyListeners();
         Either<ServerFailure, Response> response =
         await homeRepo.getHomeVendors();
         response.fold((fail) {
-          _homeVendorList = null;
           notifyListeners();
         }, (success) {
-          _homeVendorList = success.data;
+          _homeVendorList = BaseModel.fromJson(success.data['data']);
           notifyListeners();
         });
 
-    // } catch (e) {
-    //   CustomSnackBar.showSnackBar(
-    //       notification: AppNotification(
-    //           message: ApiErrorHandler.getMessage(e),
-    //           isFloating: true,
-    //           backgroundColor: ColorResources.IN_ACTIVE,
-    //           borderColor: Colors.transparent));
-    //   _homeVendorList = null;
-    //   notifyListeners();
-    // }
+    } catch (e) {
+      CustomSnackBar.showSnackBar(
+          notification: AppNotification(
+              message: ApiErrorHandler.getMessage(e),
+              isFloating: true,
+              backgroundColor: ColorResources.IN_ACTIVE,
+              borderColor: Colors.transparent));
+      notifyListeners();
+    }
   }
 }

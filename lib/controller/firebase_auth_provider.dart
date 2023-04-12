@@ -25,7 +25,7 @@ class FirebaseAuthProvider extends ChangeNotifier {
 
   String? firebaseVerificationId;
   String smsCode = "";
-  String? phone;
+  // String? phone;
 
 
   bool _isRememberMe = false;
@@ -125,18 +125,18 @@ class FirebaseAuthProvider extends ChangeNotifier {
         PhoneAuthCredential phoneAuthCredential = PhoneAuthProvider.credential(
           verificationId: firebaseVerificationId!, smsCode: smsCode.toString().trim(),);
         await FirebaseAuth.instance.signInWithCredential(phoneAuthCredential).then((value) {
-          _isLoading = false;
-          CustomNavigator.push(Routes.DASHBOARD, clean: true);
+          ///  to send Device token
+          firebaseAuthRepo.sendDeviceToken(phone:"+966${_phoneTEC.text.trim()}" );
+          CustomNavigator.push(Routes.DASHBOARD, clean: true,);
           CustomSnackBar.showSnackBar(
               notification: AppNotification(
                   message: "تم تسجيل الدخول بنجاح",
                   isFloating: true,
                   backgroundColor: ColorResources.ACTIVE,
                   borderColor: Colors.transparent));
-
-          log(value.user!.uid.toString());
           firebaseAuthRepo.saveUserToken(token: value.user!.uid);
           firebaseAuthRepo.setLoggedIn();
+          _isLoading = false;
           notifyListeners();
         }).catchError((error) {
           _isLoading = false;
@@ -176,9 +176,16 @@ class FirebaseAuthProvider extends ChangeNotifier {
 
   logOut() async {
     try {
-      FirebaseAuth.instance.signOut();
+
+      Future.delayed(Duration.zero,() async {
+
+      await FirebaseAuth.instance.signOut();
+
       await firebaseAuthRepo.clearSharedData();
-      CustomNavigator.push(Routes.LOGIN, clean: true);
+
+      CustomNavigator.push(Routes.LOGIN, clean: true,);
+      });
+
       CustomSnackBar.showSnackBar(
           notification: AppNotification(
               message: getTranslated("your_logged_out_successfully",
@@ -186,12 +193,12 @@ class FirebaseAuthProvider extends ChangeNotifier {
               isFloating: true,
               backgroundColor: ColorResources.ACTIVE,
               borderColor: Colors.transparent));
+
       notifyListeners();
     } catch (e) {
       CustomSnackBar.showSnackBar(
           notification: AppNotification(
-              message: getTranslated("your_logged_out_successfully",
-                  CustomNavigator.navigatorState.currentContext!),
+              message: e.toString(),
               isFloating: true,
               backgroundColor: ColorResources.ACTIVE,
               borderColor: Colors.transparent));
@@ -199,8 +206,8 @@ class FirebaseAuthProvider extends ChangeNotifier {
     }
   }
 
-  getUserData(){
-    phone= FirebaseAuth.instance.currentUser?.phoneNumber;
-    notifyListeners();
-  }
+  // getUserData(){
+  //   phone= FirebaseAuth.instance.currentUser?.phoneNumber;
+  //   notifyListeners();
+  // }
 }

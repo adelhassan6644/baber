@@ -20,6 +20,8 @@ class VendorsRepo {
         "category_id":categoryId,
         "city_id":sharedPreferences.getString(AppStorageKey.cityId),
       });
+
+
       if (response.statusCode == 200) {
         return Right(response);
       } else {

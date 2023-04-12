@@ -2,6 +2,9 @@ import 'package:baber/controller/auth_provider.dart';
 import 'package:baber/firebase_options.dart';
 import 'package:baber/presentation/auth/login_page.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
+import 'package:flutter/foundation.dart';
+import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:provider/provider.dart';
 import 'app/core/utils/app_storage_keys.dart';
@@ -29,8 +32,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'app/core/utils/app_strings.dart';
 import 'domain/localization/app_localization.dart';
+import 'domain/my_notification.dart';
 import 'navigation/custom_navigation.dart';
 import 'navigation/routes.dart';
+
+
+final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
+FlutterLocalNotificationsPlugin();
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -65,6 +73,18 @@ Future<void> main() async {
       statusBarColor: Colors.transparent,
       statusBarIconBrightness: Brightness.dark,
       statusBarBrightness: Brightness.light));
+
+    if (!kIsWeb) {
+      final NotificationAppLaunchDetails? notificationAppLaunchDetails = await flutterLocalNotificationsPlugin
+          .getNotificationAppLaunchDetails();
+      if (notificationAppLaunchDetails?.didNotificationLaunchApp ?? false) {
+        // _orderID = notificationAppLaunchDetails!.payload != null
+        //     ? int.parse(notificationAppLaunchDetails!.payload)
+        //     : null;
+      }
+      await MyNotification.initialize(flutterLocalNotificationsPlugin);
+      FirebaseMessaging.onBackgroundMessage(myBackgroundMessageHandler);
+    }
 }
 
 class MyApp extends StatefulWidget {
@@ -115,7 +135,7 @@ class _MyAppState extends State<MyApp> {
         GlobalWidgetsLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,
       ],
-      home: const LoginPage(),
+      home: const LoginPage(fromProfile: false),
 
     );
   }

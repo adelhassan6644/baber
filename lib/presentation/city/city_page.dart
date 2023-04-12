@@ -41,7 +41,7 @@ class _CityPageState extends State<CityPage> {
               title: widget.fromProfile
                   ? getTranslated("change_city", context)
                   : getTranslated("city", context),
-              withBack: true,
+              withBack:widget.fromProfile? true:false,
             ),
             Expanded(
               child: Padding(
@@ -76,7 +76,7 @@ class _CityPageState extends State<CityPage> {
                                 provider.cityModel!.cities!.isNotEmpty ? provider.cityModel!.cities! : [],
                         name:  provider.city?.name ?? getTranslated("city", context),
                         onChange: (location) {
-                          provider.onSelectLocation(location: location);
+                          provider.onSelectCity(location: location);
                         },
                         pAssetIcon: Images.city,
                       ),

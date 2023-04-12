@@ -25,9 +25,7 @@ class CityRepo {
     }
   }
 
-  Future<Either<ServerFailure, Response>> setCity({
-    required int cityId,
-  }) async {
+  Future<Either<ServerFailure, Response>> setCity({required int cityId,}) async {
     try {
       Response response = await dioClient.post(uri: EndPoints.setCity, data: {
         "city_id": cityId,

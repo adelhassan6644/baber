@@ -1,4 +1,5 @@
 import 'package:baber/app/core/utils/extensions.dart';
+import 'package:baber/navigation/custom_navigation.dart';
 import 'package:baber/presentation/auth/widget/guest_button.dart';
 import 'package:baber/presentation/auth/widget/welcome_widget.dart';
 import 'package:baber/presentation/base/custom_text_form_field.dart';
@@ -15,10 +16,12 @@ import '../../controller/firebase_auth_provider.dart';
 import '../../domain/localization/language_constant.dart';
 import '../base/chekbox_listtile.dart';
 import '../base/custom_button.dart';
+import '../base/custom_network_image.dart';
+import '../base/custom_stack_app_bar.dart';
 
 class LoginPage extends StatefulWidget {
-  const LoginPage({Key? key}) : super(key: key);
-
+  const LoginPage({required this.fromProfile, Key? key}) : super(key: key);
+final bool fromProfile;
   @override
   State<LoginPage> createState() => _LoginPageState();
 }
@@ -49,13 +52,14 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 child: Column(
                   children: [
-                    SizedBox(height: context.toPadding,),
-                    Image.asset(
-                      Images.splash,
-                      height: 215.h,
-                      width: context.width,
-                      fit: BoxFit.cover,
-                    ),
+                    CustomNetworkImage.containerNewWorkImage(
+                        image:"",
+                        radius: 0,
+                        width: context.width,
+                        height: 250.h,
+                        imageWidget: Navigator.canPop(context)? const CustomStackAppBar(
+                          withCart: false,
+                        ):const SizedBox()),
                   ],
                 ),
               ),
@@ -97,7 +101,6 @@ class _LoginPageState extends State<LoginPage> {
                         title:getTranslated("agree_to_the_terms_and_conditions", context),
                         onChange:provider.onAgree ,
                         check: provider.isAgree,
-
                       ),
                     ),
                     Padding(
@@ -126,7 +129,7 @@ class _LoginPageState extends State<LoginPage> {
                           text: getTranslated("sign_in", context),
                           backgroundColor: ColorResources.PRIMARY_COLOR),
                     ),
-                    const GuestButton()
+                   if(!widget.fromProfile) const GuestButton()
                   ],
                 ),
               )

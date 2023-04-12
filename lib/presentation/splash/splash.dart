@@ -5,7 +5,6 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:provider/provider.dart';
 import '../../app/core/utils/color_resources.dart';
 import '../../app/core/utils/images.dart';
-import '../../controller/auth_provider.dart';
 import '../../controller/firebase_auth_provider.dart';
 import '../../navigation/custom_navigation.dart';
 import '../../navigation/routes.dart';
@@ -26,7 +25,7 @@ class _SplashState extends State<Splash> with WidgetsBindingObserver {
       if (Provider.of<FirebaseAuthProvider>(CustomNavigator.navigatorState.currentContext!, listen: false).isLogin) {
         CustomNavigator.push(Routes.DASHBOARD,replace: true);
       }else{
-        CustomNavigator.push(Routes.LOGIN,replace: true);
+        CustomNavigator.push(Routes.CITY,replace: true,);
       }
 
     });
