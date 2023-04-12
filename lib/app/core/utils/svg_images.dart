@@ -23,4 +23,5 @@ class SvgImages {
   static const String login = 'assets/svgs/login.svg';
   static const String send = 'assets/svgs/send.svg';
   static const String delete = 'assets/svgs/delete.svg';
+  static const String alarm = 'assets/svgs/alarm.svg';
 }

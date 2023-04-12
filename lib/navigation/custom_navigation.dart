@@ -8,7 +8,7 @@ import '../presentation/cart/cart_page.dart';
 import '../presentation/city/city_page.dart';
 import '../presentation/dashboard/dashbboard.dart';
 import '../presentation/item_details/page/item_details_page.dart';
-import '../presentation/notifications/pages/notification_page.dart';
+import '../presentation/notifications/notification_page.dart';
 import '../presentation/privacy/privacy_page.dart';
 import '../presentation/search/search_page.dart';
 import '../presentation/splash/splash.dart';

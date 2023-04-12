@@ -5,10 +5,11 @@ import 'package:baber/presentation/base/empty_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shimmer/shimmer.dart';
-import '../../../app/core/utils/color_resources.dart';
-import '../../../domain/localization/language_constant.dart';
-import '../../base/custom_app_bar.dart';
-import '../widget/notification_card_view.dart';
+import '../../app/core/utils/color_resources.dart';
+import '../../app/core/utils/images.dart';
+import '../../domain/localization/language_constant.dart';
+import '../base/custom_app_bar.dart';
+import 'widget/notification_card_view.dart';
 
 class NotificationPage extends StatelessWidget {
   const NotificationPage({super.key});
@@ -51,9 +52,9 @@ class NotificationPage extends StatelessWidget {
                       ),
                     )
                   : provider.notificationModel != null &&
-                          provider.notificationModel!.notifications != null &&
-                          provider.notificationModel!.notifications!.isNotEmpty
-                      ? Expanded(
+                  provider.notificationModel!.notifications != null &&
+                  provider.notificationModel!.notifications!.isNotEmpty
+                  ? Expanded(
                           child: ListView(
                             physics: const BouncingScrollPhysics(),
                             children: List.generate(
@@ -67,7 +68,14 @@ class NotificationPage extends StatelessWidget {
                                     )),
                           ),
                         )
-                      : const EmptyWidget();
+                  : Expanded(
+                          child: EmptyWidget(
+                            img: Images.emptyNotifications,
+                            imgWidth: 150.w,
+                            imgHeight: 150.h,
+                            txt: "لا يوجد اشعارات",
+                          ),
+                        );
             },
           ),
         ],

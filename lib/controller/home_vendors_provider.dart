@@ -7,7 +7,6 @@ import '../app/core/error/api_error_handler.dart';
 import '../app/core/error/failures.dart';
 import '../app/core/utils/app_snack_bar.dart';
 import '../app/core/utils/color_resources.dart';
-import '../data/model/item_model.dart';
 import '../domain/repository/home_repo.dart';
 
 class HomeVendorsProvider extends ChangeNotifier {
@@ -16,19 +15,16 @@ class HomeVendorsProvider extends ChangeNotifier {
 
 
 
-  late BaseModel _homeVendorList ;
-  BaseModel? get homeVendorList => _homeVendorList;
+  BaseModel? homeVendorList ;
 
   getVendorList() async {
     try {
-
-        notifyListeners();
         Either<ServerFailure, Response> response =
         await homeRepo.getHomeVendors();
         response.fold((fail) {
           notifyListeners();
         }, (success) {
-          _homeVendorList = BaseModel.fromJson(success.data['data']);
+          homeVendorList = BaseModel.fromJson(success.data['data']);
           notifyListeners();
         });
 

@@ -71,6 +71,7 @@ class ContactWithUs extends StatelessWidget {
                     isLoading: provider.isLoading,
                     height: 46.h,
                     svgIcon: SvgImages.send,
+                    iconColor:ColorResources.WHITE_COLOR,
                     onTap: () => provider.sendMessage(),
                     textColor: ColorResources.WHITE_COLOR,
                     text: getTranslated("submit", context),
