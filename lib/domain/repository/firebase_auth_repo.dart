@@ -39,7 +39,7 @@ class FirebaseAuthRepo {
     sharedPreferences.remove(AppStorageKey.phone);
   }
 
-  Future<String?> saveDeviceToken() async {
+  Future<String?> getDeviceToken() async {
     String? _deviceToken;
     if(Platform.isIOS) {
       _deviceToken = await FirebaseMessaging.instance.getAPNSToken();
@@ -57,9 +57,10 @@ class FirebaseAuthRepo {
   Future<Either<ServerFailure, Response>> sendDeviceToken({required String phone}) async {
     try {
       Response res = await dioClient.post(
-        data: {"fcm_token": await saveDeviceToken(),"phone":phone},
+        data: {"fcm_token": await getDeviceToken(),"phone":phone},
         uri: EndPoints.logIn,);
       if(res.statusCode ==200){
+        saveUserToken(token: res.data['data']["api_token"]);
         return Right(res);
       } else {
     return left(ServerFailure(res.data['message']));
@@ -69,16 +70,14 @@ class FirebaseAuthRepo {
     }
   }
 
-
   Future<void> saveUserToken({required String token}) async {
     try {
-      // dioClient.updateHeader(token: token);
+      dioClient.updateHeader(token: token);
       await sharedPreferences.setString(AppStorageKey.token, token);
     } catch (e) {
       rethrow;
     }
   }
-
 
 
   Future<bool> clearSharedData() async {
