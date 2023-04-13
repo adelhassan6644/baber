@@ -10,13 +10,32 @@ import '../../../navigation/routes.dart';
 import '../../base/custom_network_image.dart';
 
 class CartItemCard extends StatelessWidget {
-  const CartItemCard({required this.onDelete,required this.onDecrease,required this.onIncrease,required this.item,  Key? key}) : super(key: key);
+  const CartItemCard({required this.onDelete,
+    required this.onDecrease,
+    required this.onIncrease,
+    required this.item,
+    Key? key}) : super(key: key);
  final void Function() onDelete;
  final void Function() onIncrease;
  final void Function() onDecrease;
  final ItemModel item;
   @override
   Widget build(BuildContext context) {
+
+    double getItemPrice({required ItemModel item}) {
+      double itemPrice = 0;
+      double addonsPrice = 0;
+      if (item.addons != null) {
+        for (int i = 0; i < item.addons!.length; i++) {
+          if (item.addons![i].isSelected!) {
+            addonsPrice += int.parse(item.addons![i].price ?? "0");
+          }
+        }
+      }
+      itemPrice += (int.parse(item.price ?? "0") + addonsPrice)*item.qty!;
+      return itemPrice;
+    }
+
     return Padding(
       padding:  EdgeInsets.only(bottom: Dimensions.PADDING_SIZE_DEFAULT.h),
       child: GestureDetector(
@@ -44,7 +63,7 @@ class CartItemCard extends StatelessWidget {
                 child: Row(
                   children: [
                     Text(
-                      "${item.price} ر.س",
+                      "${getItemPrice(item: item)} ر.س",
                       style: AppTextStyles.w700.copyWith(
                           fontSize: 14,
                           color: ColorResources.PRIMARY_COLOR),
@@ -126,25 +145,43 @@ class CartItemCard extends StatelessWidget {
                   ],
                 ),
               ),
-                GestureDetector(
-                  onTap: onDelete,
-                  child: Container(
-                    decoration: BoxDecoration(
-                        color: ColorResources.WHITE_COLOR,
-                        borderRadius: BorderRadius.circular(50.w),
-                        boxShadow: const [BoxShadow(
-                              color: Color.fromRGBO(0, 0, 0, .1),
-                              blurRadius: 0.05,
-                              spreadRadius: 0.05,
-                              offset: Offset(0, 1))],
-                        border: Border.all(color: ColorResources.LIGHT_GREY_BORDER)),
-                    padding: const EdgeInsets.all(4),
-                    child:const Icon(Icons.delete,color: ColorResources.IN_ACTIVE,)
-                    // customImageIconSVG(
-                    //   imageName: SvgImages.delete,
-                    //   width: 24.w,height: 24.h
-                    // ),
-                  ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    GestureDetector(
+                      onTap: onDelete,
+                      child: Container(
+                        decoration: BoxDecoration(
+                            color: ColorResources.WHITE_COLOR,
+                            borderRadius: BorderRadius.circular(50.w),
+                            boxShadow: const [BoxShadow(
+                                  color: Color.fromRGBO(0, 0, 0, .1),
+                                  blurRadius: 0.05,
+                                  spreadRadius: 0.05,
+                                  offset: Offset(0, 1))],
+                            border: Border.all(color: ColorResources.LIGHT_GREY_BORDER)),
+                        padding: const EdgeInsets.all(4),
+                        child:const Icon(Icons.delete,color: ColorResources.IN_ACTIVE,)
+                        // customImageIconSVG(
+                        //   imageName: SvgImages.delete,
+                        //   width: 24.w,height: 24.h
+                        // ),
+                      ),
+                    ),
+                   if(item.addons != null &&item.addons!.isNotEmpty&&
+                       item.addons!.any((e) => e.isSelected ==true)  )  Text(
+                      "يتم اضافة ${item.addons!.map((e) {
+                        if(e.isSelected!) {
+                          return e.name;
+                        }
+                      }).toList().join(",").toString().replaceAll(",null","").replaceAll("null,", "")}",
+                      maxLines: 2,
+                      style: AppTextStyles.w500.copyWith(
+                          fontSize: 10,
+                          overflow: TextOverflow.ellipsis,
+                          color: ColorResources.PRIMARY_COLOR),
+                    ),
+                  ],
                 ),
             ],),
           ),

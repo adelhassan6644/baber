@@ -1,7 +1,12 @@
 import 'dart:developer';
+import 'dart:io';
 
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
+import '../app/core/utils/app_snack_bar.dart';
+import '../app/core/utils/color_resources.dart';
 import '../data/model/item_model.dart';
 import '../domain/repository/cart_repo.dart';
 
@@ -11,11 +16,11 @@ class CartProvider extends ChangeNotifier {
 
   List<ItemModel> _cartList = [];
   List<ItemModel> get cartList => _cartList;
-  bool _isAdded = false;
-  bool get isAdded => _isAdded;
+  bool isSameStore = false;
+  bool isAdded = false;
 
   void getCartData() {
-    _cartList = [];
+    _cartList.clear();
     _cartList.addAll(cartRepo.getCartList());
     log("==>${_cartList.map((e) => e.toJson()).toList()}");
     notifyListeners();
@@ -47,17 +52,75 @@ class CartProvider extends ChangeNotifier {
       isAddedToCart(item: item);
     }
     getCartData();
+    getTotalSum();
     notifyListeners();
+  }
+
+  checkStore({required ItemModel item}) {
+    if (_cartList.any((e) =>
+        e.store?.id == item.store?.id && e.store?.phone == item.store?.phone)) {
+      return true;
+    } else {
+      return false;
+    }
   }
 
   void isAddedToCart({required ItemModel item}) {
-    _isAdded = _cartList.any((e) => e.id == item.id&&e.qty == item.qty);
+    // isAdded = _cartList.any((e) => e.id == item.id&&e.qty == item.qty);
+    isAdded = _cartList.any((e) => e.id == item.id);
     notifyListeners();
   }
 
-  // setNewQuantityToItem({required ItemModel item,required int qty}) {
-  //   item.qty=qty;
-  //   addToCart(item: item);
-  //   notifyListeners();
+  double totalSum = 0;
+  void getTotalSum() {
+
+    for (var meal in _cartList) {
+      totalSum = 0;
+      double addonsPrice = 0;
+      if (meal.addons != null) {
+        for (int i = 0; i < meal.addons!.length; i++) {
+          if (meal.addons![i].isSelected!) {
+            addonsPrice += int.parse(meal.addons![i].price ?? "0");
+          }
+        }
+      }
+      totalSum += (int.parse(meal.price ?? "0") + addonsPrice)*meal.qty!;
+    }
+    notifyListeners();
+  }
+
+  // openWhatsApp({required String phone,required String text}) async{
+  //   var whatsAppUrlAndroid = "whatsapp://send?phone=$phone&text=hello";
+  //   var whatAppURLIos ="https://wa.me/$phone?text=${Uri.parse("hello")}";
+  //   if(Platform.isIOS){
+  //     // for iOS phone only
+  //     if( await canLaunch(whatAppURLIos)){
+  //       await launch(whatAppURLIos, forceSafariVC: false);
+  //     }else{
+  //       CustomSnackBar.showSnackBar(
+  //           notification: AppNotification(
+  //               message: "whatsapp no installed",
+  //               isFloating: true,
+  //               backgroundColor: ColorResources.ACTIVE,
+  //               borderColor: Colors.transparent));
+  //     }
+  //
+  //   }else{
+  //     if( await canLaunch(whatsAppUrlAndroid)){
+  //       await launch(whatsAppUrlAndroid);
+  //     }else{
+  //       CustomSnackBar.showSnackBar(
+  //           notification: AppNotification(
+  //               message: "whatsapp no installed",
+  //               isFloating: true,
+  //               backgroundColor: ColorResources.ACTIVE,
+  //               borderColor: Colors.transparent));
+  //
+  //     }
+  //
+  //
+  //   }
+  //
   // }
+
 }

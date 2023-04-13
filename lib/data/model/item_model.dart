@@ -1,3 +1,5 @@
+import 'package:baber/data/model/store_model.dart';
+
 class ItemModel {
   int? qty;
   List<Menus>? menus;
@@ -15,9 +17,10 @@ class ItemModel {
       productID,
       productType,
       categoryId;
-  bool? active;
+  bool? active,isAdded;
   Menus? menu;
   List<Addon>? addons;
+  StoreModel? store;
 
   ItemModel(
       {this.id,
@@ -36,15 +39,17 @@ class ItemModel {
       this.phone,
       this.email,
       this.active,
+      this.isAdded,
       this.menu,
       this.addons,
-      this.menus});
+      this.menus,
+      this.store});
 
   ItemModel.fromJson(Map<String, dynamic> json) {
     id = json['id'].toString();
     categoryId = json['category_id'].toString();
     price = json['price'];
-    qty = json['qty']??1;
+    qty = json['qty'] ?? 1;
     name = json['name'];
     description = json['description'];
     cityName = json['city_name'];
@@ -56,8 +61,12 @@ class ItemModel {
     body = json['body'];
     productID = json['product_id'];
     productType = json['product_type'];
+    active = (json['active'] == 0) ? false : true;
+    isAdded =  false;
 
-    active = (json['active'] == 0) ? true : false;
+    if (json['store'] != null) {
+      store = StoreModel.fromJson(json['store']);
+    }
 
     if (json['menu'] != null) {
       menu = Menus.fromJson(json['menu']);
@@ -81,7 +90,7 @@ class ItemModel {
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = <String, dynamic>{};
     data['id'] = id;
-    data['qty'] = qty??1;
+    data['qty'] = qty ?? 1;
     data['category_id'] = categoryId;
     data['price'] = price;
     data['logo'] = logo;
@@ -96,9 +105,13 @@ class ItemModel {
     data['product_id'] = productID;
     data['product_type'] = productType;
     if (menu != null) data['menu'] = menu?.toJson();
-    data['active'] = active == true ? 0 : 1;
+    data['active'] = active == true ? 1: 0;
+    data['is_dded'] = isAdded == true ? 1 : 0;
     if (menus != null) {
       data['menus'] = menus!.map((v) => v.toJson()).toList();
+    }
+    if (store != null) {
+      data['store'] = store!.toJson();
     }
 
     if (addons != null) {
@@ -132,14 +145,14 @@ class Addon {
   String? name, price, image;
   bool? isSelected;
 
-  Addon({this.id, this.name, this.isSelected = false, this.image, this.price});
+  Addon({this.id, this.name, this.isSelected, this.image, this.price});
 
   Addon.fromJson(Map<String, dynamic> json) {
     id = json['id'];
     name = json['name'];
-    price = json['price'];
+    price = json['price'].toString();
     image = json['image'];
-    isSelected = false;
+    isSelected = json['is_selected']??false;
   }
 
   Map<String, dynamic> toJson() {
@@ -151,4 +164,5 @@ class Addon {
     data['is_selected'] = isSelected;
     return data;
   }
+
 }

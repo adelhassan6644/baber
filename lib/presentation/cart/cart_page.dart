@@ -6,6 +6,9 @@ import 'package:baber/presentation/base/custom_button.dart';
 import 'package:baber/presentation/cart/widget/cart_item_card.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:url_launcher/url_launcher.dart';
+import 'package:whatsapp_unilink/whatsapp_unilink.dart';
+import '../../app/core/utils/app_snack_bar.dart';
 import '../../app/core/utils/images.dart';
 import '../../controller/firebase_auth_provider.dart';
 import '../../domain/localization/language_constant.dart';
@@ -57,6 +60,7 @@ class _CartPageState extends State<CartPage> {
                         ...List.generate(
                           provider.cartList.length,
                           (index) => Dismissible(
+                            direction: DismissDirection.startToEnd,
                             key: Key("${provider.cartList[index]}"),
                             onDismissed: (v) => provider.removeFromCart(
                                 index: index, item: provider.cartList[index]),
@@ -96,42 +100,93 @@ class _CartPageState extends State<CartPage> {
                               item: provider.cartList[index],
                             ),
                           ),
+
                         )
                       ],
                     ),
             );
           }),
-          Padding(
-            padding: EdgeInsets.symmetric(
-              horizontal: Dimensions.PADDING_SIZE_DEFAULT.w,
-              vertical: Dimensions.PADDING_SIZE_DEFAULT.h,
-            ),
-            child: CustomButton(
-              text: "اتمام الطلب",
-              onTap: () {
-                if (Provider.of<FirebaseAuthProvider>(context, listen: false)
-                    .isLogin) {
+          Consumer<CartProvider>(
+            builder: (context,provider,widget) {
+              return Visibility(
+                visible: provider.cartList.isNotEmpty,
+                child: Padding(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: Dimensions.PADDING_SIZE_DEFAULT.w,
+                    vertical: Dimensions.PADDING_SIZE_DEFAULT.h,
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text("بيانات الدفع",
+                          style: AppTextStyles.w600.copyWith(
+                            fontSize: 16,
+                          )),
+                      SizedBox(height: 12.h,),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text("الأجمالى",
+                              style: AppTextStyles.w500.copyWith(
+                                fontSize: 14,
+                                color: ColorResources.DETAILS_COLOR
+                              )),
+                          Text("${provider.totalSum} ر.س",
+                              style: AppTextStyles.w500.copyWith(
+                                  fontSize: 14,
+                                  color: ColorResources.DETAILS_COLOR
+                              )),
+                        ],
+                      ),
+                      SizedBox(height: 24.h,),
+                      CustomButton(
+                        text: "اتمام الطلب",
+                        onTap: () async{
+                          if (Provider.of<FirebaseAuthProvider>(context, listen: false)
+                              .isLogin) {
+                            // provider.openWhatsApp(phone: "+966505652112", text: "text");
+                           if(provider.cartList.first.store!.active!) {
+                            final link = WhatsAppUnilink(
+                              phoneNumber:
+                                  "+966${provider.cartList.first.store!.phone}",
+                              text:
+                                  "Hey! I'm inquiring about the apartment listing",
+                            );
+                            await launch('$link');
+                          }else{
+                             CustomSnackBar.showSnackBar(
+                                 notification: AppNotification(
+                                     message: "الأسرة غير متاحة الأن",
+                                     isFloating: true,
+                                     backgroundColor: ColorResources.IN_ACTIVE,
+                                     borderColor: Colors.transparent));
 
-                } else {
-                  Future.delayed(
-                      Duration.zero,
-                          () => CustomSimpleDialog.parentSimpleDialog(customListWidget: [
-                        ConfirmationDialog(
-                            txtBtn: "تسجيل",
-                            description: "يجب ان تقوم بالتسجيل اولا حتي تتمكن من اتمام الطلب",
-                            onContinue: () {
-                              CustomNavigator.pop();
-                              CustomNavigator.push(Routes.LOGIN);
-                            })
-                      ]));
-                }
-              },
-              assetIcon: Images.whatsApp,
-              isLoading: false,
-              height: 46.h,
-            ),
+                           }
+                        } else {
+                            Future.delayed(
+                                Duration.zero,
+                                    () => CustomSimpleDialog.parentSimpleDialog(customListWidget: [
+                                  ConfirmationDialog(
+                                      txtBtn: "تسجيل",
+                                      description: "يجب ان تقوم بالتسجيل اولا حتي تتمكن من اتمام الطلب",
+                                      onContinue: () {
+                                        CustomNavigator.pop();
+                                        CustomNavigator.push(Routes.LOGIN);
+                                      })
+                                ]));
+                          }
+                        },
+                        assetIcon: Images.whatsApp,
+                        isLoading: false,
+                        height: 46.h,
+                      ),
+                    ],
+                  ),
+                ),
+              );
+            }
           ),
-          SizedBox(
+          if(widget.fromNav)SizedBox(
             height: 80.h,
           ),
         ],

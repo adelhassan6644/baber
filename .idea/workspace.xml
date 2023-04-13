@@ -10,24 +10,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0f32153c-20a2-462c-b0aa-469fbaabcdc6" name="Changes" comment="&#10;feat(notification):">
-      <change afterPath="$PROJECT_DIR$/assets/images/empty_notifications.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/whatsapp.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/svgs/alarm.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/presentation/base/confirmation_dialog.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/presentation/base/custom_simple_dialog.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/presentation/cart/widget/check_dialog.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/data/model/store_model.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/package_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/package_config_subset" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config_subset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/svgs/whatsapp.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/app/core/utils/images.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/core/utils/images.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/app/core/utils/svg_images.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/core/utils/svg_images.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/controller/home_vendors_provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/controller/home_vendors_provider.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/controller/notifications_provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/controller/notifications_provider.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/navigation/custom_navigation.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/navigation/custom_navigation.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/base/custom_button.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/base/custom_button.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/language/ar.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/language/ar.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/language/en.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/language/en.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app/core/api/end_points.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/core/api/end_points.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/controller/cart_provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/controller/cart_provider.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/controller/item_details_provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/controller/item_details_provider.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/data/model/item_model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/model/item_model.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/di.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/di.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/domain/repository/home_repo.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/domain/repository/home_repo.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/base/confirmation_dialog.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/base/confirmation_dialog.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/presentation/cart/cart_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/cart/cart_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/notifications/pages/notification_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/notifications/notification_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/profile/widget/contact_with_us.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/profile/widget/contact_with_us.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/cart/widget/cart_item_card.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/cart/widget/cart_item_card.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/item_details/page/item_details_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/item_details/page/item_details_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -188,7 +191,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681259097352</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="&#10;feat(notification):">
+      <created>1681266276856</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1681266276856</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -226,6 +236,11 @@
           <url>file://$PROJECT_DIR$/lib/controller/city_provider.dart</url>
           <line>68</line>
           <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
+          <url>file://$PROJECT_DIR$/lib/presentation/cart/widget/cart_item_card.dart</url>
+          <line>58</line>
+          <option name="timeStamp" value="13" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

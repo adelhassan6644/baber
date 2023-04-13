@@ -52,7 +52,7 @@ Future<void> init() async {
   sl.registerLazySingleton(() => FirebaseAuthRepo(sharedPreferences: sl(),dioClient: sl() ));
   sl.registerLazySingleton(() => ProfileRepo(dioClient: sl() ));
   sl.registerLazySingleton(() => CityRepo(dioClient: sl(),sharedPreferences: sl() ));
-  sl.registerLazySingleton(() => HomeRepo(dioClient: sl() ));
+  sl.registerLazySingleton(() => HomeRepo(dioClient: sl(),sharedPreferences: sl()  ));
   sl.registerLazySingleton(() => VendorsRepo(dioClient: sl(),sharedPreferences: sl()));
   sl.registerLazySingleton(() => ProductsRepo(dioClient: sl()));
   sl.registerLazySingleton(() => VendorRepo(dioClient: sl() ));

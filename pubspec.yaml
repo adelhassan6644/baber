@@ -30,7 +30,7 @@ dependencies:
   flutter_styled_toast:
   flutter_animated_dialog:
   flutter_animate:
-  url_launcher:
+  url_launcher: ^6.1.10
   readmore:
   flutter_svg:
   flutter_local_notifications: ^9.8.0+1
@@ -44,6 +44,7 @@ dependencies:
   shimmer:
   carousel_slider:
   firebase_auth: ^4.4.0
+  whatsapp_unilink: ^2.1.0
 
 dev_dependencies:
   flutter_test:

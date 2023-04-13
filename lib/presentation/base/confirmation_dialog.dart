@@ -9,11 +9,11 @@ import 'custom_images.dart';
 
 class ConfirmationDialog extends StatelessWidget {
   const ConfirmationDialog(
-      {required this.txtBtn,this.icon, this.description, this.onContinue, Key? key})
+      {required this.txtBtn,this.txtBtn2,this.icon, this.description, this.onContinue, Key? key})
       : super(key: key);
   final void Function()? onContinue;
   final String txtBtn;
-  final String? description;
+  final String? description,txtBtn2;
   final String? icon;
   @override
   Widget build(BuildContext context) {
@@ -52,7 +52,7 @@ class ConfirmationDialog extends StatelessWidget {
             Expanded(
                 child: CustomButton(
               onTap: () => CustomNavigator.pop(),
-              text: "رجوع",
+              text:txtBtn2?? "رجوع",
               backgroundColor: ColorResources.PRIMARY_COLOR.withOpacity(0.1),
               textColor: ColorResources.PRIMARY_COLOR,
             ))

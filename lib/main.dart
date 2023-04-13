@@ -49,7 +49,7 @@ Future<void> main() async {
   await di.init();
 
   runApp(MultiProvider(providers: [
-    ChangeNotifierProvider(create: (context) => di.sl<ThemeProvider>()),
+    ChangeNotifierProvider(create: (context) => di.sl<ThemeProvider>(),),
     ChangeNotifierProvider(create: (context) => di.sl<LocalizationProvider>()),
     ChangeNotifierProvider(create: (context) => di.sl<AuthProvider>()),
     ChangeNotifierProvider(create: (context) => di.sl<FirebaseAuthProvider>()),

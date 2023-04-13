@@ -59,5 +59,4 @@ class ItemDetailsProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-
 }
