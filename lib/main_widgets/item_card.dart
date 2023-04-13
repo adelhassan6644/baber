@@ -40,6 +40,8 @@ class _ItemCardState extends State<ItemCard> {
           Provider.of<ProductsProvider>(context, listen: false)
               .getProductsByMenu(
                   menuId: widget.itemModel!.menus!.first.id.toString());
+          Provider.of<VendorProvider>(context, listen: false)
+              .currentIndex=0;
 
           CustomNavigator.push(
             Routes.VENDOR,

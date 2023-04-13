@@ -24,7 +24,7 @@ class HomeVendorsProvider extends ChangeNotifier {
         response.fold((fail) {
           notifyListeners();
         }, (success) {
-          homeVendorList = BaseModel.fromJson(success.data['data']);
+          homeVendorList = BaseModel.fromJson(success.data);
           notifyListeners();
         });
 

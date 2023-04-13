@@ -10,11 +10,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0f32153c-20a2-462c-b0aa-469fbaabcdc6" name="Changes" comment="&#10;feat(notification):">
+      <change afterPath="$PROJECT_DIR$/lib/presentation/item_details/widget/addon_item.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/controller/cart_provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/controller/cart_provider.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/cart/cart_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/cart/cart_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/svgs/delete.svg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/svgs/delete.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/svgs/login.svg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/svgs/login.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/controller/home_vendors_provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/controller/home_vendors_provider.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/controller/vendor_provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/controller/vendor_provider.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/main_widgets/item_card.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main_widgets/item_card.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/base/chekbox_listtile.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/base/chekbox_listtile.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/base/custom_drop_down_button.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/base/custom_drop_down_button.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/presentation/cart/widget/cart_item_card.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/cart/widget/cart_item_card.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/home/home_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/home/home_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/home/widget/our_table.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/home/widget/our_table.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/item_details/page/item_details_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/item_details/page/item_details_page.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,10 +79,10 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\My projects\baber\assets\svgs" />
+      <recent name="C:\My projects\baber\lib\presentation\item_details\widget" />
       <recent name="C:\My projects\baber\lib\presentation\base" />
       <recent name="C:\My projects\baber\assets\images" />
       <recent name="C:\My projects\baber\lib\domain" />
-      <recent name="C:\My projects\baber\lib\presentation" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\My projects\baber\lib\presentation\notifications" />
@@ -230,7 +239,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
           <url>file://$PROJECT_DIR$/lib/presentation/cart/widget/cart_item_card.dart</url>
-          <line>58</line>
+          <line>60</line>
           <option name="timeStamp" value="13" />
         </line-breakpoint>
       </breakpoints>

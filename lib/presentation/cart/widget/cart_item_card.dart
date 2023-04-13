@@ -2,11 +2,13 @@ import 'package:baber/app/core/utils/color_resources.dart';
 import 'package:baber/app/core/utils/dimensions.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import '../../../app/core/utils/svg_images.dart';
 import '../../../app/core/utils/text_styles.dart';
 import '../../../controller/item_details_provider.dart';
 import '../../../data/model/item_model.dart';
 import '../../../navigation/custom_navigation.dart';
 import '../../../navigation/routes.dart';
+import '../../base/custom_images.dart';
 import '../../base/custom_network_image.dart';
 
 class CartItemCard extends StatelessWidget {
@@ -150,7 +152,8 @@ class CartItemCard extends StatelessWidget {
                   children: [
                     GestureDetector(
                       onTap: onDelete,
-                      child: Container(
+                      child:
+                      Container(
                         decoration: BoxDecoration(
                             color: ColorResources.WHITE_COLOR,
                             borderRadius: BorderRadius.circular(50.w),
@@ -161,11 +164,13 @@ class CartItemCard extends StatelessWidget {
                                   offset: Offset(0, 1))],
                             border: Border.all(color: ColorResources.LIGHT_GREY_BORDER)),
                         padding: const EdgeInsets.all(4),
-                        child:const Icon(Icons.delete,color: ColorResources.IN_ACTIVE,)
-                        // customImageIconSVG(
-                        //   imageName: SvgImages.delete,
-                        //   width: 24.w,height: 24.h
-                        // ),
+                        child:
+                        // const Icon(Icons.delete,color: ColorResources.IN_ACTIVE,)
+                        customImageIconSVG(
+                          imageName: SvgImages.delete,
+                          width: 24.w,height: 24.h,
+                          color: Colors.red
+                        ),
                       ),
                     ),
                    if(item.addons != null &&item.addons!.isNotEmpty&& item.addons!.any((e) => e.isSelected ==true))  Text(

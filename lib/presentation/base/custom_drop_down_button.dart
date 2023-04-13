@@ -55,6 +55,7 @@ class _CustomDropDownButtonState extends State<CustomDropDownButton> {
           );
         }).toList(),
         onChanged: widget.onChange,
+        menuMaxHeight: context.height*0.4,
         initialValue: widget.value,
         isDense: true,
         validator: widget.validation,

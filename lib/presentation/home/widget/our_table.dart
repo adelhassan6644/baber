@@ -37,8 +37,9 @@ class OurTable extends StatelessWidget {
                   ...List.generate(
                     vendorProvider.homeVendorList != null && vendorProvider.homeVendorList!.items != null
                         ? vendorProvider.homeVendorList!.items!.length : 4,
-                    (index) =>   vendorProvider.homeVendorList != null && vendorProvider.homeVendorList!.items != null
-                        ?Row(
+                    (index) =>
+                    vendorProvider.homeVendorList != null && vendorProvider.homeVendorList!.items != null ?
+                    Row(
                             children: [
                                ItemCard(
                                 itemModel: vendorProvider.homeVendorList!.items![index],

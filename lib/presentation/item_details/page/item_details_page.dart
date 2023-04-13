@@ -20,7 +20,7 @@ import '../../base/custom_app_bar.dart';
 import '../../base/custom_button.dart';
 import '../../base/custom_network_image.dart';
 import '../../base/custom_simple_dialog.dart';
-import '../widget/addons_card.dart';
+import '../widget/addon_item.dart';
 
 class ItemDetailsPage extends StatelessWidget {
   const ItemDetailsPage({this.title, Key? key}) : super(key: key);
@@ -293,7 +293,8 @@ class ItemDetailsPage extends StatelessWidget {
                   Visibility(
                     visible: provider.item?.addons != null &&
                         provider.item!.addons!.isNotEmpty,
-                    child: Column(
+                    child:
+                    Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -314,34 +315,29 @@ class ItemDetailsPage extends StatelessWidget {
                                   ),
                                 ),
                               ),
-                              Padding(
-                                padding: EdgeInsets.symmetric(vertical: 12.h),
-                                child: SingleChildScrollView(
-                                  scrollDirection: Axis.horizontal,
-                                  physics: const BouncingScrollPhysics(),
-                                  child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      SizedBox(
-                                          width: Dimensions
-                                              .PADDING_SIZE_DEFAULT.w),
-                                      ...List.generate(
-                                          provider.isLoading
-                                              ? 4
-                                              : provider.item?.addons?.length ??
-                                                  0,
-                                          (index) => provider.isLoading
-                                              ? const AddonsCardShimmer()
-                                              : AddonCard(
-                                                  addon: provider
-                                                      .item!.addons![index],
-                                                )),
-                                    ],
-                                  ),
-                                ),
-                              )
+                              SizedBox(
+                                height: 12.h,
+                              ),
+                              ...List.generate(
+                                  provider.isLoading
+                                      ? 3
+                                      : provider.item?.addons?.length ??
+                                      0,
+                                      (index) => provider.isLoading
+                                      ? Padding(
+                                        padding: EdgeInsets.symmetric(horizontal: Dimensions.PADDING_SIZE_DEFAULT.w,vertical: 6.h),
+                                        child: Row(
+                                          children: [
+                                            TextShimmer(width:100.w,height: 20.h,),
+                                            const Spacer(),
+                                            TextShimmer(width:50.w,height: 20.h,),
+                                          ],
+                                        ),
+                                      )
+                                      : AddonItem(
+                                    addon: provider
+                                        .item!.addons![index],
+                                  )),
                             ],
                           ),
                         ),
