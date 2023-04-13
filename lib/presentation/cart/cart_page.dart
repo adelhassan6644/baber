@@ -6,8 +6,6 @@ import 'package:baber/presentation/base/custom_button.dart';
 import 'package:baber/presentation/cart/widget/cart_item_card.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:url_launcher/url_launcher.dart';
-import 'package:whatsapp_unilink/whatsapp_unilink.dart';
 import '../../app/core/utils/app_snack_bar.dart';
 import '../../app/core/utils/images.dart';
 import '../../controller/firebase_auth_provider.dart';
@@ -144,15 +142,8 @@ class _CartPageState extends State<CartPage> {
                         onTap: () async{
                           if (Provider.of<FirebaseAuthProvider>(context, listen: false)
                               .isLogin) {
-                            // provider.openWhatsApp(phone: "+966505652112", text: "text");
                            if(provider.cartList.first.store!.active!) {
-                            final link = WhatsAppUnilink(
-                              phoneNumber:
-                                  "+966${provider.cartList.first.store!.phone}",
-                              text:
-                                  "Hey! I'm inquiring about the apartment listing",
-                            );
-                            await launch('$link');
+                             provider.openWhatsApp();
                           }else{
                              CustomSnackBar.showSnackBar(
                                  notification: AppNotification(
@@ -171,7 +162,7 @@ class _CartPageState extends State<CartPage> {
                                       description: "يجب ان تقوم بالتسجيل اولا حتي تتمكن من اتمام الطلب",
                                       onContinue: () {
                                         CustomNavigator.pop();
-                                        CustomNavigator.push(Routes.LOGIN);
+                                        CustomNavigator.push(Routes.LOGIN,arguments: true);
                                       })
                                 ]));
                           }

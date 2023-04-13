@@ -168,8 +168,7 @@ class CartItemCard extends StatelessWidget {
                         // ),
                       ),
                     ),
-                   if(item.addons != null &&item.addons!.isNotEmpty&&
-                       item.addons!.any((e) => e.isSelected ==true)  )  Text(
+                   if(item.addons != null &&item.addons!.isNotEmpty&& item.addons!.any((e) => e.isSelected ==true))  Text(
                       "يتم اضافة ${item.addons!.map((e) {
                         if(e.isSelected!) {
                           return e.name;

@@ -1,12 +1,8 @@
 import 'dart:developer';
-import 'dart:io';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
-
-import '../app/core/utils/app_snack_bar.dart';
-import '../app/core/utils/color_resources.dart';
+import 'package:whatsapp_unilink/whatsapp_unilink.dart';
 import '../data/model/item_model.dart';
 import '../domain/repository/cart_repo.dart';
 
@@ -122,5 +118,19 @@ class CartProvider extends ChangeNotifier {
   //   }
   //
   // }
+  openWhatsApp() async{
+
+    final link = WhatsAppUnilink(
+      phoneNumber:
+      "+966${_cartList.first.store!.phone}",
+      text:
+      "طلبك عبارة عن : ${ _cartList
+      .map((e) {
+        return e.name;
+      }).toString()}",
+    );
+    await launch('$link');
+
+  }
 
 }

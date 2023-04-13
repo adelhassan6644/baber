@@ -10,27 +10,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0f32153c-20a2-462c-b0aa-469fbaabcdc6" name="Changes" comment="&#10;feat(notification):">
-      <change afterPath="$PROJECT_DIR$/lib/data/model/store_model.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/package_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/package_config_subset" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config_subset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/language/ar.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/language/ar.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/language/en.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/language/en.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/app/core/api/end_points.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/core/api/end_points.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/controller/cart_provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/controller/cart_provider.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/controller/item_details_provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/controller/item_details_provider.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/data/model/item_model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/model/item_model.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/di.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/di.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/domain/repository/home_repo.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/domain/repository/home_repo.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/base/confirmation_dialog.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/base/confirmation_dialog.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/presentation/cart/cart_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/cart/cart_page.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/presentation/cart/widget/cart_item_card.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/cart/widget/cart_item_card.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/item_details/page/item_details_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/item_details/page/item_details_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -198,7 +182,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681266276856</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="&#10;feat(notification):">
+      <created>1681379179163</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1681379179163</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
