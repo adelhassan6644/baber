@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
 import 'package:provider/provider.dart';
 import '../../../domain/localization/language_constant.dart';
-import '../../app/core/utils/text_styles.dart';
 import '../../controller/settings_provider.dart';
 import '../../main_widgets/Item_card.dart';
 import '../base/custom_app_bar.dart';
@@ -29,7 +28,7 @@ class AboutPage extends StatelessWidget {
                   children: List.generate(7,
                           (index) => Padding(
                         padding: EdgeInsets.symmetric(
-                            vertical: 12.h,
+                            vertical: 8.h,
                             horizontal:
                             Dimensions.PADDING_SIZE_DEFAULT.w),
                         child: TextShimmer(width: context.width,height: 20.h,),

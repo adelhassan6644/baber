@@ -28,14 +28,14 @@ class PrivacyPage extends StatelessWidget {
                   children: List.generate(7,
                           (index) => Padding(
                         padding: EdgeInsets.symmetric(
-                            vertical: 12.h,
+                            vertical: 8.h,
                             horizontal:
                             Dimensions.PADDING_SIZE_DEFAULT.w),
                         child: TextShimmer(width: context.width,height: 20.h,),
                       )),
                 ),
               )
-                  :    Expanded(
+                  : Expanded(
                 child: Padding(
                   padding: EdgeInsets.symmetric(horizontal: Dimensions.PADDING_SIZE_DEFAULT.w),
                   child: ListView(
