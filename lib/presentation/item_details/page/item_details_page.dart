@@ -112,7 +112,7 @@ class ItemDetailsPage extends StatelessWidget {
 
                                           Provider.of<CartProvider>(context,
                                                   listen: false)
-                                              .isAddedToCart(item: provider.item!);
+                                              .existInCart(item: provider.item!);
                                         },
                                         child: Container(
                                           padding: const EdgeInsets.all(5),
@@ -166,7 +166,7 @@ class ItemDetailsPage extends StatelessWidget {
                                             provider.updateQty(
                                                 qty: provider.item!.qty! - 1);
                                             Provider.of<CartProvider>(context,
-                                                    listen: false).isAddedToCart(item: provider.item!);
+                                                    listen: false).existInCart(item: provider.item!);
                                           }
                                         },
                                         child: Container(
@@ -458,10 +458,10 @@ class ItemDetailsPage extends StatelessWidget {
                                }
                              },
                              textColor: ColorResources.WHITE_COLOR,
-                             text: cartProvider.isAdded
-                                 ? getTranslated("update_cart", context)
+                             text: itemDetailsProvider.item!.isAdded!?
+                                 getTranslated("update_cart", context)
                                  : getTranslated("add_to_cart", context),
-                             backgroundColor: cartProvider.isAdded ?
+                             backgroundColor:  itemDetailsProvider.item!.isAdded!?
                              ColorResources.ACTIVE : ColorResources.PRIMARY_COLOR),
                        ),
                        SizedBox(

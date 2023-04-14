@@ -142,17 +142,19 @@ class _CartPageState extends State<CartPage> {
                         onTap: () async{
                           if (Provider.of<FirebaseAuthProvider>(context, listen: false)
                               .isLogin) {
-                           if(provider.cartList.first.store!.active!) {
+                          //  if(provider.cartList.first.store!.active!) {
+                          //    provider.openWhatsApp();
+                          // }else{
+                          //    CustomSnackBar.showSnackBar(
+                          //        notification: AppNotification(
+                          //            message: "الأسرة غير متاحة الأن",
+                          //            isFloating: true,
+                          //            backgroundColor: ColorResources.IN_ACTIVE,
+                          //            borderColor: Colors.transparent));
+                          // }
                              provider.openWhatsApp();
-                          }else{
-                             CustomSnackBar.showSnackBar(
-                                 notification: AppNotification(
-                                     message: "الأسرة غير متاحة الأن",
-                                     isFloating: true,
-                                     backgroundColor: ColorResources.IN_ACTIVE,
-                                     borderColor: Colors.transparent));
 
-                           }
+
                         } else {
                             Future.delayed(
                                 Duration.zero,

@@ -24,6 +24,7 @@ import 'controller/notifications_provider.dart';
 import 'controller/products_provider.dart';
 import 'controller/profile_provider.dart';
 import 'controller/search_provider.dart';
+import 'controller/settings_provider.dart';
 import 'controller/theme_provider.dart';
 import 'controller/vendor_provider.dart';
 import 'controller/vendors_provider.dart';
@@ -66,6 +67,7 @@ Future<void> main() async {
     ChangeNotifierProvider(create: (context) => di.sl<ProductsProvider>()),
     ChangeNotifierProvider(create: (context) => di.sl<CartProvider>()),
     ChangeNotifierProvider(create: (context) => di.sl<SearchProvider>()),
+    ChangeNotifierProvider(create: (context) => di.sl<SettingsProvider>()),
   ], child: const MyApp()));
   SystemChrome.setPreferredOrientations(
       [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);

@@ -62,7 +62,7 @@ class ItemModel {
     productID = json['product_id'];
     productType = json['product_type'];
     active = (json['active'] == 0) ? false : true;
-    isAdded =  false;
+    isAdded = json['is_add']?? false ;
 
     if (json['store'] != null) {
       store = StoreModel.fromJson(json['store']);

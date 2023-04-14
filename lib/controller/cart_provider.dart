@@ -25,7 +25,7 @@ class CartProvider extends ChangeNotifier {
   void removeFromCart({required ItemModel item, required int index}) {
     _cartList.removeAt(index);
     cartRepo.saveNewItems(_cartList);
-    isAddedToCart(item: item);
+    // isAddedToCart(item: item);
     getCartData();
     notifyListeners();
   }
@@ -41,35 +41,27 @@ class CartProvider extends ChangeNotifier {
       _cartList.removeWhere((e) => e.id == item.id);
       _cartList.add(item);
       cartRepo.saveNewItems(_cartList);
-      isAddedToCart(item: item);
     } else {
       _cartList.add(item);
       cartRepo.saveNewItems(_cartList);
-      isAddedToCart(item: item);
     }
+    item.isAdded = true;
     getCartData();
     getTotalSum();
     notifyListeners();
   }
 
   checkStore({required ItemModel item}) {
-    if (_cartList.any((e) =>
-        e.store?.id == item.store?.id && e.store?.phone == item.store?.phone)) {
-      return true;
-    } else {
-      return false;
-    }
+    return _cartList.any((e) =>
+        e.store?.id == item.store?.id && e.store?.phone == item.store?.phone);
   }
 
-  void isAddedToCart({required ItemModel item}) {
-    // isAdded = _cartList.any((e) => e.id == item.id&&e.qty == item.qty);
-    isAdded = _cartList.any((e) => e.id == item.id);
-    notifyListeners();
+  existInCart({required ItemModel item}) {
+    return _cartList.any((e) => e.id == item.id);
   }
 
   double totalSum = 0;
   void getTotalSum() {
-
     for (var meal in _cartList) {
       totalSum = 0;
       double addonsPrice = 0;
@@ -80,9 +72,8 @@ class CartProvider extends ChangeNotifier {
           }
         }
       }
-      totalSum += (int.parse(meal.price ?? "0") + addonsPrice)*meal.qty!;
+      totalSum += (int.parse(meal.price ?? "0") + addonsPrice) * meal.qty!;
     }
-    notifyListeners();
   }
 
   // openWhatsApp({required String phone,required String text}) async{
@@ -118,19 +109,13 @@ class CartProvider extends ChangeNotifier {
   //   }
   //
   // }
-  openWhatsApp() async{
-
+  openWhatsApp() async {
     final link = WhatsAppUnilink(
-      phoneNumber:
-      "+966${_cartList.first.store!.phone}",
-      text:
-      "طلبك عبارة عن : ${ _cartList
-      .map((e) {
+      phoneNumber: "+966${_cartList.first.store!.phone}",
+      text: "طلبك عبارة عن : ${_cartList.map((e) {
         return e.name;
       }).toString()}",
     );
     await launch('$link');
-
   }
-
 }

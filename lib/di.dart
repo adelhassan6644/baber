@@ -17,6 +17,7 @@ import 'controller/notifications_provider.dart';
 import 'controller/products_provider.dart';
 import 'controller/profile_provider.dart';
 import 'controller/search_provider.dart';
+import 'controller/settings_provider.dart';
 import 'controller/theme_provider.dart';
 import 'controller/vendor_provider.dart';
 import 'controller/vendors_provider.dart';
@@ -33,6 +34,7 @@ import 'domain/repository/notification_repo.dart';
 import 'domain/repository/products_repo.dart';
 import 'domain/repository/profile_repo.dart';
 import 'domain/repository/search_repo.dart';
+import 'domain/repository/settings_repo.dart';
 import 'domain/repository/vendor_repo.dart';
 import 'domain/repository/vendors_repo.dart';
 
@@ -61,6 +63,7 @@ Future<void> init() async {
   sl.registerLazySingleton(() => ContactRepo(dioClient: sl() ));
   sl.registerLazySingleton(() => CartRepo(sharedPreferences: sl() ));
   sl.registerLazySingleton(() => SearchRepo(dioClient: sl() ));
+  sl.registerLazySingleton(() => SettingsRepo(dioClient: sl() ));
 
 
   //provider
@@ -83,6 +86,7 @@ Future<void> init() async {
    sl.registerLazySingleton(() => NotificationProvider(notificationRepo: sl()));
    sl.registerLazySingleton(() => CartProvider(cartRepo: sl()));
    sl.registerLazySingleton(() => SearchProvider(searchRepo: sl()));
+   sl.registerLazySingleton(() => SettingsProvider(settingsRepo: sl()));
 
 
   // External
