@@ -39,7 +39,7 @@ class FirebaseAuthRepo {
     sharedPreferences.remove(AppStorageKey.phone);
   }
 
-  Future<String?> getDeviceToken() async {
+  Future<String?> getFcmToken() async {
     String? _deviceToken;
     if(Platform.isIOS) {
       _deviceToken = await FirebaseMessaging.instance.getAPNSToken();
@@ -57,7 +57,7 @@ class FirebaseAuthRepo {
   Future<Either<ServerFailure, Response>> sendDeviceToken({required String phone}) async {
     try {
       Response res = await dioClient.post(
-        data: {"fcm_token": await getDeviceToken(),"phone":phone},
+        data: {"fcm_token": await getFcmToken(),"phone":phone},
         uri: EndPoints.logIn,);
       if(res.statusCode ==200){
         saveUserToken(token: res.data['data']["api_token"]);

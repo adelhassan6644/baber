@@ -134,7 +134,6 @@ class FirebaseAuthProvider extends ChangeNotifier {
                   isFloating: true,
                   backgroundColor: ColorResources.ACTIVE,
                   borderColor: Colors.transparent));
-          firebaseAuthRepo.saveUserToken(token: value.user!.uid);
           firebaseAuthRepo.setLoggedIn();
           _isLoading = false;
           notifyListeners();
@@ -143,7 +142,7 @@ class FirebaseAuthProvider extends ChangeNotifier {
           log(error.toString());
           CustomSnackBar.showSnackBar(
               notification: AppNotification(
-                  message: "رقم الهاتف غير صحيح",
+                  message: "الكود غير صحيح",
                   isFloating: true,
                   backgroundColor: ColorResources.IN_ACTIVE,
                   borderColor: Colors.transparent));

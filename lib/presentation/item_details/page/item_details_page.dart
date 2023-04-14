@@ -468,7 +468,7 @@ class ItemDetailsPage extends StatelessWidget {
                          width: 12.w,
                        ),
                        GestureDetector(
-                         onTap: () => CustomNavigator.push(Routes.CART,),
+                         onTap: () => CustomNavigator.push(Routes.CART,replace: true),
                          child: Container(
                            width: 60.h,
                            height: 46.h,
