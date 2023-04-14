@@ -43,66 +43,86 @@ class _CartPageState extends State<CartPage> {
             withBack: !widget.fromNav,
           ),
           Consumer<CartProvider>(builder: (_, provider, widget) {
-            return Expanded(
-              child: provider.cartList.isEmpty
-                  ? EmptyWidget(
+            return provider.cartList.isEmpty
+                ? Expanded(
+                  child: EmptyWidget(
                       img: Images.emptyCart,
                       imgWidth: 195.w,
                       imgHeight: 205.h,
                       txt: "عربة التسوق الخاصة بك فارغة",
                       subText: "اذهب وابحث عن وجبتك اللذيذة !😋",
-                    )
-                  : ListView(
+                    ),
+                )
+                : Expanded(
+                  child: ListView(
                       physics: const BouncingScrollPhysics(),
                       children: [
                         ...List.generate(
                           provider.cartList.length,
-                          (index) => Dismissible(
-                            direction: DismissDirection.startToEnd,
-                            key: Key("${provider.cartList[index]}"),
-                            onDismissed: (v) => provider.removeFromCart(
-                                index: index, item: provider.cartList[index]),
-                            background: Container(
-                              color: ColorResources.IN_ACTIVE,
-                              child: Row(
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: [
-                                  SizedBox(
-                                    width: 50.w,
-                                  ),
-                                  Text(getTranslated("delete", context),
-                                      style: AppTextStyles.w600.copyWith(
-                                        color: ColorResources.WHITE_COLOR,
-                                        fontSize: 16,
-                                      )),
-                                ],
-                              ),
-                            ),
-                            child: CartItemCard(
-                              onDecrease: () {
-                                if (provider.cartList[index].qty! > 1) {
-                                  provider.cartList[index].qty =
-                                      provider.cartList[index].qty! - 1;
-                                  provider.addToCart(
-                                      item: provider.cartList[index]);
-                                }
-                              },
-                              onIncrease: () {
+                          (index) =>CartItemCard(
+                            onDecrease: () {
+                              if (provider.cartList[index].qty! > 1) {
                                 provider.cartList[index].qty =
-                                    provider.cartList[index].qty! + 1;
+                                    provider.cartList[index].qty! - 1;
                                 provider.addToCart(
                                     item: provider.cartList[index]);
-                              },
-                              onDelete: () => provider.removeFromCart(
-                                  index: index, item: provider.cartList[index]),
-                              item: provider.cartList[index],
-                            ),
+                              }
+                            },
+                            onIncrease: () {
+                              provider.cartList[index].qty =
+                                  provider.cartList[index].qty! + 1;
+                              provider.addToCart(
+                                  item: provider.cartList[index]);
+                            },
+                            onDelete: () => provider.removeFromCart(
+                                index: index, item: provider.cartList[index]),
+                            item: provider.cartList[index],
                           ),
-
+                          //     Dismissible(
+                          //   direction: DismissDirection.startToEnd,
+                          //   key: UniqueKey(),
+                          //   onDismissed: (v) => provider.removeFromCart(
+                          //       index: index, item: provider.cartList[index]),
+                          //   background: Container(
+                          //     color: ColorResources.IN_ACTIVE,
+                          //     child: Row(
+                          //       crossAxisAlignment: CrossAxisAlignment.center,
+                          //       children: [
+                          //         SizedBox(
+                          //           width: 50.w,
+                          //         ),
+                          //         Text(getTranslated("delete", context),
+                          //             style: AppTextStyles.w600.copyWith(
+                          //               color: ColorResources.WHITE_COLOR,
+                          //               fontSize: 16,
+                          //             )),
+                          //       ],
+                          //     ),
+                          //   ),
+                          //   child: CartItemCard(
+                          //     onDecrease: () {
+                          //       if (provider.cartList[index].qty! > 1) {
+                          //         provider.cartList[index].qty =
+                          //             provider.cartList[index].qty! - 1;
+                          //         provider.addToCart(
+                          //             item: provider.cartList[index]);
+                          //       }
+                          //     },
+                          //     onIncrease: () {
+                          //       provider.cartList[index].qty =
+                          //           provider.cartList[index].qty! + 1;
+                          //       provider.addToCart(
+                          //           item: provider.cartList[index]);
+                          //     },
+                          //     onDelete: () => provider.removeFromCart(
+                          //         index: index, item: provider.cartList[index]),
+                          //     item: provider.cartList[index],
+                          //   ),
+                          // ),
                         )
                       ],
                     ),
-            );
+                );
           }),
           Consumer<CartProvider>(
             builder: (context,provider,widget) {
