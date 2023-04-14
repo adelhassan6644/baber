@@ -25,8 +25,8 @@ class CartProvider extends ChangeNotifier {
   void removeFromCart({required ItemModel item, required int index}) {
     _cartList.removeAt(index);
     cartRepo.saveNewItems(_cartList);
-    // isAddedToCart(item: item);
     getCartData();
+    getTotalSum();
     notifyListeners();
   }
 
