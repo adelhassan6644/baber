@@ -62,8 +62,8 @@ class CartProvider extends ChangeNotifier {
 
   double totalSum = 0;
   void getTotalSum() {
+    totalSum = 0;
     for (var meal in _cartList) {
-      totalSum = 0;
       double addonsPrice = 0;
       if (meal.addons != null) {
         for (int i = 0; i < meal.addons!.length; i++) {
@@ -76,39 +76,6 @@ class CartProvider extends ChangeNotifier {
     }
   }
 
-  // openWhatsApp({required String phone,required String text}) async{
-  //   var whatsAppUrlAndroid = "whatsapp://send?phone=$phone&text=hello";
-  //   var whatAppURLIos ="https://wa.me/$phone?text=${Uri.parse("hello")}";
-  //   if(Platform.isIOS){
-  //     // for iOS phone only
-  //     if( await canLaunch(whatAppURLIos)){
-  //       await launch(whatAppURLIos, forceSafariVC: false);
-  //     }else{
-  //       CustomSnackBar.showSnackBar(
-  //           notification: AppNotification(
-  //               message: "whatsapp no installed",
-  //               isFloating: true,
-  //               backgroundColor: ColorResources.ACTIVE,
-  //               borderColor: Colors.transparent));
-  //     }
-  //
-  //   }else{
-  //     if( await canLaunch(whatsAppUrlAndroid)){
-  //       await launch(whatsAppUrlAndroid);
-  //     }else{
-  //       CustomSnackBar.showSnackBar(
-  //           notification: AppNotification(
-  //               message: "whatsapp no installed",
-  //               isFloating: true,
-  //               backgroundColor: ColorResources.ACTIVE,
-  //               borderColor: Colors.transparent));
-  //
-  //     }
-  //
-  //
-  //   }
-  //
-  // }
   openWhatsApp() async {
     final link = WhatsAppUnilink(
       phoneNumber: "+966${_cartList.first.store!.phone}",
