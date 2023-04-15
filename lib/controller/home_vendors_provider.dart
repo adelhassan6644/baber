@@ -18,7 +18,7 @@ class HomeVendorsProvider extends ChangeNotifier {
   BaseModel? homeVendorList ;
 
   getVendorList() async {
-    try {
+    // try {
         Either<ServerFailure, Response> response =
         await homeRepo.getHomeVendors();
         response.fold((fail) {
@@ -28,14 +28,14 @@ class HomeVendorsProvider extends ChangeNotifier {
           notifyListeners();
         });
 
-    } catch (e) {
-      CustomSnackBar.showSnackBar(
-          notification: AppNotification(
-              message: ApiErrorHandler.getMessage(e),
-              isFloating: true,
-              backgroundColor: ColorResources.IN_ACTIVE,
-              borderColor: Colors.transparent));
-      notifyListeners();
-    }
+    // } catch (e) {
+    //   CustomSnackBar.showSnackBar(
+    //       notification: AppNotification(
+    //           message: ApiErrorHandler.getMessage(e),
+    //           isFloating: true,
+    //           backgroundColor: ColorResources.IN_ACTIVE,
+    //           borderColor: Colors.transparent));
+    //   notifyListeners();
+    // }
   }
 }

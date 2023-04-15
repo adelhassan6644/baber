@@ -1,5 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../../app/core/api/end_points.dart';
 import '../../app/core/error/api_error_handler.dart';
@@ -29,6 +30,7 @@ class CityRepo {
     try {
       Response response = await dioClient.post(uri: EndPoints.setCity, data: {
         "city_id": cityId,
+        "phone":FirebaseAuth.instance.currentUser?.phoneNumber,
       });
 
       if (response.statusCode == 200) {

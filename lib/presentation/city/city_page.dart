@@ -8,7 +8,10 @@ import '../../app/core/utils/color_resources.dart';
 import '../../app/core/utils/dimensions.dart';
 import '../../app/core/utils/images.dart';
 import '../../controller/city_provider.dart';
+import '../../controller/firebase_auth_provider.dart';
 import '../../domain/localization/language_constant.dart';
+import '../../navigation/custom_navigation.dart';
+import '../../navigation/routes.dart';
 import '../base/custom_button.dart';
 
 class CityPage extends StatefulWidget {

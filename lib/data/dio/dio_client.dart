@@ -28,7 +28,6 @@ class DioClient extends ApiClient {
       ..options.headers = {
         'Content-Type': 'application/json',
         "Accept": " application/json",
-        // 'Authorization': 'Bearer sstiSBvCOeFzIvbqzfRy8neP9aPB0QGr325XPD1sQGWWywB3qj',
         'Authorization': 'Bearer ${sharedPreferences.getString(AppStorageKey.token)}',
       };
     dio.interceptors.add(loggingInterceptor);
