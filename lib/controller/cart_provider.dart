@@ -23,7 +23,7 @@ class CartProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  void removeFromCart({required ItemModel item, required int index}) {
+  void removeFromCart({required ItemModel item,}) {
     // _cartList.removeAt(index);
     _cartList.removeWhere((e) => e.id == item.id);
     cartRepo.saveNewItems(_cartList);

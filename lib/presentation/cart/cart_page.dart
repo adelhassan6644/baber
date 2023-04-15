@@ -82,7 +82,8 @@ class _CartPageState extends State<CartPage> {
                             direction: DismissDirection.startToEnd,
                             key: UniqueKey(),
                             onDismissed: (v) => provider.removeFromCart(
-                                index: index, item: provider.cartList[index]),
+                                // index: index,
+                                item: provider.cartList[index]),
                             background: Container(
                               color: ColorResources.IN_ACTIVE,
                               child: Row(
@@ -115,7 +116,8 @@ class _CartPageState extends State<CartPage> {
                                     item: provider.cartList[index]);
                               },
                               onDelete: () => provider.removeFromCart(
-                                  index: index, item: provider.cartList[index]),
+                                  // index: index,
+                                  item: provider.cartList[index]),
                               item: provider.cartList[index],
                             ),
                           ),
