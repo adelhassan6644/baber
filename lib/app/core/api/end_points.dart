@@ -5,7 +5,7 @@ class EndPoints {
   static const String logIn = 'login';
   static const String verifyPhone = 'verify-phone';
   static const String cities = 'cities';
-  static const String setCity = 'updateProfile';
+  static const String updateCity = 'updateProfile';
   static const String profileInfo = 'profile';
   static const String updateProfile = 'updateProfile';
   static const String banners= 'slider';

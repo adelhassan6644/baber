@@ -59,13 +59,13 @@ class CityProvider extends ChangeNotifier {
     }
   }
 
-  setCity() async {
+  updateCity() async {
     try {
         if (Provider.of<FirebaseAuthProvider>(CustomNavigator.navigatorState.currentContext!, listen: false).isLogin) {
           _isLoading = true;
           notifyListeners();
           Either<ServerFailure, Response> response =
-          await cityRepo.setCity(cityId: city!.id!);
+          await cityRepo.updateCity(cityId: city!.id!);
           response.fold((fail) {
             _isLoading = false;
             CustomSnackBar.showSnackBar(

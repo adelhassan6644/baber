@@ -26,9 +26,9 @@ class CityRepo {
     }
   }
 
-  Future<Either<ServerFailure, Response>> setCity({required int cityId,}) async {
+  Future<Either<ServerFailure, Response>> updateCity({required int cityId,}) async {
     try {
-      Response response = await dioClient.post(uri: EndPoints.setCity, data: {
+      Response response = await dioClient.post(uri: EndPoints.updateCity, data: {
         "city_id": cityId,
         "phone":FirebaseAuth.instance.currentUser?.phoneNumber,
       });
