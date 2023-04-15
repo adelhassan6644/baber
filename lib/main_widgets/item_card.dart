@@ -73,7 +73,7 @@ class _ItemCardState extends State<ItemCard> {
             children: [
               // Card Image
               CustomNetworkImage.containerNewWorkImage(
-                image: widget.itemModel?.logo ?? "",
+                image:widget.isVendor? widget.itemModel?.logo ?? "": widget.itemModel?.image ?? "",
                 height: widget.fromHome ? 90.h : 95.h,
                 width: widget.fromHome ? 130.w : 165.w,
                 fit: BoxFit.cover,

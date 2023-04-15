@@ -1,11 +1,10 @@
 import 'package:baber/app/core/utils/dimensions.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import '../../app/core/api/end_points.dart';
 import '../../app/core/utils/images.dart';
 
 class CustomNetworkImage {
-  static const key = 'customCacheKey';
-  static var cacheManger;
   static CustomNetworkImage? _instance;
 
   CustomNetworkImage._internal();
@@ -29,7 +28,7 @@ class CustomNetworkImage {
       Widget? imageWidget,
       bool edges = false}) {
     return CachedNetworkImage(
-      imageUrl: image,
+      imageUrl: EndPoints.imageUrl+image,
       fadeInDuration: const Duration(seconds: 1),
       fadeOutDuration: const Duration(seconds: 1),
       errorWidget: (a, b, c) => Container(

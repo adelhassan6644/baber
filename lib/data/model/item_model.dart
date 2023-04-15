@@ -8,14 +8,11 @@ class ItemModel {
       logo,
       image,
       name,
-      description,
       address,
       body,
       cityName,
       phone,
       email,
-      productID,
-      productType,
       categoryId;
   bool? active,isAdded;
   Menus? menu;
@@ -26,14 +23,11 @@ class ItemModel {
       {this.id,
       this.qty = 1,
       this.body,
-      this.productID,
-      this.productType,
       this.price,
       this.logo,
       this.image,
       this.cityName,
       this.name,
-      this.description,
       this.address,
       this.categoryId,
       this.phone,
@@ -51,7 +45,6 @@ class ItemModel {
     price = json['price'];
     qty = json['qty'] ?? 1;
     name = json['name'];
-    description = json['description'];
     cityName = json['city_name'];
     address = json['address'];
     logo = json['logo'];
@@ -59,8 +52,6 @@ class ItemModel {
     phone = json['phone'];
     email = json['email'];
     body = json['body'];
-    productID = json['product_id'];
-    productType = json['product_type'];
     active = (json['active'] == 0) ? false : true;
     isAdded = json['is_add']?? false ;
 
@@ -96,14 +87,11 @@ class ItemModel {
     data['logo'] = logo;
     data['image'] = image;
     data['name'] = name;
-    data['description'] = description;
     data['city_name'] = cityName;
     data['address'] = address;
     data['phone'] = phone;
     data['email'] = email;
     data['body'] = body;
-    data['product_id'] = productID;
-    data['product_type'] = productType;
     if (menu != null) data['menu'] = menu?.toJson();
     data['active'] = active == true ? 1: 0;
     data['is_dded'] = isAdded == true ? 1 : 0;
