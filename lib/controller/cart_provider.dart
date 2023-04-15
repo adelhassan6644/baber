@@ -84,8 +84,8 @@ class CartProvider extends ChangeNotifier {
 
   openWhatsApp() async {
     final link = WhatsAppUnilink(
-      // phoneNumber: "+966${_cartList.first.store!.phone}",
-      phoneNumber: "+201017622825",
+      phoneNumber: "+966${_cartList.first.store!.phone}",
+      // phoneNumber: "+201017622825",
       text: format(),
     );
     await launch('$link');
