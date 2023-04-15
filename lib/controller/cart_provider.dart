@@ -19,14 +19,15 @@ class CartProvider extends ChangeNotifier {
     _cartList.clear();
     _cartList.addAll(cartRepo.getCartList());
     log("==>${_cartList.map((e) => e.toJson()).toList()}");
+    getTotalSum();
     notifyListeners();
   }
 
   void removeFromCart({required ItemModel item, required int index}) {
-    _cartList.removeAt(index);
+    // _cartList.removeAt(index);
+    _cartList.removeWhere((e) => e.id == item.id);
     cartRepo.saveNewItems(_cartList);
     getCartData();
-    getTotalSum();
     notifyListeners();
   }
 
@@ -47,7 +48,6 @@ class CartProvider extends ChangeNotifier {
     }
     item.isAdded = true;
     getCartData();
-    getTotalSum();
     notifyListeners();
   }
 
