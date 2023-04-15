@@ -84,8 +84,8 @@ class CartProvider extends ChangeNotifier {
 
   openWhatsApp() async {
     final link = WhatsAppUnilink(
-      phoneNumber: "+966${_cartList.first.store!.phone}",
-      // phoneNumber: "+201017622825",
+      // phoneNumber: "+966${_cartList.first.store!.phone}",
+      phoneNumber: "+201017622825",
       text: format(),
     );
     await launch('$link');
@@ -94,8 +94,8 @@ class CartProvider extends ChangeNotifier {
   format() {
     int i = 1;
     return "طلبك هو : \n${_cartList.map((e) {
-          return "\n  ****الطلب رقم (${i++}): ${e.name}  ---- العدد: ${e.qty}${e.addons?.map((addon) {if (addon.isSelected!) {
-            return "\n^^الاضافات \n ==>النوع  : ${addon.name}";
+          return "\n  ****الطلب رقم (${i++}): ${e.name}  ---- العدد: ${e.qty}\n^^الاضافات${e.addons?.map((addon) {if (addon.isSelected!) {
+            return "\n ==>النوع  : ${addon.name}";
           }}).toList().join("").replaceAll("null", "")}\n\$\$\$\$\$\$ (السعر : ${e.price} ر.س) \$\$\$\$\$\$"
               "\n ------------------------------------";
         }).toList().join("")}"
