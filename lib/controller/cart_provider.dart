@@ -1,10 +1,14 @@
 import 'dart:developer';
+import 'package:baber/navigation/custom_navigation.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:whatsapp_unilink/whatsapp_unilink.dart';
 import '../data/model/item_model.dart';
 import '../domain/repository/cart_repo.dart';
+import 'city_provider.dart';
 
 class CartProvider extends ChangeNotifier {
   final CartRepo cartRepo;
@@ -12,7 +16,6 @@ class CartProvider extends ChangeNotifier {
 
   List<ItemModel> _cartList = [];
   List<ItemModel> get cartList => _cartList;
-  bool isSameStore = false;
   bool isAdded = false;
 
   void getCartData() {
@@ -23,7 +26,9 @@ class CartProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  void removeFromCart({required ItemModel item,}) {
+  void removeFromCart({
+    required ItemModel item,
+  }) {
     // _cartList.removeAt(index);
     _cartList.removeWhere((e) => e.id == item.id);
     cartRepo.saveNewItems(_cartList);
@@ -39,9 +44,9 @@ class CartProvider extends ChangeNotifier {
 
   void addToCart({required ItemModel item}) {
     if (_cartList.any((e) => e.id == item.id)) {
-      int index=_cartList.indexOf(item);
+      int index = _cartList.indexOf(item);
       _cartList.removeAt(index);
-      _cartList.insert(index,item);
+      _cartList.insert(index, item);
       cartRepo.saveNewItems(_cartList);
     } else {
       _cartList.add(item);
@@ -58,7 +63,7 @@ class CartProvider extends ChangeNotifier {
   }
 
   existInCart({required ItemModel item}) {
-    return _cartList.any((e) => e.id == item.id );
+    return _cartList.any((e) => e.id == item.id);
   }
 
   double totalSum = 0;
@@ -79,11 +84,22 @@ class CartProvider extends ChangeNotifier {
 
   openWhatsApp() async {
     final link = WhatsAppUnilink(
-      phoneNumber: "+966${_cartList.first.store!.phone}",
-      text: "طلبك عبارة عن : ${_cartList.map((e) {
-        return e.name;
-      }).toString()}",
+      // phoneNumber: "+966${_cartList.first.store!.phone}",
+      phoneNumber: "+201017622825",
+      text: format(),
     );
     await launch('$link');
+  }
+
+  format() {
+    int i = 1;
+    return "طلبك هو : \n${_cartList.map((e) {
+          return "\n  ****الطلب رقم (${i++}): ${e.name}  ---- العدد: ${e.qty}${e.addons?.map((addon) {if (addon.isSelected!) {
+            return "\n^^الاضافات \n ==>النوع  : ${addon.name}";
+          }}).toList().join("").replaceAll("null", "")}\n\$\$\$\$\$\$ (السعر : ${e.price} ر.س) \$\$\$\$\$\$"
+              "\n ------------------------------------";
+        }).toList().join("")}"
+        "\nالتوصيل : 0 ر.س\nالاجمالي : $totalSum ر.س"
+        "\n**رقم الهاتف : ${FirebaseAuth.instance.currentUser?.phoneNumber} \n**المدينة : ${Provider.of<CityProvider>(CustomNavigator.navigatorState.currentContext!, listen: false).city!.name!}";
   }
 }
