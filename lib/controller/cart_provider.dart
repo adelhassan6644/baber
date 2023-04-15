@@ -39,8 +39,9 @@ class CartProvider extends ChangeNotifier {
 
   void addToCart({required ItemModel item}) {
     if (_cartList.any((e) => e.id == item.id)) {
-      _cartList.removeWhere((e) => e.id == item.id);
-      _cartList.add(item);
+      int index=_cartList.indexOf(item);
+      _cartList.removeAt(index);
+      _cartList.insert(index,item);
       cartRepo.saveNewItems(_cartList);
     } else {
       _cartList.add(item);
@@ -57,7 +58,7 @@ class CartProvider extends ChangeNotifier {
   }
 
   existInCart({required ItemModel item}) {
-    return _cartList.any((e) => e.id == item.id);
+    return _cartList.any((e) => e.id == item.id );
   }
 
   double totalSum = 0;
