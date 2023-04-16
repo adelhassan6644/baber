@@ -9,29 +9,13 @@ import 'package:baber/presentation/profile/widget/profile_option.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:provider/provider.dart';
 import '../../controller/firebase_auth_provider.dart';
-import '../../controller/settings_provider.dart';
 import '../../navigation/custom_navigation.dart';
 import '../../navigation/routes.dart';
 import '../base/custom_show_model_bottom_sheet.dart';
 
-class ProfilePage extends StatefulWidget {
+class ProfilePage extends StatelessWidget {
   const ProfilePage({Key? key}) : super(key: key);
 
-  @override
-  State<ProfilePage> createState() => _ProfilePageState();
-}
-
-class _ProfilePageState extends State<ProfilePage> {
-
-
-  // @override
-  // void initState() {
-  //   Future.delayed(Duration.zero, () {
-  //     // Provider.of<ProfileProvider>(context, listen: false).getProfileInfo();
-  //     Provider.of<SettingsProvider>(context, listen: false).getSettingsInfo();
-  //   });
-  //   super.initState();
-  // }
   @override
   Widget build(BuildContext context) {
     return Column(
