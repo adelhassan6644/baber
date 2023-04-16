@@ -25,6 +25,7 @@ class BannerProvider extends ChangeNotifier {
 
   getBannerList() async {
     try {
+      bannerModel=null;
       notifyListeners();
       Either<ServerFailure, Response> response =
           await homeRepo.getHomeBanners();

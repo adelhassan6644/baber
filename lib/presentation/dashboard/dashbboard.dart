@@ -1,10 +1,16 @@
 import 'package:baber/app/core/utils/dimensions.dart';
 import 'package:baber/presentation/dashboard/widget/nav_bar_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import '../../app/core/utils/color_resources.dart';
 import '../../app/core/utils/images.dart';
 import '../../app/core/utils/svg_images.dart';
+import '../../controller/banner_provider.dart';
+import '../../controller/city_provider.dart';
+import '../../controller/home_categories_provider.dart';
+import '../../controller/home_vendors_provider.dart';
+import '../../controller/settings_provider.dart';
 import '../../domain/localization/language_constant.dart';
 import '../cart/cart_page.dart';
 import '../home/home_page.dart';
@@ -31,6 +37,14 @@ class _DashBoardState extends State<DashBoard> {
 
   @override
   void initState() {
+    Future.delayed(Duration.zero, () {
+      // Provider.of<ProfileProvider>(context, listen: false).getProfileInfo();
+      Provider.of<BannerProvider>(context, listen: false).getBannerList();
+      Provider.of<HomeCategoryProvider>(context, listen: false).getHomeCategories();
+      Provider.of<HomeVendorsProvider>(context, listen: false).getVendorList();
+      Provider.of<CityProvider>(context, listen: false).getYourCity();
+      Provider.of<SettingsProvider>(context, listen: false).getSettingsInfo();
+    });
     _selectedIndex = widget.index ?? 0;
     super.initState();
   }

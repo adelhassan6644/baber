@@ -24,14 +24,14 @@ class ProfilePage extends StatefulWidget {
 class _ProfilePageState extends State<ProfilePage> {
 
 
-  @override
-  void initState() {
-    Future.delayed(Duration.zero, () {
-      // Provider.of<ProfileProvider>(context, listen: false).getProfileInfo();
-      Provider.of<SettingsProvider>(context, listen: false).getSettingsInfo();
-    });
-    super.initState();
-  }
+  // @override
+  // void initState() {
+  //   Future.delayed(Duration.zero, () {
+  //     // Provider.of<ProfileProvider>(context, listen: false).getProfileInfo();
+  //     Provider.of<SettingsProvider>(context, listen: false).getSettingsInfo();
+  //   });
+  //   super.initState();
+  // }
   @override
   Widget build(BuildContext context) {
     return Column(

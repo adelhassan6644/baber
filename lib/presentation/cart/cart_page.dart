@@ -25,6 +25,7 @@ class CartPage extends StatefulWidget {
 }
 
 class _CartPageState extends State<CartPage> {
+
   @override
   void initState() {
     Future.delayed(Duration.zero,
@@ -59,25 +60,6 @@ class _CartPageState extends State<CartPage> {
                         ...List.generate(
                           provider.cartList.length,
                           (index) =>
-                          //     CartItemCard(
-                          //   onDecrease: () {
-                          //     if (provider.cartList[index].qty! > 1) {
-                          //       provider.cartList[index].qty =
-                          //           provider.cartList[index].qty! - 1;
-                          //       provider.addToCart(
-                          //           item: provider.cartList[index]);
-                          //     }
-                          //   },
-                          //   onIncrease: () {
-                          //     provider.cartList[index].qty =
-                          //         provider.cartList[index].qty! + 1;
-                          //     provider.addToCart(
-                          //         item: provider.cartList[index]);
-                          //   },
-                          //   onDelete: () => provider.removeFromCart(
-                          //       index: index, item: provider.cartList[index]),
-                          //   item: provider.cartList[index],
-                          // ),
                               Dismissible(
                             direction: DismissDirection.startToEnd,
                             key: UniqueKey(),

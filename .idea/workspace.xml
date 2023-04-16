@@ -10,15 +10,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0f32153c-20a2-462c-b0aa-469fbaabcdc6" name="Changes" comment="&#10;update(cart)">
-      <change beforePath="$PROJECT_DIR$/.dart_tool/dartpad/web_plugin_registrant.dart" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/dartpad/web_plugin_registrant.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/package_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/package_config_subset" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config_subset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.flutter-plugins" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Flutter/Generated.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Flutter/Generated.xcconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Flutter/flutter_export_environment.sh" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Flutter/flutter_export_environment.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/macos/Flutter/ephemeral/Flutter-Generated.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/macos/Flutter/ephemeral/Flutter-Generated.xcconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/macos/Flutter/ephemeral/flutter_export_environment.sh" beforeDir="false" afterPath="$PROJECT_DIR$/macos/Flutter/ephemeral/flutter_export_environment.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/controller/banner_provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/controller/banner_provider.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/controller/home_categories_provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/controller/home_categories_provider.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/controller/home_vendors_provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/controller/home_vendors_provider.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/cart/cart_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/cart/cart_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/dashboard/dashbboard.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/dashboard/dashbboard.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/home/home_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/home/home_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/profile/profile_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/profile/profile_page.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,11 +72,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\My projects\baber\android\app\src\main\kotlin" />
       <recent name="C:\My projects\baber\android\app\src\main\res" />
       <recent name="C:\My projects\baber\assets\svgs" />
       <recent name="C:\My projects\baber\lib\presentation\item_details\widget" />
       <recent name="C:\My projects\baber\lib\presentation\base" />
-      <recent name="C:\My projects\baber\assets\images" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\My projects\baber\android\app\src\main\res\drawable" />
@@ -340,7 +339,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681599847166</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="&#10;update(cart)">
+      <created>1681674018838</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1681674018838</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
