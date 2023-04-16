@@ -31,23 +31,21 @@ class CityProvider extends ChangeNotifier {
 
   getCities() async {
     try {
-      {
-        cityModel?.cities?.clear();
+      cityModel?.cities?.clear();
+      notifyListeners();
+      Either<ServerFailure, Response> response = await cityRepo.getCities();
+      response.fold((fail) {
+        CustomSnackBar.showSnackBar(
+            notification: AppNotification(
+                message: ApiErrorHandler.getMessage(fail.error),
+                isFloating: true,
+                backgroundColor: ColorResources.IN_ACTIVE,
+                borderColor: Colors.transparent));
         notifyListeners();
-        Either<ServerFailure, Response> response = await cityRepo.getCities();
-        response.fold((fail) {
-          CustomSnackBar.showSnackBar(
-              notification: AppNotification(
-                  message: ApiErrorHandler.getMessage(fail.error),
-                  isFloating: true,
-                  backgroundColor: ColorResources.IN_ACTIVE,
-                  borderColor: Colors.transparent));
-          notifyListeners();
-        }, (success) {
-          cityModel = CityModel.fromJson(success.data);
-          notifyListeners();
-        });
-      }
+      }, (success) {
+        cityModel = CityModel.fromJson(success.data);
+        notifyListeners();
+      });
     } catch (e) {
       CustomSnackBar.showSnackBar(
           notification: AppNotification(
@@ -61,33 +59,35 @@ class CityProvider extends ChangeNotifier {
 
   updateCity() async {
     try {
-        if (Provider.of<FirebaseAuthProvider>(CustomNavigator.navigatorState.currentContext!, listen: false).isLogin) {
-          _isLoading = true;
+      if (Provider.of<FirebaseAuthProvider>(
+              CustomNavigator.navigatorState.currentContext!,
+              listen: false)
+          .isLogin) {
+        _isLoading = true;
+        notifyListeners();
+        Either<ServerFailure, Response> response =
+            await cityRepo.updateCity(cityId: city!.id!);
+        response.fold((fail) {
+          _isLoading = false;
+          CustomSnackBar.showSnackBar(
+              notification: AppNotification(
+                  message: ApiErrorHandler.getMessage(fail.error),
+                  isFloating: true,
+                  backgroundColor: ColorResources.IN_ACTIVE,
+                  borderColor: Colors.transparent));
           notifyListeners();
-          Either<ServerFailure, Response> response =
-          await cityRepo.updateCity(cityId: city!.id!);
-          response.fold((fail) {
-            _isLoading = false;
-            CustomSnackBar.showSnackBar(
-                notification: AppNotification(
-                    message: ApiErrorHandler.getMessage(fail.error),
-                    isFloating: true,
-                    backgroundColor: ColorResources.IN_ACTIVE,
-                    borderColor: Colors.transparent));
-            notifyListeners();
-          }, (success) async {
-            saveYourCity();
-            getYourCity();
-            CustomNavigator.push(Routes.DASHBOARD, replace: true);
-            _isLoading = false;
-            notifyListeners();
-          });
-        } else{
+        }, (success) async {
           saveYourCity();
           getYourCity();
-          CustomNavigator.push(Routes.DASHBOARD,replace: true);
-        }
-
+          CustomNavigator.push(Routes.DASHBOARD, replace: true);
+          _isLoading = false;
+          notifyListeners();
+        });
+      } else {
+        saveYourCity();
+        getYourCity();
+        CustomNavigator.push(Routes.DASHBOARD, replace: true);
+      }
     } catch (e) {
       CustomSnackBar.showSnackBar(
           notification: AppNotification(
@@ -106,7 +106,7 @@ class CityProvider extends ChangeNotifier {
   }
 
   saveYourCity() {
-    cityRepo.saveCity(cityId: city!.id.toString(),cityName: city!.name??"");
+    cityRepo.saveCity(cityId: city!.id.toString(), cityName: city!.name ?? "");
     notifyListeners();
   }
 }
