@@ -3,6 +3,7 @@ import 'package:baber/presentation/dashboard/widget/nav_bar_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '../../app/core/network/netwok_info.dart';
 import '../../app/core/utils/color_resources.dart';
 import '../../app/core/utils/images.dart';
 import '../../app/core/utils/svg_images.dart';
@@ -46,6 +47,16 @@ class _DashBoardState extends State<DashBoard> {
       Provider.of<SettingsProvider>(context, listen: false).getSettingsInfo();
     });
     _selectedIndex = widget.index ?? 0;
+    NetworkInfo.checkConnectivity(
+        onVisible: () {
+          Provider.of<BannerProvider>(context, listen: false).getBannerList();
+          Provider.of<HomeCategoryProvider>(context, listen: false).getHomeCategories();
+          Provider.of<HomeVendorsProvider>(context, listen: false).getVendorList();
+          Provider.of<CityProvider>(context, listen: false).getYourCity();
+          Provider.of<SettingsProvider>(context, listen: false).getSettingsInfo();
+        }
+    );
+
     super.initState();
   }
 

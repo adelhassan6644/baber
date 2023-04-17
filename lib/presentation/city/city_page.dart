@@ -3,6 +3,7 @@ import 'package:baber/presentation/base/custom_app_bar.dart';
 import 'package:baber/presentation/base/custom_drop_down_button.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import '../../app/core/network/netwok_info.dart';
 import '../../app/core/utils/app_snack_bar.dart';
 import '../../app/core/utils/color_resources.dart';
 import '../../app/core/utils/dimensions.dart';
@@ -26,6 +27,13 @@ class _CityPageState extends State<CityPage> {
         () { Provider.of<CityProvider>(context, listen: false).getCities();
         Provider.of<CityProvider>(context, listen: false).getYourCity();
         });
+    if(widget.fromProfile==false){
+      NetworkInfo.checkConnectivity(
+        onVisible:  () { Provider.of<CityProvider>(context, listen: false).getCities();
+        Provider.of<CityProvider>(context, listen: false).getYourCity();
+        }
+      );
+    }
     super.initState();
   }
 

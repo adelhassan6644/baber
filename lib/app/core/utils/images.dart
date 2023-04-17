@@ -15,4 +15,6 @@ class Images {
   static const String whatsApp = 'assets/images/whatsapp.png';
   static const String support = 'assets/icons/technical-support.png';
   static const String termsConditions = 'assets/icons/terms-and-conditions.png';
+  static const String noConnection = 'assets/images/no_connection.png';
+  static const String connected = 'assets/images/connected.png';
 }

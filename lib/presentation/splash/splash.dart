@@ -27,7 +27,6 @@ class _SplashState extends State<Splash> with WidgetsBindingObserver {
       }else{
         CustomNavigator.push(Routes.CITY,replace: true,);
       }
-
     });
     super.initState();
   }

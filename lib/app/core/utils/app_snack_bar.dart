@@ -13,7 +13,8 @@ class AppNotification {
   late final double radius;
   final Widget? action;
   final bool withAction;
-  AppNotification({required this.message, this.iconName, this.backgroundColor = Colors.black, this.borderColor = Colors.transparent, this.isFloating = false, this.withAction = false, this.action, double? radius}) {
+  final void Function()? onVisible;
+  AppNotification({required this.message, this.onVisible, this.iconName, this.backgroundColor = Colors.black, this.borderColor = Colors.transparent, this.isFloating = false, this.withAction = false, this.action, double? radius}) {
     this.radius = radius ?? (isFloating ? 15 : 0);
   }
 }
@@ -28,6 +29,7 @@ class CustomSnackBar{
           behavior: notification.isFloating ? SnackBarBehavior.floating : SnackBarBehavior.fixed,
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(notification.radius), side: BorderSide(width: 1, color: notification.borderColor)),
           margin: notification.isFloating ?  EdgeInsets.all(24.w) : null,
+          onVisible:notification.onVisible ,
           content: SizedBox(
             height: notification.withAction ? null : 60.h,
             child: Row(

@@ -206,6 +206,18 @@
       "languageVersion": "2.18"
     },
     {
+      "name": "firebase_dynamic_links",
+      "rootUri": "file:///C:/Users/moham/AppData/Local/Pub/Cache/hosted/pub.dev/firebase_dynamic_links-5.1.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.18"
+    },
+    {
+      "name": "firebase_dynamic_links_platform_interface",
+      "rootUri": "file:///C:/Users/moham/AppData/Local/Pub/Cache/hosted/pub.dev/firebase_dynamic_links_platform_interface-0.2.4",
+      "packageUri": "lib/",
+      "languageVersion": "2.18"
+    },
+    {
       "name": "firebase_messaging",
       "rootUri": "file:///C:/Users/moham/AppData/Local/Pub/Cache/hosted/pub.dev/firebase_messaging-14.4.0",
       "packageUri": "lib/",
@@ -896,7 +908,7 @@
       "languageVersion": "2.19"
     }
   ],
-  "generated": "2023-04-16T19:38:19.129322Z",
+  "generated": "2023-04-17T07:19:40.267752Z",
   "generator": "pub",
   "generatorVersion": "2.19.3"
 }

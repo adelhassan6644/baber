@@ -50,6 +50,8 @@
   "delete": "Delete",
   "search": "search here",
   "products": "products",
-  "vendors": "vendors"
+  "vendors": "vendors",
+  "no_connection": "No connection",
+  "connected": "connected"
 
 }

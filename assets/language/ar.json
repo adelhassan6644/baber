@@ -50,7 +50,9 @@
   "delete": "حذف",
   "search": "ابحث هنا",
   "products": "المنتجات",
-  "vendors": "المطاعم"
+  "vendors": "المطاعم",
+  "no_connection": "غير متصل",
+  "connected": "متصل"
 
 
 }

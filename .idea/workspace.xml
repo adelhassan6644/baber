@@ -10,8 +10,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0f32153c-20a2-462c-b0aa-469fbaabcdc6" name="Changes" comment="&#10;update(cart)">
+      <change afterPath="$PROJECT_DIR$/assets/images/connected.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/no_connection.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/app/core/network/check_connection_dialog.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/package_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/package_config_subset" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config_subset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.flutter-plugins" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/profile/profile_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/profile/profile_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/app/src/main/java/io/flutter/plugins/GeneratedPluginRegistrant.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/src/main/java/io/flutter/plugins/GeneratedPluginRegistrant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/language/ar.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/language/ar.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/language/en.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/language/en.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Runner/GeneratedPluginRegistrant.m" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner/GeneratedPluginRegistrant.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app/core/network/netwok_info.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/core/network/netwok_info.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app/core/utils/app_snack_bar.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/core/utils/app_snack_bar.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app/core/utils/images.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/core/utils/images.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/di.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/di.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/base/confirmation_dialog.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/base/confirmation_dialog.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/base/image_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/base/image_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/city/city_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/city/city_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/dashboard/dashbboard.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/dashboard/dashbboard.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/splash/splash.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/splash/splash.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,7 +55,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="stadging" />
+        <entry key="$PROJECT_DIR$" value="test_dynamic_linck" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -60,17 +84,17 @@
     <property name="cidr.known.project.marker" value="true" />
     <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/android/app/src/main/kotlin" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/assets/images" />
     <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\My projects\baber\assets\images" />
       <recent name="C:\My projects\baber\android\app\src\main\kotlin" />
       <recent name="C:\My projects\baber\android\app\src\main\res" />
       <recent name="C:\My projects\baber\assets\svgs" />
       <recent name="C:\My projects\baber\lib\presentation\item_details\widget" />
-      <recent name="C:\My projects\baber\lib\presentation\base" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\My projects\baber\android\app\src\main\res\drawable" />

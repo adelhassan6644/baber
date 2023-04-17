@@ -26,12 +26,6 @@ class ConfirmationDialog extends StatelessWidget {
          SizedBox(
           height: 16.h,
         ),
-        // Text("هل انت متأكد ؟",style: AppTextStyles.w500.copyWith(
-        //   fontSize: 16,
-        // ),),
-        // SizedBox(
-        //   height: 8.h,
-        // ),
         if(description != null) Text(description!,textAlign: TextAlign.center,style: AppTextStyles.w400.copyWith(
             fontSize: 14,
             // color: ColorResources.DETAILS_COLOR

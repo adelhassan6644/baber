@@ -1,14 +1,63 @@
-import 'package:internet_connection_checker/internet_connection_checker.dart';
+import 'dart:io';
+import 'package:baber/app/core/utils/app_snack_bar.dart';
+import 'package:baber/navigation/custom_navigation.dart';
+import 'package:connectivity/connectivity.dart';
+import 'package:flutter/material.dart';
+import '../../../domain/localization/language_constant.dart';
 
-abstract class NetworkInfo {
-  Future<bool> get isConnected;
-}
+ class  NetworkInfo {
+  final Connectivity connectivity;
+  NetworkInfo(this.connectivity);
 
-class NetworkInfoImpl implements NetworkInfo {
-  final InternetConnectionChecker connectionChecker;
+   Future<bool> get isConnected async {
+    ConnectivityResult result = await connectivity.checkConnectivity();
+    return result != ConnectivityResult.none;
+  }
 
-  NetworkInfoImpl({required this.connectionChecker});
+  static void checkConnectivity({Function()? onVisible}) {
+    bool firstTime = true;
+    Connectivity().onConnectivityChanged.listen((ConnectivityResult result) async {
+      if(!firstTime) {
+        bool isNotConnected;
+        if(result == ConnectivityResult.none) {
+          isNotConnected = true;
+        }else {
+          isNotConnected = !await _updateConnectivityStatus();
+        }
+        isNotConnected ?null : CustomSnackBar.hideSnackBar();
+        // isNotConnected ?null : Future.delayed(const Duration(seconds: 1),() {
+        //   CustomNavigator.pop();
+        //   CustomNavigator.pop();
+        // });
+        // Future.delayed(
+        //     Duration.zero,
+        //         () => CustomSimpleDialog.parentSimpleDialog(customListWidget: [
+        //           CheckConnectionDialog(isConnected:!isNotConnected ,)
+        //     ]));
+        ScaffoldMessenger.of(CustomNavigator.navigatorState.currentContext!).showSnackBar(SnackBar(
+          backgroundColor: isNotConnected ? Colors.red : Colors.green,
+          duration: Duration(seconds: isNotConnected ? 6000 : 3),
+          onVisible: !isNotConnected?onVisible:null,
+          content: Text(
+            getTranslated( !isNotConnected?"connected":"no_connection", CustomNavigator.navigatorState.currentContext!),
+            textAlign: TextAlign.center,
+          ),
+        ));
+      }
+      firstTime = false;
+    });
+  }
 
-  @override
-  Future<bool> get isConnected async => await connectionChecker.hasConnection;
+  static Future<bool> _updateConnectivityStatus() async {
+    bool isConnected =true;
+    try {
+      final List<InternetAddress> result = await InternetAddress.lookup('google.com');
+      if(result.isNotEmpty && result[0].rawAddress.isNotEmpty) {
+        isConnected = true;
+      }
+    }catch(e) {
+      isConnected = false;
+    }
+    return isConnected;
+  }
 }

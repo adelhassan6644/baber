@@ -3,6 +3,7 @@ import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'app/core/api/end_points.dart';
+import 'app/core/network/netwok_info.dart';
 import 'controller/banner_provider.dart';
 import 'controller/cart_provider.dart';
 import 'controller/firebase_auth_provider.dart';
@@ -43,11 +44,8 @@ final sl = GetIt.instance;
 
 Future<void> init() async {
   // Core
-  sl.registerLazySingleton(() => DioClient(
-        EndPoints.baseUrl,
-        dio: sl(),
-        loggingInterceptor: sl(),
-    sharedPreferences:sl(), ));
+  sl.registerLazySingleton(() => NetworkInfo(sl()));
+  sl.registerLazySingleton(() => DioClient(EndPoints.baseUrl, dio: sl(), loggingInterceptor: sl(), sharedPreferences:sl(), ));
 
   // Repository
   sl.registerLazySingleton(() => AuthRepo(sharedPreferences: sl(), dioClient: sl() ));
@@ -87,6 +85,7 @@ Future<void> init() async {
    sl.registerLazySingleton(() => CartProvider(cartRepo: sl()));
    sl.registerLazySingleton(() => SearchProvider(searchRepo: sl()));
    sl.registerLazySingleton(() => SettingsProvider(settingsRepo: sl()));
+
 
 
   // External
