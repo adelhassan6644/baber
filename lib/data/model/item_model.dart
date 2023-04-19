@@ -10,7 +10,6 @@ class ItemModel {
       name,
       address,
       body,
-      cityName,
       phone,
       email,
       description,
@@ -27,7 +26,6 @@ class ItemModel {
       this.price,
       this.logo,
       this.image,
-      this.cityName,
       this.name,
       this.address,
       this.categoryId,
@@ -48,7 +46,7 @@ class ItemModel {
     price = json['price'];
     qty = json['qty'] ?? 1;
     name = json['name'];
-    cityName = json['city_name'];
+    // cityName = json['city_name'];
     address = json['address'];
     logo = json['logo'];
     image = json['image'];
@@ -91,7 +89,7 @@ class ItemModel {
     data['logo'] = logo;
     data['image'] = image;
     data['name'] = name;
-    data['city_name'] = cityName;
+    // data['city_name'] = cityName;
     data['address'] = address;
     data['phone'] = phone;
     data['email'] = email;
