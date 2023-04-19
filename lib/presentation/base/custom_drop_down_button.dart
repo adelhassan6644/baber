@@ -55,7 +55,7 @@ class _CustomDropDownButtonState extends State<CustomDropDownButton> {
           );
         }).toList(),
         onChanged: widget.onChange,
-        menuMaxHeight: context.height*0.4,
+        menuMaxHeight: context.height * 0.4,
         initialValue: widget.value,
         isDense: true,
         validator: widget.validation,
@@ -68,12 +68,12 @@ class _CustomDropDownButtonState extends State<CustomDropDownButton> {
               color: ColorResources.HINT_COLOR,
             ),
         iconSize: widget.iconSize,
-        hint: Text(widget.name,
-            style: AppTextStyles.w400
-                .copyWith(color: ColorResources.HINT_COLOR, fontSize: 11)),
         borderRadius:
             const BorderRadius.all(Radius.circular(Dimensions.RADIUS_DEFAULT)),
         decoration: InputDecoration(
+          hintStyle: AppTextStyles.w400
+              .copyWith(color: ColorResources.HINT_COLOR, fontSize: 11),
+          hintText: widget.name,
           prefixIcon: Padding(
             padding: EdgeInsets.symmetric(
               horizontal: 15.w,

@@ -60,7 +60,7 @@ class VendorPage extends StatelessWidget {
                       width: 100.w,
                     )
                         : Text(
-                            provider.vendor?.cityName ?? "الرياض",
+                            provider.vendor?.description ?? "الرياض",
                             style: AppTextStyles.w500.copyWith(
                               fontSize: 11,
                             ),

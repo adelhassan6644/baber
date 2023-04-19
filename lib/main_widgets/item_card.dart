@@ -95,8 +95,8 @@ class _ItemCardState extends State<ItemCard> {
                           fontSize: 12,
                         )),
                     if (widget.isVendor)
-                      Text("${widget.itemModel?.address}",
-                          maxLines: 2,
+                      Text("${widget.itemModel?.description}",
+                          maxLines: 1,
                           overflow: TextOverflow.ellipsis,
                           style: AppTextStyles.w500.copyWith(
                             fontSize: 12,

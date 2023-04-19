@@ -13,8 +13,9 @@ class ItemModel {
       cityName,
       phone,
       email,
+      description,
       categoryId;
-  bool? active,isAdded;
+  bool? active, isAdded;
   Menus? menu;
   List<Addon>? addons;
   StoreModel? store;
@@ -37,11 +38,13 @@ class ItemModel {
       this.menu,
       this.addons,
       this.menus,
+      this.description,
       this.store});
 
   ItemModel.fromJson(Map<String, dynamic> json) {
     id = json['id'].toString();
     categoryId = json['category_id'].toString();
+    description = json['description'];
     price = json['price'];
     qty = json['qty'] ?? 1;
     name = json['name'];
@@ -53,7 +56,7 @@ class ItemModel {
     email = json['email'];
     body = json['body'];
     active = (json['active'] == 0) ? false : true;
-    isAdded = json['is_add']?? false ;
+    isAdded = json['is_add'] ?? false;
 
     if (json['store'] != null) {
       store = StoreModel.fromJson(json['store']);
@@ -83,6 +86,7 @@ class ItemModel {
     data['id'] = id;
     data['qty'] = qty ?? 1;
     data['category_id'] = categoryId;
+    data['description'] = description;
     data['price'] = price;
     data['logo'] = logo;
     data['image'] = image;
@@ -93,7 +97,7 @@ class ItemModel {
     data['email'] = email;
     data['body'] = body;
     if (menu != null) data['menu'] = menu?.toJson();
-    data['active'] = active == true ? 1: 0;
+    data['active'] = active == true ? 1 : 0;
     data['is_dded'] = isAdded == true ? 1 : 0;
     if (menus != null) {
       data['menus'] = menus!.map((v) => v.toJson()).toList();
@@ -140,7 +144,7 @@ class Addon {
     name = json['name'];
     price = json['price'].toString();
     image = json['image'];
-    isSelected = json['is_selected']??false;
+    isSelected = json['is_selected'] ?? false;
   }
 
   Map<String, dynamic> toJson() {
@@ -152,5 +156,4 @@ class Addon {
     data['is_selected'] = isSelected;
     return data;
   }
-
 }

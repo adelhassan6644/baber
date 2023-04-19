@@ -1,6 +1,6 @@
 class EndPoints {
-  static const String baseUrl = 'http://baber.app/api/v1/';
-  static const String imageUrl = 'http://baber.app/';
+  static const String baseUrl = 'https://baber.app/api/v1/';
+  static const String imageUrl = 'https://baber.app/';
   static const String topic = 'baber';
   static const String logIn = 'login';
   static const String verifyPhone = 'verify-phone';
