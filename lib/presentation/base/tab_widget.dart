@@ -19,6 +19,14 @@ class TabWidget extends StatelessWidget {
       onTap: onTab,
       child: Container(
         padding: EdgeInsets.symmetric(horizontal: 24.w),
+        decoration: const BoxDecoration(
+          border: Border(
+            bottom: BorderSide(
+              color: ColorResources.LIGHT_GREY_BORDER,
+              width: 1
+            )
+          )
+        ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -53,9 +61,13 @@ class TabWidget extends StatelessWidget {
               return Container(
                 padding: EdgeInsets.zero,
                 width: (expand) ? constraints.maxWidth : 28.w + (title.length * 8),
-                height: 3.h,
-                margin: EdgeInsets.only(top: 10.h),
+                height: 4.h,
+                margin: const EdgeInsets.only(top: 10),
                 decoration: BoxDecoration(
+                  borderRadius: const BorderRadius.only(
+                    topLeft:Radius.circular(5) ,
+                    topRight: Radius.circular(5) ,
+                  ),
                   color: isSelected ? ColorResources.PRIMARY_COLOR : Colors.transparent,
                 ),
               );

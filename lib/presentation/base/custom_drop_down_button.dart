@@ -16,7 +16,7 @@ class CustomDropDownButton extends StatefulWidget {
   final String? label;
   final String name;
   final String? value;
-  final void Function(Object?)? onChange;
+  final void Function(dynamic)? onChange;
   final String? Function(Object?)? validation;
 
   const CustomDropDownButton({
@@ -44,17 +44,18 @@ class _CustomDropDownButtonState extends State<CustomDropDownButton> {
     return SizedBox(
       width: context.width,
       child: FormBuilderDropdown(
-        items: widget.items.map((item) {
+        items: widget.items.map((dynamic item) {
           return DropdownMenuItem(
             value: item,
             child: Text(
-              item,
+              item.name,
               style: AppTextStyles.w500
                   .copyWith(color: ColorResources.TITLE, fontSize: 13),
             ),
           );
         }).toList(),
         onChanged: widget.onChange,
+        menuMaxHeight: context.height * 0.4,
         initialValue: widget.value,
         isDense: true,
         validator: widget.validation,
@@ -67,12 +68,12 @@ class _CustomDropDownButtonState extends State<CustomDropDownButton> {
               color: ColorResources.HINT_COLOR,
             ),
         iconSize: widget.iconSize,
-        hint: Text(widget.name,
-            style: AppTextStyles.w400
-                .copyWith(color: ColorResources.HINT_COLOR, fontSize: 11)),
         borderRadius:
             const BorderRadius.all(Radius.circular(Dimensions.RADIUS_DEFAULT)),
         decoration: InputDecoration(
+          hintStyle: AppTextStyles.w400
+              .copyWith(color: ColorResources.HINT_COLOR, fontSize: 11),
+          hintText: widget.name,
           prefixIcon: Padding(
             padding: EdgeInsets.symmetric(
               horizontal: 15.w,

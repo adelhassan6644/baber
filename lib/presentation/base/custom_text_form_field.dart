@@ -10,6 +10,7 @@ import 'custom_images.dart';
 class CustomTextFormField extends StatefulWidget {
   final String? hint;
   final Widget? sufWidget;
+  final Widget? prefixWidget;
   final bool label;
   final TextInputType? inputType;
   final Function(String?)? onSave;
@@ -35,12 +36,15 @@ class CustomTextFormField extends StatefulWidget {
   final int? maxLength;
   final Color? fieldColor;
   final int? maxLine;
+  final int? minLine;
   final bool isValidat;
 
   const CustomTextFormField({
     super.key,
+    this.prefixWidget,
     this.isValidat = true,
     this.maxLine = 1,
+    this.minLine = 1,
     this.hint,
     this.sufWidget,
     this.onSave,
@@ -93,6 +97,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
         focusNode: widget.focus,
         readOnly: widget.read == true ? true : false,
         maxLines: widget.maxLine,
+        minLines: widget.minLine??1,
         obscureText: widget.icon == Icons.lock_outline ? _isHidden : false,
         keyboardType: widget.inputType,
         inputFormatters: widget.inputType == TextInputType.phone ? <TextInputFormatter>[
@@ -112,15 +117,15 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
           counterText: "",
           prefixIcon:  Padding(
             padding: EdgeInsets.symmetric(horizontal: 15.w,),
-            child: widget.pAssetIcon != null ? Image.asset(
+            child: widget.prefixWidget ?? (widget.pAssetIcon != null ? Image.asset(
               widget.pAssetIcon!,
               height: 22.h,
               color: widget.pIconColor??ColorResources.DISABLED,
-            ) :widget.pSvgIcon != null? customImageIconSVG(
+            ) :widget.pSvgIcon != null?
+            customImageIconSVG(
                 imageName:widget.pSvgIcon!,
                 color:widget.pIconColor?? Colors.black,
-                height: 22.h,
-            ):null,
+                height: 22.h,):null),
 
 
           ),

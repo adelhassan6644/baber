@@ -8,10 +8,12 @@ class CheckBoxListTile extends StatelessWidget {
     Key? key,
     this.check = false,
     required this.title,
+    this.description,
     required this.onChange,
   }) : super(key: key);
   final bool check;
   final String title;
+  final String? description;
   final Function(bool) onChange;
 
   @override
@@ -44,8 +46,18 @@ class CheckBoxListTile extends StatelessWidget {
                 : null,
           ),
           SizedBox(width: 16.w),
-          Text(
-            title,
+          Expanded(
+            child: Text(
+              title,
+              style: AppTextStyles.w400.copyWith(
+                  fontSize: 14,
+                  color: check
+                      ? ColorResources.PRIMARY_COLOR
+                      : ColorResources.SUBTITLE),
+            ),
+          ),
+          if(description != null)  Text(
+            description!,
             style: AppTextStyles.w400.copyWith(
                 fontSize: 14,
                 color: check

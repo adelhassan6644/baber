@@ -8,9 +8,7 @@ Widget customImageIcon(
     {required String imageName,
     double? width,
     double? height,
-
     BoxFit fit = BoxFit.fill,
-    String? url,
     color}) {
   return
   Image.asset(

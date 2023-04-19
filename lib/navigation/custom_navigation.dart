@@ -1,9 +1,19 @@
 import 'package:flutter/material.dart';
+import '../data/model/item_model.dart';
 import '../main.dart';
-import '../presentation/auth/choose_city_page.dart';
+import '../presentation/about/about_page.dart';
 import '../presentation/auth/login_page.dart';
 import '../presentation/auth/verification_page.dart';
-import '../splash.dart';
+import '../presentation/cart/cart_page.dart';
+import '../presentation/city/city_page.dart';
+import '../presentation/dashboard/dashbboard.dart';
+import '../presentation/item_details/page/item_details_page.dart';
+import '../presentation/notifications/notification_page.dart';
+import '../presentation/privacy/privacy_page.dart';
+import '../presentation/search/search_page.dart';
+import '../presentation/splash/splash.dart';
+import '../presentation/vendor/vendor_page.dart';
+import '../presentation/vendors/vendors_page.dart';
 import 'routes.dart';
 
 abstract class CustomNavigator {
@@ -21,11 +31,36 @@ abstract class CustomNavigator {
       case Routes.SPLASH:
         return _pageRoute(const Splash());
       case Routes.LOGIN:
-        return _pageRoute(const LoginPage());
+        return _pageRoute( LoginPage(fromProfile:settings.arguments != null? settings.arguments as bool:false,));
       case Routes.VERIFICATION:
         return _pageRoute(const VerificationPage());
-      case Routes.CHOOSE_CITY:
-        return _pageRoute(const ChooseCityPage());
+      case Routes.CITY:
+        return _pageRoute(CityPage(
+          fromProfile:
+              settings.arguments != null ? settings.arguments as bool : false,
+        ));
+      case Routes.DASHBOARD:
+        return _pageRoute(DashBoard(
+          index: settings.arguments != null ? settings.arguments as int : null,
+        ));
+      case Routes.CATEGORIES:
+        return _pageRoute(VendorsPage(
+          categories: settings.arguments as List<ItemModel>,
+        ));
+        case Routes.ITEM_DETAILS:
+        return _pageRoute(ItemDetailsPage(title: settings.arguments as String,));
+      case Routes.VENDOR:
+        return _pageRoute(const VendorPage());
+        case Routes.CART:
+        return _pageRoute(const CartPage(fromNav: false,));
+        case Routes.SEARCH:
+        return _pageRoute(const SearchPage());
+      case Routes.NOTIFICATION:
+        return _pageRoute(const NotificationPage());
+      case Routes.PRIVACY:
+        return _pageRoute(const PrivacyPage());
+      case Routes.ABOUT:
+        return _pageRoute(const AboutPage());
 
       default:
         return MaterialPageRoute(builder: (_) => const MyApp());

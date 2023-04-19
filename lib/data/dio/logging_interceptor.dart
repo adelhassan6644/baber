@@ -34,7 +34,7 @@ class LoggingInterceptor extends InterceptorsWrapper {
             responseAsString.substring(i * maxCharactersPerLine, endingIndex));
       }
     } else {
-      log(response.data);
+      log(response.data.toString());
     }
 
     log("<-- END HTTP");

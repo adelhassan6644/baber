@@ -1,10 +1,10 @@
 import 'package:baber/app/core/utils/dimensions.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import '../../app/core/api/end_points.dart';
+import '../../app/core/utils/images.dart';
 
 class CustomNetworkImage {
-  static const key = 'customCacheKey';
-  static var cacheManger;
   static CustomNetworkImage? _instance;
 
   CustomNetworkImage._internal();
@@ -28,7 +28,7 @@ class CustomNetworkImage {
       Widget? imageWidget,
       bool edges = false}) {
     return CachedNetworkImage(
-      imageUrl: image,
+      imageUrl: EndPoints.imageUrl+image,
       fadeInDuration: const Duration(seconds: 1),
       fadeOutDuration: const Duration(seconds: 1),
       errorWidget: (a, b, c) => Container(
@@ -41,13 +41,13 @@ class CustomNetworkImage {
                   topLeft: Radius.circular(radius ?? 10))
               : BorderRadius.all(Radius.circular(radius ?? 10.0)),
           image: DecorationImage(
-            fit: fit ?? BoxFit.contain,
+            fit: fit ?? BoxFit.cover,
             image: Image.asset(
-              defaultImage ?? "assets/app_icon.png",
-              fit: fit ?? BoxFit.contain,
+              defaultImage ?? Images.splash,
+              fit: fit ?? BoxFit.cover,
             ).image,
           ),
-          
+
         ),
         padding: padding,
         child: imageWidget,
@@ -60,10 +60,10 @@ class CustomNetworkImage {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(radius ??15.w),
                   image: DecorationImage(
-                    fit: fit ?? BoxFit.contain,
+                    fit: fit ?? BoxFit.cover,
                     image: Image.asset(
-                      defaultImage ?? "assets/app_icon.png",
-                      fit: fit??BoxFit.contain,
+                      defaultImage ?? Images.splash,
+                      fit: fit??BoxFit.cover,
                     ).image,
                   ),
                 ),
@@ -82,7 +82,7 @@ class CustomNetworkImage {
                     topRight: Radius.circular(radius ?? 10),
                     topLeft: Radius.circular(radius ?? 10))
                 : BorderRadius.all(Radius.circular(radius ?? 10.0)),
-            image: DecorationImage(fit: fit ?? BoxFit.contain, image: provider),
+            image: DecorationImage(fit: fit ?? BoxFit.cover, image: provider),
           ),
           child: imageWidget,
         );

@@ -1,8 +1,6 @@
 import 'package:baber/app/core/utils/extensions.dart';
 import 'package:baber/app/core/utils/text_styles.dart';
 import 'package:baber/app/core/utils/validation.dart';
-import 'package:baber/navigation/custom_navigation.dart';
-import 'package:baber/presentation/base/custom_images.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
@@ -10,12 +8,11 @@ import 'package:provider/provider.dart';
 import '../../app/core/utils/color_resources.dart';
 import '../../app/core/utils/dimensions.dart';
 import '../../app/core/utils/images.dart';
-import '../../app/core/utils/svg_images.dart';
-import '../../controller/auth_provider.dart';
+import '../../controller/firebase_auth_provider.dart';
 import '../../domain/localization/language_constant.dart';
-import '../../navigation/routes.dart';
 import '../base/count_down.dart';
 import '../base/custom_button.dart';
+import '../base/custom_stack_app_bar.dart';
 
 class VerificationPage extends StatefulWidget {
   const VerificationPage({Key? key}) : super(key: key);
@@ -27,13 +24,12 @@ class VerificationPage extends StatefulWidget {
 class _VerificationPageState extends State<VerificationPage> {
 
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
-  bool isValid = true;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: ColorResources.BACKGROUND_COLOR,
-      body: Consumer<AuthProvider>(builder: (child, authProvider, _) {
+      body: Consumer<FirebaseAuthProvider>(builder: (child, provider, _) {
         return Form(
           key: formKey,
           child: Column(
@@ -65,16 +61,7 @@ class _VerificationPageState extends State<VerificationPage> {
                       ],
                     ),
                   ),
-                 Padding(
-                   padding:  EdgeInsets.symmetric(vertical:Dimensions.PADDING_SIZE_DEFAULT.h,horizontal: Dimensions.PADDING_SIZE_DEFAULT.w),
-                   child: Column(
-                     children: [
-                       SizedBox(height: context.toPadding,),
-                       GestureDetector(onTap: ()=>CustomNavigator.pop(),
-                           child: customImageIconSVG(imageName: SvgImages.backIcon)),
-                     ],
-                   ),
-                 )
+                  const CustomStackAppBar()
                 ],
               ),
               Expanded(
@@ -107,9 +94,9 @@ class _VerificationPageState extends State<VerificationPage> {
                     )),
                     Padding(
                       padding: EdgeInsets.symmetric(
-                          horizontal: 50.w, vertical: 20.h),
+                          horizontal: Dimensions.PADDING_SIZE_DEFAULT.w, vertical: 20.h),
                       child: PinCodeTextField(
-                        length: 4,
+                        length: 6,
                         hintCharacter: "*",
                         hintStyle: AppTextStyles.w500.copyWith(color: ColorResources.DETAILS_COLOR),
                         appContext: context,
@@ -126,8 +113,8 @@ class _VerificationPageState extends State<VerificationPage> {
                         inputFormatters: [FilteringTextInputFormatter.allow(RegExp('[0-9]'))],
                         pinTheme: PinTheme(
                           shape: PinCodeFieldShape.box,
-                          fieldHeight: 62.h,
-                          fieldWidth: 62.w,
+                          fieldHeight: 50.h,
+                          fieldWidth: 50.w,
                           borderWidth: 1.w,
                           borderRadius: BorderRadius.circular(Dimensions.RADIUS_DEFAULT),
                           selectedColor: ColorResources.LIGHT_GREY_BORDER,
@@ -140,29 +127,24 @@ class _VerificationPageState extends State<VerificationPage> {
                         animationDuration: const Duration(milliseconds: 300),
                         backgroundColor: Colors.transparent,
                         enableActiveFill: true,
-                        onChanged: authProvider.updateVerificationCode,
+                        onChanged: provider.updateVerificationCode,
                         beforeTextPaste: (text) => true,
                       ),
                     ),
                     CountDown(
-                      onCount: authProvider.logIn,
+                      onCount: provider.signInWithMobileNo,
                     ),
                     Padding(
                       padding: EdgeInsets.symmetric(
                           horizontal: Dimensions.PADDING_SIZE_DEFAULT.w,
                           vertical: Dimensions.PADDING_SIZE_SMALL.h),
                       child: CustomButton(
-                          isLoading: authProvider.isSubmit,
-                          isError: authProvider.isErrorOnSubmit,
+                          isLoading: provider.isLoading,
                           height: 46.h,
                           onTap: () {
-                            // if (formKey.currentState!.validate()) {
-                            //   authProvider.sendOTP();
-                            // } else {
-                            //   isValid = false;
-                            // }
-                            CustomNavigator.push(Routes.CHOOSE_CITY,replace: true);
-                          },
+                            if (formKey.currentState!.validate()) {
+                             provider.sendOTP();
+                          }},
                           textColor: ColorResources.WHITE_COLOR,
                           text: getTranslated("submit", context),
                           backgroundColor: ColorResources.PRIMARY_COLOR),

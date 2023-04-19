@@ -1,11 +1,23 @@
 class EndPoints {
-  static const String baseUrl = '';
-  static const String paymentBaseUrl = '';
-  static const String apiKey = '';
-  static const String logIn = '';
-  static const String sendOTP = '';
-  static const String getProfileInfo = '';
-  static const String getCategories= '';
-  static const String search = '';
+  static const String baseUrl = 'https://baber.app/api/v1/';
+  static const String imageUrl = 'https://baber.app/';
+  static const String topic = 'baber';
+  static const String logIn = 'login';
+  static const String verifyPhone = 'verify-phone';
+  static const String cities = 'cities';
+  static const String updateCity = 'updateProfile';
+  static const String profileInfo = 'profile';
+  static const String updateProfile = 'updateProfile';
+  static const String banners= 'slider';
+  static const String categories= 'categories';
+  static const String homeVendors= 'home';
+  static const String vendors= 'stores';
+  static const String products= 'products';
+  static const String vendorDetails= 'store';
+  static const String itemDetails= 'product';
+  static const String search = 'search';
+  static const String contact = 'contact';
+  static const String notifications = 'notifications';
+  static const String settings = 'settings';
 
 }

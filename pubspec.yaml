@@ -20,7 +20,8 @@ dependencies:
   shared_preferences:
   get_it:
   http:
-#  firebase_messaging:
+  firebase_messaging:
+  firebase_core:
   provider:
   flutter_staggered_animations:
   connectivity:
@@ -29,16 +30,23 @@ dependencies:
   flutter_styled_toast:
   flutter_animated_dialog:
   flutter_animate:
-  url_launcher:
+  url_launcher: ^6.1.10
   readmore:
   flutter_svg:
+  flutter_local_notifications: ^9.8.0+1
 #  flutter_native_splash:
   flutter_form_builder:
   equatable:
   pin_code_fields:
   cupertino_icons: ^1.0.2
-  modal_bottom_sheet: ^2.1.2
+  modal_bottom_sheet: ^3.0.0-pre
   rxdart:
+  shimmer:
+  carousel_slider:
+  firebase_auth: ^4.4.0
+  whatsapp_unilink: ^2.1.0
+  flutter_html: ^2.2.1
+  firebase_dynamic_links: ^5.1.0
 
 dev_dependencies:
   flutter_test:

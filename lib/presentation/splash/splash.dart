@@ -3,11 +3,11 @@ import 'package:baber/app/core/utils/extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:provider/provider.dart';
-import 'app/core/utils/color_resources.dart';
-import 'app/core/utils/images.dart';
-import 'controller/auth_provider.dart';
-import 'navigation/custom_navigation.dart';
-import 'navigation/routes.dart';
+import '../../app/core/utils/color_resources.dart';
+import '../../app/core/utils/images.dart';
+import '../../controller/firebase_auth_provider.dart';
+import '../../navigation/custom_navigation.dart';
+import '../../navigation/routes.dart';
 
 class Splash extends StatefulWidget {
   const Splash({Key? key}) : super(key: key);
@@ -22,12 +22,11 @@ class _SplashState extends State<Splash> with WidgetsBindingObserver {
 
     WidgetsBinding.instance.addObserver(this);
     Future.delayed(const Duration(milliseconds: 4500), () {
-      if (Provider.of<AuthProvider>(CustomNavigator.navigatorState.currentContext!, listen: false).isLogin) {
+      if (Provider.of<FirebaseAuthProvider>(CustomNavigator.navigatorState.currentContext!, listen: false).isLogin) {
         CustomNavigator.push(Routes.DASHBOARD,replace: true);
       }else{
-        CustomNavigator.push(Routes.LOGIN,replace: true);
+        CustomNavigator.push(Routes.CITY,replace: true,);
       }
-
     });
     super.initState();
   }
@@ -57,6 +56,7 @@ class _SplashState extends State<Splash> with WidgetsBindingObserver {
                 child:const SizedBox()),
               Image.asset(
                 Images.logo,
+                color: Colors.black,
               ).animate()
                   .scale(duration: 500.ms)
                   .then(delay: 200.ms) // baseline=800ms
