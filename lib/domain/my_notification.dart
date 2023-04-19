@@ -57,7 +57,7 @@ class MyNotification {
 
   static Future<void> showTextNotification(
       Map<String, dynamic> message, FlutterLocalNotificationsPlugin fln) async {
-    String _title = message['title'] ?? "Fahim";
+    String _title = message['title'] ?? "Baber";
     String _body = message['body'] ?? " Notification";
     // String _orderID = message['id'];
     const AndroidNotificationDetails androidPlatformChannelSpecifics =
@@ -79,7 +79,7 @@ class MyNotification {
 
   static Future<void> showBigTextNotification(
       Map<String, dynamic> message, FlutterLocalNotificationsPlugin fln) async {
-    String _title = message['title'] ?? "Fahim";
+    String _title = message['title'] ?? "Baber";
     String _body = message['body'] ?? " Notification";
     // String _orderID = message['id'];
     BigTextStyleInformation bigTextStyleInformation = BigTextStyleInformation(
@@ -108,16 +108,16 @@ class MyNotification {
 
   static Future<void> showBigPictureNotificationHiddenLargeIcon(
       Map<String, dynamic> message, FlutterLocalNotificationsPlugin fln) async {
-    String _title = message['title'] ?? "Fahim";
+    String _title = message['title'] ?? "Baber";
     String _body = message['body'] ?? " Notification";
     // String _orderID = message['id'];
 
-    final AndroidNotificationDetails androidPlatformChannelSpecifics =
+    const AndroidNotificationDetails androidPlatformChannelSpecifics =
     AndroidNotificationDetails(
       'big text channel id', 'your channel name',
       // 'big text channel name',
     );
-    final NotificationDetails platformChannelSpecifics =
+    const NotificationDetails platformChannelSpecifics =
     NotificationDetails(android: androidPlatformChannelSpecifics);
     await fln.show(
       0,
@@ -130,9 +130,8 @@ class MyNotification {
 }
 
 Future<dynamic> myBackgroundMessageHandler(RemoteMessage message) async {
-  print('background: ${message.data}');
-  var androidInitialize = AndroidInitializationSettings('notification_icon');
-  var iOSInitialize = IOSInitializationSettings();
+  var androidInitialize = const AndroidInitializationSettings('notification_icon');
+  var iOSInitialize = const IOSInitializationSettings();
   var initializationsSettings =
   InitializationSettings(android: androidInitialize, iOS: iOSInitialize);
   FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =

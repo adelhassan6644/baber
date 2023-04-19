@@ -12,11 +12,8 @@
     <list default="true" id="0f32153c-20a2-462c-b0aa-469fbaabcdc6" name="Changes" comment="&#10;update(cart)">
       <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/app/core/api/end_points.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/core/api/end_points.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/data/model/item_model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/model/item_model.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/main_widgets/item_card.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main_widgets/item_card.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/base/custom_drop_down_button.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/base/custom_drop_down_button.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/vendor/vendor_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/vendor/vendor_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/data/model/banner_model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/model/banner_model.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/home/widget/banner_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/home/widget/banner_view.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -352,7 +349,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681674852572</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="&#10;update(cart)">
+      <created>1681917466581</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1681917466581</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
