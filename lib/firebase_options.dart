@@ -67,6 +67,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '543303823124',
     projectId: 'baber-27e2c',
     storageBucket: 'baber-27e2c.appspot.com',
+    androidClientId: '543303823124-ua2qm5pido9m8l6d7r639r51sco6rvpq.apps.googleusercontent.com',
     iosClientId: '543303823124-csosei9d644ap6vef03c88ddv067n007.apps.googleusercontent.com',
     iosBundleId: 'com.example.baber',
   );
@@ -77,6 +78,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '543303823124',
     projectId: 'baber-27e2c',
     storageBucket: 'baber-27e2c.appspot.com',
+    androidClientId: '543303823124-ua2qm5pido9m8l6d7r639r51sco6rvpq.apps.googleusercontent.com',
     iosClientId: '543303823124-csosei9d644ap6vef03c88ddv067n007.apps.googleusercontent.com',
     iosBundleId: 'com.example.baber',
   );
