@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "543303823124",
+    "project_id": "baber-27e2c",
+    "storage_bucket": "baber-27e2c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:543303823124:android:230a7a9b52a77232ef1c01",
+        "android_client_info": {
+          "package_name": "com.example.baber"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "543303823124-ua2qm5pido9m8l6d7r639r51sco6rvpq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.baber",
+            "certificate_hash": "78bff6825539ee30ec75e9c18b0a77aba39c9254"
+          }
+        },
+        {
+          "client_id": "543303823124-38lvdkjln295qs55a0t6e4m9m4thadoo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyChYQXbF9BBS-fAiBM_mhO9-uUEmg_WWzo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "543303823124-38lvdkjln295qs55a0t6e4m9m4thadoo.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "543303823124-csosei9d644ap6vef03c88ddv067n007.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.baber"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -24,26 +24,26 @@ class NotificationData{
   int? id;
   String? image;
   String? body;
-  String? createdAt;
-  String? productID;
-  String? productType;
+  DateTime? createdAt;
+  // String? productID;
+  // String? productType;
 
   NotificationData({
     this.id,
     this.image,
     this.createdAt,
     this.body,
-    this.productID,
-    this.productType,
+    // this.productID,
+    // this.productType,
   });
 
   NotificationData.fromJson(Map<String, dynamic> json) {
     id = json['id'];
     image = json['image'];
     body = json['body'];
-    createdAt = json['created_at'];
-    productID = json['product_id'];
-    productType = json['product_type'];
+    createdAt = DateTime.parse(json['created_at']);
+    // productID = json['product_id'];
+    // productType = json['product_type'];
   }
 
   Map<String, dynamic> toJson() {
@@ -52,8 +52,8 @@ class NotificationData{
     data['image'] = image;
     data['body'] = body;
     data['created_at'] = createdAt;
-    data['product_id'] = productID;
-    data['product_type'] = productType;
+    // data['product_id'] = productID;
+    // data['product_type'] = productType;
     return data;
   }
 }

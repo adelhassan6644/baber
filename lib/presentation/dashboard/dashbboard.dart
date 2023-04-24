@@ -1,4 +1,5 @@
 import 'package:baber/app/core/utils/dimensions.dart';
+import 'package:baber/navigation/custom_navigation.dart';
 import 'package:baber/presentation/dashboard/widget/nav_bar_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -25,7 +26,8 @@ class DashBoard extends StatefulWidget {
 }
 
 class _DashBoardState extends State<DashBoard> {
-  late final PageController _pageController = PageController(initialPage:_selectedIndex );
+  late final PageController _pageController =
+      PageController(initialPage: _selectedIndex);
   late int _selectedIndex;
   _setPage(int index) {
     setState(() {
@@ -38,24 +40,52 @@ class _DashBoardState extends State<DashBoard> {
 
   @override
   void initState() {
-    Future.delayed(Duration.zero, () {
+    Future.delayed(Duration.zero, () async {
       // Provider.of<ProfileProvider>(context, listen: false).getProfileInfo();
-      Provider.of<BannerProvider>(context, listen: false).getBannerList();
-      Provider.of<HomeCategoryProvider>(context, listen: false).getHomeCategories();
-      Provider.of<HomeVendorsProvider>(context, listen: false).getVendorList();
-      Provider.of<CityProvider>(context, listen: false).getYourCity();
-      Provider.of<SettingsProvider>(context, listen: false).getSettingsInfo();
+      await Provider.of<BannerProvider>(
+              CustomNavigator.navigatorState.currentContext!,
+              listen: false)
+          .getBannerList();
+      await Provider.of<HomeCategoryProvider>(
+              CustomNavigator.navigatorState.currentContext!,
+              listen: false)
+          .getHomeCategories();
+      await Provider.of<HomeVendorsProvider>(
+              CustomNavigator.navigatorState.currentContext!,
+              listen: false)
+          .getVendorList();
+      await Provider.of<CityProvider>(
+              CustomNavigator.navigatorState.currentContext!,
+              listen: false)
+          .getYourCity();
+      await Provider.of<SettingsProvider>(
+              CustomNavigator.navigatorState.currentContext!,
+              listen: false)
+          .getSettingsInfo();
     });
     _selectedIndex = widget.index ?? 0;
-    NetworkInfo.checkConnectivity(
-        onVisible: () {
-          Provider.of<BannerProvider>(context, listen: false).getBannerList();
-          Provider.of<HomeCategoryProvider>(context, listen: false).getHomeCategories();
-          Provider.of<HomeVendorsProvider>(context, listen: false).getVendorList();
-          Provider.of<CityProvider>(context, listen: false).getYourCity();
-          Provider.of<SettingsProvider>(context, listen: false).getSettingsInfo();
-        }
-    );
+    NetworkInfo.checkConnectivity(onVisible: () async {
+      await Provider.of<BannerProvider>(
+              CustomNavigator.navigatorState.currentContext!,
+              listen: false)
+          .getBannerList();
+      await Provider.of<HomeCategoryProvider>(
+              CustomNavigator.navigatorState.currentContext!,
+              listen: false)
+          .getHomeCategories();
+      await Provider.of<HomeVendorsProvider>(
+              CustomNavigator.navigatorState.currentContext!,
+              listen: false)
+          .getVendorList();
+      await Provider.of<CityProvider>(
+              CustomNavigator.navigatorState.currentContext!,
+              listen: false)
+          .getYourCity();
+      await Provider.of<SettingsProvider>(
+              CustomNavigator.navigatorState.currentContext!,
+              listen: false)
+          .getSettingsInfo();
+    });
 
     super.initState();
   }

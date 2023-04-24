@@ -36,6 +36,9 @@ import '../../../domain/localization/language_constant.dart';
         //     ]));
         ScaffoldMessenger.of(CustomNavigator.navigatorState.currentContext!).showSnackBar(SnackBar(
           backgroundColor: isNotConnected ? Colors.red : Colors.green,
+          behavior:  SnackBarBehavior.floating,
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15), side: const BorderSide(width: 1, color:Colors.transparent)),
+          margin: const EdgeInsets.all(24),
           duration: Duration(seconds: isNotConnected ? 6000 : 3),
           onVisible: !isNotConnected?onVisible:null,
           content: Text(

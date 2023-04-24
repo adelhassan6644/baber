@@ -1,4 +1,5 @@
 import 'package:baber/app/core/utils/text_styles.dart';
+import 'package:baber/navigation/custom_navigation.dart';
 import 'package:baber/presentation/base/custom_app_bar.dart';
 import 'package:baber/presentation/base/custom_drop_down_button.dart';
 import 'package:flutter/material.dart';
@@ -24,13 +25,14 @@ class _CityPageState extends State<CityPage> {
   void initState() {
     Future.delayed(
         Duration.zero,
-        () { Provider.of<CityProvider>(context, listen: false).getCities();
-        Provider.of<CityProvider>(context, listen: false).getYourCity();
+        () { Provider.of<CityProvider>(CustomNavigator.navigatorState.currentContext!, listen: false).getCities();
+        Provider.of<CityProvider>(CustomNavigator.navigatorState.currentContext!, listen: false).getYourCity();
         });
     if(widget.fromProfile==false){
       NetworkInfo.checkConnectivity(
-        onVisible:  () { Provider.of<CityProvider>(context, listen: false).getCities();
-        Provider.of<CityProvider>(context, listen: false).getYourCity();
+        onVisible:  () async{
+         await Provider.of<CityProvider>(CustomNavigator.navigatorState.currentContext!, listen: false).getCities();
+          Provider.of<CityProvider>(CustomNavigator.navigatorState.currentContext!, listen: false).getYourCity();
         }
       );
     }

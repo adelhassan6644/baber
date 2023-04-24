@@ -20,7 +20,7 @@ dependencies:
   shared_preferences:
   get_it:
   http:
-  firebase_messaging:
+  firebase_messaging: ^14.4.1
   firebase_core:
   provider:
   flutter_staggered_animations:
@@ -47,6 +47,8 @@ dependencies:
   whatsapp_unilink: ^2.1.0
   flutter_html: ^2.2.1
   firebase_dynamic_links: ^5.1.0
+  firebase_analytics: ^10.2.1
+  flutter_native_splash: ^2.2.0+1
 
 dev_dependencies:
   flutter_test:

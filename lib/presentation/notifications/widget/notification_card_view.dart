@@ -1,5 +1,6 @@
 import 'package:baber/app/core/utils/color_resources.dart';
 import 'package:baber/app/core/utils/dimensions.dart';
+import 'package:baber/app/core/utils/extensions.dart';
 import 'package:baber/presentation/base/custom_images.dart';
 import 'package:flutter/material.dart';
 
@@ -54,7 +55,7 @@ class NotificationCardView extends StatelessWidget {
                             color:
                                 !isOpened ? ColorResources.HINT_COLOR : null)),
                   ),
-                  Text("Wednesday, 08, 02:00 Am",
+                  Text(notification.createdAt!.dateFormat(format: "EEEE, MMM d, hh:mm"),
                       style: AppTextStyles.w500.copyWith(
                           fontSize: 12,
                           color: !isOpened ? ColorResources.HINT_COLOR : null)),
