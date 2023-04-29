@@ -23,11 +23,13 @@ class CityPage extends StatefulWidget {
 class _CityPageState extends State<CityPage> {
   @override
   void initState() {
-    Future.delayed(
+    if(widget.fromProfile==true) {
+      Future.delayed(
         Duration.zero,
         () { Provider.of<CityProvider>(CustomNavigator.navigatorState.currentContext!, listen: false).getCities();
         Provider.of<CityProvider>(CustomNavigator.navigatorState.currentContext!, listen: false).getYourCity();
         });
+    }
     if(widget.fromProfile==false){
       NetworkInfo.checkConnectivity(
         onVisible:  () async{
@@ -82,9 +84,18 @@ class _CityPageState extends State<CityPage> {
                       padding: EdgeInsets.symmetric(
                           vertical: Dimensions.PADDING_SIZE_DEFAULT.h),
                       child: CustomDropDownButton(
+                        // onTap:(){
+                        //   provider.cityModel?.cities == null && provider.cityModel!.cities!.isEmpty ?
+                        //   CustomSnackBar.showSnackBar(
+                        //       notification: AppNotification(
+                        //           message: "انتظر من فضلك",
+                        //           isFloating: false,
+                        //           backgroundColor: ColorResources.PENDING,
+                        //           borderColor: Colors.transparent)):null;
+                        // },
                         items: provider.cityModel?.cities != null &&
                                 provider.cityModel!.cities!.isNotEmpty ? provider.cityModel!.cities! : [],
-                        name:  provider.city?.name ?? getTranslated("city", context),
+                        name:   provider.currentCity ?? getTranslated("city", context),
                         onChange: (location) {
                           provider.onSelectCity(location: location);
                         },

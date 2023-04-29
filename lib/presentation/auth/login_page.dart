@@ -1,5 +1,4 @@
 import 'package:baber/app/core/utils/extensions.dart';
-import 'package:baber/navigation/custom_navigation.dart';
 import 'package:baber/presentation/auth/widget/guest_button.dart';
 import 'package:baber/presentation/auth/widget/welcome_widget.dart';
 import 'package:baber/presentation/base/custom_text_form_field.dart';
@@ -8,10 +7,8 @@ import 'package:provider/provider.dart';
 import '../../app/core/utils/app_snack_bar.dart';
 import '../../app/core/utils/color_resources.dart';
 import '../../app/core/utils/dimensions.dart';
-import '../../app/core/utils/images.dart';
 import '../../app/core/utils/svg_images.dart';
 import '../../app/core/utils/validation.dart';
-import '../../controller/auth_provider.dart';
 import '../../controller/firebase_auth_provider.dart';
 import '../../domain/localization/language_constant.dart';
 import '../base/chekbox_listtile.dart';

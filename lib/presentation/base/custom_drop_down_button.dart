@@ -17,6 +17,7 @@ class CustomDropDownButton extends StatefulWidget {
   final String name;
   final String? value;
   final void Function(dynamic)? onChange;
+  final void Function()? onTap;
   final String? Function(Object?)? validation;
 
   const CustomDropDownButton({
@@ -30,6 +31,7 @@ class CustomDropDownButton extends StatefulWidget {
     this.icon,
     this.label,
     required this.name,
+    this.onTap,
     this.iconSize = 22,
     Key? key,
   }) : super(key: key);
@@ -55,6 +57,7 @@ class _CustomDropDownButtonState extends State<CustomDropDownButton> {
           );
         }).toList(),
         onChanged: widget.onChange,
+        onTap:widget.onTap,
         menuMaxHeight: context.height * 0.4,
         initialValue: widget.value,
         isDense: true,
@@ -62,14 +65,12 @@ class _CustomDropDownButtonState extends State<CustomDropDownButton> {
         isExpanded: true,
         dropdownColor: ColorResources.FILL_COLOR,
         itemHeight: 50,
-        icon: widget.icon ??
-            const Icon(
+        icon: widget.icon ?? const Icon(
               Icons.arrow_drop_down,
               color: ColorResources.HINT_COLOR,
             ),
         iconSize: widget.iconSize,
-        borderRadius:
-            const BorderRadius.all(Radius.circular(Dimensions.RADIUS_DEFAULT)),
+        borderRadius: const BorderRadius.all(Radius.circular(Dimensions.RADIUS_DEFAULT)),
         decoration: InputDecoration(
           hintStyle: AppTextStyles.w400
               .copyWith(color: ColorResources.HINT_COLOR, fontSize: 11),
@@ -163,8 +164,7 @@ class _CustomDropDownButtonState extends State<CustomDropDownButton> {
           labelStyle: AppTextStyles.w500
               .copyWith(color: ColorResources.HINT_COLOR, fontSize: 11),
         ),
-        style: AppTextStyles.w500
-            .copyWith(color: ColorResources.PRIMARY_COLOR, fontSize: 14),
+        style: AppTextStyles.w500.copyWith(color: ColorResources.PRIMARY_COLOR, fontSize: 14),
         name: widget.name,
         elevation: 1,
       ),

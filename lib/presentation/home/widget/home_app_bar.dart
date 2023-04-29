@@ -71,7 +71,7 @@ class HomeAppBar extends StatelessWidget {
                     Consumer<CityProvider>(
                       builder: (context, provider, child) {
                         return   Text(
-                          provider.city?.name ?? "الرياض",
+                          provider.currentCity ?? "الرياض",
                           style: AppTextStyles.w500.copyWith(
                               color: ColorResources.DETAILS_COLOR, fontSize: 13),
                         );

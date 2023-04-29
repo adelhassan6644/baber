@@ -56,6 +56,7 @@ class _ItemCardState extends State<ItemCard> {
       child: Padding(
         padding: EdgeInsets.symmetric(vertical: 8.h),
         child: Container(
+          width: widget.fromHome ? 130.w : 165.w,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(8.w),
             boxShadow: const [

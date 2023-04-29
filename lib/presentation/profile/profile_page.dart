@@ -38,11 +38,13 @@ class ProfilePage extends StatelessWidget {
             onTap: () => CustomNavigator.push(Routes.NOTIFICATION),
             title: getTranslated("notifications", context),
             iconName: SvgImages.notification),
-        ProfileOption(
+
+        if(Provider.of<FirebaseAuthProvider>(context, listen: false).isLogin) ProfileOption(
             onTap: () =>
                 customShowModelBottomSheet(body: const ContactWithUs()),
             title: getTranslated("contact_with_us", context),
             iconName: SvgImages.message),
+
         ProfileOption(
             onTap: () => CustomNavigator.push(Routes.ABOUT),
             title: getTranslated("about_baber", context),

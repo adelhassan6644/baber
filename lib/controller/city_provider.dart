@@ -19,6 +19,7 @@ class CityProvider extends ChangeNotifier {
   });
 
   City? city;
+  String? currentCity;
   CityModel? cityModel;
 
   void onSelectCity({required City location}) {
@@ -101,7 +102,7 @@ class CityProvider extends ChangeNotifier {
   }
 
   getYourCity() {
-    city?.name = cityRepo.getCityName();
+    currentCity = cityRepo.getCityName();
     notifyListeners();
   }
 

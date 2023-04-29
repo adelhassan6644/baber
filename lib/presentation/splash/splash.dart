@@ -5,6 +5,7 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:provider/provider.dart';
 import '../../app/core/utils/color_resources.dart';
 import '../../app/core/utils/images.dart';
+import '../../controller/city_provider.dart';
 import '../../controller/firebase_auth_provider.dart';
 import '../../navigation/custom_navigation.dart';
 import '../../navigation/routes.dart';
@@ -21,12 +22,24 @@ class _SplashState extends State<Splash> with WidgetsBindingObserver {
   void initState() {
 
     WidgetsBinding.instance.addObserver(this);
-    Future.delayed(const Duration(milliseconds: 4500), () {
-      if (Provider.of<FirebaseAuthProvider>(CustomNavigator.navigatorState.currentContext!, listen: false).isLogin) {
+    Future.delayed(Duration.zero, () async {
+      await Provider.of<CityProvider>(CustomNavigator.navigatorState.currentContext!, listen: false).getCities();
+      await Provider.of<CityProvider>(CustomNavigator.navigatorState.currentContext!, listen: false).getYourCity();
+    });
+
+    Future.delayed(const Duration(milliseconds: 4500), () async {
+      if (Provider.of<CityProvider>(CustomNavigator.navigatorState.currentContext!, listen: false).currentCity != null) {
         CustomNavigator.push(Routes.DASHBOARD,replace: true);
-      }else{
+      }
+      else{
         CustomNavigator.push(Routes.CITY,replace: true,);
       }
+
+      // if (Provider.of<FirebaseAuthProvider>(CustomNavigator.navigatorState.currentContext!, listen: false).isLogin) {
+      //   CustomNavigator.push(Routes.DASHBOARD,replace: true);
+      // }else{
+      //   CustomNavigator.push(Routes.CITY,replace: true,);
+      // }
     });
     super.initState();
   }

@@ -63,8 +63,7 @@ class FirebaseAuthProvider extends ChangeNotifier {
         phoneNumber: "+966${_phoneTEC.text.trim()}",
         timeout: const Duration(seconds: 60),
         verificationCompleted: (authCredential) => phoneVerificationCompleted(authCredential),
-        verificationFailed: (authException) =>
-            phoneVerificationFailed(authException),
+        verificationFailed: (authException) => phoneVerificationFailed(authException),
         codeSent: (verificationId, code) => phoneCodeSent(verificationId: verificationId, code: code ?? 0),
         codeAutoRetrievalTimeout: phoneCodeAutoRetrievalTimeout,
       );
