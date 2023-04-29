@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>751283654969-udi0fgeq28ef1ujsr2ru9bkm6pqfs0bm.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.751283654969-udi0fgeq28ef1ujsr2ru9bkm6pqfs0bm</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAb9TiEeHqxJLWDpMGzvSYhLnYORFZgsXs</string>
+	<key>GCM_SENDER_ID</key>
+	<string>751283654969</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.baber</string>
+	<key>PROJECT_ID</key>
+	<string>baberapp-cab90</string>
+	<key>STORAGE_BUCKET</key>
+	<string>baberapp-cab90.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:751283654969:ios:f84ddbc17fbfd209fb98e8</string>
+</dict>
+</plist>

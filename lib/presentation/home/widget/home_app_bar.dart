@@ -19,7 +19,7 @@ class HomeAppBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: context.width,
-      height: 100.h,
+      height: 120.h,
       decoration: BoxDecoration(
         border: Border(
             bottom: BorderSide(color: ColorResources.BORDER_COLOR, width: 1.h)),
