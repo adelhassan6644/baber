@@ -40,6 +40,8 @@ class _ItemCardState extends State<ItemCard> {
           Provider.of<ProductsProvider>(context, listen: false)
               .getProductsByMenu(
                   menuId: widget.itemModel!.menus!.first.id.toString());
+          Provider.of<VendorProvider>(context, listen: false)
+              .currentIndex=0;
 
           CustomNavigator.push(
             Routes.VENDOR,
@@ -54,6 +56,7 @@ class _ItemCardState extends State<ItemCard> {
       child: Padding(
         padding: EdgeInsets.symmetric(vertical: 8.h),
         child: Container(
+          width: widget.fromHome ? 130.w : 165.w,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(8.w),
             boxShadow: const [
@@ -71,7 +74,7 @@ class _ItemCardState extends State<ItemCard> {
             children: [
               // Card Image
               CustomNetworkImage.containerNewWorkImage(
-                image: widget.itemModel?.logo ?? "",
+                image:widget.isVendor? widget.itemModel?.logo ?? "": widget.itemModel?.image ?? "",
                 height: widget.fromHome ? 90.h : 95.h,
                 width: widget.fromHome ? 130.w : 165.w,
                 fit: BoxFit.cover,
@@ -93,8 +96,8 @@ class _ItemCardState extends State<ItemCard> {
                           fontSize: 12,
                         )),
                     if (widget.isVendor)
-                      Text("${widget.itemModel?.address}",
-                          maxLines: 2,
+                      Text("${widget.itemModel?.description}",
+                          maxLines: 1,
                           overflow: TextOverflow.ellipsis,
                           style: AppTextStyles.w500.copyWith(
                             fontSize: 12,

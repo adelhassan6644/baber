@@ -39,6 +39,7 @@ abstract class ImageWidget {
       {double? height,
         double? width,
         BoxFit fit = BoxFit.cover,
+        Color? color,
         BorderRadiusGeometry border = BorderRadius.zero}) {
     return ClipRRect(
       borderRadius: border,
@@ -46,6 +47,7 @@ abstract class ImageWidget {
         path,
         height: height,
         width: width,
+        color: color,
         fit: fit,
         errorBuilder: (context, error, stackTrace) => Center(
             child: Container(

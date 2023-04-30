@@ -8,7 +8,7 @@ import '../presentation/cart/cart_page.dart';
 import '../presentation/city/city_page.dart';
 import '../presentation/dashboard/dashbboard.dart';
 import '../presentation/item_details/page/item_details_page.dart';
-import '../presentation/notifications/pages/notification_page.dart';
+import '../presentation/notifications/notification_page.dart';
 import '../presentation/privacy/privacy_page.dart';
 import '../presentation/search/search_page.dart';
 import '../presentation/splash/splash.dart';
@@ -31,7 +31,7 @@ abstract class CustomNavigator {
       case Routes.SPLASH:
         return _pageRoute(const Splash());
       case Routes.LOGIN:
-        return _pageRoute(const LoginPage());
+        return _pageRoute( LoginPage(fromProfile:settings.arguments != null? settings.arguments as bool:false,));
       case Routes.VERIFICATION:
         return _pageRoute(const VerificationPage());
       case Routes.CITY:

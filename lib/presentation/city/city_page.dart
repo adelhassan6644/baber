@@ -1,8 +1,10 @@
 import 'package:baber/app/core/utils/text_styles.dart';
+import 'package:baber/navigation/custom_navigation.dart';
 import 'package:baber/presentation/base/custom_app_bar.dart';
 import 'package:baber/presentation/base/custom_drop_down_button.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import '../../app/core/network/netwok_info.dart';
 import '../../app/core/utils/app_snack_bar.dart';
 import '../../app/core/utils/color_resources.dart';
 import '../../app/core/utils/dimensions.dart';
@@ -21,11 +23,21 @@ class CityPage extends StatefulWidget {
 class _CityPageState extends State<CityPage> {
   @override
   void initState() {
-    Future.delayed(
+    if(widget.fromProfile==true) {
+      Future.delayed(
         Duration.zero,
-        () { Provider.of<CityProvider>(context, listen: false).getCities();
-        Provider.of<CityProvider>(context, listen: false).getYourCity();
+        () { Provider.of<CityProvider>(CustomNavigator.navigatorState.currentContext!, listen: false).getCities();
+        Provider.of<CityProvider>(CustomNavigator.navigatorState.currentContext!, listen: false).getYourCity();
         });
+    }
+    if(widget.fromProfile==false){
+      NetworkInfo.checkConnectivity(
+        onVisible:  () async{
+         await Provider.of<CityProvider>(CustomNavigator.navigatorState.currentContext!, listen: false).getCities();
+          Provider.of<CityProvider>(CustomNavigator.navigatorState.currentContext!, listen: false).getYourCity();
+        }
+      );
+    }
     super.initState();
   }
 
@@ -41,7 +53,7 @@ class _CityPageState extends State<CityPage> {
               title: widget.fromProfile
                   ? getTranslated("change_city", context)
                   : getTranslated("city", context),
-              withBack: true,
+              withBack:widget.fromProfile? true:false,
             ),
             Expanded(
               child: Padding(
@@ -72,11 +84,20 @@ class _CityPageState extends State<CityPage> {
                       padding: EdgeInsets.symmetric(
                           vertical: Dimensions.PADDING_SIZE_DEFAULT.h),
                       child: CustomDropDownButton(
+                        // onTap:(){
+                        //   provider.cityModel?.cities == null && provider.cityModel!.cities!.isEmpty ?
+                        //   CustomSnackBar.showSnackBar(
+                        //       notification: AppNotification(
+                        //           message: "انتظر من فضلك",
+                        //           isFloating: false,
+                        //           backgroundColor: ColorResources.PENDING,
+                        //           borderColor: Colors.transparent)):null;
+                        // },
                         items: provider.cityModel?.cities != null &&
                                 provider.cityModel!.cities!.isNotEmpty ? provider.cityModel!.cities! : [],
-                        name:  provider.city?.name ?? getTranslated("city", context),
+                        name:   provider.currentCity ?? getTranslated("city", context),
                         onChange: (location) {
-                          provider.onSelectLocation(location: location);
+                          provider.onSelectCity(location: location);
                         },
                         pAssetIcon: Images.city,
                       ),
@@ -86,7 +107,7 @@ class _CityPageState extends State<CityPage> {
                         height: 46.h,
                         onTap: () {
                           if (provider.city != null ) {
-                            provider.setCity();
+                            provider.updateCity();
                           }
                           else {CustomSnackBar.showSnackBar(
                                 notification: AppNotification(

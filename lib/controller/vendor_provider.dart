@@ -15,15 +15,14 @@ class VendorProvider extends ChangeNotifier {
   final VendorRepo vendorRepo;
   VendorProvider({required this.vendorRepo});
 
-  late int _currentIndex = 0;
-  int get currentIndex => _currentIndex;
+  late int currentIndex = 0;
 
   void getMenusData(
       {required int index,
       required String menuId,
       required BuildContext context}) {
     Provider.of<ProductsProvider>(context, listen: false).getProductsByMenu(menuId: menuId);
-    _currentIndex = index;
+    currentIndex = index;
     notifyListeners();
   }
 

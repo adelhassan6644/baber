@@ -6,6 +6,7 @@ import 'package:baber/main_widgets/grid_list_animator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:provider/provider.dart';
+import 'package:readmore/readmore.dart';
 import 'package:shimmer/shimmer.dart';
 import '../../app/core/utils/color_resources.dart';
 import '../../app/core/utils/images.dart';
@@ -59,12 +60,17 @@ class VendorPage extends StatelessWidget {
                         ? TextShimmer(
                       width: 100.w,
                     )
-                        : Text(
-                            provider.vendor?.cityName ?? "الرياض",
-                            style: AppTextStyles.w500.copyWith(
-                              fontSize: 11,
-                            ),
-                          )
+                        :  ReadMoreText(
+                      provider.vendor?.description ?? "الرياض",
+                      trimLines: 2,
+                      colorClickableText: Colors.white,
+                      trimMode: TrimMode.Line,
+                      style: AppTextStyles.w500.copyWith(fontSize: 12.0,),
+                      trimCollapsedText: 'عرض المزيد',
+                      trimExpandedText: 'عرض اقل',
+                      lessStyle: AppTextStyles.w400.copyWith(fontSize: 10, color: ColorResources.PRIMARY_COLOR),
+                      moreStyle: AppTextStyles.w400.copyWith(fontSize: 10, color: ColorResources.PRIMARY_COLOR),
+                    ),
                   ],
                 ),
               ),

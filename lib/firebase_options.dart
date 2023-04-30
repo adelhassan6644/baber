@@ -44,40 +44,40 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyBdwndJ7u4a3PZvPCQXFbPQX5yvKKT6ZxE',
-    appId: '1:543303823124:web:e9376840c3c03971ef1c01',
-    messagingSenderId: '543303823124',
-    projectId: 'baber-27e2c',
-    authDomain: 'baber-27e2c.firebaseapp.com',
-    storageBucket: 'baber-27e2c.appspot.com',
-    measurementId: 'G-Q6LJ812SM6',
+    apiKey: 'AIzaSyD_D7r4NLwz8hxaJfPsksB1YvoSL__m6II',
+    appId: '1:751283654969:web:574f122f7b12d0acfb98e8',
+    messagingSenderId: '751283654969',
+    projectId: 'baberapp-cab90',
+    authDomain: 'baberapp-cab90.firebaseapp.com',
+    storageBucket: 'baberapp-cab90.appspot.com',
+    measurementId: 'G-SW25TQMHYD',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyChYQXbF9BBS-fAiBM_mhO9-uUEmg_WWzo',
-    appId: '1:543303823124:android:230a7a9b52a77232ef1c01',
-    messagingSenderId: '543303823124',
-    projectId: 'baber-27e2c',
-    storageBucket: 'baber-27e2c.appspot.com',
+    apiKey: 'AIzaSyCO-xBsdC86aPtf_hpNimZ-ZcLBoVDcsBc',
+    appId: '1:751283654969:android:c730242839621dedfb98e8',
+    messagingSenderId: '751283654969',
+    projectId: 'baberapp-cab90',
+    storageBucket: 'baberapp-cab90.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyBv4IWZyPZCHfRZ5Kxk0KhDLhekDbTH_bM',
-    appId: '1:543303823124:ios:331c3f76e0d0cb3cef1c01',
-    messagingSenderId: '543303823124',
-    projectId: 'baber-27e2c',
-    storageBucket: 'baber-27e2c.appspot.com',
-    iosClientId: '543303823124-csosei9d644ap6vef03c88ddv067n007.apps.googleusercontent.com',
+    apiKey: 'AIzaSyAb9TiEeHqxJLWDpMGzvSYhLnYORFZgsXs',
+    appId: '1:751283654969:ios:fed8efbfca44dbeafb98e8',
+    messagingSenderId: '751283654969',
+    projectId: 'baberapp-cab90',
+    storageBucket: 'baberapp-cab90.appspot.com',
+    iosClientId: '751283654969-udi0fgeq28ef1ujsr2ru9bkm6pqfs0bm.apps.googleusercontent.com',
     iosBundleId: 'com.example.baber',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyBv4IWZyPZCHfRZ5Kxk0KhDLhekDbTH_bM',
-    appId: '1:543303823124:ios:331c3f76e0d0cb3cef1c01',
-    messagingSenderId: '543303823124',
-    projectId: 'baber-27e2c',
-    storageBucket: 'baber-27e2c.appspot.com',
-    iosClientId: '543303823124-csosei9d644ap6vef03c88ddv067n007.apps.googleusercontent.com',
+    apiKey: 'AIzaSyAb9TiEeHqxJLWDpMGzvSYhLnYORFZgsXs',
+    appId: '1:751283654969:ios:fed8efbfca44dbeafb98e8',
+    messagingSenderId: '751283654969',
+    projectId: 'baberapp-cab90',
+    storageBucket: 'baberapp-cab90.appspot.com',
+    iosClientId: '751283654969-udi0fgeq28ef1ujsr2ru9bkm6pqfs0bm.apps.googleusercontent.com',
     iosBundleId: 'com.example.baber',
   );
 }

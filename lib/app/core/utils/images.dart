@@ -8,13 +8,13 @@ class Images {
   static const String emptyDish = 'assets/images/empty_dish.png';
   static const String emptySearch = 'assets/images/empty_search.png';
   static const String emptyCart = 'assets/images/empty_cart.png';
+  static const String emptyNotifications = 'assets/images/empty_notifications.png';
   static const String phone = 'assets/images/phone.png';
   static const String eyeLockIcon = 'assets/images/phone.png';
   static const String unlockEyeLockIcon = 'assets/images/phone.png';
-
-  static const String whatsApp =
-      'assets/icons/5296520_bubble_chat_mobile_whatsapp_whatsapp logo_icon.png';
-
+  static const String whatsApp = 'assets/images/whatsapp.png';
   static const String support = 'assets/icons/technical-support.png';
   static const String termsConditions = 'assets/icons/terms-and-conditions.png';
+  static const String noConnection = 'assets/images/no_connection.png';
+  static const String connected = 'assets/images/connected.png';
 }

@@ -1,3 +1,4 @@
+import 'package:baber/app/core/utils/color_resources.dart';
 import 'package:baber/app/core/utils/dimensions.dart';
 import 'package:baber/presentation/home/widget/banner_view.dart';
 import 'package:baber/presentation/home/widget/categories_section.dart';
@@ -11,40 +12,40 @@ import '../../controller/city_provider.dart';
 import '../../controller/home_categories_provider.dart';
 import '../../controller/home_vendors_provider.dart';
 
-class HomePage extends StatefulWidget {
+
+class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
-
-  @override
-  State<HomePage> createState() => _HomePageState();
-}
-
-class _HomePageState extends State<HomePage> {
-
-  @override
-  void initState() {
-    Future.delayed(Duration.zero, (){
-      Provider.of<BannerProvider>(context, listen: false).getBannerList();
-      Provider.of<HomeCategoryProvider>(context, listen: false).getHomeCategories();
-      Provider.of<HomeVendorsProvider>(context, listen: false).getVendorList();
-      Provider.of<CityProvider>(context, listen: false).getYourCity();
-    });
-    super.initState();
-  }
 
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
          const HomeAppBar(),
-        SizedBox(
-          height: Dimensions.PADDING_SIZE_DEFAULT.h,
-        ),
-        const BannerView(),
-        const CategoriesSection(),
-        const OurTable(),
-        SizedBox(
-          height: 85.h,
+        Expanded(
+          child: RefreshIndicator(
+            onRefresh: ()async{
+                Future.delayed(Duration.zero, (){
+                  Provider.of<BannerProvider>(context, listen: false).getBannerList();
+                  Provider.of<HomeCategoryProvider>(context, listen: false).getHomeCategories();
+                  Provider.of<HomeVendorsProvider>(context, listen: false).getVendorList();
+                  Provider.of<CityProvider>(context, listen: false).getYourCity();
+                });
+            },
+            color: ColorResources.PRIMARY_COLOR,
+            child: ListView(
+              physics: const BouncingScrollPhysics(),
+              children: [
+              const BannerView(),
+              const CategoriesSection(),
+              const OurTable(),
+              SizedBox(
+                height: 85.h,
+              )
+            ],),
+          ),
         )
+
       ],
     );
   }

@@ -6,6 +6,8 @@ import 'package:baber/presentation/base/custom_images.dart';
 import 'package:flutter/material.dart';
 
 import '../../../app/core/utils/svg_images.dart';
+import '../../../navigation/custom_navigation.dart';
+import '../../../navigation/routes.dart';
 
 class GuestButton extends StatelessWidget {
   const GuestButton({super.key});
@@ -17,7 +19,9 @@ class GuestButton extends StatelessWidget {
       highlightColor: Colors.transparent,
       focusColor: Colors.transparent,
       hoverColor: Colors.transparent,
-      onTap: (){},
+      onTap: (){
+        CustomNavigator.push(Routes.DASHBOARD,replace: true);
+      },
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,

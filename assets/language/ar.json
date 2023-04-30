@@ -5,7 +5,7 @@
   "phone_number": "رقم الهاتف",
   "remember_me": "تذكرني",
   "agree_to_the_terms_and_conditions": "الموافقة علي الشروط و الاحكام",
-  "sign_in": "تسجيل",
+  "sign_in": "تسجيل الدخول",
   "don't_get_the_code": "لم تحصل علي الرمز؟",
   "browse": "تصفح ",
   "as_a_guest": "كضيف",
@@ -27,7 +27,7 @@
   "our_dining_table": "سفرتنا",
   "resend_code": " أعد إرسال الرمز",
   "code_expires_in": "تنتهي صلاحية الرمز في: ",
-  "please_verify_your_mobile_number_and_enter_the_4_digit_verification_code": "يرجى التحقق من رقم هاتفك المحمول و إدخال رمز التحقق المكون من 4 أرقام",
+  "please_verify_your_mobile_number_and_enter_the_6_digit_verification_code": "يرجى التحقق من رقم هاتفك المحمول و إدخال رمز التحقق المكون من 6 أرقام",
   "edit": "تعديل",
   "next": "التالي",
   "attachment": "ارفاق",
@@ -43,14 +43,16 @@
   "your_message_send_successfully": "تم ارسال رسالتك بنجاح",
   "your_logged_out_successfully": "تم تسجيل خروجك بنجاح",
   "item_description": "وصف المنتج",
-  "addons": "الاضافات",
+  "addons": "الإضافات",
   "item_details": "تفاصيل المنتج",
   "add_to_cart": "أضف الي السلة",
-  "added_to_cart": "تم الإضافة",
+  "update_cart": "التحديث في السلة",
   "delete": "حذف",
   "search": "ابحث هنا",
   "products": "المنتجات",
-  "vendors": "المطاعم"
+  "vendors": "المطاعم",
+  "no_connection": "غير متصل",
+  "connected": "متصل"
 
 
 }

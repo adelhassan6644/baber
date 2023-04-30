@@ -49,20 +49,31 @@ class CategoriesSection extends StatelessWidget {
                 alignment: WrapAlignment.spaceBetween,
                 children: List.generate(
                   categoriesProvider.homeCategoryModel != null &&
-                          categoriesProvider.homeCategoryModel!.items!.isNotEmpty
+                          categoriesProvider
+                              .homeCategoryModel!.items!.isNotEmpty
                       ? categoriesProvider.homeCategoryModel!.items!.length
                       : 4,
                   (index) => categoriesProvider.homeCategoryModel != null &&
-                      categoriesProvider.homeCategoryModel!.items!.isNotEmpty
+                          categoriesProvider
+                              .homeCategoryModel!.items!.isNotEmpty
                       ? InkWell(
                           onTap: () {
-                            CustomNavigator.push(Routes.CATEGORIES, arguments: categoriesProvider.homeCategoryModel!.items);
-                            Provider.of<VendorsProvider>(context, listen: false).setCurrentIndex(index);
-                            Provider.of<VendorsProvider>(context, listen: false).getVendorsByCategory(id: categoriesProvider.homeCategoryModel!.items![index].id!);
+                            CustomNavigator.push(Routes.CATEGORIES,
+                                arguments: categoriesProvider
+                                    .homeCategoryModel!.items);
+                            Provider.of<VendorsProvider>(context, listen: false)
+                                .setCurrentIndex(index);
+                            Provider.of<VendorsProvider>(context, listen: false)
+                                .getVendorsByCategory(
+                                    id: categoriesProvider
+                                        .homeCategoryModel!.items![index].id!);
                           },
-                          child: Stack(children: [
+                          child: Stack(
+                            children: [
                               CustomNetworkImage.containerNewWorkImage(
-                                  image:categoriesProvider.homeCategoryModel!.items![index].image??"",
+                                  image: categoriesProvider.homeCategoryModel!
+                                          .items![index].image ??
+                                      "",
                                   width: 163.h,
                                   height: 80.h,
                                   fit: BoxFit.cover,
@@ -71,13 +82,16 @@ class CategoriesSection extends StatelessWidget {
                                 top: 12.h,
                                 left: 14.w,
                                 child: Text(
-                                  categoriesProvider.homeCategoryModel!.items![index].name??"",
+                                  categoriesProvider.homeCategoryModel!
+                                          .items![index].name ??
+                                      "",
                                   style: AppTextStyles.w500.copyWith(
                                       fontSize: 15,
                                       color: ColorResources.WHITE_COLOR),
                                 ),
                               ),
-                            ],))
+                            ],
+                          ))
                       : Stack(
                           children: [
                             Shimmer.fromColors(

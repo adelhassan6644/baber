@@ -7,17 +7,18 @@ import 'package:provider/provider.dart';
 import '../../app/core/utils/app_snack_bar.dart';
 import '../../app/core/utils/color_resources.dart';
 import '../../app/core/utils/dimensions.dart';
-import '../../app/core/utils/images.dart';
 import '../../app/core/utils/svg_images.dart';
 import '../../app/core/utils/validation.dart';
-import '../../controller/auth_provider.dart';
+import '../../controller/firebase_auth_provider.dart';
 import '../../domain/localization/language_constant.dart';
 import '../base/chekbox_listtile.dart';
 import '../base/custom_button.dart';
+import '../base/custom_network_image.dart';
+import '../base/custom_stack_app_bar.dart';
 
 class LoginPage extends StatefulWidget {
-  const LoginPage({Key? key}) : super(key: key);
-
+  const LoginPage({required this.fromProfile, Key? key}) : super(key: key);
+final bool fromProfile;
   @override
   State<LoginPage> createState() => _LoginPageState();
 }
@@ -29,7 +30,7 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: ColorResources.BACKGROUND_COLOR,
-      body: Consumer<AuthProvider>(builder: (child, authProvider, _) {
+      body: Consumer<FirebaseAuthProvider>(builder: (child, provider, _) {
         return Form(
           key: formKey,
           child: Column(
@@ -48,13 +49,14 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 child: Column(
                   children: [
-                    SizedBox(height: context.toPadding,),
-                    Image.asset(
-                      Images.splash,
-                      height: 215.h,
-                      width: context.width,
-                      fit: BoxFit.cover,
-                    ),
+                    CustomNetworkImage.containerNewWorkImage(
+                        image:"",
+                        radius: 0,
+                        width: context.width,
+                        height: 250.h,
+                        imageWidget: Navigator.canPop(context)? const CustomStackAppBar(
+                          withCart: false,
+                        ):const SizedBox()),
                   ],
                 ),
               ),
@@ -72,45 +74,42 @@ class _LoginPageState extends State<LoginPage> {
                         vertical:  Dimensions.PADDING_SIZE_DEFAULT.h,
                           horizontal: Dimensions.PADDING_SIZE_DEFAULT.w),
                       child: CustomTextFormField(
-                        controller: authProvider.phoneTEC,
+                        controller: provider.phoneTEC,
                         pIconColor: Colors.black,
                         pSvgIcon: SvgImages.phoneIcon,
-                        isValidat: formKey.currentState?.validate() ?? true,
                         hint: getTranslated("phone_number", context),
                         valid: Validations.phone,
                         inputType: TextInputType.phone,
                         label: true,
-                        maxLength: 9,
+                        // maxLength: 9,
                       ),
                     ),
                     Padding(
                       padding:  EdgeInsets.symmetric(horizontal: Dimensions.PADDING_SIZE_DEFAULT.w),
                       child: CheckBoxListTile(
                         title: getTranslated("remember_me", context),
-                        onChange:authProvider.onRememberMe ,
-                        check: authProvider.isRememberMe,
+                        onChange:provider.onRememberMe ,
+                        check: provider.isRememberMe,
                       ),
                     ),
                     Padding(
                       padding:  EdgeInsets.symmetric(horizontal: Dimensions.PADDING_SIZE_DEFAULT.w),
                       child: CheckBoxListTile(
                         title:getTranslated("agree_to_the_terms_and_conditions", context),
-                        onChange:authProvider.onAgree ,
-                        check: authProvider.isAgree,
-
+                        onChange:provider.onAgree ,
+                        check: provider.isAgree,
                       ),
                     ),
                     Padding(
                       padding: EdgeInsets.symmetric(
                           horizontal: Dimensions.PADDING_SIZE_DEFAULT.w,vertical:Dimensions.PADDING_SIZE_DEFAULT.h ),
                       child: CustomButton(
-                          isLoading: authProvider.isLoading,
-                          isError: authProvider.isError,
+                          isLoading: provider.isLoading,
                           height: 46.h,
                           onTap: () {
-                            if(authProvider.isAgree) {
+                            if(provider.isAgree) {
                               if (formKey.currentState!.validate()) {
-                                authProvider.logIn();
+                                provider.signInWithMobileNo();
                               }
                             }else{
                               CustomSnackBar.showSnackBar(
@@ -127,7 +126,7 @@ class _LoginPageState extends State<LoginPage> {
                           text: getTranslated("sign_in", context),
                           backgroundColor: ColorResources.PRIMARY_COLOR),
                     ),
-                    const GuestButton()
+                   if(!widget.fromProfile) const GuestButton()
                   ],
                 ),
               )

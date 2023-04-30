@@ -8,7 +8,7 @@ import 'package:provider/provider.dart';
 import '../../app/core/utils/color_resources.dart';
 import '../../app/core/utils/dimensions.dart';
 import '../../app/core/utils/images.dart';
-import '../../controller/auth_provider.dart';
+import '../../controller/firebase_auth_provider.dart';
 import '../../domain/localization/language_constant.dart';
 import '../base/count_down.dart';
 import '../base/custom_button.dart';
@@ -29,7 +29,7 @@ class _VerificationPageState extends State<VerificationPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: ColorResources.BACKGROUND_COLOR,
-      body: Consumer<AuthProvider>(builder: (child, authProvider, _) {
+      body: Consumer<FirebaseAuthProvider>(builder: (child, provider, _) {
         return Form(
           key: formKey,
           child: Column(
@@ -83,7 +83,7 @@ class _VerificationPageState extends State<VerificationPage> {
                           SizedBox(height: 24.h),
                           Text(
                               getTranslated(
-                                  "please_verify_your_mobile_number_and_enter_the_4_digit_verification_code",
+                                  "please_verify_your_mobile_number_and_enter_the_6_digit_verification_code",
                                   context),
                               textAlign: TextAlign.center,
                               style: AppTextStyles.w500.copyWith(
@@ -94,9 +94,9 @@ class _VerificationPageState extends State<VerificationPage> {
                     )),
                     Padding(
                       padding: EdgeInsets.symmetric(
-                          horizontal: 50.w, vertical: 20.h),
+                          horizontal: Dimensions.PADDING_SIZE_DEFAULT.w, vertical: 20.h),
                       child: PinCodeTextField(
-                        length: 4,
+                        length: 6,
                         hintCharacter: "*",
                         hintStyle: AppTextStyles.w500.copyWith(color: ColorResources.DETAILS_COLOR),
                         appContext: context,
@@ -109,12 +109,11 @@ class _VerificationPageState extends State<VerificationPage> {
                         errorTextDirection:TextDirection.rtl,
                         cursorColor: ColorResources.PRIMARY_COLOR,
                         errorTextSpace: 30.h,
-                        errorTextMargin: EdgeInsets.symmetric(horizontal:71.w),
                         inputFormatters: [FilteringTextInputFormatter.allow(RegExp('[0-9]'))],
                         pinTheme: PinTheme(
                           shape: PinCodeFieldShape.box,
-                          fieldHeight: 62.h,
-                          fieldWidth: 62.w,
+                          fieldHeight: 50.h,
+                          fieldWidth: 50.w,
                           borderWidth: 1.w,
                           borderRadius: BorderRadius.circular(Dimensions.RADIUS_DEFAULT),
                           selectedColor: ColorResources.LIGHT_GREY_BORDER,
@@ -127,26 +126,21 @@ class _VerificationPageState extends State<VerificationPage> {
                         animationDuration: const Duration(milliseconds: 300),
                         backgroundColor: Colors.transparent,
                         enableActiveFill: true,
-                        onChanged: authProvider.updateVerificationCode,
+                        onChanged: provider.updateVerificationCode,
                         beforeTextPaste: (text) => true,
                       ),
                     ),
                     CountDown(
-                      onCount: authProvider.logIn,
+                      onCount: provider.signInWithMobileNo,
                     ),
                     Padding(
                       padding: EdgeInsets.symmetric(
                           horizontal: Dimensions.PADDING_SIZE_DEFAULT.w,
                           vertical: Dimensions.PADDING_SIZE_SMALL.h),
                       child: CustomButton(
-                          isLoading: authProvider.isSubmit,
-                          isError: authProvider.isErrorOnSubmit,
+                          isLoading: provider.isSubmit,
                           height: 46.h,
-                          onTap: () {
-                            if (formKey.currentState!.validate()) {
-                              authProvider.verifyPhone();
-                            }
-                          },
+                          onTap: () {if (formKey.currentState!.validate()) {provider.sendOTP();}},
                           textColor: ColorResources.WHITE_COLOR,
                           text: getTranslated("submit", context),
                           backgroundColor: ColorResources.PRIMARY_COLOR),

@@ -6,7 +6,7 @@ import '../app/core/error/api_error_handler.dart';
 import '../app/core/error/failures.dart';
 import '../app/core/utils/app_snack_bar.dart';
 import '../app/core/utils/color_resources.dart';
-import '../data/model/base_model.dart';
+import '../data/model/banner_model.dart';
 import '../domain/repository/home_repo.dart';
 
 class BannerProvider extends ChangeNotifier {
@@ -21,17 +21,18 @@ class BannerProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  BaseModel? bannerModel;
+  BannerModel? bannerModel;
 
   getBannerList() async {
     try {
+      bannerModel=null;
       notifyListeners();
       Either<ServerFailure, Response> response =
           await homeRepo.getHomeBanners();
       response.fold((fail) {
         notifyListeners();
       }, (success) {
-        bannerModel = BaseModel.fromJson(success.data);
+        bannerModel = BannerModel.fromJson(success.data);
         notifyListeners();
       });
     } catch (e) {

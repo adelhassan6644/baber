@@ -45,37 +45,40 @@ class HomeAppBar extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Row(
-                    children: [
-                      Text(
-                        getTranslated("delivery_to", context),
-                        style: AppTextStyles.w500.copyWith(
-                            color: ColorResources.PRIMARY_COLOR, fontSize: 13),
-                      ),
-                      SizedBox(
-                        width: 6.w,
-                      ),
-                      const Icon(
-                        Icons.keyboard_arrow_down,
-                        color: ColorResources.PRIMARY_COLOR,
-                        size: 15,
-                      )
-                    ],
-                  ),
-                  Consumer<CityProvider>(
-                    builder: (context, provider, child) {
-                      return   Text(
-                        provider.city?.name ?? "الرياض",
-                        style: AppTextStyles.w500.copyWith(
-                            color: ColorResources.DETAILS_COLOR, fontSize: 13),
-                      );
-                    },
-                  ),
-                ],
+              GestureDetector(
+                onTap: () => CustomNavigator.push(Routes.CITY, arguments: true),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Row(
+                      children: [
+                        Text(
+                          getTranslated("delivery_to", context),
+                          style: AppTextStyles.w500.copyWith(
+                              color: ColorResources.PRIMARY_COLOR, fontSize: 13),
+                        ),
+                        SizedBox(
+                          width: 6.w,
+                        ),
+                        const Icon(
+                          Icons.keyboard_arrow_down,
+                          color: ColorResources.PRIMARY_COLOR,
+                          size: 15,
+                        )
+                      ],
+                    ),
+                    Consumer<CityProvider>(
+                      builder: (context, provider, child) {
+                        return   Text(
+                          provider.currentCity ?? "الرياض",
+                          style: AppTextStyles.w500.copyWith(
+                              color: ColorResources.DETAILS_COLOR, fontSize: 13),
+                        );
+                      },
+                    ),
+                  ],
+                ),
               ),
               GestureDetector(
                   onTap: ()=>CustomNavigator.push(Routes.SEARCH),

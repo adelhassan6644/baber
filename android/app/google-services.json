@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "751283654969",
+    "project_id": "baberapp-cab90",
+    "storage_bucket": "baberapp-cab90.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:751283654969:android:c730242839621dedfb98e8",
+        "android_client_info": {
+          "package_name": "com.example.baber"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "751283654969-bj22psg3i58ascmunacnkpod8r8knafl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCO-xBsdC86aPtf_hpNimZ-ZcLBoVDcsBc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "751283654969-bj22psg3i58ascmunacnkpod8r8knafl.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "751283654969-udi0fgeq28ef1ujsr2ru9bkm6pqfs0bm.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.baber"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

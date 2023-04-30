@@ -1,6 +1,13 @@
-import 'package:firebase_auth/firebase_auth.dart';
+import 'dart:developer';
+import 'dart:io';
+
+import 'package:dartz/dartz.dart';
+import 'package:dio/dio.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import '../../app/core/api/end_points.dart';
+import '../../app/core/error/api_error_handler.dart';
+import '../../app/core/error/failures.dart';
 import '../../app/core/utils/app_storage_keys.dart';
 import '../../data/dio/dio_client.dart';
 
@@ -9,7 +16,6 @@ class FirebaseAuthRepo {
   final DioClient dioClient;
   FirebaseAuthRepo({required this.sharedPreferences,required this.dioClient});
 
-  FirebaseAuth auth = FirebaseAuth.instance;
 
   bool isLoggedIn() {
     return sharedPreferences.containsKey(AppStorageKey.isLogin);
@@ -28,40 +34,41 @@ class FirebaseAuthRepo {
   remember({required String phone}) {
     sharedPreferences.setString(AppStorageKey.phone, phone);
   }
+
   forget() {
     sharedPreferences.remove(AppStorageKey.phone);
   }
 
-  Future<String?> saveDeviceToken() async {
-    // String? _deviceToken;
-    // if(Platform.isIOS) {
-    //   _deviceToken = await FirebaseMessaging.instance.getAPNSToken();
-    // }else {
-    //   _deviceToken = await FirebaseMessaging.instance.getToken();
-    // }
-    //
-    // if (_deviceToken != null) {
-    //   log('--------Device Token---------- $_deviceToken');
-    // }
-    // return _deviceToken;
-    return "RVmsmxd5dg8v3cS0d48q3nvoFFuaSXuCwZbMU3LCjEren7VWhq";
+  Future<String?> getFcmToken() async {
+    String? _deviceToken;
+    if(Platform.isIOS) {
+      _deviceToken = await FirebaseMessaging.instance.getAPNSToken();
+    }else {
+      _deviceToken = await FirebaseMessaging.instance.getToken();
+    }
+
+    if (_deviceToken != null) {
+      log('--------Device Token---------- $_deviceToken');
+    }
+    return _deviceToken;
   }
 
-  // Future<Either<ServerFailure, Response>> subscribeToTopic() async {
-  //   try {
-  //     FirebaseMessaging.instance.subscribeToTopic(EndPoints.topic);
-  //     Response response = await dioClient.post(
-  //       data: {"_method": "put", "cm_firebase_token": await saveDeviceToken()},
-  //       uri: EndPoints.,
-  //     );
-  //   else {
-  //   return left(ServerFailure(response.data['message']));
-  //   }
-  //   } catch (error) {
-  //   return left(ServerFailure(ApiErrorHandler.getMessage(error)));
-  //   }
-  // }
 
+  Future<Either<ServerFailure, Response>> sendDeviceToken({required String phone}) async {
+    try {
+      Response res = await dioClient.post(
+        data: {"device_token": await getFcmToken(),"phone":phone},
+        uri: EndPoints.logIn,);
+      if(res.statusCode ==200){
+        saveUserToken(token: res.data['data']["api_token"]);
+        return Right(res);
+      } else {
+    return left(ServerFailure(res.data['message']));
+    }
+    } catch (error) {
+    return left(ServerFailure(ApiErrorHandler.getMessage(error)));
+    }
+  }
 
   Future<void> saveUserToken({required String token}) async {
     try {
@@ -73,10 +80,7 @@ class FirebaseAuthRepo {
   }
 
 
-
   Future<bool> clearSharedData() async {
-    await sharedPreferences.remove(AppStorageKey.cityId);
-    await sharedPreferences.remove(AppStorageKey.cityName);
     await sharedPreferences.remove(AppStorageKey.token);
     await sharedPreferences.remove(AppStorageKey.isLogin);
     return true;

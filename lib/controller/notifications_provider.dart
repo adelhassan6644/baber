@@ -19,9 +19,11 @@ class NotificationProvider extends ChangeNotifier {
   getHomeCategories() async {
     try {
       isLoading =true;
+      notifyListeners();
       Either<ServerFailure, Response> response =
       await notificationRepo.getNotifications();
       response.fold((fail) {
+        isLoading =false;
         notifyListeners();
       }, (success) {
         notificationModel = NotificationModel.fromJson(success.data);

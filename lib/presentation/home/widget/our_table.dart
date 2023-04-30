@@ -35,13 +35,14 @@ class OurTable extends StatelessWidget {
                 children: [
                   SizedBox(width: 24.w),
                   ...List.generate(
-                    vendorProvider.homeVendorList != null && vendorProvider.homeVendorList!.isNotEmpty
-                        ? vendorProvider.homeVendorList!.length : 4,
-                    (index) => vendorProvider.homeVendorList != null &&
-                            vendorProvider.homeVendorList!.isNotEmpty
-                        ? Row(
+                    vendorProvider.homeVendorList != null && vendorProvider.homeVendorList!.items != null
+                        ? vendorProvider.homeVendorList!.items!.length : 4,
+                    (index) =>
+                    vendorProvider.homeVendorList != null && vendorProvider.homeVendorList!.items != null ?
+                    Row(
                             children: [
-                              const ItemCard(
+                               ItemCard(
+                                itemModel: vendorProvider.homeVendorList!.items![index],
                                 fromHome: true,
                                 isVendor: true,
                               ),

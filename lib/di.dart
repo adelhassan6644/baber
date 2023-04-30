@@ -3,8 +3,10 @@ import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'app/core/api/end_points.dart';
+import 'app/core/network/netwok_info.dart';
 import 'controller/banner_provider.dart';
 import 'controller/cart_provider.dart';
+import 'controller/firebase_auth_provider.dart';
 import 'controller/home_categories_provider.dart';
 import 'controller/city_provider.dart';
 import 'controller/contact_provider.dart';
@@ -16,6 +18,7 @@ import 'controller/notifications_provider.dart';
 import 'controller/products_provider.dart';
 import 'controller/profile_provider.dart';
 import 'controller/search_provider.dart';
+import 'controller/settings_provider.dart';
 import 'controller/theme_provider.dart';
 import 'controller/vendor_provider.dart';
 import 'controller/vendors_provider.dart';
@@ -32,6 +35,7 @@ import 'domain/repository/notification_repo.dart';
 import 'domain/repository/products_repo.dart';
 import 'domain/repository/profile_repo.dart';
 import 'domain/repository/search_repo.dart';
+import 'domain/repository/settings_repo.dart';
 import 'domain/repository/vendor_repo.dart';
 import 'domain/repository/vendors_repo.dart';
 
@@ -40,18 +44,15 @@ final sl = GetIt.instance;
 
 Future<void> init() async {
   // Core
-  sl.registerLazySingleton(() => DioClient(
-        EndPoints.baseUrl,
-        dio: sl(),
-        loggingInterceptor: sl(),
-    sharedPreferences:sl(), ));
+  sl.registerLazySingleton(() => NetworkInfo(sl()));
+  sl.registerLazySingleton(() => DioClient(EndPoints.baseUrl, dio: sl(), loggingInterceptor: sl(), sharedPreferences:sl(), ));
 
   // Repository
   sl.registerLazySingleton(() => AuthRepo(sharedPreferences: sl(), dioClient: sl() ));
   sl.registerLazySingleton(() => FirebaseAuthRepo(sharedPreferences: sl(),dioClient: sl() ));
   sl.registerLazySingleton(() => ProfileRepo(dioClient: sl() ));
   sl.registerLazySingleton(() => CityRepo(dioClient: sl(),sharedPreferences: sl() ));
-  sl.registerLazySingleton(() => HomeRepo(dioClient: sl() ));
+  sl.registerLazySingleton(() => HomeRepo(dioClient: sl(),sharedPreferences: sl()  ));
   sl.registerLazySingleton(() => VendorsRepo(dioClient: sl(),sharedPreferences: sl()));
   sl.registerLazySingleton(() => ProductsRepo(dioClient: sl()));
   sl.registerLazySingleton(() => VendorRepo(dioClient: sl() ));
@@ -60,6 +61,7 @@ Future<void> init() async {
   sl.registerLazySingleton(() => ContactRepo(dioClient: sl() ));
   sl.registerLazySingleton(() => CartRepo(sharedPreferences: sl() ));
   sl.registerLazySingleton(() => SearchRepo(dioClient: sl() ));
+  sl.registerLazySingleton(() => SettingsRepo(dioClient: sl() ));
 
 
   //provider
@@ -68,6 +70,7 @@ Future<void> init() async {
   sl.registerLazySingleton(() => LanguageProvider());
    sl.registerLazySingleton(() => ThemeProvider(sharedPreferences: sl()));
    sl.registerLazySingleton(() => AuthProvider(authRepo: sl()));
+   sl.registerLazySingleton(() => FirebaseAuthProvider(firebaseAuthRepo: sl()));
    sl.registerLazySingleton(() => ProfileProvider(profileRepo: sl()));
    sl.registerLazySingleton(() => CityProvider(cityRepo: sl()));
    sl.registerLazySingleton(() => BannerProvider(homeRepo: sl()));
@@ -81,6 +84,8 @@ Future<void> init() async {
    sl.registerLazySingleton(() => NotificationProvider(notificationRepo: sl()));
    sl.registerLazySingleton(() => CartProvider(cartRepo: sl()));
    sl.registerLazySingleton(() => SearchProvider(searchRepo: sl()));
+   sl.registerLazySingleton(() => SettingsProvider(settingsRepo: sl()));
+
 
 
   // External

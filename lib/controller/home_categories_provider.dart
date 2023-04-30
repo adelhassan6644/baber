@@ -17,7 +17,9 @@ class HomeCategoryProvider extends ChangeNotifier {
 
   getHomeCategories() async {
     try {
-        Either<ServerFailure, Response> response =
+      homeCategoryModel =null;
+      notifyListeners();
+      Either<ServerFailure, Response> response =
         await homeRepo.getHomeCategories();
         response.fold((fail) {
           notifyListeners();

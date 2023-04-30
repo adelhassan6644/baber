@@ -8,16 +8,19 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shimmer/shimmer.dart';
 
+import '../../../app/core/utils/app_snack_bar.dart';
 import '../../../app/core/utils/color_resources.dart';
 import '../../../app/core/utils/text_styles.dart';
 import '../../../domain/localization/language_constant.dart';
 import '../../../main_widgets/item_card.dart';
 import '../../../navigation/custom_navigation.dart';
 import '../../../navigation/routes.dart';
+import '../../base/confirmation_dialog.dart';
 import '../../base/custom_app_bar.dart';
 import '../../base/custom_button.dart';
 import '../../base/custom_network_image.dart';
-import '../widget/addons_card.dart';
+import '../../base/custom_simple_dialog.dart';
+import '../widget/addon_item.dart';
 
 class ItemDetailsPage extends StatelessWidget {
   const ItemDetailsPage({this.title, Key? key}) : super(key: key);
@@ -105,11 +108,11 @@ class ItemDetailsPage extends StatelessWidget {
                                     children: [
                                       GestureDetector(
                                         onTap: () {
-                                          provider.updateQty(
-                                              qty: provider.item!.qty! + 1);
+                                          provider.updateQty(qty: provider.item!.qty! + 1);
+
                                           Provider.of<CartProvider>(context,
-                                              listen: false)
-                                              .isAddedToCart(item: provider.item!);
+                                                  listen: false)
+                                              .existInCart(item: provider.item!);
                                         },
                                         child: Container(
                                           padding: const EdgeInsets.all(5),
@@ -160,10 +163,10 @@ class ItemDetailsPage extends StatelessWidget {
                                       GestureDetector(
                                         onTap: () {
                                           if (provider.item!.qty! > 1) {
-                                            provider.updateQty(qty: provider.item!.qty! - 1);
+                                            provider.updateQty(
+                                                qty: provider.item!.qty! - 1);
                                             Provider.of<CartProvider>(context,
-                                                listen: false)
-                                                .isAddedToCart(item: provider.item!);
+                                                    listen: false).existInCart(item: provider.item!);
                                           }
                                         },
                                         child: Container(
@@ -290,12 +293,16 @@ class ItemDetailsPage extends StatelessWidget {
                   Visibility(
                     visible: provider.item?.addons != null &&
                         provider.item!.addons!.isNotEmpty,
-                    child: Column(
+                    child:
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Padding(
                           padding: EdgeInsets.symmetric(vertical: 12.h),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.start,
                             children: [
                               Padding(
                                 padding: EdgeInsets.symmetric(
@@ -308,31 +315,29 @@ class ItemDetailsPage extends StatelessWidget {
                                   ),
                                 ),
                               ),
-                              Padding(
-                                padding: EdgeInsets.symmetric(vertical: 12.h),
-                                child: SingleChildScrollView(
-                                  scrollDirection: Axis.horizontal,
-                                  physics: const BouncingScrollPhysics(),
-                                  child: Row(
-                                    children: [
-                                      SizedBox(
-                                          width: Dimensions
-                                              .PADDING_SIZE_DEFAULT.w),
-                                      ...List.generate(
-                                          provider.isLoading
-                                              ? 4
-                                              : provider.item?.addons?.length ??
-                                                  0,
-                                          (index) => provider.isLoading
-                                              ? const AddonsCardShimmer()
-                                              : AddonCard(
-                                                  addon: provider
-                                                      .item!.addons![index],
-                                                )),
-                                    ],
-                                  ),
-                                ),
-                              )
+                              SizedBox(
+                                height: 12.h,
+                              ),
+                              ...List.generate(
+                                  provider.isLoading
+                                      ? 3
+                                      : provider.item?.addons?.length ??
+                                      0,
+                                      (index) => provider.isLoading
+                                      ? Padding(
+                                        padding: EdgeInsets.symmetric(horizontal: Dimensions.PADDING_SIZE_DEFAULT.w,vertical: 6.h),
+                                        child: Row(
+                                          children: [
+                                            TextShimmer(width:100.w,height: 20.h,),
+                                            const Spacer(),
+                                            TextShimmer(width:50.w,height: 20.h,),
+                                          ],
+                                        ),
+                                      )
+                                      : AddonItem(
+                                    addon: provider
+                                        .item!.addons![index],
+                                  )),
                             ],
                           ),
                         ),
@@ -351,93 +356,184 @@ class ItemDetailsPage extends StatelessWidget {
       ),
 
       ///Add to cart Button
-      bottomNavigationBar: SafeArea(
-        bottom: true,
-        child: Padding(
-          padding: EdgeInsets.symmetric(
-              horizontal: Dimensions.PADDING_SIZE_DEFAULT.w,
-              vertical: Dimensions.PADDING_SIZE_DEFAULT.h),
-          child: Consumer<CartProvider>(
-            builder: (_, provider, widget) {
-              return Row(
-                children: [
-                  Expanded(
-                    child: CustomButton(
-                        isLoading: false,
-                        height: 46.h,
-                        onTap: () => provider.addToCart(item: Provider.of<ItemDetailsProvider>(context, listen: false).item!,),
-                        textColor: ColorResources.WHITE_COLOR,
-                        text: provider.isAdded
-                            ? getTranslated("added_to_cart", context)
-                            : getTranslated("add_to_cart", context),
-                        backgroundColor: provider.isAdded
-                            ? ColorResources.OFFER_COLOR
-                            : ColorResources.PRIMARY_COLOR),
-                  ),
-                  SizedBox(
-                    width: 12.w,
-                  ),
-                  GestureDetector(
-                    onTap: () => CustomNavigator.push(Routes.CART),
-                    child: Container(
-                      width: 60.h,
-                      height: 46.h,
-                      decoration: BoxDecoration(
-                          color: ColorResources.WHITE_COLOR,
-                          borderRadius: BorderRadius.circular(15.w),
-                          boxShadow: const [
-                            BoxShadow(
-                                color: Color.fromRGBO(0, 0, 0, .1),
-                                blurRadius: 0.05,
-                                spreadRadius: 0.05,
-                                offset: Offset(0, 1))
-                          ],
-                          border: Border.all(color: ColorResources.LIGHT_GREY_BORDER)),
-                      child: Center(
-                        child: Stack(
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.all(10.0),
-                              child: customImageIconSVG(
-                                imageName: SvgImages.cartIcon,
-                                color: ColorResources.PRIMARY_COLOR,
-                              ),
-                            ),
-                            Visibility(
-                              visible: provider.cartList.isNotEmpty,
-                              child: Positioned(
-                                right: 8.w,
-                                top: 5.h,
-                                child: Container(
-                                  height: 13.h,
-                                  padding:  EdgeInsets.symmetric(horizontal: 4.w,),
-                                  decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(50),
-                                      color: ColorResources.FAILED_COLOR),
-                                  child: Center(
-                                    child: Text(
-                                     provider.cartList.length.toString(),
-                                      textAlign: TextAlign.center,
-                                      style: AppTextStyles.w500.copyWith(
-                                        fontSize: 10,
-                                        height: 1.3,
-                                        color: Colors.white,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            )
-                          ],
-                        ),
-                      ),
-                    ),
-                  )
-                ],
-              );
-            },
-          ),
-        ),
+      bottomNavigationBar: Consumer<ItemDetailsProvider>(
+        builder: (_,itemDetailsProvider,widget) {
+          return itemDetailsProvider.isLoading? SafeArea(
+             bottom: true,
+             child: Padding(
+               padding: EdgeInsets.symmetric(
+                   horizontal: Dimensions.PADDING_SIZE_DEFAULT.w,
+                   vertical: Dimensions.PADDING_SIZE_DEFAULT.h),
+               child: Consumer<CartProvider>(
+                 builder: (_, cartProvider, widget) {
+                   return Row(
+                     children: [
+                       Expanded(
+                         child: Shimmer.fromColors(
+                           baseColor: Colors.grey[300]!,
+                           highlightColor: Colors.grey[100]!,
+                           enabled: true,
+                           child: Container(
+                               width: context.width,
+                               height: 46.h,
+                               decoration: BoxDecoration(
+                                 borderRadius: BorderRadius.circular(15.w),
+                                 color: ColorResources.WHITE_COLOR,
+                               )),
+                         )
+                       ),
+                       SizedBox(
+                         width: 12.w,
+                       ),
+                       Shimmer.fromColors(
+                         baseColor: Colors.grey[300]!,
+                         highlightColor: Colors.grey[100]!,
+                         enabled: true,
+                         child: Container(
+                             width: 60.h,
+                             height: 46.h,
+                             decoration: BoxDecoration(
+                               borderRadius: BorderRadius.circular(15.w),
+                               color: ColorResources.WHITE_COLOR,
+                             )),
+                       )
+                     ],
+                   );
+                 },
+               ),
+             ),
+           ) :
+          SafeArea(
+             bottom: true,
+             child: Padding(
+               padding: EdgeInsets.symmetric(
+                   horizontal: Dimensions.PADDING_SIZE_DEFAULT.w,
+                   vertical: Dimensions.PADDING_SIZE_DEFAULT.h),
+               child: Consumer<CartProvider>(
+                 builder: (_, cartProvider, widget) {
+                      return Row(
+                     children: [
+                       Expanded(
+                         child: CustomButton(
+                             isLoading: false,
+                             height: 46.h,
+                             onTap: () {
+                               if (cartProvider.cartList.isEmpty) {
+                                 cartProvider.addToCart(item: itemDetailsProvider.item!,);
+                                 CustomSnackBar.showSnackBar(
+                                     notification: AppNotification(
+                                         message: "تم الإضافة إلي السلة",
+                                         isFloating: true,
+                                         backgroundColor: ColorResources.ACTIVE,
+                                         borderColor: Colors.transparent));
+                               }
+                               else {
+                                 if (cartProvider.checkStore(item: itemDetailsProvider.item!,)) {
+                                   cartProvider.addToCart(item: itemDetailsProvider.item!,);
+                                   CustomSnackBar.showSnackBar(
+                                       notification: AppNotification(
+                                           message: "تم التحديث في السلة",
+                                           isFloating: true,
+                                           backgroundColor: ColorResources.ACTIVE,
+                                           borderColor: Colors.transparent));
+                                 }
+                                 else {Future.delayed(
+                                     Duration.zero, () => CustomSimpleDialog.parentSimpleDialog(
+                                     customListWidget: [
+                                       ConfirmationDialog(
+                                           txtBtn: "نعم,أضف الطلب",
+                                           description: "سوف يتم ازالة جميع الطلبات الموجودة في السلة",
+                                           onContinue: () {
+                                             CustomNavigator.pop();
+                                             cartProvider.clearCartList();
+                                             cartProvider.addToCart(item: itemDetailsProvider.item!,);
+                                             CustomSnackBar.showSnackBar(notification: AppNotification(
+                                                 message:"تم إضافة الطلب الجديد إلي السلة",
+                                                 isFloating: true,
+                                                 backgroundColor: ColorResources.ACTIVE,
+                                                 borderColor: Colors.transparent));
+                                           }
+                                       )
+                                     ]));}
+                               }
+                             },
+                             textColor: ColorResources.WHITE_COLOR,
+                             text: itemDetailsProvider.item!.isAdded!?
+                                 getTranslated("update_cart", context)
+                                 : getTranslated("add_to_cart", context),
+                             backgroundColor:  itemDetailsProvider.item!.isAdded!?
+                             ColorResources.ACTIVE : ColorResources.PRIMARY_COLOR),
+                       ),
+                       SizedBox(
+                         width: 12.w,
+                       ),
+                       GestureDetector(
+                         onTap: () => CustomNavigator.push(Routes.CART,replace: true),
+                         child: Container(
+                           width: 60.h,
+                           height: 46.h,
+                           decoration: BoxDecoration(
+                               color: ColorResources.WHITE_COLOR,
+                               borderRadius: BorderRadius.circular(15.w),
+                               boxShadow: const [
+                                 BoxShadow(
+                                     color: Color.fromRGBO(0, 0, 0, .1),
+                                     blurRadius: 0.05,
+                                     spreadRadius: 0.05,
+                                     offset: Offset(0, 1))
+                               ],
+                               border: Border.all(
+                                   color: ColorResources.LIGHT_GREY_BORDER)),
+                           child: Center(
+                             child: Stack(
+                               children: [
+                                 Padding(
+                                   padding: const EdgeInsets.all(10.0),
+                                   child: customImageIconSVG(
+                                     imageName: SvgImages.cartIcon,
+                                     color: ColorResources.PRIMARY_COLOR,
+                                   ),
+                                 ),
+                                 Visibility(
+                                   visible: cartProvider.cartList.isNotEmpty,
+                                   child: Positioned(
+                                     right: 8.w,
+                                     top: 5.h,
+                                     child: Container(
+                                       height: 13.h,
+                                       padding: EdgeInsets.symmetric(
+                                         horizontal: 4.w,
+                                       ),
+                                       decoration: BoxDecoration(
+                                           borderRadius: BorderRadius.circular(
+                                               50),
+                                           color: ColorResources.FAILED_COLOR),
+                                       child: Center(
+                                         child: Text(
+                                           cartProvider.cartList.length.toString(),
+                                           textAlign: TextAlign.center,
+                                           style: AppTextStyles.w500.copyWith(
+                                             fontSize: 10,
+                                             height: 1.3,
+                                             color: Colors.white,
+                                           ),
+                                         ),
+                                       ),
+                                     ),
+                                   ),
+                                 )
+                               ],
+                             ),
+                           ),
+                         ),
+                       )
+                     ],
+                   );
+                 },
+               ),
+             ),
+           );
+        }
       ),
     );
   }

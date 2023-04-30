@@ -17,17 +17,15 @@ class FirebaseAuthProvider extends ChangeNotifier {
     required this.firebaseAuthRepo,
   }) {
     _phoneTEC = TextEditingController(
-        text: kDebugMode ? "597834528" : firebaseAuthRepo.getPhone());
+        text: kDebugMode ? "555666777" : firebaseAuthRepo.getPhone());
   }
-  FirebaseAuth auth = FirebaseAuth.instance;
 
-  String? phone;
   late final TextEditingController _phoneTEC;
   TextEditingController get phoneTEC => _phoneTEC;
 
-  String firebaseVerificationId = "";
-  String _verificationCode = "";
-  String get verificationCode => _verificationCode;
+  String? firebaseVerificationId;
+  String smsCode = "";
+
 
   bool _isRememberMe = false;
   bool isLoginBefore = false;
@@ -46,26 +44,31 @@ class FirebaseAuthProvider extends ChangeNotifier {
   }
 
   bool _isLoading = false;
-  // bool _isSubmit = false;
+  bool _isSubmit = false;
   bool get isLoading => _isLoading;
-  // bool get isSubmit => _isSubmit;
+  bool get isSubmit => _isSubmit;
 
   bool get isLogin => firebaseAuthRepo.isLoggedIn();
 
-  signInWithMobileNo(String mobileNo) async {
+  void updateVerificationCode(String code) {
+    smsCode = code;
+    notifyListeners();
+  }
+
+  signInWithMobileNo() async {
     try {
       _isLoading = true;
       notifyListeners();
-
-      await auth.verifyPhoneNumber(
-        phoneNumber: mobileNo,
+      await FirebaseAuth.instance.verifyPhoneNumber(
+        phoneNumber: "+966${_phoneTEC.text.trim()}",
         timeout: const Duration(seconds: 60),
         verificationCompleted: (authCredential) => phoneVerificationCompleted(authCredential),
         verificationFailed: (authException) => phoneVerificationFailed(authException),
-        codeSent: (verificationId, code) => phoneCodeSent(verificationId: verificationId,code:  code??0),
+        codeSent: (verificationId, code) => phoneCodeSent(verificationId: verificationId, code: code ?? 0),
         codeAutoRetrievalTimeout: phoneCodeAutoRetrievalTimeout,
       );
     } catch (e) {
+      _isLoading = false;
       CustomSnackBar.showSnackBar(
           notification: AppNotification(
               message: ApiErrorHandler.getMessage(e),
@@ -76,11 +79,7 @@ class FirebaseAuthProvider extends ChangeNotifier {
   }
 
   phoneVerificationCompleted(AuthCredential authCredential) {
-    _isLoading=false;
-    CustomNavigator.push(Routes.DASHBOARD,clean: true);
-    log(authCredential.token.toString());
-    firebaseAuthRepo.saveUserToken(token: authCredential.token.toString());
-    firebaseAuthRepo.setLoggedIn();
+    log("====>phoneVerificationCompleted ${authCredential.token}");
   }
 
   phoneVerificationFailed(FirebaseException authException) {
@@ -89,66 +88,102 @@ class FirebaseAuthProvider extends ChangeNotifier {
           notification: AppNotification(
               message: "رقم الهاتف غير صحيح",
               isFloating: true,
-              backgroundColor: ColorResources.ACTIVE,
+              backgroundColor: ColorResources.IN_ACTIVE,
               borderColor: Colors.transparent));
     } else {
       CustomSnackBar.showSnackBar(
           notification: AppNotification(
               message: authException.message.toString(),
               isFloating: true,
-              backgroundColor: ColorResources.ACTIVE,
+              backgroundColor: ColorResources.IN_ACTIVE,
               borderColor: Colors.transparent));
     }
-    _isLoading=false;
+    _isLoading = false;
+    notifyListeners();
   }
 
   phoneCodeAutoRetrievalTimeout(String verificationCode) {
-    _verificationCode = verificationCode;
+    log("====>phoneCodeAutoRetrievalTimeout is $firebaseVerificationId");
+    firebaseVerificationId = verificationCode;
+    notifyListeners();
   }
 
-  phoneCodeSent({required String verificationId,required int code,bool submit =false,String? smsCode}) async {
-    _isLoading=false;
+  phoneCodeSent({required String verificationId, required int code,}) async {
+
+    _isLoading = false;
     firebaseVerificationId = verificationId;
     CustomNavigator.push(Routes.VERIFICATION,);
+    notifyListeners();
+  }
 
-   if(submit == true) {
-      try {
-        _isLoading=true;
+  sendOTP() async {
+    _isSubmit = true;
+    notifyListeners();
+    try {
+      if (firebaseVerificationId != null) {
         PhoneAuthCredential phoneAuthCredential = PhoneAuthProvider.credential(
-          verificationId: firebaseVerificationId,
-          smsCode: smsCode??"",
-        );
-        await FirebaseAuth.instance.signInWithCredential(phoneAuthCredential);
-      } catch (e) {
-        _isLoading=false;
+          verificationId: firebaseVerificationId!, smsCode: smsCode.toString().trim(),);
+        await FirebaseAuth.instance.signInWithCredential(phoneAuthCredential).then((value) {
+          ///  to send Device token
+          firebaseAuthRepo.sendDeviceToken(phone:"+966${_phoneTEC.text.trim()}" );
+          CustomNavigator.push(Routes.DASHBOARD, clean: true,);
+          CustomSnackBar.showSnackBar(
+              notification: AppNotification(
+                  message: "تم تسجيل الدخول بنجاح",
+                  isFloating: true,
+                  backgroundColor: ColorResources.ACTIVE,
+                  borderColor: Colors.transparent));
+          firebaseAuthRepo.setLoggedIn();
+          _isSubmit = false;
+          notifyListeners();
+        }).catchError((error) {
+          _isSubmit = false;
+          log(error.toString());
+          CustomSnackBar.showSnackBar(
+              notification: AppNotification(
+                  message: "الكود غير صحيح",
+                  isFloating: true,
+                  backgroundColor: ColorResources.IN_ACTIVE,
+                  borderColor: Colors.transparent));
+          notifyListeners();
+        });
+      } else {
+        log("====>has error in firebaseVerificationId $firebaseVerificationId");
         CustomSnackBar.showSnackBar(
             notification: AppNotification(
-                message: e.toString(),
+                message: "has error in firebaseVerificationId",
                 isFloating: true,
-                backgroundColor: ColorResources.ACTIVE,
+                backgroundColor: ColorResources.IN_ACTIVE,
                 borderColor: Colors.transparent));
       }
+
+      _isSubmit = false;
+      notifyListeners();
+    } catch (e) {
+      log("====>$e");
+      CustomSnackBar.showSnackBar(
+          notification: AppNotification(
+              message: e.toString(),
+              isFloating: true,
+              backgroundColor: ColorResources.IN_ACTIVE,
+              borderColor: Colors.transparent));
+      _isSubmit = false;
+      notifyListeners();
     }
-
   }
-
-  signIn(AuthCredential authCredential) {
-    FirebaseAuth.instance.signInWithCredential(authCredential);
-  }
-
-  //for manual otp entry
-  signInViaOTP(smsCode, verId) {
-    AuthCredential authCredential = PhoneAuthProvider.credential(
-        verificationId: verId, smsCode: smsCode);
-    signIn(authCredential);
-  }
-
 
   logOut() async {
     try {
-      FirebaseAuth.instance.signOut();
+
+      Future.delayed(Duration.zero,() async {
+
+      await FirebaseAuth.instance.signOut();
+
       await firebaseAuthRepo.clearSharedData();
-      CustomNavigator.push(Routes.LOGIN, clean: true);
+
+      CustomNavigator.push(Routes.LOGIN, clean: true,);
+      });
+
       CustomSnackBar.showSnackBar(
           notification: AppNotification(
               message: getTranslated("your_logged_out_successfully",
@@ -156,17 +191,21 @@ class FirebaseAuthProvider extends ChangeNotifier {
               isFloating: true,
               backgroundColor: ColorResources.ACTIVE,
               borderColor: Colors.transparent));
+
       notifyListeners();
     } catch (e) {
       CustomSnackBar.showSnackBar(
           notification: AppNotification(
-              message: getTranslated("your_logged_out_successfully",
-                  CustomNavigator.navigatorState.currentContext!),
+              message: e.toString(),
               isFloating: true,
               backgroundColor: ColorResources.ACTIVE,
               borderColor: Colors.transparent));
       notifyListeners();
     }
-
   }
+
+  // getUserData(){
+  //   phone= FirebaseAuth.instance.currentUser?.phoneNumber;
+  //   notifyListeners();
+  // }
 }
