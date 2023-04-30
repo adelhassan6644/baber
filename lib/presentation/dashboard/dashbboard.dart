@@ -42,23 +42,22 @@ class _DashBoardState extends State<DashBoard> {
   void initState() {
     Future.delayed(Duration.zero, () async {
       // Provider.of<ProfileProvider>(context, listen: false).getProfileInfo();
-      await Provider.of<BannerProvider>(
+      Provider.of<BannerProvider>(
               CustomNavigator.navigatorState.currentContext!,
               listen: false)
           .getBannerList();
-      await Provider.of<HomeCategoryProvider>(
+      Provider.of<HomeCategoryProvider>(
               CustomNavigator.navigatorState.currentContext!,
               listen: false)
           .getHomeCategories();
-      await Provider.of<HomeVendorsProvider>(
+      Provider.of<HomeVendorsProvider>(
               CustomNavigator.navigatorState.currentContext!,
               listen: false)
           .getVendorList();
-      await Provider.of<CityProvider>(
-              CustomNavigator.navigatorState.currentContext!,
+      Provider.of<CityProvider>(CustomNavigator.navigatorState.currentContext!,
               listen: false)
           .getYourCity();
-      await Provider.of<SettingsProvider>(
+      Provider.of<SettingsProvider>(
               CustomNavigator.navigatorState.currentContext!,
               listen: false)
           .getSettingsInfo();
@@ -94,54 +93,6 @@ class _DashBoardState extends State<DashBoard> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: ColorResources.BACKGROUND_COLOR,
-      // bottomNavigationBar: Padding(
-      //     padding:  EdgeInsets.only(bottom: 25.h,right: 35.w,left: 35.w),
-      //     child: Container(
-      //         height: 60.h,
-      //         decoration:BoxDecoration(
-      //           color: ColorResources.NAV_BAR_BACKGROUND_COLOR,
-      //           borderRadius: BorderRadius.circular(100),
-      //           boxShadow: const [
-      //             BoxShadow(
-      //               color: Color.fromRGBO(0, 0, 0, .1),
-      //               blurRadius: 0.5,
-      //               spreadRadius:0.75,
-      //               offset: Offset(0, 2)
-      //             )
-      //           ],
-      //         ),
-      //         child: Row(
-      //             crossAxisAlignment: CrossAxisAlignment.center,
-      //             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      //             children: [
-      //               Expanded(
-      //                 child: BottomNavBarItem(
-      //                   imageIcon: Images.logo,
-      //                   isSelected: _selectedIndex ==0 ,
-      //                   onTap: () => _setPage(0),
-      //                   name: getTranslated("home", context),
-      //                 ),
-      //               ),
-      //               Expanded(
-      //                 child: BottomNavBarItem(
-      //                   svgIcon: SvgImages.cartIcon,
-      //                   isSelected: _selectedIndex ==1 ,
-      //                   onTap: () => _setPage(1),
-      //                   name: getTranslated("cart", context),
-      //                 ),
-      //               ),
-      //               Expanded(
-      //                 child: BottomNavBarItem(
-      //                   svgIcon: SvgImages.profileIcon,
-      //                   isSelected: _selectedIndex ==2 ,
-      //                   onTap: () => _setPage(2),
-      //                   name: getTranslated("profile", context),
-      //
-      //                 ),
-      //               ),
-      //
-      //             ]))
-      // ),
       body: Stack(
         alignment: Alignment.bottomCenter,
         children: [
