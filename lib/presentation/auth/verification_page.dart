@@ -83,7 +83,7 @@ class _VerificationPageState extends State<VerificationPage> {
                           SizedBox(height: 24.h),
                           Text(
                               getTranslated(
-                                  "please_verify_your_mobile_number_and_enter_the_4_digit_verification_code",
+                                  "please_verify_your_mobile_number_and_enter_the_6_digit_verification_code",
                                   context),
                               textAlign: TextAlign.center,
                               style: AppTextStyles.w500.copyWith(
@@ -109,7 +109,6 @@ class _VerificationPageState extends State<VerificationPage> {
                         errorTextDirection:TextDirection.rtl,
                         cursorColor: ColorResources.PRIMARY_COLOR,
                         errorTextSpace: 30.h,
-                        errorTextMargin: EdgeInsets.symmetric(horizontal:71.w),
                         inputFormatters: [FilteringTextInputFormatter.allow(RegExp('[0-9]'))],
                         pinTheme: PinTheme(
                           shape: PinCodeFieldShape.box,
@@ -139,12 +138,9 @@ class _VerificationPageState extends State<VerificationPage> {
                           horizontal: Dimensions.PADDING_SIZE_DEFAULT.w,
                           vertical: Dimensions.PADDING_SIZE_SMALL.h),
                       child: CustomButton(
-                          isLoading: provider.isLoading,
+                          isLoading: provider.isSubmit,
                           height: 46.h,
-                          onTap: () {
-                            if (formKey.currentState!.validate()) {
-                             provider.sendOTP();
-                          }},
+                          onTap: () {if (formKey.currentState!.validate()) {provider.sendOTP();}},
                           textColor: ColorResources.WHITE_COLOR,
                           text: getTranslated("submit", context),
                           backgroundColor: ColorResources.PRIMARY_COLOR),

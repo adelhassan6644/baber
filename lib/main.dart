@@ -37,8 +37,8 @@ import 'domain/my_notification.dart';
 import 'navigation/custom_navigation.dart';
 import 'navigation/routes.dart';
 
-final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
-FlutterLocalNotificationsPlugin();
+// final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
+// FlutterLocalNotificationsPlugin();
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -49,18 +49,15 @@ Future<void> main() async {
 
   await di.init();
 
-  if (!kIsWeb) {
-    final NotificationAppLaunchDetails? notificationAppLaunchDetails =
-    await flutterLocalNotificationsPlugin
-        .getNotificationAppLaunchDetails();
-    if (notificationAppLaunchDetails?.didNotificationLaunchApp ?? false) {
-      // _orderID = notificationAppLaunchDetails!.payload != null
-      //     ? int.parse(notificationAppLaunchDetails!.payload)
-      //     : null;
-    }
-    await MyNotification.initialize(flutterLocalNotificationsPlugin);
-    FirebaseMessaging.onBackgroundMessage(myBackgroundMessageHandler);
-  }
+  // if (!kIsWeb) {
+  //   final NotificationAppLaunchDetails? notificationAppLaunchDetails =
+  //   await flutterLocalNotificationsPlugin
+  //       .getNotificationAppLaunchDetails();
+  //   if (notificationAppLaunchDetails?.didNotificationLaunchApp ?? false) {
+  //   }
+  //   await MyNotification.initialize(flutterLocalNotificationsPlugin);
+  //   FirebaseMessaging.onBackgroundMessage(myBackgroundMessageHandler);
+  // }
 
   runApp(MultiProvider(providers: [
     ChangeNotifierProvider(create: (context) => di.sl<ThemeProvider>(),),

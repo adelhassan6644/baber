@@ -25,7 +25,6 @@ class FirebaseAuthProvider extends ChangeNotifier {
 
   String? firebaseVerificationId;
   String smsCode = "";
-  // String? phone;
 
 
   bool _isRememberMe = false;
@@ -45,8 +44,9 @@ class FirebaseAuthProvider extends ChangeNotifier {
   }
 
   bool _isLoading = false;
-  bool isSubmit = false;
+  bool _isSubmit = false;
   bool get isLoading => _isLoading;
+  bool get isSubmit => _isSubmit;
 
   bool get isLogin => firebaseAuthRepo.isLoggedIn();
 
@@ -117,7 +117,7 @@ class FirebaseAuthProvider extends ChangeNotifier {
   }
 
   sendOTP() async {
-    _isLoading = true;
+    _isSubmit = true;
     notifyListeners();
     try {
       if (firebaseVerificationId != null) {
@@ -134,10 +134,10 @@ class FirebaseAuthProvider extends ChangeNotifier {
                   backgroundColor: ColorResources.ACTIVE,
                   borderColor: Colors.transparent));
           firebaseAuthRepo.setLoggedIn();
-          _isLoading = false;
+          _isSubmit = false;
           notifyListeners();
         }).catchError((error) {
-          _isLoading = false;
+          _isSubmit = false;
           log(error.toString());
           CustomSnackBar.showSnackBar(
               notification: AppNotification(
@@ -157,7 +157,7 @@ class FirebaseAuthProvider extends ChangeNotifier {
                 borderColor: Colors.transparent));
       }
 
-      _isLoading = false;
+      _isSubmit = false;
       notifyListeners();
     } catch (e) {
       log("====>$e");
@@ -167,7 +167,7 @@ class FirebaseAuthProvider extends ChangeNotifier {
               isFloating: true,
               backgroundColor: ColorResources.IN_ACTIVE,
               borderColor: Colors.transparent));
-      _isLoading = false;
+      _isSubmit = false;
       notifyListeners();
     }
   }
