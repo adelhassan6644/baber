@@ -33,9 +33,8 @@ class NotificationPage extends StatelessWidget {
                             7,
                             (index) => Padding(
                                   padding: EdgeInsets.symmetric(
-                                      vertical: 12.h,
-                                      horizontal:
-                                          Dimensions.PADDING_SIZE_DEFAULT.w),
+                                    vertical: 2.h,
+                                  ),
                                   child: Shimmer.fromColors(
                                     baseColor: Colors.grey[300]!,
                                     highlightColor: Colors.grey[100]!,
@@ -52,10 +51,11 @@ class NotificationPage extends StatelessWidget {
                       ),
                     )
                   : provider.notificationModel != null &&
-                  provider.notificationModel!.notifications != null &&
-                  provider.notificationModel!.notifications!.isNotEmpty
-                  ? Expanded(
+                          provider.notificationModel!.notifications != null &&
+                          provider.notificationModel!.notifications!.isNotEmpty
+                      ? Expanded(
                           child: ListView(
+                            padding: const EdgeInsets.all(0),
                             physics: const BouncingScrollPhysics(),
                             children: List.generate(
                                 provider
@@ -68,7 +68,7 @@ class NotificationPage extends StatelessWidget {
                                     )),
                           ),
                         )
-                  : Expanded(
+                      : Expanded(
                           child: EmptyWidget(
                             img: Images.emptyNotifications,
                             imgWidth: 150.w,

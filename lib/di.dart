@@ -59,7 +59,7 @@ Future<void> init() async {
   sl.registerLazySingleton(() => ItemDetailsRepo(dioClient: sl() ));
   sl.registerLazySingleton(() => NotificationRepo(dioClient: sl() ));
   sl.registerLazySingleton(() => ContactRepo(dioClient: sl() ));
-  sl.registerLazySingleton(() => CartRepo(sharedPreferences: sl() ));
+  sl.registerLazySingleton(() => CartRepo(sharedPreferences: sl(),dioClient: sl() ));
   sl.registerLazySingleton(() => SearchRepo(dioClient: sl() ));
   sl.registerLazySingleton(() => SettingsRepo(dioClient: sl() ));
 
@@ -82,7 +82,7 @@ Future<void> init() async {
    sl.registerLazySingleton(() => ItemDetailsProvider(itemRepo: sl()));
    sl.registerLazySingleton(() => ContactProvider(contactRepo: sl()));
    sl.registerLazySingleton(() => NotificationProvider(notificationRepo: sl()));
-   sl.registerLazySingleton(() => CartProvider(cartRepo: sl()));
+   sl.registerLazySingleton(() => CartProvider(cartRepo: sl(),sharedPreferences: sl()));
    sl.registerLazySingleton(() => SearchProvider(searchRepo: sl()));
    sl.registerLazySingleton(() => SettingsProvider(settingsRepo: sl()));
 

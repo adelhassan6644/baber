@@ -20,40 +20,41 @@ class NotificationModel {
     return data;
   }
 }
-class NotificationData{
+
+class NotificationData {
   int? id;
-  String? image;
-  String? body;
+  String? userId;
+  String? title;
+  String? message;
+  String? status;
+  String? alertId;
   DateTime? createdAt;
-  // String? productID;
-  // String? productType;
+  DateTime? updatedAt;
 
   NotificationData({
     this.id,
-    this.image,
+    this.title,
+    this.message,
+    this.status,
     this.createdAt,
-    this.body,
-    // this.productID,
-    // this.productType,
+    this.updatedAt,
   });
 
-  NotificationData.fromJson(Map<String, dynamic> json) {
-    id = json['id'];
-    image = json['image'];
-    body = json['body'];
-    createdAt = DateTime.parse(json['created_at']);
-    // productID = json['product_id'];
-    // productType = json['product_type'];
-  }
+  factory NotificationData.fromJson(Map<String, dynamic> json) => NotificationData(
+    id: json["id"],
+    title: json["title"],
+    message: json["message"],
+    status: json["status"],
+    createdAt: json["created_at"] == null ? null : DateTime.parse(json["created_at"]),
+    updatedAt: json["updated_at"] == null ? null : DateTime.parse(json["updated_at"]),
+  );
 
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = <String, dynamic>{};
-    data['id'] = id;
-    data['image'] = image;
-    data['body'] = body;
-    data['created_at'] = createdAt;
-    // data['product_id'] = productID;
-    // data['product_type'] = productType;
-    return data;
-  }
+  Map<String, dynamic> toJson() => {
+    "id": id,
+    "title": title,
+    "message": message,
+    "status": status,
+    "created_at": createdAt?.toIso8601String(),
+    "updated_at": updatedAt?.toIso8601String(),
+  };
 }

@@ -23,8 +23,8 @@ class _SplashState extends State<Splash> with WidgetsBindingObserver {
 
     WidgetsBinding.instance.addObserver(this);
     Future.delayed(Duration.zero, () async {
-      await Provider.of<CityProvider>(CustomNavigator.navigatorState.currentContext!, listen: false).getCities();
-      await Provider.of<CityProvider>(CustomNavigator.navigatorState.currentContext!, listen: false).getYourCity();
+       Provider.of<CityProvider>(CustomNavigator.navigatorState.currentContext!, listen: false).getCities();
+       Provider.of<CityProvider>(CustomNavigator.navigatorState.currentContext!, listen: false).getYourCity();
     });
 
     Future.delayed(const Duration(milliseconds: 4500), () async {
@@ -71,9 +71,10 @@ class _SplashState extends State<Splash> with WidgetsBindingObserver {
                 Images.logo,
                 color: Colors.black,
               ).animate()
-                  .scale(duration: 500.ms)
-                  .then(delay: 200.ms) // baseline=800ms
-                  .slide()  .scaleXY(duration: 600.ms)  .then(delay: 200.ms).shimmer(duration: 1000.ms),
+                  // .scale(duration: 500.ms)
+                  // .then(delay: 200.ms) // baseline=800ms
+                  // .slide()  .scaleXY(duration: 600.ms)
+                  .then(delay: 200.ms).shimmer(duration: 1500.ms),
             ],
           ),
         ));

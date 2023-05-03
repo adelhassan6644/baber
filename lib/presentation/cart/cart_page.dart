@@ -11,9 +11,7 @@ import '../../controller/firebase_auth_provider.dart';
 import '../../domain/localization/language_constant.dart';
 import '../../navigation/custom_navigation.dart';
 import '../../navigation/routes.dart';
-import '../base/confirmation_dialog.dart';
 import '../base/custom_app_bar.dart';
-import '../base/custom_simple_dialog.dart';
 import '../base/empty_widget.dart';
 
 class CartPage extends StatefulWidget {
@@ -141,41 +139,41 @@ class _CartPageState extends State<CartPage> {
                         ],
                       ),
                       SizedBox(height: 24.h,),
-                      CustomButton(
-                        text: "اتمام الطلب",
-                        onTap: () async{
-                          if (Provider.of<FirebaseAuthProvider>(context, listen: false)
-                              .isLogin) {
-                          //  if(provider.cartList.first.store!.active!) {
-                          //    provider.openWhatsApp();
-                          // }else{
-                          //    CustomSnackBar.showSnackBar(
-                          //        notification: AppNotification(
-                          //            message: "الأسرة غير متاحة الأن",
-                          //            isFloating: true,
-                          //            backgroundColor: ColorResources.IN_ACTIVE,
-                          //            borderColor: Colors.transparent));
-                          // }
-                             provider.openWhatsApp();
-
-
-                        } else {
-                            Future.delayed(
-                                Duration.zero,
-                                    () => CustomSimpleDialog.parentSimpleDialog(customListWidget: [
-                                  ConfirmationDialog(
-                                      txtBtn: "تسجيل",
-                                      description: "يجب ان تقوم بالتسجيل اولا حتي تتمكن من اتمام الطلب",
-                                      onContinue: () {
-                                        CustomNavigator.pop();
-                                        CustomNavigator.push(Routes.LOGIN,arguments: true);
-                                      })
-                                ]));
-                          }
-                        },
-                        assetIcon: Images.whatsApp,
-                        isLoading: false,
-                        height: 46.h,
+                      Center(
+                        child: CustomButton(
+                          text: "اتمام الطلب",
+                          onTap: () async{
+                            if (Provider.of<FirebaseAuthProvider>(context, listen: false).isLogin) {
+                            //  if(provider.cartList.first.store!.active!) {
+                            //    provider.checkOut();
+                            // }else{
+                            //    CustomSnackBar.showSnackBar(
+                            //        notification: AppNotification(
+                            //            message: "الأسرة غير متاحة الأن",
+                            //            isFloating: true,
+                            //            backgroundColor: ColorResources.IN_ACTIVE,
+                            //            borderColor: Colors.transparent));
+                            // }
+                             provider.checkOut();
+                          } else {
+                              // Future.delayed(
+                              //     Duration.zero,
+                              //         () => CustomSimpleDialog.parentSimpleDialog(customListWidget: [
+                              //       ConfirmationDialog(
+                              //           txtBtn: "تسجيل",
+                              //           description: "يجب ان تقوم بالتسجيل اولا حتي تتمكن من اتمام الطلب",
+                              //           onContinue: () {
+                              //             CustomNavigator.pop();
+                              //
+                              //           })
+                              //     ]));
+                              CustomNavigator.push(Routes.LOGIN,arguments: true);
+                            }
+                          },
+                          assetIcon: Images.whatsApp,
+                          isLoading: provider.isLoading,
+                          height: 46.h,
+                        ),
                       ),
                     ],
                   ),

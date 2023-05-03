@@ -1,41 +1,34 @@
 {
   "project_info": {
-    "project_number": "751283654969",
-    "project_id": "baberapp-cab90",
-    "storage_bucket": "baberapp-cab90.appspot.com"
+    "project_number": "33242133420",
+    "project_id": "baberapp-e0472",
+    "storage_bucket": "baberapp-e0472.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:751283654969:android:c730242839621dedfb98e8",
+        "mobilesdk_app_id": "1:33242133420:android:696815cccbc8c336118009",
         "android_client_info": {
           "package_name": "com.example.baber"
         }
       },
       "oauth_client": [
         {
-          "client_id": "751283654969-bj22psg3i58ascmunacnkpod8r8knafl.apps.googleusercontent.com",
+          "client_id": "33242133420-fkvd052eel8eufpoonu1g2evt0hjva1k.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCO-xBsdC86aPtf_hpNimZ-ZcLBoVDcsBc"
+          "current_key": "AIzaSyA7S0ztNKB24qKcW1cd-QS92bCQRnQywFw"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "751283654969-bj22psg3i58ascmunacnkpod8r8knafl.apps.googleusercontent.com",
+              "client_id": "33242133420-fkvd052eel8eufpoonu1g2evt0hjva1k.apps.googleusercontent.com",
               "client_type": 3
-            },
-            {
-              "client_id": "751283654969-udi0fgeq28ef1ujsr2ru9bkm6pqfs0bm.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "com.example.baber"
-              }
             }
           ]
         }

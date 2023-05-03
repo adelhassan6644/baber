@@ -17,7 +17,7 @@ class ProfileCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Consumer<FirebaseAuthProvider>(
       builder: (context, provider, child) {
-        return  Padding(
+        return Padding(
           padding: EdgeInsets.symmetric(
               horizontal: Dimensions.PADDING_SIZE_DEFAULT.w),
           child: Row(
@@ -38,26 +38,31 @@ class ProfileCard extends StatelessWidget {
               SizedBox(
                 width: 24.h,
               ),
-              (Provider.of<FirebaseAuthProvider>(context, listen: false).isLogin)? FirebaseAuth.instance.currentUser?.phoneNumber != null? Text("${FirebaseAuth.instance.currentUser?.phoneNumber}",
-                  style: AppTextStyles.w500.copyWith(
-                      fontSize: 14, color: ColorResources.HINT_COLOR)): Shimmer.fromColors(
-                baseColor: Colors.grey[300]!,
-                highlightColor: Colors.grey[100]!,
-                enabled: true,
-                child: Container(
-                    width:150.w,
-                    height: 14.h,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10.w),
-                      color: ColorResources.WHITE_COLOR,
-                    )),
-              ):
-              Text("انت الان في وضع ضيف",
-                  style: AppTextStyles.w500.copyWith(
-                      fontSize: 14, color: ColorResources.HINT_COLOR)),
+              (Provider.of<FirebaseAuthProvider>(context, listen: false)
+                      .isLogin)
+                  ? FirebaseAuth.instance.currentUser?.phoneNumber != null
+                      ? Text(
+                          "${FirebaseAuth.instance.currentUser?.phoneNumber?.replaceAll("+", "")}+",
+                          style: AppTextStyles.w500.copyWith(
+                              fontSize: 14, color: ColorResources.HINT_COLOR))
+                      : Shimmer.fromColors(
+                          baseColor: Colors.grey[300]!,
+                          highlightColor: Colors.grey[100]!,
+                          enabled: true,
+                          child: Container(
+                              width: 150.w,
+                              height: 14.h,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10.w),
+                                color: ColorResources.WHITE_COLOR,
+                              )),
+                        )
+                  : Text("انت الان في وضع ضيف",
+                      style: AppTextStyles.w500.copyWith(
+                          fontSize: 14, color: ColorResources.HINT_COLOR)),
             ],
           ),
-        ) ;
+        );
       },
     );
   }

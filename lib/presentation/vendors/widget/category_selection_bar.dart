@@ -42,6 +42,8 @@ class _CategorySelectionBarState extends State<CategorySelectionBar> {
           child: Consumer<VendorsProvider>(
             builder: (context, provider, child) {
               return Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   ...List.generate(
                     widget.categories.length,
@@ -63,10 +65,12 @@ class _CategorySelectionBarState extends State<CategorySelectionBar> {
                             provider.getVendorsByCategory(id: widget.categories[index].id!);
                           },
                           child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Container(
                                 height: 50.h,
-                                width: 100.w,
+                                width: 130.w,
                                 padding: EdgeInsets.symmetric(horizontal: 12.w),
                                 child: Center(
                                   child: Text(widget.categories[index].name!,

@@ -16,7 +16,7 @@ class NotificationProvider extends ChangeNotifier {
 
   bool isLoading =false;
 
-  getHomeCategories() async {
+  getNotifications() async {
     try {
       isLoading =true;
       notifyListeners();

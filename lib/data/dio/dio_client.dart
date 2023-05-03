@@ -5,6 +5,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '../../app/core/utils/app_storage_keys.dart';
 import 'api_clinet.dart';
 import 'logging_interceptor.dart';
+import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 
 class DioClient extends ApiClient {
   final String baseUrl;
@@ -30,7 +31,14 @@ class DioClient extends ApiClient {
         "Accept": " application/json",
         'Authorization': 'Bearer ${sharedPreferences.getString(AppStorageKey.token)}',
       };
-    dio.interceptors.add(loggingInterceptor);
+    dio.interceptors.add(PrettyDioLogger(
+        requestHeader: true,
+        requestBody: true,
+        responseBody: true,
+        responseHeader: false,
+        error: true,
+        compact: true,
+        maxWidth: 90));
   }
 
 

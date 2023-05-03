@@ -2,7 +2,6 @@ import 'package:baber/navigation/custom_navigation.dart';
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import '../../app/core/error/failures.dart';
 import '../app/core/error/api_error_handler.dart';
 import '../app/core/utils/app_snack_bar.dart';
@@ -10,7 +9,6 @@ import '../app/core/utils/color_resources.dart';
 import '../data/model/City_model.dart';
 import '../domain/repository/city_repo.dart';
 import '../navigation/routes.dart';
-import 'firebase_auth_provider.dart';
 
 class CityProvider extends ChangeNotifier {
   final CityRepo cityRepo;
@@ -60,35 +58,37 @@ class CityProvider extends ChangeNotifier {
 
   updateCity() async {
     try {
-      if (Provider.of<FirebaseAuthProvider>(
-              CustomNavigator.navigatorState.currentContext!,
-              listen: false)
-          .isLogin) {
-        _isLoading = true;
-        notifyListeners();
-        Either<ServerFailure, Response> response =
-            await cityRepo.updateCity(cityId: city!.id!);
-        response.fold((fail) {
-          _isLoading = false;
-          CustomSnackBar.showSnackBar(
-              notification: AppNotification(
-                  message: ApiErrorHandler.getMessage(fail.error),
-                  isFloating: true,
-                  backgroundColor: ColorResources.IN_ACTIVE,
-                  borderColor: Colors.transparent));
-          notifyListeners();
-        }, (success) async {
-          saveYourCity();
-          getYourCity();
-          CustomNavigator.push(Routes.DASHBOARD, replace: true);
-          _isLoading = false;
-          notifyListeners();
-        });
-      } else {
-        saveYourCity();
-        getYourCity();
-        CustomNavigator.push(Routes.DASHBOARD, replace: true);
-      }
+      // if (Provider.of<FirebaseAuthProvider>(
+      //         CustomNavigator.navigatorState.currentContext!,
+      //         listen: false)
+      //     .isLogin) {
+      //   _isLoading = true;
+      //   notifyListeners();
+      //   Either<ServerFailure, Response> response = await cityRepo.updateCity(cityId: city!.id!);
+      //   response.fold((fail) {
+      //     _isLoading = false;
+      //     CustomSnackBar.showSnackBar(
+      //         notification: AppNotification(
+      //             message: ApiErrorHandler.getMessage(fail.error),
+      //             isFloating: true,
+      //             backgroundColor: ColorResources.IN_ACTIVE,
+      //             borderColor: Colors.transparent));
+      //     notifyListeners();
+      //   }, (success) async {
+      //     saveYourCity();
+      //     getYourCity();
+      //     CustomNavigator.push(Routes.DASHBOARD, replace: true);
+      //     _isLoading = false;
+      //     notifyListeners();
+      //   });
+      // } else {
+      //   saveYourCity();
+      //   getYourCity();
+      //   CustomNavigator.push(Routes.DASHBOARD, replace: true);
+      // }
+      saveYourCity();
+      getYourCity();
+      CustomNavigator.push(Routes.DASHBOARD, replace: true);
     } catch (e) {
       CustomSnackBar.showSnackBar(
           notification: AppNotification(

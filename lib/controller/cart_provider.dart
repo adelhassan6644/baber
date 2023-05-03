@@ -1,18 +1,24 @@
 import 'dart:developer';
-import 'package:baber/navigation/custom_navigation.dart';
+import 'package:dartz/dartz.dart';
+import 'package:dio/dio.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:whatsapp_unilink/whatsapp_unilink.dart';
+import '../app/core/error/api_error_handler.dart';
+import '../app/core/error/failures.dart';
+import '../app/core/utils/app_snack_bar.dart';
+import '../app/core/utils/app_storage_keys.dart';
+import '../app/core/utils/color_resources.dart';
 import '../data/model/item_model.dart';
 import '../domain/repository/cart_repo.dart';
-import 'city_provider.dart';
 
 class CartProvider extends ChangeNotifier {
   final CartRepo cartRepo;
-  CartProvider({required this.cartRepo});
+  final SharedPreferences sharedPreferences;
+
+  CartProvider({required this.cartRepo, required this.sharedPreferences});
 
   List<ItemModel> _cartList = [];
   List<ItemModel> get cartList => _cartList;
@@ -29,7 +35,6 @@ class CartProvider extends ChangeNotifier {
   void removeFromCart({
     required ItemModel item,
   }) {
-    // _cartList.removeAt(index);
     _cartList.removeWhere((e) => e.id == item.id);
     cartRepo.saveNewItems(_cartList);
     getCartData();
@@ -82,24 +87,109 @@ class CartProvider extends ChangeNotifier {
     }
   }
 
-  openWhatsApp() async {
+  bool _isLoading = false;
+  bool get isLoading => _isLoading;
+
+  checkOut() async {
+    try {
+      _isLoading = true;
+      notifyListeners();
+      final List items = [];
+      for (var item in _cartList) {
+        items.add({
+          "product_id": item.id,
+          "qty": item.qty,
+          "details": item.addons != null
+              ? item.addons!
+                  .map((e) => e.name)
+                  .toList()
+                  .toString()
+                  .replaceAll("[", '')
+                  .replaceAll("]", '')
+              : ""
+        });
+      }
+
+      Map<String, dynamic> body = {
+        "user_id": sharedPreferences.getString(AppStorageKey.token),
+        "store_id": _cartList[0].store!.id.toString(),
+        "order_date": DateTime.now().toString(),
+        "total": totalSum,
+        "items": items
+      };
+      log(body.toString());
+
+      Either<ServerFailure, Response> response =
+          await cartRepo.checkOut(data: body);
+      response.fold((fail) {
+        _isLoading = false;
+        CustomSnackBar.showSnackBar(
+            notification: AppNotification(
+                message: ApiErrorHandler.getMessage(fail.error),
+                isFloating: true,
+                backgroundColor: ColorResources.IN_ACTIVE,
+                borderColor: Colors.transparent));
+        notifyListeners();
+      }, (success) async {
+        await openWhatsApp(
+            url: success.data["url"], id: success.data["order_id"].toString());
+        _cartList.clear();
+        _isLoading = false;
+        notifyListeners();
+      });
+    } catch (e) {
+      CustomSnackBar.showSnackBar(
+          notification: AppNotification(
+              message: ApiErrorHandler.getMessage(e),
+              isFloating: true,
+              backgroundColor: ColorResources.IN_ACTIVE,
+              borderColor: Colors.transparent));
+      _isLoading = false;
+      notifyListeners();
+    }
+  }
+
+  double getItemPrice({required ItemModel item}) {
+    double itemPrice = 0;
+    double addonsPrice = 0;
+    if (item.addons != null) {
+      for (int i = 0; i < item.addons!.length; i++) {
+        if (item.addons![i].isSelected!) {
+          addonsPrice += int.parse(item.addons![i].price ?? "0");
+        }
+      }
+    }
+    itemPrice += (int.parse(item.price ?? "0") + addonsPrice) * item.qty!;
+    return itemPrice;
+  }
+
+  openWhatsApp({
+    required String url,
+    required String id,
+  }) async {
     final link = WhatsAppUnilink(
-      phoneNumber: "+966${_cartList.first.store!.phone}",
-      // phoneNumber: "+201017622825",
-      text: format(),
+      // phoneNumber: "+966${_cartList.first.store!.phone}",
+      phoneNumber: "+201554444801",
+      text: format(url: url, id: id),
     );
     await launch('$link');
   }
 
-  format() {
+  format({
+    required String url,
+    required String id,
+  }) {
     int i = 1;
-    return "طلبك هو : \n${_cartList.map((e) {
-          return "\n  ****الطلب رقم (${i++}): ${e.name}  ---- العدد: ${e.qty}\n^^الاضافات${e.addons?.map((addon) {if (addon.isSelected!) {
-            return "\n ==>النوع  : ${addon.name}";
-          }}).toList().join("").replaceAll("null", "")}\n\$\$\$\$\$\$ (السعر : ${e.price} ر.س) \$\$\$\$\$\$"
-              "\n ------------------------------------";
-        }).toList().join("")}"
+    return "الطلب رقم($id) : \n${_cartList.map((e) {
+              return "\n  (${i++}): ${e.name}  ---- العدد: ${e.qty}\n^^الاضافات${e.addons?.map((addon) {
+                        if (addon.isSelected!) {
+                          return "\n ==>النوع  : ${addon.name}";
+                        }
+                      }).toList().join("").replaceAll("null", "")}\n\$\$\$\$\$\$ (السعر : ${getItemPrice(item: e)} ر.س) \$\$\$\$\$\$"
+                  "\n ------------------------------------";
+            }).toList().join("")}"
         "\nالتوصيل : 0 ر.س\nالاجمالي : $totalSum ر.س"
-        "\n**رقم الهاتف : ${FirebaseAuth.instance.currentUser?.phoneNumber} \n**المدينة : ${Provider.of<CityProvider>(CustomNavigator.navigatorState.currentContext!, listen: false).city!.name!}";
+        "\n**رقم الهاتف : ${FirebaseAuth.instance.currentUser?.phoneNumber?.replaceAll("+", "")}+ \n**المدينة : ${sharedPreferences.getString(AppStorageKey.cityName)}"
+        "\n$url";
   }
 }
