@@ -55,7 +55,7 @@ class FirebaseAuthProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  signInWithMobileNo() async {
+  signInWithMobileNo({bool? fromVerification }) async {
     try {
       _isLoading = true;
       notifyListeners();
@@ -64,7 +64,7 @@ class FirebaseAuthProvider extends ChangeNotifier {
         timeout: const Duration(seconds: 60),
         verificationCompleted: (authCredential) => phoneVerificationCompleted(authCredential),
         verificationFailed: (authException) => phoneVerificationFailed(authException),
-        codeSent: (verificationId, code) => phoneCodeSent(verificationId: verificationId, code: code ?? 0),
+        codeSent: (verificationId, code) => phoneCodeSent(verificationId: verificationId, code: code ?? 0,fromVerification:fromVerification??false ),
         codeAutoRetrievalTimeout: phoneCodeAutoRetrievalTimeout,
       );
     } catch (e) {
@@ -87,14 +87,12 @@ class FirebaseAuthProvider extends ChangeNotifier {
       CustomSnackBar.showSnackBar(
           notification: AppNotification(
               message: "رقم الهاتف غير صحيح",
-              isFloating: true,
               backgroundColor: ColorResources.IN_ACTIVE,
               borderColor: Colors.transparent));
     } else {
       CustomSnackBar.showSnackBar(
           notification: AppNotification(
               message: authException.message.toString(),
-              isFloating: true,
               backgroundColor: ColorResources.IN_ACTIVE,
               borderColor: Colors.transparent));
     }
@@ -105,14 +103,20 @@ class FirebaseAuthProvider extends ChangeNotifier {
   phoneCodeAutoRetrievalTimeout(String verificationCode) {
     log("====>phoneCodeAutoRetrievalTimeout is $firebaseVerificationId");
     firebaseVerificationId = verificationCode;
+    _isSubmit =false;
+    _isLoading = false;
     notifyListeners();
   }
 
-  phoneCodeSent({required String verificationId, required int code,}) async {
 
+  phoneCodeSent({required String verificationId, required int code,required bool fromVerification}) async {
     _isLoading = false;
     firebaseVerificationId = verificationId;
-    CustomNavigator.push(Routes.VERIFICATION,);
+    if(fromVerification==false) {
+      CustomNavigator.push(
+        Routes.VERIFICATION,
+      );
+    }
     notifyListeners();
   }
 

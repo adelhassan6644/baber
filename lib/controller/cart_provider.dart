@@ -32,13 +32,19 @@ class CartProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  void removeFromCart({
-    required ItemModel item,
-  }) {
+  void removeFromCart({required ItemModel item,}) {
     _cartList.removeWhere((e) => e.id == item.id);
     cartRepo.saveNewItems(_cartList);
     getCartData();
     notifyListeners();
+  }
+
+  checkCity({required String city}){
+    if(_cartList.isNotEmpty) {
+      if (_cartList.first.store!.cityId != city) {
+        clearCartList();
+      }
+    }
   }
 
   void clearCartList() {
@@ -133,7 +139,7 @@ class CartProvider extends ChangeNotifier {
       }, (success) async {
         await openWhatsApp(
             url: success.data["url"], id: success.data["order_id"].toString());
-        _cartList.clear();
+        clearCartList();
         _isLoading = false;
         notifyListeners();
       });
@@ -168,8 +174,8 @@ class CartProvider extends ChangeNotifier {
     required String id,
   }) async {
     final link = WhatsAppUnilink(
-      // phoneNumber: "+966${_cartList.first.store!.phone}",
-      phoneNumber: "+201554444801",
+      phoneNumber: "+966${_cartList.first.store!.phone}",
+      // phoneNumber: "+201554444801",
       text: format(url: url, id: id),
     );
     await launch('$link');

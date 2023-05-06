@@ -9,48 +9,39 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0f32153c-20a2-462c-b0aa-469fbaabcdc6" name="Changes" comment="firebase configuration">
+    <list default="true" id="0f32153c-20a2-462c-b0aa-469fbaabcdc6" name="Changes" comment="cart">
+      <change afterPath="$PROJECT_DIR$/assets/splash_logo.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/c66618b73d2abf4b7db8b10de592115f/.filecache" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/c66618b73d2abf4b7db8b10de592115f/.filecache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/c66618b73d2abf4b7db8b10de592115f/app.dill" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/c66618b73d2abf4b7db8b10de592115f/app.dill" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/c66618b73d2abf4b7db8b10de592115f/debug_android_application.stamp" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/c66618b73d2abf4b7db8b10de592115f/debug_android_application.stamp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/c66618b73d2abf4b7db8b10de592115f/flutter_assets.d" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/c66618b73d2abf4b7db8b10de592115f/flutter_assets.d" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/c66618b73d2abf4b7db8b10de592115f/kernel_snapshot.d" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/c66618b73d2abf4b7db8b10de592115f/kernel_snapshot.d" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/c66618b73d2abf4b7db8b10de592115f/kernel_snapshot.stamp" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/c66618b73d2abf4b7db8b10de592115f/kernel_snapshot.stamp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/c66618b73d2abf4b7db8b10de592115f/outputs.json" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/c66618b73d2abf4b7db8b10de592115f/outputs.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.dart_tool/package_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/package_config_subset" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config_subset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/.gradle/7.5/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/7.5/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/.gradle/7.5/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/7.5/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/.gradle/7.5/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/7.5/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/.gradle/7.5/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/7.5/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/.gradle/7.5/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/7.5/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/file-system.probe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/app/google-services.json" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/google-services.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/android/local.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_assets/AssetManifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_assets/AssetManifest.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_assets/kernel_blob.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_assets/kernel_blob.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_build.d" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_build.d" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/firebase_app_id_file.json" beforeDir="false" afterPath="$PROJECT_DIR$/ios/firebase_app_id_file.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/app/core/api/end_points.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/core/api/end_points.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app/core/utils/images.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/core/utils/images.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/controller/cart_provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/controller/cart_provider.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/controller/city_provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/controller/city_provider.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/controller/notifications_provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/controller/notifications_provider.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/data/dio/dio_client.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/dio/dio_client.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/data/model/notification_model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/model/notification_model.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/di.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/di.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/domain/repository/cart_repo.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/domain/repository/cart_repo.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/firebase_options.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/firebase_options.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/controller/firebase_auth_provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/controller/firebase_auth_provider.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/data/model/item_model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/model/item_model.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/data/model/store_model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/model/store_model.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/auth/verification_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/auth/verification_page.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/presentation/cart/cart_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/cart/cart_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/notifications/notification_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/notifications/notification_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/notifications/widget/notification_card_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/notifications/widget/notification_card_view.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/profile/profile_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/profile/profile_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/profile/widget/profile_card.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/profile/widget/profile_card.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/city/city_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/city/city_page.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/presentation/splash/splash.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/splash/splash.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/vendors/widget/category_selection_bar.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/vendors/widget/category_selection_bar.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/macos/firebase_app_id_file.json" beforeDir="false" afterPath="$PROJECT_DIR$/macos/firebase_app_id_file.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,17 +94,17 @@
     <property name="cidr.known.project.marker" value="true" />
     <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../tariqy" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/assets" />
     <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\My projects\baber\assets" />
       <recent name="C:\My projects\baber" />
       <recent name="C:\My projects\baber\android\app\src\main\res\drawable" />
       <recent name="C:\My projects\baber\android\app\src\main\res" />
       <recent name="C:\My projects\baber\assets\images" />
-      <recent name="C:\My projects\baber\android\app\src\main\kotlin" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\My projects\baber\android\app\src\main\res\drawable" />
@@ -137,13 +128,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1680547569892</updated>
-    </task>
-    <task id="LOCAL-00003" summary="feat(dashboard):&#10;- add home screen&#10;feat(category page):&#10;- add category screen">
-      <created>1680747168835</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1680747168835</updated>
     </task>
     <task id="LOCAL-00004" summary="&#10;update(category page):&#10;- empty state">
       <created>1680796378845</created>
@@ -481,7 +465,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682856449576</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="cart">
+      <created>1683120605954</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1683120605954</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -511,7 +502,8 @@
     <MESSAGE value="&#10;sdhdsd" />
     <MESSAGE value="firebase" />
     <MESSAGE value="firebase configuration" />
-    <option name="LAST_COMMIT_MESSAGE" value="firebase configuration" />
+    <MESSAGE value="cart" />
+    <option name="LAST_COMMIT_MESSAGE" value="cart" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

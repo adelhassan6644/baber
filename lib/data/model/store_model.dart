@@ -2,7 +2,7 @@ import 'item_model.dart';
 
 class StoreModel {
   List<Menus>? menus;
-  String? id, logo, image, name, description, phone, email;
+  String? id, logo, image, name, description, phone, email,cityId;
   bool? active;
 
   StoreModel(
@@ -13,6 +13,7 @@ class StoreModel {
         this.description,
         this.phone,
         this.email,
+        this.cityId,
         this.active,
         this.menus});
 
@@ -24,6 +25,7 @@ class StoreModel {
     image = json['image'];
     phone = json['phone'];
     email = json['email'];
+    cityId = json['city_id'].toString();
     active = (json['active'] == 1) ? true : false;
 
     if (json['menus'] != null) {
@@ -43,6 +45,7 @@ class StoreModel {
     data['description'] = description;
     data['phone'] = phone;
     data['email'] = email;
+    data['city_id'] = cityId.toString();
     data['active'] = active == true ? 1 : 0;
     if (menus != null) {
       data['menus'] = menus!.map((v) => v.toJson()).toList();

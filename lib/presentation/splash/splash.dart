@@ -6,7 +6,6 @@ import 'package:provider/provider.dart';
 import '../../app/core/utils/color_resources.dart';
 import '../../app/core/utils/images.dart';
 import '../../controller/city_provider.dart';
-import '../../controller/firebase_auth_provider.dart';
 import '../../navigation/custom_navigation.dart';
 import '../../navigation/routes.dart';
 
@@ -34,12 +33,6 @@ class _SplashState extends State<Splash> with WidgetsBindingObserver {
       else{
         CustomNavigator.push(Routes.CITY,replace: true,);
       }
-
-      // if (Provider.of<FirebaseAuthProvider>(CustomNavigator.navigatorState.currentContext!, listen: false).isLogin) {
-      //   CustomNavigator.push(Routes.DASHBOARD,replace: true);
-      // }else{
-      //   CustomNavigator.push(Routes.CITY,replace: true,);
-      // }
     });
     super.initState();
   }
@@ -68,8 +61,10 @@ class _SplashState extends State<Splash> with WidgetsBindingObserver {
                 ),
                 child:const SizedBox()),
               Image.asset(
-                Images.logo,
-                color: Colors.black,
+                Images.splashLogo,
+               fit: BoxFit.cover,
+                width: context.width,
+                height: context.width*1.3,
               ).animate()
                   // .scale(duration: 500.ms)
                   // .then(delay: 200.ms) // baseline=800ms

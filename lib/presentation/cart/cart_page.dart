@@ -6,6 +6,7 @@ import 'package:baber/presentation/base/custom_button.dart';
 import 'package:baber/presentation/cart/widget/cart_item_card.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import '../../app/core/utils/app_snack_bar.dart';
 import '../../app/core/utils/images.dart';
 import '../../controller/firebase_auth_provider.dart';
 import '../../domain/localization/language_constant.dart';
@@ -144,17 +145,17 @@ class _CartPageState extends State<CartPage> {
                           text: "اتمام الطلب",
                           onTap: () async{
                             if (Provider.of<FirebaseAuthProvider>(context, listen: false).isLogin) {
-                            //  if(provider.cartList.first.store!.active!) {
-                            //    provider.checkOut();
-                            // }else{
-                            //    CustomSnackBar.showSnackBar(
-                            //        notification: AppNotification(
-                            //            message: "الأسرة غير متاحة الأن",
-                            //            isFloating: true,
-                            //            backgroundColor: ColorResources.IN_ACTIVE,
-                            //            borderColor: Colors.transparent));
-                            // }
-                             provider.checkOut();
+                             if(provider.cartList.first.store!.active!) {
+                               provider.checkOut();
+                            }else{
+                               CustomSnackBar.showSnackBar(
+                                   notification: AppNotification(
+                                       message: "الأسرة غير متاحة الأن",
+                                       isFloating: true,
+                                       backgroundColor: ColorResources.IN_ACTIVE,
+                                       borderColor: Colors.transparent));
+                            }
+                             // provider.checkOut();
                           } else {
                               // Future.delayed(
                               //     Duration.zero,

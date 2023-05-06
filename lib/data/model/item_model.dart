@@ -13,7 +13,8 @@ class ItemModel {
       phone,
       email,
       description,
-      categoryId;
+      categoryId,
+  cityId;
   bool? active, isAdded;
   Menus? menu;
   List<Addon>? addons;
@@ -37,6 +38,7 @@ class ItemModel {
       this.addons,
       this.menus,
       this.description,
+        this.cityId,
       this.store});
 
   ItemModel.fromJson(Map<String, dynamic> json) {
@@ -46,7 +48,7 @@ class ItemModel {
     price = json['price'];
     qty = json['qty'] ?? 1;
     name = json['name'];
-    // cityName = json['city_name'];
+    cityId = json['city_id'].toString();
     address = json['address'];
     logo = json['logo'];
     image = json['image'];
@@ -89,7 +91,7 @@ class ItemModel {
     data['logo'] = logo;
     data['image'] = image;
     data['name'] = name;
-    // data['city_name'] = cityName;
+    data['city_id'] = cityId;
     data['address'] = address;
     data['phone'] = phone;
     data['email'] = email;

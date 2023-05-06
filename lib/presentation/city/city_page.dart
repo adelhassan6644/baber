@@ -9,6 +9,7 @@ import '../../app/core/utils/app_snack_bar.dart';
 import '../../app/core/utils/color_resources.dart';
 import '../../app/core/utils/dimensions.dart';
 import '../../app/core/utils/images.dart';
+import '../../controller/cart_provider.dart';
 import '../../controller/city_provider.dart';
 import '../../domain/localization/language_constant.dart';
 import '../base/custom_button.dart';
@@ -23,20 +24,29 @@ class CityPage extends StatefulWidget {
 class _CityPageState extends State<CityPage> {
   @override
   void initState() {
-    if(widget.fromProfile==true) {
-      Future.delayed(
-        Duration.zero,
-        () { Provider.of<CityProvider>(CustomNavigator.navigatorState.currentContext!, listen: false).getCities();
-        Provider.of<CityProvider>(CustomNavigator.navigatorState.currentContext!, listen: false).getYourCity();
-        });
+    if (widget.fromProfile == true) {
+      Future.delayed(Duration.zero, () {
+        Provider.of<CityProvider>(
+                CustomNavigator.navigatorState.currentContext!,
+                listen: false)
+            .getCities();
+        Provider.of<CityProvider>(
+                CustomNavigator.navigatorState.currentContext!,
+                listen: false)
+            .getYourCity();
+      });
     }
-    if(widget.fromProfile==false){
-      NetworkInfo.checkConnectivity(
-        onVisible:  () async{
-         await Provider.of<CityProvider>(CustomNavigator.navigatorState.currentContext!, listen: false).getCities();
-          Provider.of<CityProvider>(CustomNavigator.navigatorState.currentContext!, listen: false).getYourCity();
-        }
-      );
+    if (widget.fromProfile == false) {
+      NetworkInfo.checkConnectivity(onVisible: () async {
+        await Provider.of<CityProvider>(
+                CustomNavigator.navigatorState.currentContext!,
+                listen: false)
+            .getCities();
+        Provider.of<CityProvider>(
+                CustomNavigator.navigatorState.currentContext!,
+                listen: false)
+            .getYourCity();
+      });
     }
     super.initState();
   }
@@ -53,7 +63,7 @@ class _CityPageState extends State<CityPage> {
               title: widget.fromProfile
                   ? getTranslated("change_city", context)
                   : getTranslated("city", context),
-              withBack:widget.fromProfile? true:false,
+              withBack: widget.fromProfile ? true : false,
             ),
             Expanded(
               child: Padding(
@@ -74,8 +84,7 @@ class _CityPageState extends State<CityPage> {
                     Center(
                         child: Text(
                             widget.fromProfile
-                                ? getTranslated(
-                                    "choose_your_new_city", context)
+                                ? getTranslated("choose_your_new_city", context)
                                 : getTranslated("choose_your_city", context),
                             textAlign: TextAlign.center,
                             style: AppTextStyles.w500.copyWith(
@@ -94,8 +103,11 @@ class _CityPageState extends State<CityPage> {
                         //           borderColor: Colors.transparent)):null;
                         // },
                         items: provider.cityModel?.cities != null &&
-                                provider.cityModel!.cities!.isNotEmpty ? provider.cityModel!.cities! : [],
-                        name:   provider.currentCity ?? getTranslated("city", context),
+                                provider.cityModel!.cities!.isNotEmpty
+                            ? provider.cityModel!.cities!
+                            : [],
+                        name: provider.currentCity ??
+                            getTranslated("city", context),
                         onChange: (location) {
                           provider.onSelectCity(location: location);
                         },
@@ -106,16 +118,18 @@ class _CityPageState extends State<CityPage> {
                         isLoading: provider.isLoading,
                         height: 46.h,
                         onTap: () {
-                          if (provider.city != null ) {
+                          if (provider.city != null) {
                             provider.updateCity();
-                          }
-                          else {CustomSnackBar.showSnackBar(
+                            Provider.of<CartProvider>(context,listen: false).checkCity(city: provider.city!.id.toString());
+                          } else {
+                            CustomSnackBar.showSnackBar(
                                 notification: AppNotification(
                                     message: getTranslated(
                                         "please_choose_city", context),
                                     isFloating: true,
                                     backgroundColor: ColorResources.IN_ACTIVE,
-                                    borderColor: Colors.transparent));}
+                                    borderColor: Colors.transparent));
+                          }
                         },
                         textColor: ColorResources.WHITE_COLOR,
                         text: getTranslated("confirm", context),

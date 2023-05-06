@@ -2,6 +2,7 @@ class Images {
   static const String logo = 'assets/logo.png';
   static const String homeLogo = 'assets/images/home_logo.png';
   static const String splash = 'assets/splash.png';
+  static const String splashLogo = 'assets/splash_logo.png';
   static const String chooseCity = 'assets/images/choose_city.png';
   static const String city = 'assets/images/city.png';
   static const String emptyItems = 'assets/images/empty_search.png';
