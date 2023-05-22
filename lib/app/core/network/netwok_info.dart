@@ -1,7 +1,7 @@
 import 'dart:io';
 import 'package:baber/app/core/utils/app_snack_bar.dart';
 import 'package:baber/navigation/custom_navigation.dart';
-import 'package:connectivity/connectivity.dart';
+import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/material.dart';
 import '../../../domain/localization/language_constant.dart';
 
@@ -10,7 +10,8 @@ import '../../../domain/localization/language_constant.dart';
   NetworkInfo(this.connectivity);
 
    Future<bool> get isConnected async {
-    ConnectivityResult result = await connectivity.checkConnectivity();
+
+     ConnectivityResult result = await connectivity.checkConnectivity();
     return result != ConnectivityResult.none;
   }
 

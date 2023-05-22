@@ -9,39 +9,1049 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0f32153c-20a2-462c-b0aa-469fbaabcdc6" name="Changes" comment="cart">
-      <change afterPath="$PROJECT_DIR$/assets/splash_logo.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/c66618b73d2abf4b7db8b10de592115f/.filecache" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/c66618b73d2abf4b7db8b10de592115f/.filecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/c66618b73d2abf4b7db8b10de592115f/app.dill" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/c66618b73d2abf4b7db8b10de592115f/app.dill" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/c66618b73d2abf4b7db8b10de592115f/debug_android_application.stamp" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/c66618b73d2abf4b7db8b10de592115f/debug_android_application.stamp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/c66618b73d2abf4b7db8b10de592115f/flutter_assets.d" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/c66618b73d2abf4b7db8b10de592115f/flutter_assets.d" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/c66618b73d2abf4b7db8b10de592115f/kernel_snapshot.d" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/c66618b73d2abf4b7db8b10de592115f/kernel_snapshot.d" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/c66618b73d2abf4b7db8b10de592115f/kernel_snapshot.stamp" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/c66618b73d2abf4b7db8b10de592115f/kernel_snapshot.stamp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/c66618b73d2abf4b7db8b10de592115f/outputs.json" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/c66618b73d2abf4b7db8b10de592115f/outputs.json" afterDir="false" />
+    <list default="true" id="0f32153c-20a2-462c-b0aa-469fbaabcdc6" name="Changes" comment="&#10;update(cart)">
+      <change afterPath="$PROJECT_DIR$/.idea/kotlinc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Podfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Podfile.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FMDB/LICENSE.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FMDB/README.markdown" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FMDB/src/fmdb/FMDB.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FMDB/src/fmdb/FMDatabase.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FMDB/src/fmdb/FMDatabase.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FMDB/src/fmdb/FMDatabaseAdditions.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FMDB/src/fmdb/FMDatabaseAdditions.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FMDB/src/fmdb/FMDatabasePool.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FMDB/src/fmdb/FMDatabasePool.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FMDB/src/fmdb/FMDatabaseQueue.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FMDB/src/fmdb/FMDatabaseQueue.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FMDB/src/fmdb/FMResultSet.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FMDB/src/fmdb/FMResultSet.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/Firebase/CoreOnly/Sources/Firebase.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/Firebase/CoreOnly/Sources/module.modulemap" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/Firebase/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/Firebase/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.xcframework/Info.plist" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.xcframework/ios-arm64_armv7/FirebaseAnalytics.framework/FirebaseAnalytics" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.xcframework/ios-arm64_armv7/FirebaseAnalytics.framework/Headers/FIRAnalytics+AppDelegate.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.xcframework/ios-arm64_armv7/FirebaseAnalytics.framework/Headers/FIRAnalytics+Consent.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.xcframework/ios-arm64_armv7/FirebaseAnalytics.framework/Headers/FIRAnalytics+OnDevice.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.xcframework/ios-arm64_armv7/FirebaseAnalytics.framework/Headers/FIRAnalytics.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.xcframework/ios-arm64_armv7/FirebaseAnalytics.framework/Headers/FIREventNames.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.xcframework/ios-arm64_armv7/FirebaseAnalytics.framework/Headers/FIRParameterNames.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.xcframework/ios-arm64_armv7/FirebaseAnalytics.framework/Headers/FIRUserPropertyNames.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.xcframework/ios-arm64_armv7/FirebaseAnalytics.framework/Headers/FirebaseAnalytics-umbrella.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.xcframework/ios-arm64_armv7/FirebaseAnalytics.framework/Headers/FirebaseAnalytics.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.xcframework/ios-arm64_armv7/FirebaseAnalytics.framework/Info.plist" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.xcframework/ios-arm64_armv7/FirebaseAnalytics.framework/Modules/module.modulemap" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.xcframework/ios-arm64_i386_x86_64-simulator/FirebaseAnalytics.framework/FirebaseAnalytics" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.xcframework/ios-arm64_i386_x86_64-simulator/FirebaseAnalytics.framework/Headers/FIRAnalytics+AppDelegate.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.xcframework/ios-arm64_i386_x86_64-simulator/FirebaseAnalytics.framework/Headers/FIRAnalytics+Consent.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.xcframework/ios-arm64_i386_x86_64-simulator/FirebaseAnalytics.framework/Headers/FIRAnalytics+OnDevice.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.xcframework/ios-arm64_i386_x86_64-simulator/FirebaseAnalytics.framework/Headers/FIRAnalytics.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.xcframework/ios-arm64_i386_x86_64-simulator/FirebaseAnalytics.framework/Headers/FIREventNames.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.xcframework/ios-arm64_i386_x86_64-simulator/FirebaseAnalytics.framework/Headers/FIRParameterNames.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.xcframework/ios-arm64_i386_x86_64-simulator/FirebaseAnalytics.framework/Headers/FIRUserPropertyNames.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.xcframework/ios-arm64_i386_x86_64-simulator/FirebaseAnalytics.framework/Headers/FirebaseAnalytics-umbrella.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.xcframework/ios-arm64_i386_x86_64-simulator/FirebaseAnalytics.framework/Headers/FirebaseAnalytics.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.xcframework/ios-arm64_i386_x86_64-simulator/FirebaseAnalytics.framework/Info.plist" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.xcframework/ios-arm64_i386_x86_64-simulator/FirebaseAnalytics.framework/Modules/module.modulemap" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.xcframework/ios-arm64_x86_64-maccatalyst/FirebaseAnalytics.framework/FirebaseAnalytics" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.xcframework/ios-arm64_x86_64-maccatalyst/FirebaseAnalytics.framework/Headers/FIRAnalytics+AppDelegate.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.xcframework/ios-arm64_x86_64-maccatalyst/FirebaseAnalytics.framework/Headers/FIRAnalytics+Consent.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.xcframework/ios-arm64_x86_64-maccatalyst/FirebaseAnalytics.framework/Headers/FIRAnalytics+OnDevice.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.xcframework/ios-arm64_x86_64-maccatalyst/FirebaseAnalytics.framework/Headers/FIRAnalytics.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.xcframework/ios-arm64_x86_64-maccatalyst/FirebaseAnalytics.framework/Headers/FIREventNames.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.xcframework/ios-arm64_x86_64-maccatalyst/FirebaseAnalytics.framework/Headers/FIRParameterNames.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.xcframework/ios-arm64_x86_64-maccatalyst/FirebaseAnalytics.framework/Headers/FIRUserPropertyNames.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.xcframework/ios-arm64_x86_64-maccatalyst/FirebaseAnalytics.framework/Headers/FirebaseAnalytics-umbrella.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.xcframework/ios-arm64_x86_64-maccatalyst/FirebaseAnalytics.framework/Headers/FirebaseAnalytics.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.xcframework/ios-arm64_x86_64-maccatalyst/FirebaseAnalytics.framework/Info.plist" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.xcframework/ios-arm64_x86_64-maccatalyst/FirebaseAnalytics.framework/Modules/module.modulemap" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.xcframework/macos-arm64_x86_64/FirebaseAnalytics.framework/FirebaseAnalytics" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.xcframework/macos-arm64_x86_64/FirebaseAnalytics.framework/Headers/FIRAnalytics+AppDelegate.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.xcframework/macos-arm64_x86_64/FirebaseAnalytics.framework/Headers/FIRAnalytics+Consent.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.xcframework/macos-arm64_x86_64/FirebaseAnalytics.framework/Headers/FIRAnalytics+OnDevice.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.xcframework/macos-arm64_x86_64/FirebaseAnalytics.framework/Headers/FIRAnalytics.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.xcframework/macos-arm64_x86_64/FirebaseAnalytics.framework/Headers/FIREventNames.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.xcframework/macos-arm64_x86_64/FirebaseAnalytics.framework/Headers/FIRParameterNames.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.xcframework/macos-arm64_x86_64/FirebaseAnalytics.framework/Headers/FIRUserPropertyNames.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.xcframework/macos-arm64_x86_64/FirebaseAnalytics.framework/Headers/FirebaseAnalytics-umbrella.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.xcframework/macos-arm64_x86_64/FirebaseAnalytics.framework/Headers/FirebaseAnalytics.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.xcframework/macos-arm64_x86_64/FirebaseAnalytics.framework/Info.plist" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.xcframework/macos-arm64_x86_64/FirebaseAnalytics.framework/Modules/module.modulemap" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.xcframework/tvos-arm64/FirebaseAnalytics.framework/FirebaseAnalytics" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.xcframework/tvos-arm64/FirebaseAnalytics.framework/Headers/FIRAnalytics+AppDelegate.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.xcframework/tvos-arm64/FirebaseAnalytics.framework/Headers/FIRAnalytics+Consent.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.xcframework/tvos-arm64/FirebaseAnalytics.framework/Headers/FIRAnalytics+OnDevice.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.xcframework/tvos-arm64/FirebaseAnalytics.framework/Headers/FIRAnalytics.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.xcframework/tvos-arm64/FirebaseAnalytics.framework/Headers/FIREventNames.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.xcframework/tvos-arm64/FirebaseAnalytics.framework/Headers/FIRParameterNames.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.xcframework/tvos-arm64/FirebaseAnalytics.framework/Headers/FIRUserPropertyNames.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.xcframework/tvos-arm64/FirebaseAnalytics.framework/Headers/FirebaseAnalytics-umbrella.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.xcframework/tvos-arm64/FirebaseAnalytics.framework/Headers/FirebaseAnalytics.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.xcframework/tvos-arm64/FirebaseAnalytics.framework/Info.plist" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.xcframework/tvos-arm64/FirebaseAnalytics.framework/Modules/module.modulemap" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.xcframework/tvos-arm64_x86_64-simulator/FirebaseAnalytics.framework/FirebaseAnalytics" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.xcframework/tvos-arm64_x86_64-simulator/FirebaseAnalytics.framework/Headers/FIRAnalytics+AppDelegate.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.xcframework/tvos-arm64_x86_64-simulator/FirebaseAnalytics.framework/Headers/FIRAnalytics+Consent.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.xcframework/tvos-arm64_x86_64-simulator/FirebaseAnalytics.framework/Headers/FIRAnalytics+OnDevice.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.xcframework/tvos-arm64_x86_64-simulator/FirebaseAnalytics.framework/Headers/FIRAnalytics.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.xcframework/tvos-arm64_x86_64-simulator/FirebaseAnalytics.framework/Headers/FIREventNames.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.xcframework/tvos-arm64_x86_64-simulator/FirebaseAnalytics.framework/Headers/FIRParameterNames.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.xcframework/tvos-arm64_x86_64-simulator/FirebaseAnalytics.framework/Headers/FIRUserPropertyNames.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.xcframework/tvos-arm64_x86_64-simulator/FirebaseAnalytics.framework/Headers/FirebaseAnalytics-umbrella.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.xcframework/tvos-arm64_x86_64-simulator/FirebaseAnalytics.framework/Headers/FirebaseAnalytics.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.xcframework/tvos-arm64_x86_64-simulator/FirebaseAnalytics.framework/Info.plist" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.xcframework/tvos-arm64_x86_64-simulator/FirebaseAnalytics.framework/Modules/module.modulemap" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/CHANGELOG.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Interop/FIRAuthInterop.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Auth/FIRActionCodeSettings.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Auth/FIRAuth.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Auth/FIRAuthDataResult.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Auth/FIRAuthDataResult_Internal.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Auth/FIRAuthDispatcher.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Auth/FIRAuthDispatcher.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Auth/FIRAuthGlobalWorkQueue.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Auth/FIRAuthGlobalWorkQueue.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Auth/FIRAuthOperationType.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Auth/FIRAuthSerialTaskQueue.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Auth/FIRAuthSerialTaskQueue.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Auth/FIRAuthSettings.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Auth/FIRAuthTokenResult.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Auth/FIRAuthTokenResult_Internal.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Auth/FIRAuth_Internal.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/AuthProvider/Email/FIREmailAuthProvider.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/AuthProvider/Email/FIREmailPasswordAuthCredential.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/AuthProvider/Email/FIREmailPasswordAuthCredential.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/AuthProvider/FIRAuthCredential.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/AuthProvider/FIRAuthCredential_Internal.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/AuthProvider/FIRAuthProvider.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/AuthProvider/Facebook/FIRFacebookAuthCredential.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/AuthProvider/Facebook/FIRFacebookAuthCredential.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/AuthProvider/Facebook/FIRFacebookAuthProvider.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/AuthProvider/GameCenter/FIRGameCenterAuthCredential.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/AuthProvider/GameCenter/FIRGameCenterAuthCredential.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/AuthProvider/GameCenter/FIRGameCenterAuthProvider.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/AuthProvider/GitHub/FIRGitHubAuthCredential.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/AuthProvider/GitHub/FIRGitHubAuthCredential.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/AuthProvider/GitHub/FIRGitHubAuthProvider.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/AuthProvider/Google/FIRGoogleAuthCredential.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/AuthProvider/Google/FIRGoogleAuthCredential.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/AuthProvider/Google/FIRGoogleAuthProvider.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/AuthProvider/OAuth/FIROAuthCredential.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/AuthProvider/OAuth/FIROAuthCredential_Internal.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/AuthProvider/OAuth/FIROAuthProvider.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/AuthProvider/Phone/FIRPhoneAuthCredential.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/AuthProvider/Phone/FIRPhoneAuthCredential_Internal.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/AuthProvider/Phone/FIRPhoneAuthProvider.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/AuthProvider/Twitter/FIRTwitterAuthCredential.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/AuthProvider/Twitter/FIRTwitterAuthCredential.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/AuthProvider/Twitter/FIRTwitterAuthProvider.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/FIRAuthBackend+MultiFactor.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/FIRAuthBackend+MultiFactor.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/FIRAuthBackend.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/FIRAuthBackend.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/FIRAuthRPCRequest.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/FIRAuthRPCResponse.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/FIRAuthRequestConfiguration.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/FIRAuthRequestConfiguration.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/FIRIdentityToolkitRequest.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/FIRIdentityToolkitRequest.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/RPC/FIRCreateAuthURIRequest.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/RPC/FIRCreateAuthURIRequest.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/RPC/FIRCreateAuthURIResponse.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/RPC/FIRCreateAuthURIResponse.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/RPC/FIRDeleteAccountRequest.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/RPC/FIRDeleteAccountRequest.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/RPC/FIRDeleteAccountResponse.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/RPC/FIRDeleteAccountResponse.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/RPC/FIREmailLinkSignInRequest.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/RPC/FIREmailLinkSignInRequest.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/RPC/FIREmailLinkSignInResponse.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/RPC/FIREmailLinkSignInResponse.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/RPC/FIRGetAccountInfoRequest.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/RPC/FIRGetAccountInfoRequest.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/RPC/FIRGetAccountInfoResponse.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/RPC/FIRGetAccountInfoResponse.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/RPC/FIRGetOOBConfirmationCodeRequest.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/RPC/FIRGetOOBConfirmationCodeRequest.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/RPC/FIRGetOOBConfirmationCodeResponse.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/RPC/FIRGetOOBConfirmationCodeResponse.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/RPC/FIRGetProjectConfigRequest.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/RPC/FIRGetProjectConfigRequest.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/RPC/FIRGetProjectConfigResponse.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/RPC/FIRGetProjectConfigResponse.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/RPC/FIRResetPasswordRequest.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/RPC/FIRResetPasswordRequest.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/RPC/FIRResetPasswordResponse.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/RPC/FIRResetPasswordResponse.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/RPC/FIRSecureTokenRequest.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/RPC/FIRSecureTokenRequest.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/RPC/FIRSecureTokenResponse.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/RPC/FIRSecureTokenResponse.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/RPC/FIRSendVerificationCodeRequest.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/RPC/FIRSendVerificationCodeRequest.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/RPC/FIRSendVerificationCodeResponse.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/RPC/FIRSendVerificationCodeResponse.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/RPC/FIRSetAccountInfoRequest.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/RPC/FIRSetAccountInfoRequest.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/RPC/FIRSetAccountInfoResponse.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/RPC/FIRSetAccountInfoResponse.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/RPC/FIRSignInWithGameCenterRequest.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/RPC/FIRSignInWithGameCenterRequest.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/RPC/FIRSignInWithGameCenterResponse.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/RPC/FIRSignInWithGameCenterResponse.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/RPC/FIRSignUpNewUserRequest.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/RPC/FIRSignUpNewUserRequest.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/RPC/FIRSignUpNewUserResponse.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/RPC/FIRSignUpNewUserResponse.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/RPC/FIRVerifyAssertionRequest.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/RPC/FIRVerifyAssertionRequest.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/RPC/FIRVerifyAssertionResponse.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/RPC/FIRVerifyAssertionResponse.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/RPC/FIRVerifyClientRequest.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/RPC/FIRVerifyClientRequest.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/RPC/FIRVerifyClientResponse.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/RPC/FIRVerifyClientResponse.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/RPC/FIRVerifyCustomTokenRequest.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/RPC/FIRVerifyCustomTokenRequest.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/RPC/FIRVerifyCustomTokenResponse.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/RPC/FIRVerifyCustomTokenResponse.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/RPC/FIRVerifyPasswordRequest.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/RPC/FIRVerifyPasswordRequest.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/RPC/FIRVerifyPasswordResponse.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/RPC/FIRVerifyPasswordResponse.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/RPC/FIRVerifyPhoneNumberRequest.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/RPC/FIRVerifyPhoneNumberRequest.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/RPC/FIRVerifyPhoneNumberResponse.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/RPC/FIRVerifyPhoneNumberResponse.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/RPC/MultiFactor/Enroll/FIRFinalizeMFAEnrollmentRequest.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/RPC/MultiFactor/Enroll/FIRFinalizeMFAEnrollmentRequest.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/RPC/MultiFactor/Enroll/FIRFinalizeMFAEnrollmentResponse.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/RPC/MultiFactor/Enroll/FIRFinalizeMFAEnrollmentResponse.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/RPC/MultiFactor/Enroll/FIRStartMFAEnrollmentRequest.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/RPC/MultiFactor/Enroll/FIRStartMFAEnrollmentRequest.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/RPC/MultiFactor/Enroll/FIRStartMFAEnrollmentResponse.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/RPC/MultiFactor/Enroll/FIRStartMFAEnrollmentResponse.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/RPC/MultiFactor/SignIn/FIRFinalizeMFASignInRequest.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/RPC/MultiFactor/SignIn/FIRFinalizeMFASignInRequest.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/RPC/MultiFactor/SignIn/FIRFinalizeMFASignInResponse.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/RPC/MultiFactor/SignIn/FIRFinalizeMFASignInResponse.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/RPC/MultiFactor/SignIn/FIRStartMFASignInRequest.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/RPC/MultiFactor/SignIn/FIRStartMFASignInRequest.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/RPC/MultiFactor/SignIn/FIRStartMFASignInResponse.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/RPC/MultiFactor/SignIn/FIRStartMFASignInResponse.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/RPC/MultiFactor/Unenroll/FIRWithdrawMFARequest.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/RPC/MultiFactor/Unenroll/FIRWithdrawMFARequest.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/RPC/MultiFactor/Unenroll/FIRWithdrawMFAResponse.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/RPC/MultiFactor/Unenroll/FIRWithdrawMFAResponse.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/RPC/Proto/FIRAuthProto.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/RPC/Proto/FIRAuthProtoMFAEnrollment.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/RPC/Proto/FIRAuthProtoMFAEnrollment.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/RPC/Proto/Phone/FIRAuthProtoFinalizeMFAPhoneRequestInfo.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/RPC/Proto/Phone/FIRAuthProtoFinalizeMFAPhoneRequestInfo.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/RPC/Proto/Phone/FIRAuthProtoFinalizeMFAPhoneResponseInfo.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/RPC/Proto/Phone/FIRAuthProtoFinalizeMFAPhoneResponseInfo.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/RPC/Proto/Phone/FIRAuthProtoStartMFAPhoneRequestInfo.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/RPC/Proto/Phone/FIRAuthProtoStartMFAPhoneRequestInfo.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/RPC/Proto/Phone/FIRAuthProtoStartMFAPhoneResponseInfo.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/RPC/Proto/Phone/FIRAuthProtoStartMFAPhoneResponseInfo.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/MultiFactor/FIRMultiFactor+Internal.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/MultiFactor/FIRMultiFactor.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/MultiFactor/FIRMultiFactorAssertion+Internal.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/MultiFactor/FIRMultiFactorAssertion.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/MultiFactor/FIRMultiFactorConstants.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/MultiFactor/FIRMultiFactorInfo+Internal.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/MultiFactor/FIRMultiFactorInfo.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/MultiFactor/FIRMultiFactorResolver+Internal.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/MultiFactor/FIRMultiFactorResolver.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/MultiFactor/FIRMultiFactorSession+Internal.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/MultiFactor/FIRMultiFactorSession.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/MultiFactor/Phone/FIRPhoneMultiFactorAssertion+Internal.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/MultiFactor/Phone/FIRPhoneMultiFactorAssertion.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/MultiFactor/Phone/FIRPhoneMultiFactorGenerator.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/MultiFactor/Phone/FIRPhoneMultiFactorInfo+Internal.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/MultiFactor/Phone/FIRPhoneMultiFactorInfo.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Public/FirebaseAuth/FIRActionCodeSettings.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Public/FirebaseAuth/FIRAdditionalUserInfo.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Public/FirebaseAuth/FIRAuth.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Public/FirebaseAuth/FIRAuthAPNSTokenType.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Public/FirebaseAuth/FIRAuthCredential.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Public/FirebaseAuth/FIRAuthDataResult.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Public/FirebaseAuth/FIRAuthErrors.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Public/FirebaseAuth/FIRAuthSettings.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Public/FirebaseAuth/FIRAuthTokenResult.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Public/FirebaseAuth/FIRAuthUIDelegate.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Public/FirebaseAuth/FIREmailAuthProvider.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Public/FirebaseAuth/FIRFacebookAuthProvider.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Public/FirebaseAuth/FIRFederatedAuthProvider.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Public/FirebaseAuth/FIRGameCenterAuthProvider.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Public/FirebaseAuth/FIRGitHubAuthProvider.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Public/FirebaseAuth/FIRGoogleAuthProvider.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Public/FirebaseAuth/FIRMultiFactor.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Public/FirebaseAuth/FIRMultiFactorAssertion.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Public/FirebaseAuth/FIRMultiFactorInfo.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Public/FirebaseAuth/FIRMultiFactorResolver.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Public/FirebaseAuth/FIRMultiFactorSession.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Public/FirebaseAuth/FIROAuthCredential.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Public/FirebaseAuth/FIROAuthProvider.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Public/FirebaseAuth/FIRPhoneAuthCredential.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Public/FirebaseAuth/FIRPhoneAuthProvider.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Public/FirebaseAuth/FIRPhoneMultiFactorAssertion.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Public/FirebaseAuth/FIRPhoneMultiFactorGenerator.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Public/FirebaseAuth/FIRPhoneMultiFactorInfo.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Public/FirebaseAuth/FIRTwitterAuthProvider.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Public/FirebaseAuth/FIRUser.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Public/FirebaseAuth/FIRUserInfo.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Public/FirebaseAuth/FIRUserMetadata.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Public/FirebaseAuth/FirebaseAuth.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Storage/FIRAuthKeychainServices.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Storage/FIRAuthKeychainServices.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Storage/FIRAuthUserDefaults.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Storage/FIRAuthUserDefaults.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/SystemService/FIRAuthAPNSToken.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/SystemService/FIRAuthAPNSToken.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/SystemService/FIRAuthAPNSTokenManager.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/SystemService/FIRAuthAPNSTokenManager.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/SystemService/FIRAuthAppCredential.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/SystemService/FIRAuthAppCredential.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/SystemService/FIRAuthAppCredentialManager.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/SystemService/FIRAuthAppCredentialManager.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/SystemService/FIRAuthNotificationManager.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/SystemService/FIRAuthNotificationManager.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/SystemService/FIRAuthStoredUserManager.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/SystemService/FIRAuthStoredUserManager.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/SystemService/FIRSecureTokenService.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/SystemService/FIRSecureTokenService.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/User/FIRAdditionalUserInfo.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/User/FIRAdditionalUserInfo_Internal.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/User/FIRUser.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/User/FIRUserInfoImpl.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/User/FIRUserInfoImpl.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/User/FIRUserMetadata.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/User/FIRUserMetadata_Internal.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/User/FIRUser_Internal.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Utilities/FIRAuthDefaultUIDelegate.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Utilities/FIRAuthDefaultUIDelegate.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Utilities/FIRAuthErrorUtils.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Utilities/FIRAuthErrorUtils.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Utilities/FIRAuthExceptionUtils.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Utilities/FIRAuthExceptionUtils.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Utilities/FIRAuthInternalErrors.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Utilities/FIRAuthURLPresenter.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Utilities/FIRAuthURLPresenter.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Utilities/FIRAuthWebUtils.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Utilities/FIRAuthWebUtils.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Utilities/FIRAuthWebView.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Utilities/FIRAuthWebView.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Utilities/FIRAuthWebViewController.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Utilities/FIRAuthWebViewController.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Utilities/NSData+FIRBase64.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Utilities/NSData+FIRBase64.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseCore/Extension/FIRAppInternal.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseCore/Extension/FIRComponent.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseCore/Extension/FIRComponentContainer.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseCore/Extension/FIRComponentType.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseCore/Extension/FIRDependency.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseCore/Extension/FIRHeartbeatLogger.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseCore/Extension/FIRLibrary.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseCore/Extension/FIRLogger.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseCore/Extension/FIROptionsInternal.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/FirebaseCore/Extension/FirebaseCoreInternal.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseAuth/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseCore/FirebaseCore/Extension/FIRAppInternal.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseCore/FirebaseCore/Extension/FIRComponent.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseCore/FirebaseCore/Extension/FIRComponentContainer.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseCore/FirebaseCore/Extension/FIRComponentType.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseCore/FirebaseCore/Extension/FIRDependency.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseCore/FirebaseCore/Extension/FIRHeartbeatLogger.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseCore/FirebaseCore/Extension/FIRLibrary.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseCore/FirebaseCore/Extension/FIRLogger.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseCore/FirebaseCore/Extension/FIROptionsInternal.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseCore/FirebaseCore/Extension/FirebaseCoreInternal.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseCore/FirebaseCore/Sources/FIRAnalyticsConfiguration.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseCore/FirebaseCore/Sources/FIRAnalyticsConfiguration.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseCore/FirebaseCore/Sources/FIRApp.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseCore/FirebaseCore/Sources/FIRBundleUtil.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseCore/FirebaseCore/Sources/FIRBundleUtil.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseCore/FirebaseCore/Sources/FIRComponent.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseCore/FirebaseCore/Sources/FIRComponentContainer.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseCore/FirebaseCore/Sources/FIRComponentContainerInternal.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseCore/FirebaseCore/Sources/FIRComponentType.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseCore/FirebaseCore/Sources/FIRConfiguration.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseCore/FirebaseCore/Sources/FIRConfigurationInternal.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseCore/FirebaseCore/Sources/FIRDependency.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseCore/FirebaseCore/Sources/FIRFirebaseUserAgent.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseCore/FirebaseCore/Sources/FIRFirebaseUserAgent.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseCore/FirebaseCore/Sources/FIRHeartbeatLogger.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseCore/FirebaseCore/Sources/FIRLogger.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseCore/FirebaseCore/Sources/FIROptions.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseCore/FirebaseCore/Sources/FIRVersion.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseCore/FirebaseCore/Sources/Public/FirebaseCore/FIRApp.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseCore/FirebaseCore/Sources/Public/FirebaseCore/FIRConfiguration.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseCore/FirebaseCore/Sources/Public/FirebaseCore/FIRLoggerLevel.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseCore/FirebaseCore/Sources/Public/FirebaseCore/FIROptions.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseCore/FirebaseCore/Sources/Public/FirebaseCore/FIRVersion.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseCore/FirebaseCore/Sources/Public/FirebaseCore/FirebaseCore.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseCore/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseCore/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseCoreInternal/FirebaseCore/Internal/Sources/HeartbeatLogging/Heartbeat.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseCoreInternal/FirebaseCore/Internal/Sources/HeartbeatLogging/HeartbeatController.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseCoreInternal/FirebaseCore/Internal/Sources/HeartbeatLogging/HeartbeatStorage.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseCoreInternal/FirebaseCore/Internal/Sources/HeartbeatLogging/HeartbeatsBundle.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseCoreInternal/FirebaseCore/Internal/Sources/HeartbeatLogging/HeartbeatsPayload.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseCoreInternal/FirebaseCore/Internal/Sources/HeartbeatLogging/RingBuffer.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseCoreInternal/FirebaseCore/Internal/Sources/HeartbeatLogging/Storage.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseCoreInternal/FirebaseCore/Internal/Sources/HeartbeatLogging/StorageFactory.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseCoreInternal/FirebaseCore/Internal/Sources/HeartbeatLogging/WeakContainer.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseCoreInternal/FirebaseCore/Internal/Sources/HeartbeatLogging/_ObjC_HeartbeatController.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseCoreInternal/FirebaseCore/Internal/Sources/HeartbeatLogging/_ObjC_HeartbeatsPayload.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseCoreInternal/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseCoreInternal/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseDynamicLinks/FirebaseCore/Extension/FIRAppInternal.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseDynamicLinks/FirebaseCore/Extension/FIRComponent.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseDynamicLinks/FirebaseCore/Extension/FIRComponentContainer.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseDynamicLinks/FirebaseCore/Extension/FIRComponentType.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseDynamicLinks/FirebaseCore/Extension/FIRDependency.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseDynamicLinks/FirebaseCore/Extension/FIRHeartbeatLogger.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseDynamicLinks/FirebaseCore/Extension/FIRLibrary.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseDynamicLinks/FirebaseCore/Extension/FIRLogger.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseDynamicLinks/FirebaseCore/Extension/FIROptionsInternal.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseDynamicLinks/FirebaseCore/Extension/FirebaseCoreInternal.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseDynamicLinks/FirebaseDynamicLinks/Sources/FDLURLComponents/FDLURLComponents+Private.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseDynamicLinks/FirebaseDynamicLinks/Sources/FDLURLComponents/FDLURLComponents.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseDynamicLinks/FirebaseDynamicLinks/Sources/FDLURLComponents/FIRDynamicLinkComponentsKeyProvider.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseDynamicLinks/FirebaseDynamicLinks/Sources/FDLURLComponents/FIRDynamicLinkComponentsKeyProvider.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseDynamicLinks/FirebaseDynamicLinks/Sources/FIRDLDefaultRetrievalProcessV2.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseDynamicLinks/FirebaseDynamicLinks/Sources/FIRDLDefaultRetrievalProcessV2.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseDynamicLinks/FirebaseDynamicLinks/Sources/FIRDLJavaScriptExecutor.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseDynamicLinks/FirebaseDynamicLinks/Sources/FIRDLJavaScriptExecutor.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseDynamicLinks/FirebaseDynamicLinks/Sources/FIRDLRetrievalProcessFactory.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseDynamicLinks/FirebaseDynamicLinks/Sources/FIRDLRetrievalProcessFactory.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseDynamicLinks/FirebaseDynamicLinks/Sources/FIRDLRetrievalProcessProtocols.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseDynamicLinks/FirebaseDynamicLinks/Sources/FIRDLRetrievalProcessResult+Private.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseDynamicLinks/FirebaseDynamicLinks/Sources/FIRDLRetrievalProcessResult.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseDynamicLinks/FirebaseDynamicLinks/Sources/FIRDLRetrievalProcessResult.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseDynamicLinks/FirebaseDynamicLinks/Sources/FIRDLScionLogging.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseDynamicLinks/FirebaseDynamicLinks/Sources/FIRDLScionLogging.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseDynamicLinks/FirebaseDynamicLinks/Sources/FIRDynamicLink+Private.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseDynamicLinks/FirebaseDynamicLinks/Sources/FIRDynamicLink.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseDynamicLinks/FirebaseDynamicLinks/Sources/FIRDynamicLinkNetworking+Private.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseDynamicLinks/FirebaseDynamicLinks/Sources/FIRDynamicLinkNetworking.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseDynamicLinks/FirebaseDynamicLinks/Sources/FIRDynamicLinkNetworking.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseDynamicLinks/FirebaseDynamicLinks/Sources/FIRDynamicLinks+FirstParty.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseDynamicLinks/FirebaseDynamicLinks/Sources/FIRDynamicLinks+Private.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseDynamicLinks/FirebaseDynamicLinks/Sources/FIRDynamicLinks.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseDynamicLinks/FirebaseDynamicLinks/Sources/GINInvocation/GINArgument.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseDynamicLinks/FirebaseDynamicLinks/Sources/GINInvocation/GINArgument.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseDynamicLinks/FirebaseDynamicLinks/Sources/GINInvocation/GINInvocation.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseDynamicLinks/FirebaseDynamicLinks/Sources/GINInvocation/GINInvocation.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseDynamicLinks/FirebaseDynamicLinks/Sources/Logging/FDLLogging.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseDynamicLinks/FirebaseDynamicLinks/Sources/Logging/FDLLogging.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseDynamicLinks/FirebaseDynamicLinks/Sources/Public/FirebaseDynamicLinks/FDLURLComponents.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseDynamicLinks/FirebaseDynamicLinks/Sources/Public/FirebaseDynamicLinks/FIRDynamicLink.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseDynamicLinks/FirebaseDynamicLinks/Sources/Public/FirebaseDynamicLinks/FIRDynamicLinks.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseDynamicLinks/FirebaseDynamicLinks/Sources/Public/FirebaseDynamicLinks/FIRDynamicLinksCommon.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseDynamicLinks/FirebaseDynamicLinks/Sources/Public/FirebaseDynamicLinks/FirebaseDynamicLinks.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseDynamicLinks/FirebaseDynamicLinks/Sources/Utilities/FDLDeviceHeuristicsHelper.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseDynamicLinks/FirebaseDynamicLinks/Sources/Utilities/FDLDeviceHeuristicsHelper.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseDynamicLinks/FirebaseDynamicLinks/Sources/Utilities/FDLUtilities.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseDynamicLinks/FirebaseDynamicLinks/Sources/Utilities/FDLUtilities.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseDynamicLinks/Interop/Analytics/Public/FIRAnalyticsInterop.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseDynamicLinks/Interop/Analytics/Public/FIRAnalyticsInteropListener.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseDynamicLinks/Interop/Analytics/Public/FIRInteropEventNames.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseDynamicLinks/Interop/Analytics/Public/FIRInteropParameterNames.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseDynamicLinks/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseDynamicLinks/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseInstallations/FirebaseCore/Extension/FIRAppInternal.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseInstallations/FirebaseCore/Extension/FIRComponent.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseInstallations/FirebaseCore/Extension/FIRComponentContainer.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseInstallations/FirebaseCore/Extension/FIRComponentType.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseInstallations/FirebaseCore/Extension/FIRDependency.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseInstallations/FirebaseCore/Extension/FIRHeartbeatLogger.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseInstallations/FirebaseCore/Extension/FIRLibrary.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseInstallations/FirebaseCore/Extension/FIRLogger.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseInstallations/FirebaseCore/Extension/FIROptionsInternal.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseInstallations/FirebaseCore/Extension/FirebaseCoreInternal.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseInstallations/FirebaseInstallations/Source/Library/Errors/FIRInstallationsErrorUtil.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseInstallations/FirebaseInstallations/Source/Library/Errors/FIRInstallationsErrorUtil.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseInstallations/FirebaseInstallations/Source/Library/Errors/FIRInstallationsHTTPError.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseInstallations/FirebaseInstallations/Source/Library/Errors/FIRInstallationsHTTPError.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseInstallations/FirebaseInstallations/Source/Library/FIRInstallations.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseInstallations/FirebaseInstallations/Source/Library/FIRInstallationsAuthTokenResult.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseInstallations/FirebaseInstallations/Source/Library/FIRInstallationsAuthTokenResultInternal.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseInstallations/FirebaseInstallations/Source/Library/FIRInstallationsItem.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseInstallations/FirebaseInstallations/Source/Library/FIRInstallationsItem.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseInstallations/FirebaseInstallations/Source/Library/FIRInstallationsLogger.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseInstallations/FirebaseInstallations/Source/Library/FIRInstallationsLogger.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseInstallations/FirebaseInstallations/Source/Library/IIDMigration/FIRInstallationsIIDStore.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseInstallations/FirebaseInstallations/Source/Library/IIDMigration/FIRInstallationsIIDStore.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseInstallations/FirebaseInstallations/Source/Library/IIDMigration/FIRInstallationsIIDTokenStore.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseInstallations/FirebaseInstallations/Source/Library/IIDMigration/FIRInstallationsIIDTokenStore.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseInstallations/FirebaseInstallations/Source/Library/InstallationsAPI/FIRInstallationsAPIService.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseInstallations/FirebaseInstallations/Source/Library/InstallationsAPI/FIRInstallationsAPIService.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseInstallations/FirebaseInstallations/Source/Library/InstallationsAPI/FIRInstallationsItem+RegisterInstallationAPI.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseInstallations/FirebaseInstallations/Source/Library/InstallationsAPI/FIRInstallationsItem+RegisterInstallationAPI.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseInstallations/FirebaseInstallations/Source/Library/InstallationsIDController/FIRCurrentDateProvider.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseInstallations/FirebaseInstallations/Source/Library/InstallationsIDController/FIRCurrentDateProvider.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseInstallations/FirebaseInstallations/Source/Library/InstallationsIDController/FIRInstallationsBackoffController.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseInstallations/FirebaseInstallations/Source/Library/InstallationsIDController/FIRInstallationsBackoffController.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseInstallations/FirebaseInstallations/Source/Library/InstallationsIDController/FIRInstallationsIDController.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseInstallations/FirebaseInstallations/Source/Library/InstallationsIDController/FIRInstallationsIDController.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseInstallations/FirebaseInstallations/Source/Library/InstallationsIDController/FIRInstallationsSingleOperationPromiseCache.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseInstallations/FirebaseInstallations/Source/Library/InstallationsIDController/FIRInstallationsSingleOperationPromiseCache.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseInstallations/FirebaseInstallations/Source/Library/InstallationsIDController/FIRInstallationsStatus.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseInstallations/FirebaseInstallations/Source/Library/InstallationsStore/FIRInstallationsStore.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseInstallations/FirebaseInstallations/Source/Library/InstallationsStore/FIRInstallationsStore.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseInstallations/FirebaseInstallations/Source/Library/InstallationsStore/FIRInstallationsStoredAuthToken.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseInstallations/FirebaseInstallations/Source/Library/InstallationsStore/FIRInstallationsStoredAuthToken.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseInstallations/FirebaseInstallations/Source/Library/InstallationsStore/FIRInstallationsStoredItem.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseInstallations/FirebaseInstallations/Source/Library/InstallationsStore/FIRInstallationsStoredItem.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseInstallations/FirebaseInstallations/Source/Library/Private/FirebaseInstallationsInternal.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseInstallations/FirebaseInstallations/Source/Library/Public/FirebaseInstallations/FIRInstallations.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseInstallations/FirebaseInstallations/Source/Library/Public/FirebaseInstallations/FIRInstallationsAuthTokenResult.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseInstallations/FirebaseInstallations/Source/Library/Public/FirebaseInstallations/FIRInstallationsErrors.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseInstallations/FirebaseInstallations/Source/Library/Public/FirebaseInstallations/FirebaseInstallations.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseInstallations/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseInstallations/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseMessaging/FirebaseCore/Extension/FIRAppInternal.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseMessaging/FirebaseCore/Extension/FIRComponent.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseMessaging/FirebaseCore/Extension/FIRComponentContainer.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseMessaging/FirebaseCore/Extension/FIRComponentType.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseMessaging/FirebaseCore/Extension/FIRDependency.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseMessaging/FirebaseCore/Extension/FIRHeartbeatLogger.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseMessaging/FirebaseCore/Extension/FIRLibrary.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseMessaging/FirebaseCore/Extension/FIRLogger.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseMessaging/FirebaseCore/Extension/FIROptionsInternal.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseMessaging/FirebaseCore/Extension/FirebaseCoreInternal.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseMessaging/FirebaseInstallations/Source/Library/Private/FirebaseInstallationsInternal.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseMessaging/FirebaseMessaging/Interop/FIRMessagingInterop.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseMessaging/FirebaseMessaging/Sources/FIRMessaging.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseMessaging/FirebaseMessaging/Sources/FIRMessagingAnalytics.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseMessaging/FirebaseMessaging/Sources/FIRMessagingAnalytics.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseMessaging/FirebaseMessaging/Sources/FIRMessagingCode.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseMessaging/FirebaseMessaging/Sources/FIRMessagingConstants.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseMessaging/FirebaseMessaging/Sources/FIRMessagingConstants.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseMessaging/FirebaseMessaging/Sources/FIRMessagingContextManagerService.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseMessaging/FirebaseMessaging/Sources/FIRMessagingContextManagerService.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseMessaging/FirebaseMessaging/Sources/FIRMessagingDefines.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseMessaging/FirebaseMessaging/Sources/FIRMessagingExtensionHelper.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseMessaging/FirebaseMessaging/Sources/FIRMessagingLogger.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseMessaging/FirebaseMessaging/Sources/FIRMessagingLogger.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseMessaging/FirebaseMessaging/Sources/FIRMessagingPendingTopicsList.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseMessaging/FirebaseMessaging/Sources/FIRMessagingPendingTopicsList.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseMessaging/FirebaseMessaging/Sources/FIRMessagingPersistentSyncMessage.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseMessaging/FirebaseMessaging/Sources/FIRMessagingPersistentSyncMessage.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseMessaging/FirebaseMessaging/Sources/FIRMessagingPubSub.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseMessaging/FirebaseMessaging/Sources/FIRMessagingPubSub.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseMessaging/FirebaseMessaging/Sources/FIRMessagingRemoteNotificationsProxy.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseMessaging/FirebaseMessaging/Sources/FIRMessagingRemoteNotificationsProxy.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseMessaging/FirebaseMessaging/Sources/FIRMessagingRmqManager.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseMessaging/FirebaseMessaging/Sources/FIRMessagingRmqManager.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseMessaging/FirebaseMessaging/Sources/FIRMessagingSyncMessageManager.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseMessaging/FirebaseMessaging/Sources/FIRMessagingSyncMessageManager.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseMessaging/FirebaseMessaging/Sources/FIRMessagingTopicOperation.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseMessaging/FirebaseMessaging/Sources/FIRMessagingTopicOperation.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseMessaging/FirebaseMessaging/Sources/FIRMessagingTopicsCommon.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseMessaging/FirebaseMessaging/Sources/FIRMessagingUtilities.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseMessaging/FirebaseMessaging/Sources/FIRMessagingUtilities.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseMessaging/FirebaseMessaging/Sources/FIRMessaging_Private.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseMessaging/FirebaseMessaging/Sources/FirebaseMessaging.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseMessaging/FirebaseMessaging/Sources/NSDictionary+FIRMessaging.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseMessaging/FirebaseMessaging/Sources/NSDictionary+FIRMessaging.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseMessaging/FirebaseMessaging/Sources/NSError+FIRMessaging.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseMessaging/FirebaseMessaging/Sources/NSError+FIRMessaging.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseMessaging/FirebaseMessaging/Sources/Protogen/nanopb/me.nanopb.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseMessaging/FirebaseMessaging/Sources/Protogen/nanopb/me.nanopb.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseMessaging/FirebaseMessaging/Sources/Public/FirebaseMessaging/FIRMessaging.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseMessaging/FirebaseMessaging/Sources/Public/FirebaseMessaging/FIRMessagingExtensionHelper.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseMessaging/FirebaseMessaging/Sources/Public/FirebaseMessaging/FirebaseMessaging.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseMessaging/FirebaseMessaging/Sources/Token/FIRMessagingAPNSInfo.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseMessaging/FirebaseMessaging/Sources/Token/FIRMessagingAPNSInfo.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseMessaging/FirebaseMessaging/Sources/Token/FIRMessagingAuthKeychain.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseMessaging/FirebaseMessaging/Sources/Token/FIRMessagingAuthKeychain.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseMessaging/FirebaseMessaging/Sources/Token/FIRMessagingAuthService.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseMessaging/FirebaseMessaging/Sources/Token/FIRMessagingAuthService.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseMessaging/FirebaseMessaging/Sources/Token/FIRMessagingBackupExcludedPlist.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseMessaging/FirebaseMessaging/Sources/Token/FIRMessagingBackupExcludedPlist.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseMessaging/FirebaseMessaging/Sources/Token/FIRMessagingCheckinPreferences.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseMessaging/FirebaseMessaging/Sources/Token/FIRMessagingCheckinPreferences.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseMessaging/FirebaseMessaging/Sources/Token/FIRMessagingCheckinService.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseMessaging/FirebaseMessaging/Sources/Token/FIRMessagingCheckinService.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseMessaging/FirebaseMessaging/Sources/Token/FIRMessagingCheckinStore.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseMessaging/FirebaseMessaging/Sources/Token/FIRMessagingCheckinStore.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseMessaging/FirebaseMessaging/Sources/Token/FIRMessagingKeychain.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseMessaging/FirebaseMessaging/Sources/Token/FIRMessagingKeychain.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseMessaging/FirebaseMessaging/Sources/Token/FIRMessagingTokenDeleteOperation.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseMessaging/FirebaseMessaging/Sources/Token/FIRMessagingTokenDeleteOperation.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseMessaging/FirebaseMessaging/Sources/Token/FIRMessagingTokenFetchOperation.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseMessaging/FirebaseMessaging/Sources/Token/FIRMessagingTokenFetchOperation.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseMessaging/FirebaseMessaging/Sources/Token/FIRMessagingTokenInfo.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseMessaging/FirebaseMessaging/Sources/Token/FIRMessagingTokenInfo.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseMessaging/FirebaseMessaging/Sources/Token/FIRMessagingTokenManager.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseMessaging/FirebaseMessaging/Sources/Token/FIRMessagingTokenManager.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseMessaging/FirebaseMessaging/Sources/Token/FIRMessagingTokenOperation.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseMessaging/FirebaseMessaging/Sources/Token/FIRMessagingTokenOperation.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseMessaging/FirebaseMessaging/Sources/Token/FIRMessagingTokenStore.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseMessaging/FirebaseMessaging/Sources/Token/FIRMessagingTokenStore.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseMessaging/Interop/Analytics/Public/FIRAnalyticsInterop.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseMessaging/Interop/Analytics/Public/FIRAnalyticsInteropListener.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseMessaging/Interop/Analytics/Public/FIRInteropEventNames.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseMessaging/Interop/Analytics/Public/FIRInteropParameterNames.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseMessaging/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/FirebaseMessaging/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GTMSessionFetcher/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GTMSessionFetcher/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GTMSessionFetcher/Sources/Core/GTMSessionFetcher.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GTMSessionFetcher/Sources/Core/GTMSessionFetcherLogging.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GTMSessionFetcher/Sources/Core/GTMSessionFetcherService+Internal.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GTMSessionFetcher/Sources/Core/GTMSessionFetcherService.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GTMSessionFetcher/Sources/Core/GTMSessionUploadFetcher.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GTMSessionFetcher/Sources/Core/Public/GTMSessionFetcher/GTMSessionFetcher.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GTMSessionFetcher/Sources/Core/Public/GTMSessionFetcher/GTMSessionFetcherLogging.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GTMSessionFetcher/Sources/Core/Public/GTMSessionFetcher/GTMSessionFetcherService.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GTMSessionFetcher/Sources/Core/Public/GTMSessionFetcher/GTMSessionUploadFetcher.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleAppMeasurement/Frameworks/GoogleAppMeasurement.xcframework/Info.plist" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleAppMeasurement/Frameworks/GoogleAppMeasurement.xcframework/ios-arm64_armv7/GoogleAppMeasurement.framework/GoogleAppMeasurement" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleAppMeasurement/Frameworks/GoogleAppMeasurement.xcframework/ios-arm64_armv7/GoogleAppMeasurement.framework/Info.plist" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleAppMeasurement/Frameworks/GoogleAppMeasurement.xcframework/ios-arm64_armv7/GoogleAppMeasurement.framework/Modules/module.modulemap" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleAppMeasurement/Frameworks/GoogleAppMeasurement.xcframework/ios-arm64_i386_x86_64-simulator/GoogleAppMeasurement.framework/GoogleAppMeasurement" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleAppMeasurement/Frameworks/GoogleAppMeasurement.xcframework/ios-arm64_i386_x86_64-simulator/GoogleAppMeasurement.framework/Info.plist" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleAppMeasurement/Frameworks/GoogleAppMeasurement.xcframework/ios-arm64_i386_x86_64-simulator/GoogleAppMeasurement.framework/Modules/module.modulemap" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleAppMeasurement/Frameworks/GoogleAppMeasurement.xcframework/ios-arm64_x86_64-maccatalyst/GoogleAppMeasurement.framework/GoogleAppMeasurement" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleAppMeasurement/Frameworks/GoogleAppMeasurement.xcframework/ios-arm64_x86_64-maccatalyst/GoogleAppMeasurement.framework/Info.plist" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleAppMeasurement/Frameworks/GoogleAppMeasurement.xcframework/ios-arm64_x86_64-maccatalyst/GoogleAppMeasurement.framework/Modules/module.modulemap" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleAppMeasurement/Frameworks/GoogleAppMeasurement.xcframework/macos-arm64_x86_64/GoogleAppMeasurement.framework/GoogleAppMeasurement" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleAppMeasurement/Frameworks/GoogleAppMeasurement.xcframework/macos-arm64_x86_64/GoogleAppMeasurement.framework/Info.plist" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleAppMeasurement/Frameworks/GoogleAppMeasurement.xcframework/macos-arm64_x86_64/GoogleAppMeasurement.framework/Modules/module.modulemap" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleAppMeasurement/Frameworks/GoogleAppMeasurement.xcframework/tvos-arm64/GoogleAppMeasurement.framework/GoogleAppMeasurement" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleAppMeasurement/Frameworks/GoogleAppMeasurement.xcframework/tvos-arm64/GoogleAppMeasurement.framework/Info.plist" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleAppMeasurement/Frameworks/GoogleAppMeasurement.xcframework/tvos-arm64/GoogleAppMeasurement.framework/Modules/module.modulemap" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleAppMeasurement/Frameworks/GoogleAppMeasurement.xcframework/tvos-arm64_x86_64-simulator/GoogleAppMeasurement.framework/GoogleAppMeasurement" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleAppMeasurement/Frameworks/GoogleAppMeasurement.xcframework/tvos-arm64_x86_64-simulator/GoogleAppMeasurement.framework/Info.plist" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleAppMeasurement/Frameworks/GoogleAppMeasurement.xcframework/tvos-arm64_x86_64-simulator/GoogleAppMeasurement.framework/Modules/module.modulemap" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleAppMeasurement/Frameworks/GoogleAppMeasurementIdentitySupport.xcframework/Info.plist" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleAppMeasurement/Frameworks/GoogleAppMeasurementIdentitySupport.xcframework/ios-arm64_armv7/GoogleAppMeasurementIdentitySupport.framework/GoogleAppMeasurementIdentitySupport" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleAppMeasurement/Frameworks/GoogleAppMeasurementIdentitySupport.xcframework/ios-arm64_armv7/GoogleAppMeasurementIdentitySupport.framework/Info.plist" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleAppMeasurement/Frameworks/GoogleAppMeasurementIdentitySupport.xcframework/ios-arm64_armv7/GoogleAppMeasurementIdentitySupport.framework/Modules/module.modulemap" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleAppMeasurement/Frameworks/GoogleAppMeasurementIdentitySupport.xcframework/ios-arm64_i386_x86_64-simulator/GoogleAppMeasurementIdentitySupport.framework/GoogleAppMeasurementIdentitySupport" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleAppMeasurement/Frameworks/GoogleAppMeasurementIdentitySupport.xcframework/ios-arm64_i386_x86_64-simulator/GoogleAppMeasurementIdentitySupport.framework/Info.plist" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleAppMeasurement/Frameworks/GoogleAppMeasurementIdentitySupport.xcframework/ios-arm64_i386_x86_64-simulator/GoogleAppMeasurementIdentitySupport.framework/Modules/module.modulemap" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleAppMeasurement/Frameworks/GoogleAppMeasurementIdentitySupport.xcframework/ios-arm64_x86_64-maccatalyst/GoogleAppMeasurementIdentitySupport.framework/GoogleAppMeasurementIdentitySupport" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleAppMeasurement/Frameworks/GoogleAppMeasurementIdentitySupport.xcframework/ios-arm64_x86_64-maccatalyst/GoogleAppMeasurementIdentitySupport.framework/Info.plist" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleAppMeasurement/Frameworks/GoogleAppMeasurementIdentitySupport.xcframework/ios-arm64_x86_64-maccatalyst/GoogleAppMeasurementIdentitySupport.framework/Modules/module.modulemap" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleAppMeasurement/Frameworks/GoogleAppMeasurementIdentitySupport.xcframework/macos-arm64_x86_64/GoogleAppMeasurementIdentitySupport.framework/GoogleAppMeasurementIdentitySupport" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleAppMeasurement/Frameworks/GoogleAppMeasurementIdentitySupport.xcframework/macos-arm64_x86_64/GoogleAppMeasurementIdentitySupport.framework/Info.plist" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleAppMeasurement/Frameworks/GoogleAppMeasurementIdentitySupport.xcframework/macos-arm64_x86_64/GoogleAppMeasurementIdentitySupport.framework/Modules/module.modulemap" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleAppMeasurement/Frameworks/GoogleAppMeasurementIdentitySupport.xcframework/tvos-arm64/GoogleAppMeasurementIdentitySupport.framework/GoogleAppMeasurementIdentitySupport" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleAppMeasurement/Frameworks/GoogleAppMeasurementIdentitySupport.xcframework/tvos-arm64/GoogleAppMeasurementIdentitySupport.framework/Info.plist" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleAppMeasurement/Frameworks/GoogleAppMeasurementIdentitySupport.xcframework/tvos-arm64/GoogleAppMeasurementIdentitySupport.framework/Modules/module.modulemap" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleAppMeasurement/Frameworks/GoogleAppMeasurementIdentitySupport.xcframework/tvos-arm64_x86_64-simulator/GoogleAppMeasurementIdentitySupport.framework/GoogleAppMeasurementIdentitySupport" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleAppMeasurement/Frameworks/GoogleAppMeasurementIdentitySupport.xcframework/tvos-arm64_x86_64-simulator/GoogleAppMeasurementIdentitySupport.framework/Info.plist" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleAppMeasurement/Frameworks/GoogleAppMeasurementIdentitySupport.xcframework/tvos-arm64_x86_64-simulator/GoogleAppMeasurementIdentitySupport.framework/Modules/module.modulemap" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleDataTransport/GoogleDataTransport/GDTCCTLibrary/GDTCCTCompressionHelper.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleDataTransport/GoogleDataTransport/GDTCCTLibrary/GDTCCTNanopbHelpers.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleDataTransport/GoogleDataTransport/GDTCCTLibrary/GDTCCTUploadOperation.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleDataTransport/GoogleDataTransport/GDTCCTLibrary/GDTCCTUploader.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleDataTransport/GoogleDataTransport/GDTCCTLibrary/GDTCOREvent+GDTCCTSupport.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleDataTransport/GoogleDataTransport/GDTCCTLibrary/GDTCOREvent+GDTMetricsSupport.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleDataTransport/GoogleDataTransport/GDTCCTLibrary/GDTCORMetrics+GDTCCTSupport.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleDataTransport/GoogleDataTransport/GDTCCTLibrary/Private/GDTCCTCompressionHelper.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleDataTransport/GoogleDataTransport/GDTCCTLibrary/Private/GDTCCTNanopbHelpers.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleDataTransport/GoogleDataTransport/GDTCCTLibrary/Private/GDTCCTUploadOperation.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleDataTransport/GoogleDataTransport/GDTCCTLibrary/Private/GDTCCTUploader.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleDataTransport/GoogleDataTransport/GDTCCTLibrary/Private/GDTCOREvent+GDTMetricsSupport.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleDataTransport/GoogleDataTransport/GDTCCTLibrary/Private/GDTCORMetrics+GDTCCTSupport.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleDataTransport/GoogleDataTransport/GDTCCTLibrary/Protogen/nanopb/cct.nanopb.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleDataTransport/GoogleDataTransport/GDTCCTLibrary/Protogen/nanopb/cct.nanopb.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleDataTransport/GoogleDataTransport/GDTCCTLibrary/Protogen/nanopb/client_metrics.nanopb.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleDataTransport/GoogleDataTransport/GDTCCTLibrary/Protogen/nanopb/client_metrics.nanopb.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleDataTransport/GoogleDataTransport/GDTCCTLibrary/Public/GDTCOREvent+GDTCCTSupport.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleDataTransport/GoogleDataTransport/GDTCORLibrary/GDTCORAssert.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleDataTransport/GoogleDataTransport/GDTCORLibrary/GDTCORClock.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleDataTransport/GoogleDataTransport/GDTCORLibrary/GDTCORConsoleLogger.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleDataTransport/GoogleDataTransport/GDTCORLibrary/GDTCORDirectorySizeTracker.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleDataTransport/GoogleDataTransport/GDTCORLibrary/GDTCOREndpoints.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleDataTransport/GoogleDataTransport/GDTCORLibrary/GDTCOREvent.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleDataTransport/GoogleDataTransport/GDTCORLibrary/GDTCORFlatFileStorage+Promises.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleDataTransport/GoogleDataTransport/GDTCORLibrary/GDTCORFlatFileStorage.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleDataTransport/GoogleDataTransport/GDTCORLibrary/GDTCORLifecycle.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleDataTransport/GoogleDataTransport/GDTCORLibrary/GDTCORLogSourceMetrics.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleDataTransport/GoogleDataTransport/GDTCORLibrary/GDTCORMetrics.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleDataTransport/GoogleDataTransport/GDTCORLibrary/GDTCORMetricsController.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleDataTransport/GoogleDataTransport/GDTCORLibrary/GDTCORMetricsMetadata.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleDataTransport/GoogleDataTransport/GDTCORLibrary/GDTCORPlatform.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleDataTransport/GoogleDataTransport/GDTCORLibrary/GDTCORReachability.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleDataTransport/GoogleDataTransport/GDTCORLibrary/GDTCORRegistrar.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleDataTransport/GoogleDataTransport/GDTCORLibrary/GDTCORStorageEventSelector.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleDataTransport/GoogleDataTransport/GDTCORLibrary/GDTCORStorageMetadata.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleDataTransport/GoogleDataTransport/GDTCORLibrary/GDTCORTransformer.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleDataTransport/GoogleDataTransport/GDTCORLibrary/GDTCORTransport.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleDataTransport/GoogleDataTransport/GDTCORLibrary/GDTCORUploadBatch.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleDataTransport/GoogleDataTransport/GDTCORLibrary/GDTCORUploadCoordinator.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleDataTransport/GoogleDataTransport/GDTCORLibrary/Internal/GDTCORAssert.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleDataTransport/GoogleDataTransport/GDTCORLibrary/Internal/GDTCORDirectorySizeTracker.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleDataTransport/GoogleDataTransport/GDTCORLibrary/Internal/GDTCOREventDropReason.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleDataTransport/GoogleDataTransport/GDTCORLibrary/Internal/GDTCORLifecycle.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleDataTransport/GoogleDataTransport/GDTCORLibrary/Internal/GDTCORMetricsControllerProtocol.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleDataTransport/GoogleDataTransport/GDTCORLibrary/Internal/GDTCORPlatform.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleDataTransport/GoogleDataTransport/GDTCORLibrary/Internal/GDTCORReachability.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleDataTransport/GoogleDataTransport/GDTCORLibrary/Internal/GDTCORRegistrar.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleDataTransport/GoogleDataTransport/GDTCORLibrary/Internal/GDTCORStorageEventSelector.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleDataTransport/GoogleDataTransport/GDTCORLibrary/Internal/GDTCORStorageProtocol.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleDataTransport/GoogleDataTransport/GDTCORLibrary/Internal/GDTCORStorageSizeBytes.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleDataTransport/GoogleDataTransport/GDTCORLibrary/Internal/GDTCORUploader.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleDataTransport/GoogleDataTransport/GDTCORLibrary/Private/GDTCOREndpoints_Private.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleDataTransport/GoogleDataTransport/GDTCORLibrary/Private/GDTCOREvent_Private.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleDataTransport/GoogleDataTransport/GDTCORLibrary/Private/GDTCORFlatFileStorage+Promises.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleDataTransport/GoogleDataTransport/GDTCORLibrary/Private/GDTCORFlatFileStorage.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleDataTransport/GoogleDataTransport/GDTCORLibrary/Private/GDTCORLogSourceMetrics.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleDataTransport/GoogleDataTransport/GDTCORLibrary/Private/GDTCORMetrics.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleDataTransport/GoogleDataTransport/GDTCORLibrary/Private/GDTCORMetricsController.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleDataTransport/GoogleDataTransport/GDTCORLibrary/Private/GDTCORMetricsMetadata.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleDataTransport/GoogleDataTransport/GDTCORLibrary/Private/GDTCORReachability_Private.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleDataTransport/GoogleDataTransport/GDTCORLibrary/Private/GDTCORRegistrar_Private.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleDataTransport/GoogleDataTransport/GDTCORLibrary/Private/GDTCORStorageMetadata.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleDataTransport/GoogleDataTransport/GDTCORLibrary/Private/GDTCORTransformer.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleDataTransport/GoogleDataTransport/GDTCORLibrary/Private/GDTCORTransformer_Private.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleDataTransport/GoogleDataTransport/GDTCORLibrary/Private/GDTCORTransport_Private.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleDataTransport/GoogleDataTransport/GDTCORLibrary/Private/GDTCORUploadBatch.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleDataTransport/GoogleDataTransport/GDTCORLibrary/Private/GDTCORUploadCoordinator.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleDataTransport/GoogleDataTransport/GDTCORLibrary/Public/GoogleDataTransport/GDTCORClock.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleDataTransport/GoogleDataTransport/GDTCORLibrary/Public/GoogleDataTransport/GDTCORConsoleLogger.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleDataTransport/GoogleDataTransport/GDTCORLibrary/Public/GoogleDataTransport/GDTCOREndpoints.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleDataTransport/GoogleDataTransport/GDTCORLibrary/Public/GoogleDataTransport/GDTCOREvent.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleDataTransport/GoogleDataTransport/GDTCORLibrary/Public/GoogleDataTransport/GDTCOREventDataObject.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleDataTransport/GoogleDataTransport/GDTCORLibrary/Public/GoogleDataTransport/GDTCOREventTransformer.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleDataTransport/GoogleDataTransport/GDTCORLibrary/Public/GoogleDataTransport/GDTCORTargets.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleDataTransport/GoogleDataTransport/GDTCORLibrary/Public/GoogleDataTransport/GDTCORTransport.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleDataTransport/GoogleDataTransport/GDTCORLibrary/Public/GoogleDataTransport/GoogleDataTransport.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleDataTransport/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleDataTransport/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleUtilities/GoogleUtilities/AppDelegateSwizzler/GULAppDelegateSwizzler.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleUtilities/GoogleUtilities/AppDelegateSwizzler/GULSceneDelegateSwizzler.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleUtilities/GoogleUtilities/AppDelegateSwizzler/Internal/GULAppDelegateSwizzler_Private.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleUtilities/GoogleUtilities/AppDelegateSwizzler/Internal/GULSceneDelegateSwizzler_Private.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleUtilities/GoogleUtilities/AppDelegateSwizzler/Public/GoogleUtilities/GULAppDelegateSwizzler.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleUtilities/GoogleUtilities/AppDelegateSwizzler/Public/GoogleUtilities/GULApplication.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleUtilities/GoogleUtilities/AppDelegateSwizzler/Public/GoogleUtilities/GULSceneDelegateSwizzler.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleUtilities/GoogleUtilities/Common/GULLoggerCodes.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleUtilities/GoogleUtilities/Environment/GULHeartbeatDateStorage.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleUtilities/GoogleUtilities/Environment/GULHeartbeatDateStorageUserDefaults.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleUtilities/GoogleUtilities/Environment/GULSecureCoding.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleUtilities/GoogleUtilities/Environment/NetworkInfo/GULNetworkInfo.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleUtilities/GoogleUtilities/Environment/Public/GoogleUtilities/GULAppEnvironmentUtil.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleUtilities/GoogleUtilities/Environment/Public/GoogleUtilities/GULHeartbeatDateStorable.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleUtilities/GoogleUtilities/Environment/Public/GoogleUtilities/GULHeartbeatDateStorage.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleUtilities/GoogleUtilities/Environment/Public/GoogleUtilities/GULHeartbeatDateStorageUserDefaults.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleUtilities/GoogleUtilities/Environment/Public/GoogleUtilities/GULKeychainStorage.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleUtilities/GoogleUtilities/Environment/Public/GoogleUtilities/GULKeychainUtils.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleUtilities/GoogleUtilities/Environment/Public/GoogleUtilities/GULNetworkInfo.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleUtilities/GoogleUtilities/Environment/Public/GoogleUtilities/GULSecureCoding.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleUtilities/GoogleUtilities/Environment/Public/GoogleUtilities/GULURLSessionDataResponse.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleUtilities/GoogleUtilities/Environment/Public/GoogleUtilities/NSURLSession+GULPromises.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleUtilities/GoogleUtilities/Environment/SecureStorage/GULKeychainStorage.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleUtilities/GoogleUtilities/Environment/SecureStorage/GULKeychainUtils.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleUtilities/GoogleUtilities/Environment/URLSessionPromiseWrapper/GULURLSessionDataResponse.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleUtilities/GoogleUtilities/Environment/URLSessionPromiseWrapper/NSURLSession+GULPromises.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleUtilities/GoogleUtilities/Environment/third_party/GULAppEnvironmentUtil.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleUtilities/GoogleUtilities/Logger/GULLogger.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleUtilities/GoogleUtilities/Logger/Public/GoogleUtilities/GULLogger.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleUtilities/GoogleUtilities/Logger/Public/GoogleUtilities/GULLoggerLevel.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleUtilities/GoogleUtilities/MethodSwizzler/GULSwizzler.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleUtilities/GoogleUtilities/MethodSwizzler/Public/GoogleUtilities/GULOriginalIMPConvenienceMacros.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleUtilities/GoogleUtilities/MethodSwizzler/Public/GoogleUtilities/GULSwizzler.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleUtilities/GoogleUtilities/NSData+zlib/GULNSData+zlib.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleUtilities/GoogleUtilities/NSData+zlib/Public/GoogleUtilities/GULNSData+zlib.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleUtilities/GoogleUtilities/Network/GULMutableDictionary.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleUtilities/GoogleUtilities/Network/GULNetwork.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleUtilities/GoogleUtilities/Network/GULNetworkConstants.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleUtilities/GoogleUtilities/Network/GULNetworkInternal.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleUtilities/GoogleUtilities/Network/GULNetworkURLSession.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleUtilities/GoogleUtilities/Network/Public/GoogleUtilities/GULMutableDictionary.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleUtilities/GoogleUtilities/Network/Public/GoogleUtilities/GULNetwork.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleUtilities/GoogleUtilities/Network/Public/GoogleUtilities/GULNetworkConstants.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleUtilities/GoogleUtilities/Network/Public/GoogleUtilities/GULNetworkLoggerProtocol.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleUtilities/GoogleUtilities/Network/Public/GoogleUtilities/GULNetworkMessageCode.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleUtilities/GoogleUtilities/Network/Public/GoogleUtilities/GULNetworkURLSession.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleUtilities/GoogleUtilities/Reachability/GULReachabilityChecker+Internal.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleUtilities/GoogleUtilities/Reachability/GULReachabilityChecker.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleUtilities/GoogleUtilities/Reachability/GULReachabilityMessageCode.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleUtilities/GoogleUtilities/Reachability/Public/GoogleUtilities/GULReachabilityChecker.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleUtilities/GoogleUtilities/UserDefaults/GULUserDefaults.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleUtilities/GoogleUtilities/UserDefaults/Public/GoogleUtilities/GULUserDefaults.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleUtilities/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/GoogleUtilities/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/Local Podspecs/Flutter.podspec.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/Local Podspecs/connectivity.podspec.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/Local Podspecs/firebase_analytics.podspec.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/Local Podspecs/firebase_auth.podspec.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/Local Podspecs/firebase_core.podspec.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/Local Podspecs/firebase_dynamic_links.podspec.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/Local Podspecs/firebase_messaging.podspec.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/Local Podspecs/flutter_local_notifications.podspec.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/Local Podspecs/flutter_native_splash.podspec.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/Local Podspecs/image_picker_ios.podspec.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/Local Podspecs/path_provider_foundation.podspec.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/Local Podspecs/shared_preferences_foundation.podspec.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/Local Podspecs/sqflite.podspec.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/Local Podspecs/url_launcher_ios.podspec.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/Local Podspecs/video_player_avfoundation.podspec.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/Local Podspecs/wakelock.podspec.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/Local Podspecs/webview_flutter_wkwebview.podspec.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/Manifest.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/Pods.xcodeproj/project.pbxproj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/Pods.xcodeproj/xcuserdata/mhamedelbaz.xcuserdatad/xcschemes/Pods-Runner.xcscheme" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/Pods.xcodeproj/xcuserdata/mhamedelbaz.xcuserdatad/xcschemes/xcschememanagement.plist" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/PromisesObjC/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/PromisesObjC/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/PromisesObjC/Sources/FBLPromises/FBLPromise+All.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/PromisesObjC/Sources/FBLPromises/FBLPromise+Always.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/PromisesObjC/Sources/FBLPromises/FBLPromise+Any.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/PromisesObjC/Sources/FBLPromises/FBLPromise+Async.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/PromisesObjC/Sources/FBLPromises/FBLPromise+Await.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/PromisesObjC/Sources/FBLPromises/FBLPromise+Catch.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/PromisesObjC/Sources/FBLPromises/FBLPromise+Delay.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/PromisesObjC/Sources/FBLPromises/FBLPromise+Do.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/PromisesObjC/Sources/FBLPromises/FBLPromise+Race.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/PromisesObjC/Sources/FBLPromises/FBLPromise+Recover.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/PromisesObjC/Sources/FBLPromises/FBLPromise+Reduce.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/PromisesObjC/Sources/FBLPromises/FBLPromise+Retry.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/PromisesObjC/Sources/FBLPromises/FBLPromise+Testing.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/PromisesObjC/Sources/FBLPromises/FBLPromise+Then.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/PromisesObjC/Sources/FBLPromises/FBLPromise+Timeout.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/PromisesObjC/Sources/FBLPromises/FBLPromise+Validate.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/PromisesObjC/Sources/FBLPromises/FBLPromise+Wrap.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/PromisesObjC/Sources/FBLPromises/FBLPromise.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/PromisesObjC/Sources/FBLPromises/FBLPromiseError.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/PromisesObjC/Sources/FBLPromises/include/FBLPromise+All.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/PromisesObjC/Sources/FBLPromises/include/FBLPromise+Always.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/PromisesObjC/Sources/FBLPromises/include/FBLPromise+Any.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/PromisesObjC/Sources/FBLPromises/include/FBLPromise+Async.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/PromisesObjC/Sources/FBLPromises/include/FBLPromise+Await.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/PromisesObjC/Sources/FBLPromises/include/FBLPromise+Catch.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/PromisesObjC/Sources/FBLPromises/include/FBLPromise+Delay.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/PromisesObjC/Sources/FBLPromises/include/FBLPromise+Do.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/PromisesObjC/Sources/FBLPromises/include/FBLPromise+Race.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/PromisesObjC/Sources/FBLPromises/include/FBLPromise+Recover.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/PromisesObjC/Sources/FBLPromises/include/FBLPromise+Reduce.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/PromisesObjC/Sources/FBLPromises/include/FBLPromise+Retry.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/PromisesObjC/Sources/FBLPromises/include/FBLPromise+Testing.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/PromisesObjC/Sources/FBLPromises/include/FBLPromise+Then.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/PromisesObjC/Sources/FBLPromises/include/FBLPromise+Timeout.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/PromisesObjC/Sources/FBLPromises/include/FBLPromise+Validate.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/PromisesObjC/Sources/FBLPromises/include/FBLPromise+Wrap.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/PromisesObjC/Sources/FBLPromises/include/FBLPromise.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/PromisesObjC/Sources/FBLPromises/include/FBLPromiseError.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/PromisesObjC/Sources/FBLPromises/include/FBLPromisePrivate.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/PromisesObjC/Sources/FBLPromises/include/FBLPromises.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/Reachability/LICENCE.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/Reachability/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/Reachability/Reachability.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/Reachability/Reachability.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/Target Support Files/Pods-Runner/Pods-Runner-Info.plist" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/Target Support Files/Pods-Runner/Pods-Runner-acknowledgements.markdown" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/Target Support Files/Pods-Runner/Pods-Runner-acknowledgements.plist" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/Target Support Files/Pods-Runner/Pods-Runner-dummy.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/Target Support Files/Pods-Runner/Pods-Runner-frameworks-Debug-input-files.xcfilelist" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/Target Support Files/Pods-Runner/Pods-Runner-frameworks-Debug-output-files.xcfilelist" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/Target Support Files/Pods-Runner/Pods-Runner-frameworks-Profile-input-files.xcfilelist" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/Target Support Files/Pods-Runner/Pods-Runner-frameworks-Profile-output-files.xcfilelist" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/Target Support Files/Pods-Runner/Pods-Runner-frameworks-Release-input-files.xcfilelist" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/Target Support Files/Pods-Runner/Pods-Runner-frameworks-Release-output-files.xcfilelist" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/Target Support Files/Pods-Runner/Pods-Runner-frameworks.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/Target Support Files/Pods-Runner/Pods-Runner-umbrella.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/Target Support Files/Pods-Runner/Pods-Runner.debug.xcconfig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/Target Support Files/Pods-Runner/Pods-Runner.modulemap" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/Target Support Files/Pods-Runner/Pods-Runner.profile.xcconfig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/Target Support Files/Pods-Runner/Pods-Runner.release.xcconfig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/nanopb/LICENSE.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/nanopb/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/nanopb/pb.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/nanopb/pb_common.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/nanopb/pb_common.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/nanopb/pb_decode.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/nanopb/pb_decode.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/nanopb/pb_encode.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/nanopb/pb_encode.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/build/ios/Pods.build/Release-iphonesimulator/FMDB.build/dgph" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/build/ios/Pods.build/Release-iphonesimulator/Firebase.build/dgph" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/build/ios/Pods.build/Release-iphonesimulator/FirebaseAnalytics.build/dgph" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/build/ios/Pods.build/Release-iphonesimulator/FirebaseAuth.build/dgph" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/build/ios/Pods.build/Release-iphonesimulator/FirebaseCore.build/dgph" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/build/ios/Pods.build/Release-iphonesimulator/FirebaseCoreInternal.build/dgph" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/build/ios/Pods.build/Release-iphonesimulator/FirebaseDynamicLinks.build/dgph" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/build/ios/Pods.build/Release-iphonesimulator/FirebaseInstallations.build/dgph" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/build/ios/Pods.build/Release-iphonesimulator/FirebaseMessaging.build/dgph" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/build/ios/Pods.build/Release-iphonesimulator/Flutter.build/dgph" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/build/ios/Pods.build/Release-iphonesimulator/GTMSessionFetcher.build/dgph" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/build/ios/Pods.build/Release-iphonesimulator/GoogleAppMeasurement.build/dgph" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/build/ios/Pods.build/Release-iphonesimulator/GoogleDataTransport.build/dgph" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/build/ios/Pods.build/Release-iphonesimulator/GoogleUtilities.build/dgph" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/build/ios/Pods.build/Release-iphonesimulator/Pods-Runner.build/dgph" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/build/ios/Pods.build/Release-iphonesimulator/PromisesObjC.build/dgph" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/build/ios/Pods.build/Release-iphonesimulator/Reachability.build/dgph" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/build/ios/Pods.build/Release-iphonesimulator/connectivity.build/dgph" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/build/ios/Pods.build/Release-iphonesimulator/firebase_analytics.build/dgph" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/build/ios/Pods.build/Release-iphonesimulator/firebase_auth.build/dgph" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/build/ios/Pods.build/Release-iphonesimulator/firebase_core.build/dgph" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/build/ios/Pods.build/Release-iphonesimulator/firebase_dynamic_links.build/dgph" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/build/ios/Pods.build/Release-iphonesimulator/firebase_messaging.build/dgph" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/build/ios/Pods.build/Release-iphonesimulator/flutter_local_notifications.build/dgph" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/build/ios/Pods.build/Release-iphonesimulator/flutter_native_splash.build/dgph" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/build/ios/Pods.build/Release-iphonesimulator/image_picker_ios.build/dgph" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/build/ios/Pods.build/Release-iphonesimulator/nanopb.build/dgph" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/build/ios/Pods.build/Release-iphonesimulator/path_provider_foundation.build/dgph" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/build/ios/Pods.build/Release-iphonesimulator/shared_preferences_foundation.build/dgph" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/build/ios/Pods.build/Release-iphonesimulator/sqflite.build/dgph" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/build/ios/Pods.build/Release-iphonesimulator/url_launcher_ios.build/dgph" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/build/ios/Pods.build/Release-iphonesimulator/video_player_avfoundation.build/dgph" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/build/ios/Pods.build/Release-iphonesimulator/wakelock.build/dgph" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/build/ios/Pods.build/Release-iphonesimulator/webview_flutter_wkwebview.build/dgph" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/macos/Podfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/windows/flutter/ephemeral/.plugin_symlinks/firebase_core" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/c66618b73d2abf4b7db8b10de592115f/.filecache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/c66618b73d2abf4b7db8b10de592115f/app.dill" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/c66618b73d2abf4b7db8b10de592115f/debug_android_application.stamp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/c66618b73d2abf4b7db8b10de592115f/flutter_assets.d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/c66618b73d2abf4b7db8b10de592115f/gen_dart_plugin_registrant.stamp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/c66618b73d2abf4b7db8b10de592115f/gen_localizations.stamp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/c66618b73d2abf4b7db8b10de592115f/kernel_snapshot.d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/c66618b73d2abf4b7db8b10de592115f/kernel_snapshot.stamp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/c66618b73d2abf4b7db8b10de592115f/outputs.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/dart_plugin_registrant.dart" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/dart_plugin_registrant.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.dart_tool/package_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/package_config_subset" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config_subset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/version" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/version" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.flutter-plugins" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/.gradle/7.5/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/7.5/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/.gradle/7.5/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/7.5/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/.gradle/7.5/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/7.5/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/.gradle/7.5/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/7.5/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/.gradle/7.5/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/7.5/fileHashes/resourceHashesCache.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/file-system.probe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/app/src/main/java/io/flutter/plugins/GeneratedPluginRegistrant.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/src/main/java/io/flutter/plugins/GeneratedPluginRegistrant.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/android/local.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_assets/AssetManifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_assets/AssetManifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_assets/kernel_blob.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_assets/kernel_blob.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_build.d" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_build.d" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/app/core/utils/images.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/core/utils/images.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/controller/cart_provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/controller/cart_provider.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/controller/firebase_auth_provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/controller/firebase_auth_provider.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/data/model/item_model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/model/item_model.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/data/model/store_model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/model/store_model.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/auth/verification_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/auth/verification_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/cart/cart_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/cart/cart_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/city/city_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/city/city_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/splash/splash.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/splash/splash.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/7e0907db30816fdcb593d44286933a86/_composite.stamp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/7e0907db30816fdcb593d44286933a86/gen_dart_plugin_registrant.stamp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/7e0907db30816fdcb593d44286933a86/gen_localizations.stamp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/.last_build_id" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_assets/AssetManifest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_assets/FontManifest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_assets/NOTICES.Z" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_assets/assets/fonts/ar/Cairo-Black.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_assets/assets/fonts/ar/Cairo-Bold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_assets/assets/fonts/ar/Cairo-ExtraLight.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_assets/assets/fonts/ar/Cairo-Light.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_assets/assets/fonts/ar/Cairo-Medium.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_assets/assets/fonts/ar/Cairo-Regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_assets/assets/fonts/en/Roboto-Black.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_assets/assets/fonts/en/Roboto-Bold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_assets/assets/fonts/en/Roboto-Light.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_assets/assets/fonts/en/Roboto-Medium.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_assets/assets/fonts/en/Roboto-Regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_assets/assets/fonts/en/Roboto-Thin.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_assets/assets/images/choose_city.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_assets/assets/images/city.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_assets/assets/images/connected.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_assets/assets/images/empty_cart.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_assets/assets/images/empty_dish.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_assets/assets/images/empty_notifications.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_assets/assets/images/empty_search.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_assets/assets/images/home_logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_assets/assets/images/no_connection.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_assets/assets/images/phone.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_assets/assets/images/whatsapp.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_assets/assets/language/ar.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_assets/assets/language/en.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_assets/assets/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_assets/assets/splash.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_assets/assets/svgs/Male_Avatar.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_assets/assets/svgs/alarm.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_assets/assets/svgs/arrow-down.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_assets/assets/svgs/arrow-up-2.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_assets/assets/svgs/arrow-up-3.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_assets/assets/svgs/arrow-up.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_assets/assets/svgs/arrow_right.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_assets/assets/svgs/back_icon.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_assets/assets/svgs/cart.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_assets/assets/svgs/city.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_assets/assets/svgs/delete.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_assets/assets/svgs/delicious.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_assets/assets/svgs/edit-2.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_assets/assets/svgs/edit.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_assets/assets/svgs/home_search.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_assets/assets/svgs/information.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_assets/assets/svgs/location.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_assets/assets/svgs/login.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_assets/assets/svgs/logout.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_assets/assets/svgs/message.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_assets/assets/svgs/notification.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_assets/assets/svgs/phone.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_assets/assets/svgs/profile-circle.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_assets/assets/svgs/profile.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_assets/assets/svgs/profile2.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_assets/assets/svgs/profile3.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_assets/assets/svgs/search_icon.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_assets/assets/svgs/security.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_assets/assets/svgs/send.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_assets/assets/svgs/stack_cart.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_assets/assets/svgs/tick_circle.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_assets/fonts/MaterialIcons-Regular.otf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_assets/isolate_snapshot_data" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_assets/kernel_blob.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_assets/packages/flutter_math_fork/lib/katex_fonts/fonts/KaTeX_AMS-Regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_assets/packages/flutter_math_fork/lib/katex_fonts/fonts/KaTeX_Caligraphic-Bold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_assets/packages/flutter_math_fork/lib/katex_fonts/fonts/KaTeX_Caligraphic-Regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_assets/packages/flutter_math_fork/lib/katex_fonts/fonts/KaTeX_Fraktur-Bold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_assets/packages/flutter_math_fork/lib/katex_fonts/fonts/KaTeX_Fraktur-Regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_assets/packages/flutter_math_fork/lib/katex_fonts/fonts/KaTeX_Main-Bold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_assets/packages/flutter_math_fork/lib/katex_fonts/fonts/KaTeX_Main-BoldItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_assets/packages/flutter_math_fork/lib/katex_fonts/fonts/KaTeX_Main-Italic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_assets/packages/flutter_math_fork/lib/katex_fonts/fonts/KaTeX_Main-Regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_assets/packages/flutter_math_fork/lib/katex_fonts/fonts/KaTeX_Math-BoldItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_assets/packages/flutter_math_fork/lib/katex_fonts/fonts/KaTeX_Math-Italic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_assets/packages/flutter_math_fork/lib/katex_fonts/fonts/KaTeX_SansSerif-Bold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_assets/packages/flutter_math_fork/lib/katex_fonts/fonts/KaTeX_SansSerif-Italic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_assets/packages/flutter_math_fork/lib/katex_fonts/fonts/KaTeX_SansSerif-Regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_assets/packages/flutter_math_fork/lib/katex_fonts/fonts/KaTeX_Script-Regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_assets/packages/flutter_math_fork/lib/katex_fonts/fonts/KaTeX_Size1-Regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_assets/packages/flutter_math_fork/lib/katex_fonts/fonts/KaTeX_Size2-Regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_assets/packages/flutter_math_fork/lib/katex_fonts/fonts/KaTeX_Size3-Regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_assets/packages/flutter_math_fork/lib/katex_fonts/fonts/KaTeX_Size4-Regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_assets/packages/flutter_math_fork/lib/katex_fonts/fonts/KaTeX_Typewriter-Regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_assets/packages/wakelock_web/assets/no_sleep.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_assets/shaders/ink_sparkle.frag" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_assets/vm_snapshot_data" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_build.d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Flutter/Debug.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Flutter/Debug.xcconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Flutter/Generated.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Flutter/Generated.xcconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Flutter/Release.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Flutter/Release.xcconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Flutter/flutter_export_environment.sh" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Flutter/flutter_export_environment.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Runner.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner.xcodeproj/project.pbxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Runner.xcworkspace/contents.xcworkspacedata" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner.xcworkspace/contents.xcworkspacedata" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Runner/GeneratedPluginRegistrant.m" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner/GeneratedPluginRegistrant.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app/theme/dark_theme.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/theme/dark_theme.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app/theme/light_theme.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/theme/light_theme.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/domain/my_notification.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/domain/my_notification.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/home/widget/home_app_bar.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/home/widget/home_app_bar.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/linux/flutter/ephemeral/.plugin_symlinks/path_provider_linux" beforeDir="false" afterPath="$PROJECT_DIR$/linux/flutter/ephemeral/.plugin_symlinks/path_provider_linux" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/linux/flutter/ephemeral/.plugin_symlinks/shared_preferences_linux" beforeDir="false" afterPath="$PROJECT_DIR$/linux/flutter/ephemeral/.plugin_symlinks/shared_preferences_linux" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/linux/flutter/ephemeral/.plugin_symlinks/url_launcher_linux" beforeDir="false" afterPath="$PROJECT_DIR$/linux/flutter/ephemeral/.plugin_symlinks/url_launcher_linux" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/macos/Flutter/Flutter-Debug.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/macos/Flutter/Flutter-Debug.xcconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/macos/Flutter/Flutter-Release.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/macos/Flutter/Flutter-Release.xcconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/macos/Flutter/GeneratedPluginRegistrant.swift" beforeDir="false" afterPath="$PROJECT_DIR$/macos/Flutter/GeneratedPluginRegistrant.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/macos/Flutter/ephemeral/Flutter-Generated.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/macos/Flutter/ephemeral/Flutter-Generated.xcconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/macos/Flutter/ephemeral/flutter_export_environment.sh" beforeDir="false" afterPath="$PROJECT_DIR$/macos/Flutter/ephemeral/flutter_export_environment.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/windows/flutter/ephemeral/.plugin_symlinks/path_provider_windows" beforeDir="false" afterPath="$PROJECT_DIR$/windows/flutter/ephemeral/.plugin_symlinks/path_provider_windows" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/windows/flutter/ephemeral/.plugin_symlinks/shared_preferences_windows" beforeDir="false" afterPath="$PROJECT_DIR$/windows/flutter/ephemeral/.plugin_symlinks/shared_preferences_windows" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/windows/flutter/ephemeral/.plugin_symlinks/url_launcher_windows" beforeDir="false" afterPath="$PROJECT_DIR$/windows/flutter/ephemeral/.plugin_symlinks/url_launcher_windows" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/windows/flutter/generated_plugin_registrant.cc" beforeDir="false" afterPath="$PROJECT_DIR$/windows/flutter/generated_plugin_registrant.cc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/windows/flutter/generated_plugins.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/windows/flutter/generated_plugins.cmake" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,19 +1095,12 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="cidr.known.project.marker" value="true" />
-    <property name="dart.analysis.tool.window.visible" value="false" />
-    <property name="io.flutter.reload.alreadyRun" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/assets" />
-    <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
-    <property name="show.migrate.to.gradle.popup" value="false" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "dart.analysis.tool.window.visible": "false"
+  }
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\My projects\baber\assets" />
@@ -498,12 +1501,12 @@
     <MESSAGE value="&#10;feat(vendor page):&#10;-shimmer when loading in menu" />
     <MESSAGE value="&#10;feat(notification):" />
     <MESSAGE value="&#10;update(profile):&#10;- add privacy and about page &#10;- convert html to string" />
-    <MESSAGE value="&#10;update(cart)" />
     <MESSAGE value="&#10;sdhdsd" />
     <MESSAGE value="firebase" />
     <MESSAGE value="firebase configuration" />
     <MESSAGE value="cart" />
-    <option name="LAST_COMMIT_MESSAGE" value="cart" />
+    <MESSAGE value="&#10;update(cart)" />
+    <option name="LAST_COMMIT_MESSAGE" value="&#10;update(cart)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

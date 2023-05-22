@@ -10,16 +10,17 @@ class MyNotification {
       FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin) async {
     var androidInitialize = const AndroidInitializationSettings(
         '@drawable/notification_icon');
-    var iOSInitialize = const IOSInitializationSettings();
+    var iOSInitialize = const DarwinInitializationSettings();
     var initializationsSettings =
     InitializationSettings(android: androidInitialize, iOS: iOSInitialize);
     flutterLocalNotificationsPlugin.initialize(initializationsSettings,
-        onSelectNotification: (String? payload) async {
-            if (payload != null && payload.isNotEmpty) {
-              CustomNavigator.push(Routes.NOTIFICATION);}
-
-          return;
-        });
+        // onSelectNotification: (String? payload) async {
+        //     if (payload != null && payload.isNotEmpty) {
+        //       CustomNavigator.push(Routes.NOTIFICATION);}
+        //
+        //   return;
+        // }
+        );
     await FirebaseMessaging.instance
         .setForegroundNotificationPresentationOptions(
       alert: true,
@@ -124,7 +125,7 @@ class MyNotification {
 Future<dynamic> myBackgroundMessageHandler(RemoteMessage message) async {
   log('background: ${message.data}');
   var androidInitialize = const AndroidInitializationSettings('@drawable/notification_icon');
-  var iOSInitialize = const IOSInitializationSettings();
+  var iOSInitialize = const DarwinInitializationSettings();
   var initializationsSettings =
   InitializationSettings(android: androidInitialize, iOS: iOSInitialize);
   FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin = FlutterLocalNotificationsPlugin();
