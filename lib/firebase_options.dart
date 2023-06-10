@@ -55,7 +55,7 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyA7S0ztNKB24qKcW1cd-QS92bCQRnQywFw',
-    appId: '1:33242133420:android:696815cccbc8c336118009',
+    appId: '1:33242133420:android:48b0eb8edf88b967118009',
     messagingSenderId: '33242133420',
     projectId: 'baberapp-e0472',
     storageBucket: 'baberapp-e0472.appspot.com',
@@ -63,21 +63,21 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions ios = FirebaseOptions(
     apiKey: 'AIzaSyCDqgVftnVBJq6WxXI75pGC696TsZ7nrn8',
-    appId: '1:33242133420:ios:89234f97f7593992118009',
+    appId: '1:33242133420:ios:7fa7d2d8a4e4876f118009',
     messagingSenderId: '33242133420',
     projectId: 'baberapp-e0472',
     storageBucket: 'baberapp-e0472.appspot.com',
-    iosClientId: '33242133420-acslj6f8cmcmeqc5a6dd5qrqvrkd5r70.apps.googleusercontent.com',
-    iosBundleId: 'com.example.baber',
+    iosClientId: '33242133420-g9eevm7jvqcom03hcu3cok7qbnb1pvkp.apps.googleusercontent.com',
+    iosBundleId: 'com.elbaz.baber',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
     apiKey: 'AIzaSyCDqgVftnVBJq6WxXI75pGC696TsZ7nrn8',
-    appId: '1:33242133420:ios:89234f97f7593992118009',
+    appId: '1:33242133420:ios:7fa7d2d8a4e4876f118009',
     messagingSenderId: '33242133420',
     projectId: 'baberapp-e0472',
     storageBucket: 'baberapp-e0472.appspot.com',
-    iosClientId: '33242133420-acslj6f8cmcmeqc5a6dd5qrqvrkd5r70.apps.googleusercontent.com',
-    iosBundleId: 'com.example.baber',
+    iosClientId: '33242133420-g9eevm7jvqcom03hcu3cok7qbnb1pvkp.apps.googleusercontent.com',
+    iosBundleId: 'com.elbaz.baber',
   );
 }

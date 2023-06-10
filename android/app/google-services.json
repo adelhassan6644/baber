@@ -7,6 +7,42 @@
   "client": [
     {
       "client_info": {
+        "mobilesdk_app_id": "1:33242133420:android:48b0eb8edf88b967118009",
+        "android_client_info": {
+          "package_name": "com.elbaz.baber"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "33242133420-fkvd052eel8eufpoonu1g2evt0hjva1k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA7S0ztNKB24qKcW1cd-QS92bCQRnQywFw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "33242133420-fkvd052eel8eufpoonu1g2evt0hjva1k.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "33242133420-acslj6f8cmcmeqc5a6dd5qrqvrkd5r70.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.baber"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
         "mobilesdk_app_id": "1:33242133420:android:696815cccbc8c336118009",
         "android_client_info": {
           "package_name": "com.example.baber"
@@ -29,6 +65,13 @@
             {
               "client_id": "33242133420-fkvd052eel8eufpoonu1g2evt0hjva1k.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "33242133420-acslj6f8cmcmeqc5a6dd5qrqvrkd5r70.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.baber"
+              }
             }
           ]
         }

@@ -27,7 +27,7 @@ class MyNotification {
       badge: true,
       sound: true,
     );
-    await FirebaseMessaging.instance.subscribeToTopic(EndPoints.topic);
+     FirebaseMessaging.instance.subscribeToTopic(EndPoints.topic);
     FirebaseMessaging.onMessage.listen((RemoteMessage message) {
       log("onMessage: ${message.data}");
       MyNotification.showNotification(
