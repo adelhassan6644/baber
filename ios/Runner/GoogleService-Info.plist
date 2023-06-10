@@ -3,23 +3,23 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>543303823124-csosei9d644ap6vef03c88ddv067n007.apps.googleusercontent.com</string>
+	<string>33242133420-g9eevm7jvqcom03hcu3cok7qbnb1pvkp.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.543303823124-csosei9d644ap6vef03c88ddv067n007</string>
+	<string>com.googleusercontent.apps.33242133420-g9eevm7jvqcom03hcu3cok7qbnb1pvkp</string>
 	<key>ANDROID_CLIENT_ID</key>
-	<string>543303823124-ua2qm5pido9m8l6d7r639r51sco6rvpq.apps.googleusercontent.com</string>
+	<string>33242133420-00vo80alhq884v0n7t5i0dup8aur32am.apps.googleusercontent.com</string>
 	<key>API_KEY</key>
-	<string>AIzaSyBv4IWZyPZCHfRZ5Kxk0KhDLhekDbTH_bM</string>
+	<string>AIzaSyCDqgVftnVBJq6WxXI75pGC696TsZ7nrn8</string>
 	<key>GCM_SENDER_ID</key>
-	<string>543303823124</string>
+	<string>33242133420</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>com.elbaz.baber</string>
 	<key>PROJECT_ID</key>
-	<string>baber-27e2c</string>
+	<string>baberapp-e0472</string>
 	<key>STORAGE_BUCKET</key>
-	<string>baber-27e2c.appspot.com</string>
+	<string>baberapp-e0472.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -31,6 +31,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:543303823124:ios:331c3f76e0d0cb3cef1c01</string>
+	<string>1:33242133420:ios:7fa7d2d8a4e4876f118009</string>
 </dict>
 </plist>
