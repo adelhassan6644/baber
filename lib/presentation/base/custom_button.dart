@@ -37,7 +37,9 @@ class CustomButton extends StatelessWidget {
     return GestureDetector(
       onTap: (){
         FocusScope.of(context).requestFocus(FocusNode());
-        onTap!();
+        if(onTap != null && !isLoading ) {
+          onTap!();
+        }
       },
       child: AnimatedContainer(
         width: isLoading ? 90.w :context.width,
@@ -74,7 +76,7 @@ class CustomButton extends StatelessWidget {
                       width: 18.w,
                       height: 18.w),
                   if(svgIcon != null)SizedBox(width: 8.w,),
-                  Text(text, style: AppTextStyles.w500.copyWith(
+                  Text(text, style: AppTextStyles.w600.copyWith(
                         fontSize: 16,
                         color: textColor??   ColorResources.WHITE_COLOR,
                       ),),

@@ -1,3 +1,4 @@
+import 'package:baber/presentation/success/success_page.dart';
 import 'package:flutter/material.dart';
 import '../data/model/item_model.dart';
 import '../main.dart';
@@ -61,6 +62,8 @@ abstract class CustomNavigator {
         return _pageRoute(const PrivacyPage());
       case Routes.ABOUT:
         return _pageRoute(const AboutPage());
+        case Routes.SUCCESS:
+        return _pageRoute(const SuccessPage());
 
       default:
         return MaterialPageRoute(builder: (_) => const MyApp());

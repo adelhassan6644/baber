@@ -1,4 +1,5 @@
 import 'dart:developer';
+import 'package:baber/navigation/custom_navigation.dart';
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -11,8 +12,10 @@ import '../app/core/error/failures.dart';
 import '../app/core/utils/app_snack_bar.dart';
 import '../app/core/utils/app_storage_keys.dart';
 import '../app/core/utils/color_resources.dart';
+import '../data/model/check_out_model.dart';
 import '../data/model/item_model.dart';
 import '../domain/repository/cart_repo.dart';
+import '../navigation/routes.dart';
 
 class CartProvider extends ChangeNotifier {
   final CartRepo cartRepo;
@@ -32,15 +35,17 @@ class CartProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  void removeFromCart({required ItemModel item,}) {
+  void removeFromCart({
+    required ItemModel item,
+  }) {
     _cartList.removeWhere((e) => e.id == item.id);
     cartRepo.saveNewItems(_cartList);
     getCartData();
     notifyListeners();
   }
 
-  checkCity({required String city}){
-    if(_cartList.isNotEmpty) {
+  checkCity({required String city}) {
+    if (_cartList.isNotEmpty) {
       if (_cartList.first.store!.cityId != city) {
         clearCartList();
       }
@@ -95,7 +100,7 @@ class CartProvider extends ChangeNotifier {
 
   bool _isLoading = false;
   bool get isLoading => _isLoading;
-
+  CheckOutModel? model;
   checkOut() async {
     try {
       _isLoading = true;
@@ -128,21 +133,18 @@ class CartProvider extends ChangeNotifier {
       Either<ServerFailure, Response> response =
           await cartRepo.checkOut(data: body);
       response.fold((fail) {
-        _isLoading = false;
         CustomSnackBar.showSnackBar(
             notification: AppNotification(
                 message: ApiErrorHandler.getMessage(fail.error),
                 isFloating: true,
                 backgroundColor: ColorResources.IN_ACTIVE,
                 borderColor: Colors.transparent));
-        notifyListeners();
       }, (success) async {
-        await openWhatsApp(
-            url: success.data["url"], id: success.data["order_id"].toString());
-        clearCartList();
-        _isLoading = false;
-        notifyListeners();
+        model = CheckOutModel.fromJson(success.data);
+        CustomNavigator.push(Routes.SUCCESS,replace: true);
       });
+      _isLoading = false;
+      notifyListeners();
     } catch (e) {
       CustomSnackBar.showSnackBar(
           notification: AppNotification(
@@ -151,6 +153,45 @@ class CartProvider extends ChangeNotifier {
               backgroundColor: ColorResources.IN_ACTIVE,
               borderColor: Colors.transparent));
       _isLoading = false;
+      notifyListeners();
+    }
+  }
+
+  bool _isOpen = false;
+  bool get isOpen => _isOpen;
+
+  openWhatsApp() async {
+    try {
+      _isOpen = true;
+      notifyListeners();
+
+      final List items = [];
+      for (var item in _cartList) {
+        items.add({
+          "product_id": item.id,
+          "qty": item.qty,
+          "details": item.addons != null
+              ? item.addons!
+                  .map((e) => e.name)
+                  .toList()
+                  .toString()
+                  .replaceAll("[", '')
+                  .replaceAll("]", '')
+              : ""
+        });
+      }
+
+      await launchWhatsApp(url: model?.url ?? "", id: model?.orderId?.toString() ?? "");
+      _isOpen = false;
+      notifyListeners();
+    } catch (e) {
+      CustomSnackBar.showSnackBar(
+          notification: AppNotification(
+              message: ApiErrorHandler.getMessage(e),
+              isFloating: true,
+              backgroundColor: ColorResources.IN_ACTIVE,
+              borderColor: Colors.transparent));
+      _isOpen = false;
       notifyListeners();
     }
   }
@@ -169,16 +210,18 @@ class CartProvider extends ChangeNotifier {
     return itemPrice;
   }
 
-  openWhatsApp({
+  launchWhatsApp({
     required String url,
     required String id,
   }) async {
     final link = WhatsAppUnilink(
       phoneNumber: "+966${_cartList.first.store!.phone}",
-      // phoneNumber: "+201554444801",
       text: format(url: url, id: id),
     );
-    await launch('$link');
+    await launch('$link').then((value) {
+      clearCartList();
+      CustomNavigator.push(Routes.DASHBOARD, arguments: 0, clean: true);
+    });
   }
 
   format({

@@ -6,6 +6,7 @@ class Images {
   static const String chooseCity = 'assets/images/choose_city.png';
   static const String city = 'assets/images/city.png';
   static const String emptyItems = 'assets/images/empty_search.png';
+  static const String done = 'assets/images/done.png';
   static const String emptyDish = 'assets/images/empty_dish.png';
   static const String emptySearch = 'assets/images/empty_search.png';
   static const String emptyCart = 'assets/images/empty_cart.png';

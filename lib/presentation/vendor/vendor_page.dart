@@ -28,14 +28,34 @@ class VendorPage extends StatelessWidget {
           return Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              CustomNetworkImage.containerNewWorkImage(
-                  image: provider.vendor?.logo ?? "",
-                  radius: 0,
-                  width: context.width,
-                  height: 250.h,
-                  imageWidget: const CustomStackAppBar(
-                    withCart: true,
-                  )),
+              provider.isLoading
+                  ? Stack(
+                      alignment: Alignment.topCenter,
+                      children: [
+                        Shimmer.fromColors(
+                          baseColor: Colors.grey[300]!,
+                          highlightColor: Colors.grey[100]!,
+                          enabled: true,
+                          child: Container(
+                              width: context.width,
+                              height: 250.h,
+                              decoration: const BoxDecoration(
+                                color: ColorResources.WHITE_COLOR,
+                              )),
+                        ),
+                        const CustomStackAppBar(
+                          withCart: false,
+                        )
+                      ],
+                    )
+                  : CustomNetworkImage.containerNewWorkImage(
+                      image: provider.vendor?.logo ?? "",
+                      radius: 0,
+                      width: context.width,
+                      height: 250.h,
+                      imageWidget: const CustomStackAppBar(
+                        withCart: true,
+                      )),
               Padding(
                 padding: EdgeInsets.symmetric(
                     horizontal: Dimensions.PADDING_SIZE_DEFAULT.w,
@@ -45,32 +65,40 @@ class VendorPage extends StatelessWidget {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     provider.isLoading
-                        ?  TextShimmer(
-                      width: 150.w,
-                    )
+                        ? TextShimmer(
+                            width: 150.w,
+                          )
                         : Text(
                             provider.vendor?.name ?? "Baber",
                             style: AppTextStyles.w600.copyWith(
                               fontSize: 16,
                             ),
                           ),
-                   if (provider.isLoading)SizedBox(height: 10.h,),
-
+                    if (provider.isLoading)
+                      SizedBox(
+                        height: 10.h,
+                      ),
                     provider.isLoading
                         ? TextShimmer(
-                      width: 100.w,
-                    )
-                        :  ReadMoreText(
-                      provider.vendor?.description ?? "الرياض",
-                      trimLines: 2,
-                      colorClickableText: Colors.white,
-                      trimMode: TrimMode.Line,
-                      style: AppTextStyles.w500.copyWith(fontSize: 12.0,),
-                      trimCollapsedText: 'عرض المزيد',
-                      trimExpandedText: 'عرض اقل',
-                      lessStyle: AppTextStyles.w400.copyWith(fontSize: 10, color: ColorResources.PRIMARY_COLOR),
-                      moreStyle: AppTextStyles.w400.copyWith(fontSize: 10, color: ColorResources.PRIMARY_COLOR),
-                    ),
+                            width: 100.w,
+                          )
+                        : ReadMoreText(
+                            provider.vendor?.description ?? "الرياض",
+                            trimLines: 2,
+                            colorClickableText: Colors.white,
+                            trimMode: TrimMode.Line,
+                            style: AppTextStyles.w500.copyWith(
+                              fontSize: 12.0,
+                            ),
+                            trimCollapsedText: 'عرض المزيد',
+                            trimExpandedText: 'عرض اقل',
+                            lessStyle: AppTextStyles.w400.copyWith(
+                                fontSize: 10,
+                                color: ColorResources.PRIMARY_COLOR),
+                            moreStyle: AppTextStyles.w400.copyWith(
+                                fontSize: 10,
+                                color: ColorResources.PRIMARY_COLOR),
+                          ),
                   ],
                 ),
               ),
@@ -99,17 +127,18 @@ class VendorPage extends StatelessWidget {
                                   left: Dimensions.PADDING_SIZE_DEFAULT.w),
                               child: provider.isLoading
                                   ? Shimmer.fromColors(
-                                baseColor: Colors.grey[300]!,
-                                highlightColor: Colors.grey[100]!,
-                                enabled: true,
-                                child: Container(
-                                    width: 100.w,
-                                    height: 30.h,
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(100.w),
-                                      color: ColorResources.WHITE_COLOR,
-                                    )),
-                              )
+                                      baseColor: Colors.grey[300]!,
+                                      highlightColor: Colors.grey[100]!,
+                                      enabled: true,
+                                      child: Container(
+                                          width: 100.w,
+                                          height: 30.h,
+                                          decoration: BoxDecoration(
+                                            borderRadius:
+                                                BorderRadius.circular(100.w),
+                                            color: ColorResources.WHITE_COLOR,
+                                          )),
+                                    )
                                   : InkWell(
                                       focusColor: Colors.transparent,
                                       hoverColor: Colors.transparent,
@@ -117,8 +146,10 @@ class VendorPage extends StatelessWidget {
                                       splashColor: Colors.transparent,
                                       onTap: () => provider.getMenusData(
                                           index: index,
-                                          menuId: provider.vendor!.menus![index].id.toString(),
-                                      context: context),
+                                          menuId: provider
+                                              .vendor!.menus![index].id
+                                              .toString(),
+                                          context: context),
                                       child: Container(
                                         padding: EdgeInsets.symmetric(
                                             horizontal: 12.w, vertical: 4.h),
@@ -161,57 +192,59 @@ class VendorPage extends StatelessWidget {
                 height: 1.h,
                 color: ColorResources.BORDER_COLOR,
               ),
-              Consumer<ProductsProvider>( builder: (context, provider, child){
-                return  provider.isLoading
+              Consumer<ProductsProvider>(builder: (context, provider, child) {
+                return provider.isLoading
                     ? Expanded(
-                  child: GridListAnimatorWidget(
-                    items: List.generate(
-                      8,
-                          (int index) {
-                        return AnimationConfiguration.staggeredGrid(
-                            columnCount: 2,
-                            position: index,
-                            duration: const Duration(milliseconds: 375),
-                            child: const ScaleAnimation(
-                                child: FadeInAnimation(
-                                    child: ItemShimmerCard(
-                                      fromHome: false,
-                                      isVendor: true,
-                                    ))));
-                      },
-                    ),
-                  ),
-                )
+                        child: GridListAnimatorWidget(
+                          items: List.generate(
+                            8,
+                            (int index) {
+                              return AnimationConfiguration.staggeredGrid(
+                                  columnCount: 2,
+                                  position: index,
+                                  duration: const Duration(milliseconds: 375),
+                                  child: const ScaleAnimation(
+                                      child: FadeInAnimation(
+                                          child: ItemShimmerCard(
+                                    fromHome: false,
+                                    isVendor: true,
+                                  ))));
+                            },
+                          ),
+                        ),
+                      )
                     : provider.productsModel?.items != null &&
-                    provider.productsModel!.items!.isNotEmpty
-                    ? Expanded(
-                  child: GridListAnimatorWidget(
-                    aspectRatio: 0.90,
-                    items: List.generate(
-                      provider.productsModel!.items!.length,
-                          (int index) {
-                        return AnimationConfiguration.staggeredGrid(
-                            columnCount: 2,
-                            position: index,
-                            duration: const Duration(milliseconds: 375),
-                            child: ScaleAnimation(
-                                child: FadeInAnimation(
-                                    child: ItemCard(
-                                      fromHome: false,
-                                      isVendor: false,
-                                      itemModel:provider.productsModel!.items![index],
-                                    ))));
-                      },
-                    ),
-                  ),
-                )
-                    : Expanded(
-                    child: EmptyWidget(
-                      img: Images.emptyDish,
-                      imgWidth: 215.w,
-                      imgHeight: 220.h,
-                      txt: "نعتذر , لا يوجد اصناف الان",
-                    ));
+                            provider.productsModel!.items!.isNotEmpty
+                        ? Expanded(
+                            child: GridListAnimatorWidget(
+                              aspectRatio: 0.90,
+                              items: List.generate(
+                                provider.productsModel!.items!.length,
+                                (int index) {
+                                  return AnimationConfiguration.staggeredGrid(
+                                      columnCount: 2,
+                                      position: index,
+                                      duration:
+                                          const Duration(milliseconds: 375),
+                                      child: ScaleAnimation(
+                                          child: FadeInAnimation(
+                                              child: ItemCard(
+                                        fromHome: false,
+                                        isVendor: false,
+                                        itemModel: provider
+                                            .productsModel!.items![index],
+                                      ))));
+                                },
+                              ),
+                            ),
+                          )
+                        : Expanded(
+                            child: EmptyWidget(
+                            img: Images.emptyDish,
+                            imgWidth: 215.w,
+                            imgHeight: 220.h,
+                            txt: "نعتذر , لا يوجد اصناف الان",
+                          ));
               }),
             ],
           );

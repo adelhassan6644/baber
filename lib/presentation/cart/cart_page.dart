@@ -171,7 +171,6 @@ class _CartPageState extends State<CartPage> {
                               CustomNavigator.push(Routes.LOGIN,arguments: true);
                             }
                           },
-                          assetIcon: Images.whatsApp,
                           isLoading: provider.isLoading,
                           height: 46.h,
                         ),

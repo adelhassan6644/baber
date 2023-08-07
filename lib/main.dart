@@ -1,6 +1,7 @@
 import 'package:baber/controller/auth_provider.dart';
 import 'package:baber/firebase_options.dart';
 import 'package:baber/presentation/auth/login_page.dart';
+import 'package:baber/presentation/success/success_page.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/foundation.dart';
@@ -140,7 +141,6 @@ class _MyAppState extends State<MyApp> {
         GlobalWidgetsLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,
       ],
-      home: const LoginPage(fromProfile: false),
     );
   }
 }
