@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:baber/app/core/utils/color_resources.dart';
 import 'package:baber/app/core/utils/dimensions.dart';
 import 'package:baber/app/core/utils/svg_images.dart';
@@ -77,6 +79,19 @@ class ProfilePage extends StatelessWidget {
                 title: getTranslated("sign_in", context),
                 txtColor: ColorResources.ACTIVE,
                 iconName: SvgImages.login),
+
+
+        if(Platform.isIOS&&Provider.of<FirebaseAuthProvider>(context, listen: false).isLogin)
+          ProfileOption(
+              onTap: () =>
+                  Provider.of<FirebaseAuthProvider>(context, listen: false)
+                      .deletAccount(),
+              showIcon: false,
+              showDivider: false,
+              iconColor: ColorResources.FAILED_COLOR,
+              title: "حذف الحساب",
+              txtColor: ColorResources.FAILED_COLOR,
+              iconName: SvgImages.delete)
       ],
     );
   }

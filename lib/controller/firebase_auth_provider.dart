@@ -207,6 +207,36 @@ class FirebaseAuthProvider extends ChangeNotifier {
       notifyListeners();
     }
   }
+  deletAccount() async {
+    try {
+
+      Future.delayed(Duration.zero,() async {
+
+      await FirebaseAuth.instance.signOut();
+
+      await firebaseAuthRepo.clearSharedData();
+
+      CustomNavigator.push(Routes.LOGIN, clean: true,);
+      });
+
+      CustomSnackBar.showSnackBar(
+          notification: AppNotification(
+              message: "تم حذف الحساب",
+              isFloating: true,
+              backgroundColor: ColorResources.ACTIVE,
+              borderColor: Colors.transparent));
+
+      notifyListeners();
+    } catch (e) {
+      CustomSnackBar.showSnackBar(
+          notification: AppNotification(
+              message: e.toString(),
+              isFloating: true,
+              backgroundColor: ColorResources.ACTIVE,
+              borderColor: Colors.transparent));
+      notifyListeners();
+    }
+  }
 
   // getUserData(){
   //   phone= FirebaseAuth.instance.currentUser?.phoneNumber;
