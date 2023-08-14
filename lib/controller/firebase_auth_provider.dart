@@ -207,7 +207,7 @@ class FirebaseAuthProvider extends ChangeNotifier {
       notifyListeners();
     }
   }
-  deletAccount() async {
+  deleteAccount() async {
     try {
 
       Future.delayed(Duration.zero,() async {

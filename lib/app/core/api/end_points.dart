@@ -18,6 +18,7 @@ class EndPoints {
   static const String search = 'search';
   static const String contact = 'contact';
   static const String notifications = 'notifications';
+  static const String orders = 'orders';
   static const String settings = 'settings';
   static const String checkOut = 'orders/store';
 

@@ -1,5 +1,9 @@
+import 'dart:developer';
+import 'dart:io';
+
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../app/core/api/end_points.dart';
@@ -13,7 +17,6 @@ class AuthRepo {
   final DioClient dioClient;
   AuthRepo({required this.sharedPreferences, required this.dioClient});
 
-
   bool isLoggedIn() {
     return sharedPreferences.containsKey(AppStorageKey.isLogin);
   }
@@ -23,30 +26,35 @@ class AuthRepo {
   }
 
   getPhone() {
-    if( sharedPreferences.containsKey(AppStorageKey.phone,)) {
-      return sharedPreferences.getString(AppStorageKey.phone,);
+    if (sharedPreferences.containsKey(
+      AppStorageKey.phone,
+    )) {
+      return sharedPreferences.getString(
+        AppStorageKey.phone,
+      );
     }
   }
+
   remember({required String phone}) {
     sharedPreferences.setString(AppStorageKey.phone, phone);
   }
+
   forget() {
     sharedPreferences.remove(AppStorageKey.phone);
   }
 
   Future<String?> saveDeviceToken() async {
-    // String? _deviceToken;
-    // if(Platform.isIOS) {
-    //   _deviceToken = await FirebaseMessaging.instance.getAPNSToken();
-    // }else {
-    //   _deviceToken = await FirebaseMessaging.instance.getToken();
-    // }
-    //
-    // if (_deviceToken != null) {
-    //   log('--------Device Token---------- $_deviceToken');
-    // }
-    // return _deviceToken;
-    return "RVmsmxd5dg8v3cS0d48q3nvoFFuaSXuCwZbMU3LCjEren7VWhq";
+    String? deviceToken;
+    if (Platform.isIOS) {
+      deviceToken = await FirebaseMessaging.instance.getAPNSToken();
+    } else {
+      deviceToken = await FirebaseMessaging.instance.getToken();
+    }
+
+    if (deviceToken != null) {
+      log('--------Device Token---------- $deviceToken');
+    }
+    return deviceToken;
   }
 
   // Future<Either<ServerFailure, Response>> subscribeToTopic() async {
@@ -64,7 +72,6 @@ class AuthRepo {
   //   }
   // }
 
-
   Future<void> saveUserToken({required String token}) async {
     try {
       dioClient.updateHeader(token: token);
@@ -74,14 +81,15 @@ class AuthRepo {
     }
   }
 
-
-
   Future<Either<ServerFailure, Response>> logIn({required String phone}) async {
     try {
-
-      Response response = await dioClient.post(uri: EndPoints.logIn, data: {"phone": phone,"device_token":await saveDeviceToken()});
+      Response response = await dioClient.post(
+          uri: EndPoints.logIn,
+          data: {"phone": phone, "device_token": await saveDeviceToken()});
 
       if (response.statusCode == 200) {
+        dioClient.updateHeader(token: response.data['data']["api_token"]);
+
         return Right(response);
       } else {
         return left(ServerFailure(response.data['message']));
@@ -91,12 +99,13 @@ class AuthRepo {
     }
   }
 
-
-  Future<Either<ServerFailure, Response>> verifyPhone(
-      {required String phone,required String code, }) async {
+  Future<Either<ServerFailure, Response>> verifyPhone({
+    required String phone,
+    required String code,
+  }) async {
     try {
       Response response = await dioClient.post(
-          uri: EndPoints.verifyPhone, data: {"phone": phone,"otp": code});
+          uri: EndPoints.verifyPhone, data: {"phone": phone, "otp": code});
       if (response.statusCode == 200) {
         return Right(response);
       } else {
@@ -106,7 +115,6 @@ class AuthRepo {
       return left(ServerFailure(ApiErrorHandler.getMessage(error)));
     }
   }
-
 
   Future<bool> clearSharedData() async {
     await sharedPreferences.remove(AppStorageKey.cityId);

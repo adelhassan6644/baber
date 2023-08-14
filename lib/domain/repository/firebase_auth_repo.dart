@@ -14,8 +14,7 @@ import '../../data/dio/dio_client.dart';
 class FirebaseAuthRepo {
   late final SharedPreferences sharedPreferences;
   final DioClient dioClient;
-  FirebaseAuthRepo({required this.sharedPreferences,required this.dioClient});
-
+  FirebaseAuthRepo({required this.sharedPreferences, required this.dioClient});
 
   bool isLoggedIn() {
     return sharedPreferences.containsKey(AppStorageKey.isLogin);
@@ -26,8 +25,12 @@ class FirebaseAuthRepo {
   }
 
   getPhone() {
-    if( sharedPreferences.containsKey(AppStorageKey.phone,)) {
-      return sharedPreferences.getString(AppStorageKey.phone,);
+    if (sharedPreferences.containsKey(
+      AppStorageKey.phone,
+    )) {
+      return sharedPreferences.getString(
+        AppStorageKey.phone,
+      );
     }
   }
 
@@ -40,33 +43,34 @@ class FirebaseAuthRepo {
   }
 
   Future<String?> getFcmToken() async {
-    String? _deviceToken;
-    if(Platform.isIOS) {
-      _deviceToken = await FirebaseMessaging.instance.getAPNSToken();
-    }else {
-      _deviceToken = await FirebaseMessaging.instance.getToken();
+    String? deviceToken;
+    if (Platform.isIOS) {
+      deviceToken = await FirebaseMessaging.instance.getAPNSToken();
+    } else {
+      deviceToken = await FirebaseMessaging.instance.getToken();
     }
 
-    if (_deviceToken != null) {
-      log('--------Device Token---------- $_deviceToken');
+    if (deviceToken != null) {
+      log('--------Device Token---------- $deviceToken');
     }
-    return _deviceToken;
+    return deviceToken;
   }
 
-
-  Future<Either<ServerFailure, Response>> sendDeviceToken({required String phone}) async {
+  Future<Either<ServerFailure, Response>> sendDeviceToken(
+      {required String phone}) async {
     try {
       Response res = await dioClient.post(
-        data: {"device_token": await getFcmToken(),"phone":phone},
-        uri: EndPoints.logIn,);
-      if(res.statusCode ==200){
+        data: {"device_token": await getFcmToken(), "phone": phone},
+        uri: EndPoints.logIn,
+      );
+      if (res.statusCode == 200) {
         saveUserToken(token: res.data['data']["api_token"]);
         return Right(res);
       } else {
-    return left(ServerFailure(res.data['message']));
-    }
+        return left(ServerFailure(res.data['message']));
+      }
     } catch (error) {
-    return left(ServerFailure(ApiErrorHandler.getMessage(error)));
+      return left(ServerFailure(ApiErrorHandler.getMessage(error)));
     }
   }
 
@@ -79,12 +83,9 @@ class FirebaseAuthRepo {
     }
   }
 
-
   Future<bool> clearSharedData() async {
     await sharedPreferences.remove(AppStorageKey.token);
     await sharedPreferences.remove(AppStorageKey.isLogin);
     return true;
   }
-
-
 }

@@ -14,12 +14,11 @@ class DioClient extends ApiClient {
 
   final Dio dio;
 
-
   DioClient(
     this.baseUrl, {
     required this.dio,
     required this.loggingInterceptor,
-     required this.sharedPreferences,
+    required this.sharedPreferences,
   }) {
     dio
       ..options.baseUrl = baseUrl
@@ -29,7 +28,8 @@ class DioClient extends ApiClient {
       ..options.headers = {
         'Content-Type': 'application/json',
         "Accept": " application/json",
-        'Authorization': 'Bearer ${sharedPreferences.getString(AppStorageKey.token)}',
+        'Authorization':
+            'Bearer ${sharedPreferences.getString(AppStorageKey.token)}',
       };
     dio.interceptors.add(PrettyDioLogger(
         requestHeader: true,
@@ -41,7 +41,6 @@ class DioClient extends ApiClient {
         maxWidth: 90));
   }
 
-
   void updateHeader({required String token}) {
     dio.options.headers = {
       'Content-Type': 'application/json',
@@ -49,7 +48,6 @@ class DioClient extends ApiClient {
       'Authorization': 'Bearer $token',
     };
   }
-
 
   @override
   Future<Response> get({

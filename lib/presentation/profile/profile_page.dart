@@ -85,7 +85,7 @@ class ProfilePage extends StatelessWidget {
           ProfileOption(
               onTap: () =>
                   Provider.of<FirebaseAuthProvider>(context, listen: false)
-                      .deletAccount(),
+                      .deleteAccount(),
               showIcon: false,
               showDivider: false,
               iconColor: ColorResources.FAILED_COLOR,

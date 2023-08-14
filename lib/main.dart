@@ -22,6 +22,7 @@ import 'controller/home_vendors_provider.dart';
 import 'controller/item_details_provider.dart';
 import 'controller/localization_provider.dart';
 import 'controller/notifications_provider.dart';
+import 'controller/order_history_provider.dart';
 import 'controller/products_provider.dart';
 import 'controller/profile_provider.dart';
 import 'controller/search_provider.dart';
@@ -39,7 +40,7 @@ import 'navigation/custom_navigation.dart';
 import 'navigation/routes.dart';
 
 final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
-FlutterLocalNotificationsPlugin();
+    FlutterLocalNotificationsPlugin();
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -52,10 +53,8 @@ Future<void> main() async {
 
   if (!kIsWeb) {
     final NotificationAppLaunchDetails? notificationAppLaunchDetails =
-    await flutterLocalNotificationsPlugin
-        .getNotificationAppLaunchDetails();
-    if (notificationAppLaunchDetails?.didNotificationLaunchApp ?? false) {
-    }
+        await flutterLocalNotificationsPlugin.getNotificationAppLaunchDetails();
+    if (notificationAppLaunchDetails?.didNotificationLaunchApp ?? false) {}
     await MyNotification.initialize(flutterLocalNotificationsPlugin);
     FirebaseMessaging.onBackgroundMessage(myBackgroundMessageHandler);
   }
@@ -80,6 +79,7 @@ Future<void> main() async {
     ChangeNotifierProvider(create: (context) => di.sl<ProductsProvider>()),
     ChangeNotifierProvider(create: (context) => di.sl<CartProvider>()),
     ChangeNotifierProvider(create: (context) => di.sl<SearchProvider>()),
+    ChangeNotifierProvider(create: (context) => di.sl<OrderHistoryProvider>()),
     ChangeNotifierProvider(create: (context) => di.sl<SettingsProvider>()),
   ], child: const MyApp()));
   SystemChrome.setPreferredOrientations(
