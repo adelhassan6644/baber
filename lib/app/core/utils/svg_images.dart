@@ -17,6 +17,7 @@ class SvgImages {
   static const String information = 'assets/svgs/information.svg';
   static const String security = 'assets/svgs/security.svg';
   static const String notification = 'assets/svgs/notification.svg';
+  static const String orders = 'assets/svgs/orders.svg';
   static const String message = 'assets/svgs/message.svg';
   static const String edit = 'assets/svgs/edit.svg';
   static const String logout = 'assets/svgs/logout.svg';

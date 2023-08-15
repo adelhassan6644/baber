@@ -15,6 +15,7 @@ class Routes {
   static const ABOUT = "ABOUT";
   static const PRIVACY = "PRIVACY";
   static const SUCCESS = "SUCCESS";
+  static const ORDERS = "ORDERS";
 
 }
 

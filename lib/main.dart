@@ -1,7 +1,5 @@
 import 'package:baber/controller/auth_provider.dart';
 import 'package:baber/firebase_options.dart';
-import 'package:baber/presentation/auth/login_page.dart';
-import 'package:baber/presentation/success/success_page.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/foundation.dart';
@@ -22,7 +20,7 @@ import 'controller/home_vendors_provider.dart';
 import 'controller/item_details_provider.dart';
 import 'controller/localization_provider.dart';
 import 'controller/notifications_provider.dart';
-import 'controller/order_history_provider.dart';
+import 'controller/orders_provider.dart';
 import 'controller/products_provider.dart';
 import 'controller/profile_provider.dart';
 import 'controller/search_provider.dart';
@@ -79,7 +77,7 @@ Future<void> main() async {
     ChangeNotifierProvider(create: (context) => di.sl<ProductsProvider>()),
     ChangeNotifierProvider(create: (context) => di.sl<CartProvider>()),
     ChangeNotifierProvider(create: (context) => di.sl<SearchProvider>()),
-    ChangeNotifierProvider(create: (context) => di.sl<OrderHistoryProvider>()),
+    ChangeNotifierProvider(create: (context) => di.sl<OrdersProvider>()),
     ChangeNotifierProvider(create: (context) => di.sl<SettingsProvider>()),
   ], child: const MyApp()));
   SystemChrome.setPreferredOrientations(
