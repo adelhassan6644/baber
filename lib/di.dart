@@ -15,7 +15,7 @@ import 'controller/item_details_provider.dart';
 import 'controller/language_provider.dart';
 import 'controller/localization_provider.dart';
 import 'controller/notifications_provider.dart';
-import 'controller/order_history_provider.dart';
+import 'controller/orders_provider.dart';
 import 'controller/products_provider.dart';
 import 'controller/profile_provider.dart';
 import 'controller/search_provider.dart';
@@ -33,7 +33,7 @@ import 'domain/repository/firebase_auth_repo.dart';
 import 'domain/repository/home_repo.dart';
 import 'domain/repository/item_details_repo.dart';
 import 'domain/repository/notification_repo.dart';
-import 'domain/repository/order_history_repo.dart';
+import 'domain/repository/orders_repo.dart';
 import 'domain/repository/products_repo.dart';
 import 'domain/repository/profile_repo.dart';
 import 'domain/repository/search_repo.dart';
@@ -64,7 +64,7 @@ Future<void> init() async {
   sl.registerLazySingleton(() => CartRepo(sharedPreferences: sl(),dioClient: sl() ));
   sl.registerLazySingleton(() => SearchRepo(dioClient: sl() ));
   sl.registerLazySingleton(() => SettingsRepo(dioClient: sl() ));
-  sl.registerLazySingleton(() => OrderHistoryRepo(dioClient: sl() ));
+  sl.registerLazySingleton(() => OrderRepo(dioClient: sl() ));
 
 
   //provider
@@ -87,7 +87,7 @@ Future<void> init() async {
    sl.registerLazySingleton(() => NotificationProvider(notificationRepo: sl()));
    sl.registerLazySingleton(() => CartProvider(cartRepo: sl(),sharedPreferences: sl()));
    sl.registerLazySingleton(() => SearchProvider(searchRepo: sl()));
-   sl.registerLazySingleton(() => OrderHistoryProvider(orderHistoryRepo: sl()));
+   sl.registerLazySingleton(() => OrdersProvider(orderRepo: sl()));
    sl.registerLazySingleton(() => SettingsProvider(settingsRepo: sl()));
 
 

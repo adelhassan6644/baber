@@ -12,6 +12,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:provider/provider.dart';
 import '../../controller/firebase_auth_provider.dart';
 import '../../controller/notifications_provider.dart';
+import '../../controller/orders_provider.dart';
 import '../../navigation/custom_navigation.dart';
 import '../../navigation/routes.dart';
 import '../base/custom_show_model_bottom_sheet.dart';
@@ -40,11 +41,21 @@ class ProfilePage extends StatelessWidget {
         if (Provider.of<FirebaseAuthProvider>(context, listen: false).isLogin)
           ProfileOption(
               onTap: () {
-                Provider.of<NotificationProvider>(context,listen: false).getNotifications();
+                Provider.of<NotificationProvider>(context, listen: false)
+                    .getNotifications();
                 CustomNavigator.push(Routes.NOTIFICATION);
               },
               title: getTranslated("notifications", context),
               iconName: SvgImages.notification),
+        if (Provider.of<FirebaseAuthProvider>(context, listen: false).isLogin)
+          ProfileOption(
+              onTap: () {
+                Provider.of<OrdersProvider>(context, listen: false)
+                    .getOrders();
+                CustomNavigator.push(Routes.ORDERS);
+              },
+              title: getTranslated("orders", context),
+              iconName: SvgImages.orders),
         if (Provider.of<FirebaseAuthProvider>(context, listen: false).isLogin)
           ProfileOption(
               onTap: () =>
@@ -79,9 +90,8 @@ class ProfilePage extends StatelessWidget {
                 title: getTranslated("sign_in", context),
                 txtColor: ColorResources.ACTIVE,
                 iconName: SvgImages.login),
-
-
-        if(Platform.isIOS&&Provider.of<FirebaseAuthProvider>(context, listen: false).isLogin)
+        if (Platform.isIOS &&
+            Provider.of<FirebaseAuthProvider>(context, listen: false).isLogin)
           ProfileOption(
               onTap: () =>
                   Provider.of<FirebaseAuthProvider>(context, listen: false)
