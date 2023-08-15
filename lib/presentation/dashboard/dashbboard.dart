@@ -1,4 +1,5 @@
 import 'package:baber/app/core/utils/dimensions.dart';
+import 'package:baber/controller/orders_provider.dart';
 import 'package:baber/navigation/custom_navigation.dart';
 import 'package:baber/presentation/dashboard/widget/nav_bar_bar.dart';
 import 'package:flutter/material.dart';
@@ -16,6 +17,7 @@ import '../../controller/settings_provider.dart';
 import '../../domain/localization/language_constant.dart';
 import '../cart/cart_page.dart';
 import '../home/home_page.dart';
+import '../orders/orders_page.dart';
 import '../profile/profile_page.dart';
 
 class DashBoard extends StatefulWidget {
@@ -42,6 +44,7 @@ class _DashBoardState extends State<DashBoard> {
   void initState() {
     Future.delayed(Duration.zero, () async {
       // Provider.of<ProfileProvider>(context, listen: false).getProfileInfo();
+
       Provider.of<BannerProvider>(
               CustomNavigator.navigatorState.currentContext!,
               listen: false)
@@ -54,6 +57,10 @@ class _DashBoardState extends State<DashBoard> {
               CustomNavigator.navigatorState.currentContext!,
               listen: false)
           .getVendorList();
+      Provider.of<OrdersProvider>(
+              CustomNavigator.navigatorState.currentContext!,
+              listen: false)
+          .getOrders();
       Provider.of<CityProvider>(CustomNavigator.navigatorState.currentContext!,
               listen: false)
           .getYourCity();
@@ -80,12 +87,15 @@ class _DashBoardState extends State<DashBoard> {
               CustomNavigator.navigatorState.currentContext!,
               listen: false)
           .getYourCity();
+      await Provider.of<OrdersProvider>(
+              CustomNavigator.navigatorState.currentContext!,
+              listen: false)
+          .getOrders();
       await Provider.of<SettingsProvider>(
               CustomNavigator.navigatorState.currentContext!,
               listen: false)
           .getSettingsInfo();
     });
-
     super.initState();
   }
 
@@ -96,14 +106,19 @@ class _DashBoardState extends State<DashBoard> {
       body: Stack(
         alignment: Alignment.bottomCenter,
         children: [
+          ///Body
           PageView(
-              controller: _pageController,
-              physics: const NeverScrollableScrollPhysics(),
-              children: const [
-                HomePage(),
-                CartPage(),
-                ProfilePage(),
-              ]),
+            controller: _pageController,
+            physics: const NeverScrollableScrollPhysics(),
+            children: const [
+              HomePage(),
+              OrdersPage(),
+              CartPage(),
+              ProfilePage(),
+            ],
+          ),
+
+          ///Nav
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 35.w, vertical: 25.h),
             child: Container(
@@ -136,17 +151,27 @@ class _DashBoardState extends State<DashBoard> {
                       ),
                       Expanded(
                         child: BottomNavBarItem(
-                          svgIcon: SvgImages.cartIcon,
+                          imageIcon: Images.orders,
+                          height: 20.h,
+                          width: 20.w,
                           isSelected: _selectedIndex == 1,
                           onTap: () => _setPage(1),
+                          name: getTranslated("orders", context),
+                        ),
+                      ),
+                      Expanded(
+                        child: BottomNavBarItem(
+                          svgIcon: SvgImages.cartIcon,
+                          isSelected: _selectedIndex == 2,
+                          onTap: () => _setPage(2),
                           name: getTranslated("cart", context),
                         ),
                       ),
                       Expanded(
                         child: BottomNavBarItem(
                           svgIcon: SvgImages.profileIcon,
-                          isSelected: _selectedIndex == 2,
-                          onTap: () => _setPage(2),
+                          isSelected: _selectedIndex == 3,
+                          onTap: () => _setPage(3),
                           name: getTranslated("profile", context),
                         ),
                       ),

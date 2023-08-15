@@ -3,6 +3,7 @@ import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import '../../app/core/error/failures.dart';
 import '../../domain/repository/auth_repo.dart';
 import '../../navigation/custom_navigation.dart';
@@ -11,11 +12,15 @@ import '../app/core/error/api_error_handler.dart';
 import '../app/core/utils/app_snack_bar.dart';
 import '../app/core/utils/color_resources.dart';
 import 'base_vm.dart';
+import 'orders_provider.dart';
 
 class AuthProvider extends ChangeNotifier with BaseViewModel {
   final AuthRepo authRepo;
-  AuthProvider({required this.authRepo,}){
-    _phoneTEC = TextEditingController(text:kDebugMode ? "597834528" : authRepo.getPhone());
+  AuthProvider({
+    required this.authRepo,
+  }) {
+    _phoneTEC = TextEditingController(
+        text: kDebugMode ? "597834528" : authRepo.getPhone());
   }
 
   String? phone;
@@ -54,33 +59,35 @@ class AuthProvider extends ChangeNotifier with BaseViewModel {
 
   logIn() async {
     try {
-        isError = false;
-        _isLoading = true;
+      isError = false;
+      _isLoading = true;
+      notifyListeners();
+      Either<ServerFailure, Response> response = await authRepo.logIn(
+        phone: "966${_phoneTEC.text.trim()}",
+      );
+      response.fold((fail) {
+        CustomSnackBar.showSnackBar(
+            notification: AppNotification(
+                message: fail.error,
+                isFloating: true,
+                backgroundColor: ColorResources.IN_ACTIVE,
+                borderColor: Colors.transparent));
+        isError = true;
         notifyListeners();
-        Either<ServerFailure, Response> response = await authRepo.logIn(phone: "966${_phoneTEC.text.trim()}",);
-        response.fold((fail) {
-          CustomSnackBar.showSnackBar(
-              notification: AppNotification(
-                  message: fail.error,
-                  isFloating: true,
-                  backgroundColor: ColorResources.IN_ACTIVE,
-                  borderColor: Colors.transparent));
-          isError = true;
-          notifyListeners();
-        }, (success) {
-          if(_isRememberMe){
-            authRepo.remember(phone:_phoneTEC.text.trim());
-          }else{
-            authRepo.forget();
-          }
-          _token=success.data['data']["api_token"];
-          // isLoginBefore=success.data['is_login_before'] ==0?true:false;
-          CustomNavigator.push(
-            Routes.VERIFICATION,);
-        });
-        _isLoading = false;
-        notifyListeners();
-
+      }, (success) {
+        if (_isRememberMe) {
+          authRepo.remember(phone: _phoneTEC.text.trim());
+        } else {
+          authRepo.forget();
+        }
+        _token = success.data['data']["api_token"];
+        // isLoginBefore=success.data['is_login_before'] ==0?true:false;
+        CustomNavigator.push(
+          Routes.VERIFICATION,
+        );
+      });
+      _isLoading = false;
+      notifyListeners();
     } catch (e) {
       CustomSnackBar.showSnackBar(
           notification: AppNotification(
@@ -114,14 +121,17 @@ class AuthProvider extends ChangeNotifier with BaseViewModel {
         isErrorOnSubmit = true;
         notifyListeners();
       }, (success) {
-        authRepo.saveUserToken(token:_token);
+        authRepo.saveUserToken(token: _token);
         authRepo.setLoggedIn();
         _verificationCode = "";
-        if(isLoginBefore){
+        if (isLoginBefore) {
+          Provider.of<OrdersProvider>(
+                  CustomNavigator.navigatorState.currentContext!,
+                  listen: false)
+              .getOrders();
           CustomNavigator.push(Routes.DASHBOARD, replace: true);
-        }else{
-          CustomNavigator.push(Routes.CITY,replace: true);
-
+        } else {
+          CustomNavigator.push(Routes.CITY, replace: true);
         }
       });
       _isSubmit = false;
@@ -149,7 +159,8 @@ class AuthProvider extends ChangeNotifier with BaseViewModel {
     await authRepo.clearSharedData();
     CustomSnackBar.showSnackBar(
         notification: AppNotification(
-            message: getTranslated("your_logged_out_successfully", CustomNavigator.navigatorState.currentContext!),
+            message: getTranslated("your_logged_out_successfully",
+                CustomNavigator.navigatorState.currentContext!),
             isFloating: true,
             backgroundColor: ColorResources.ACTIVE,
             borderColor: Colors.transparent));

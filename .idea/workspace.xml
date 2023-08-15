@@ -10,14 +10,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0f32153c-20a2-462c-b0aa-469fbaabcdc6" name="Changes" comment="flutter 10">
-      <change afterPath="$PROJECT_DIR$/lib/controller/order_history_provider.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/data/model/order_history_model.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/domain/repository/order_history_repo.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/presentation/order_history/order_history_page.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/presentation/order_history/widget/order_history_card.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/dart_plugin_registrant.dart" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/orders.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Flutter/Flutter.podspec" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/Manifest.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/data/model/orders_model.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.dart_tool/package_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.dart_tool/package_config_subset" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config_subset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/version" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/version" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.flutter-plugins" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
@@ -25,25 +24,37 @@
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/android/local.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/last_build_run.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Flutter/Flutter.podspec" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/.symlinks/plugins/connectivity_plus" beforeDir="false" afterPath="$PROJECT_DIR$/ios/.symlinks/plugins/connectivity_plus" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/.symlinks/plugins/firebase_analytics" beforeDir="false" afterPath="$PROJECT_DIR$/ios/.symlinks/plugins/firebase_analytics" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/.symlinks/plugins/firebase_auth" beforeDir="false" afterPath="$PROJECT_DIR$/ios/.symlinks/plugins/firebase_auth" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/.symlinks/plugins/firebase_core" beforeDir="false" afterPath="$PROJECT_DIR$/ios/.symlinks/plugins/firebase_core" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/.symlinks/plugins/firebase_dynamic_links" beforeDir="false" afterPath="$PROJECT_DIR$/ios/.symlinks/plugins/firebase_dynamic_links" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/.symlinks/plugins/firebase_messaging" beforeDir="false" afterPath="$PROJECT_DIR$/ios/.symlinks/plugins/firebase_messaging" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/.symlinks/plugins/flutter_local_notifications" beforeDir="false" afterPath="$PROJECT_DIR$/ios/.symlinks/plugins/flutter_local_notifications" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/.symlinks/plugins/flutter_native_splash" beforeDir="false" afterPath="$PROJECT_DIR$/ios/.symlinks/plugins/flutter_native_splash" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/.symlinks/plugins/image_picker_ios" beforeDir="false" afterPath="$PROJECT_DIR$/ios/.symlinks/plugins/image_picker_ios" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/.symlinks/plugins/path_provider_foundation" beforeDir="false" afterPath="$PROJECT_DIR$/ios/.symlinks/plugins/path_provider_foundation" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/.symlinks/plugins/shared_preferences_foundation" beforeDir="false" afterPath="$PROJECT_DIR$/ios/.symlinks/plugins/shared_preferences_foundation" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/.symlinks/plugins/sqflite" beforeDir="false" afterPath="$PROJECT_DIR$/ios/.symlinks/plugins/sqflite" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/.symlinks/plugins/url_launcher_ios" beforeDir="false" afterPath="$PROJECT_DIR$/ios/.symlinks/plugins/url_launcher_ios" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ios/Flutter/Generated.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Flutter/Generated.xcconfig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ios/Flutter/flutter_export_environment.sh" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Flutter/flutter_export_environment.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Pods/Manifest.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/app/core/api/end_points.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/core/api/end_points.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/controller/firebase_auth_provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/controller/firebase_auth_provider.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/data/dio/dio_client.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/dio/dio_client.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/di.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/di.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/domain/repository/auth_repo.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/domain/repository/auth_repo.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/domain/repository/firebase_auth_repo.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/domain/repository/firebase_auth_repo.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Pods/Pods.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Pods/Pods.xcodeproj/project.pbxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app/core/utils/images.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/core/utils/images.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/controller/auth_provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/controller/auth_provider.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/controller/orders_provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/controller/orders_provider.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/domain/repository/orders_repo.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/domain/repository/orders_repo.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/base/empty_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/base/empty_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/dashboard/dashbboard.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/dashboard/dashbboard.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/orders/orders_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/orders/orders_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/orders/widget/order_card.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/orders/widget/order_card.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/presentation/profile/profile_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/profile/profile_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/success/success_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/success/success_page.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/linux/flutter/ephemeral/.plugin_symlinks/connectivity_plus" beforeDir="false" afterPath="$PROJECT_DIR$/linux/flutter/ephemeral/.plugin_symlinks/connectivity_plus" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/linux/flutter/ephemeral/.plugin_symlinks/path_provider_linux" beforeDir="false" afterPath="$PROJECT_DIR$/linux/flutter/ephemeral/.plugin_symlinks/path_provider_linux" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/linux/flutter/ephemeral/.plugin_symlinks/shared_preferences_linux" beforeDir="false" afterPath="$PROJECT_DIR$/linux/flutter/ephemeral/.plugin_symlinks/shared_preferences_linux" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/linux/flutter/ephemeral/.plugin_symlinks/url_launcher_linux" beforeDir="false" afterPath="$PROJECT_DIR$/linux/flutter/ephemeral/.plugin_symlinks/url_launcher_linux" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/macos/Flutter/ephemeral/Flutter-Generated.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/macos/Flutter/ephemeral/Flutter-Generated.xcconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/macos/Flutter/ephemeral/flutter_export_environment.sh" beforeDir="false" afterPath="$PROJECT_DIR$/macos/Flutter/ephemeral/flutter_export_environment.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/windows/flutter/ephemeral/.plugin_symlinks/connectivity_plus" beforeDir="false" afterPath="$PROJECT_DIR$/windows/flutter/ephemeral/.plugin_symlinks/connectivity_plus" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/windows/flutter/ephemeral/.plugin_symlinks/firebase_core" beforeDir="false" afterPath="$PROJECT_DIR$/windows/flutter/ephemeral/.plugin_symlinks/firebase_core" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/windows/flutter/ephemeral/.plugin_symlinks/path_provider_windows" beforeDir="false" afterPath="$PROJECT_DIR$/windows/flutter/ephemeral/.plugin_symlinks/path_provider_windows" afterDir="false" />
@@ -104,24 +115,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
-    &quot;io.flutter.reload.alreadyRun&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;flutter.settings&quot;,
-    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "cidr.known.project.marker": "true",
+    "dart.analysis.tool.window.visible": "false",
+    "io.flutter.reload.alreadyRun": "true",
+    "last_opened_file_path": "/Users/user/SoftweareCloud2/baber/assets/images",
+    "settings.editor.selected.configurable": "flutter.settings",
+    "show.migrate.to.gradle.popup": "false"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/assets/images" />
       <recent name="C:\My projects\baber\assets" />
       <recent name="C:\My projects\baber" />
       <recent name="C:\My projects\baber\android\app\src\main\res\drawable" />
       <recent name="C:\My projects\baber\android\app\src\main\res" />
-      <recent name="C:\My projects\baber\assets\images" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/ios/Runner" />
@@ -145,13 +157,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1680547569892</updated>
-    </task>
-    <task id="LOCAL-00008" summary="&#10;feat(vendor page):&#10;-shimmer when loading in menu">
-      <created>1681171060791</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1681171060791</updated>
     </task>
     <task id="LOCAL-00009" summary="&#10;feat(vendor page):&#10;-shimmer when loading in menu">
       <created>1681180554103</created>
@@ -489,7 +494,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686419864921</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="flutter 10">
+      <created>1692116783459</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1692116783459</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

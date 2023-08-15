@@ -15,7 +15,8 @@ class OrderRepo {
       Response response = await dioClient.get(uri: EndPoints.orders);
       if (response.statusCode == 200) {
         return Right(response);
-      } else {
+      }
+      else {
         return left(ServerFailure(response.data['message']));
       }
     } catch (error) {

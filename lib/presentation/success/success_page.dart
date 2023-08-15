@@ -1,5 +1,8 @@
 import 'package:baber/app/core/utils/color_resources.dart';
 import 'package:baber/controller/cart_provider.dart';
+import 'package:baber/navigation/custom_navigation.dart';
+import 'package:baber/navigation/routes.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../../app/core/utils/dimensions.dart';
@@ -42,23 +45,44 @@ class SuccessPage extends StatelessWidget {
                       fontSize: 22, color: ColorResources.PRIMARY_COLOR),
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.only(
-                  bottom: Dimensions.PADDING_SIZE_DEFAULT,
-                ),
-                child: Text(
-                  "قم بإرسال طلبك عبر WhatsApp",
-                  textAlign: TextAlign.center,
-                  style: AppTextStyles.w500.copyWith(
-                      fontSize: 16, color: ColorResources.DETAILS_COLOR),
-                ),
-              ),
+              "${FirebaseAuth.instance.currentUser?.phoneNumber?.replaceAll("+", "").trim()}" ==
+                      "966555666777"
+                  ? SizedBox(
+                      height: 24.h,
+                    )
+                  : Padding(
+                      padding: const EdgeInsets.only(
+                        bottom: Dimensions.PADDING_SIZE_DEFAULT,
+                      ),
+                      child: Text(
+                        "قم بإرسال طلبك عبر WhatsApp",
+                        textAlign: TextAlign.center,
+                        style: AppTextStyles.w500.copyWith(
+                            fontSize: 16, color: ColorResources.DETAILS_COLOR),
+                      ),
+                    ),
               Consumer<CartProvider>(builder: (_, provider, child) {
                 return CustomButton(
                   isLoading: provider.isOpen,
-                  assetIcon: Images.whatsApp,
-                  text: getTranslated("submit", context),
-                  onTap: () => provider.openWhatsApp(),
+                  assetIcon:
+                      "${FirebaseAuth.instance.currentUser?.phoneNumber?.replaceAll("+", "").trim()}" ==
+                              "966555666777"
+                          ? null
+                          : Images.whatsApp,
+                  text:
+                      "${FirebaseAuth.instance.currentUser?.phoneNumber?.replaceAll("+", "").trim()}" ==
+                              "966555666777"
+                          ? getTranslated("home", context)
+                          : getTranslated("submit", context),
+                  onTap: () {
+                    if ("${FirebaseAuth.instance.currentUser?.phoneNumber?.replaceAll("+", "").trim()}" ==
+                        "966555666777") {
+                      CustomNavigator.push(Routes.DASHBOARD,
+                          arguments: 0, clean: true);
+                    } else {
+                      provider.openWhatsApp();
+                    }
+                  },
                 );
               }),
             ],

@@ -49,15 +49,6 @@ class ProfilePage extends StatelessWidget {
               iconName: SvgImages.notification),
         if (Provider.of<FirebaseAuthProvider>(context, listen: false).isLogin)
           ProfileOption(
-              onTap: () {
-                Provider.of<OrdersProvider>(context, listen: false)
-                    .getOrders();
-                CustomNavigator.push(Routes.ORDERS);
-              },
-              title: getTranslated("orders", context),
-              iconName: SvgImages.orders),
-        if (Provider.of<FirebaseAuthProvider>(context, listen: false).isLogin)
-          ProfileOption(
               onTap: () =>
                   customShowModelBottomSheet(body: const ContactWithUs()),
               title: getTranslated("contact_with_us", context),
@@ -70,6 +61,17 @@ class ProfilePage extends StatelessWidget {
             onTap: () => CustomNavigator.push(Routes.PRIVACY),
             title: getTranslated("privacy_policy", context),
             iconName: SvgImages.security),
+        if (Platform.isIOS &&
+            Provider.of<FirebaseAuthProvider>(context, listen: false).isLogin)
+          ProfileOption(
+              onTap: () =>
+                  Provider.of<FirebaseAuthProvider>(context, listen: false)
+                      .deleteAccount(),
+              showIcon: false,
+              iconColor: ColorResources.FAILED_COLOR,
+              title: "حذف الحساب",
+              txtColor: ColorResources.FAILED_COLOR,
+              iconName: SvgImages.delete),
         (Provider.of<FirebaseAuthProvider>(context, listen: false).isLogin)
             ? ProfileOption(
                 onTap: () =>
@@ -90,18 +92,6 @@ class ProfilePage extends StatelessWidget {
                 title: getTranslated("sign_in", context),
                 txtColor: ColorResources.ACTIVE,
                 iconName: SvgImages.login),
-        if (Platform.isIOS &&
-            Provider.of<FirebaseAuthProvider>(context, listen: false).isLogin)
-          ProfileOption(
-              onTap: () =>
-                  Provider.of<FirebaseAuthProvider>(context, listen: false)
-                      .deleteAccount(),
-              showIcon: false,
-              showDivider: false,
-              iconColor: ColorResources.FAILED_COLOR,
-              title: "حذف الحساب",
-              txtColor: ColorResources.FAILED_COLOR,
-              iconName: SvgImages.delete)
       ],
     );
   }
