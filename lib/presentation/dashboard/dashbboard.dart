@@ -112,8 +112,8 @@ class _DashBoardState extends State<DashBoard> {
             physics: const NeverScrollableScrollPhysics(),
             children: const [
               HomePage(),
-              OrdersPage(),
               CartPage(),
+              OrdersPage(),
               ProfilePage(),
             ],
           ),
@@ -151,20 +151,20 @@ class _DashBoardState extends State<DashBoard> {
                       ),
                       Expanded(
                         child: BottomNavBarItem(
-                          imageIcon: Images.orders,
-                          height: 20.h,
-                          width: 20.w,
+                          svgIcon: SvgImages.cartIcon,
                           isSelected: _selectedIndex == 1,
                           onTap: () => _setPage(1),
-                          name: getTranslated("orders", context),
+                          name: getTranslated("cart", context),
                         ),
                       ),
                       Expanded(
                         child: BottomNavBarItem(
-                          svgIcon: SvgImages.cartIcon,
+                          imageIcon: Images.orders,
+                          height: 20.h,
+                          width: 20.w,
                           isSelected: _selectedIndex == 2,
                           onTap: () => _setPage(2),
-                          name: getTranslated("cart", context),
+                          name: getTranslated("orders", context),
                         ),
                       ),
                       Expanded(
