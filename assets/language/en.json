@@ -53,6 +53,8 @@
   "products": "products",
   "vendors": "vendors",
   "no_connection": "No connection",
-  "connected": "connected"
+  "connected": "connected",
+  "press_here": "Press here",
+  "to_confirm_your_order": "To confirm your order"
 
 }

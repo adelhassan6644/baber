@@ -24,24 +24,24 @@ class CategoriesSection extends StatelessWidget {
       builder: (context, categoriesProvider, child) {
         return Column(
           children: [
-            Row(
-              children: [
-                SizedBox(
-                  width: Dimensions.PADDING_SIZE_DEFAULT.w,
-                ),
-                Text(
-                  getTranslated("sections", context),
-                  style: AppTextStyles.w700
-                      .copyWith(fontSize: 18, color: ColorResources.TITLE),
-                ),
-                SizedBox(
-                  width: 10.w,
-                ),
-                customImageIconSVG(
-                  imageName: SvgImages.deliciousIcon,
-                )
-              ],
-            ),
+            // Row(
+            //   children: [
+            //     SizedBox(
+            //       width: Dimensions.PADDING_SIZE_DEFAULT.w,
+            //     ),
+            //     Text(
+            //       getTranslated("sections", context),
+            //       style: AppTextStyles.w700
+            //           .copyWith(fontSize: 18, color: ColorResources.TITLE),
+            //     ),
+            //     SizedBox(
+            //       width: 10.w,
+            //     ),
+            //     customImageIconSVG(
+            //       imageName: SvgImages.deliciousIcon,
+            //     )
+            //   ],
+            // ),
             SizedBox(height: 8.0.h),
             Wrap(
                 spacing: 14.w,
@@ -68,7 +68,7 @@ class CategoriesSection extends StatelessWidget {
                                     id: categoriesProvider
                                         .homeCategoryModel!.items![index].id!);
                           },
-                          child: Stack(
+                          child: Column(
                             children: [
                               CustomNetworkImage.containerNewWorkImage(
                                   image: categoriesProvider.homeCategoryModel!
@@ -78,17 +78,15 @@ class CategoriesSection extends StatelessWidget {
                                   height: 80.h,
                                   fit: BoxFit.cover,
                                   radius: 8.w),
-                              Positioned(
-                                top: 12.h,
-                                left: 14.w,
-                                child: Text(
-                                  categoriesProvider.homeCategoryModel!
-                                          .items![index].name ??
-                                      "",
-                                  style: AppTextStyles.w500.copyWith(
-                                      fontSize: 15,
-                                      color: ColorResources.WHITE_COLOR),
-                                ),
+                              SizedBox(
+                                height: 8.h,
+                              ),
+                              Text(
+                                categoriesProvider.homeCategoryModel!
+                                        .items![index].name ??
+                                    "",
+                                style: AppTextStyles.w700.copyWith(
+                                    fontSize: 15, color: ColorResources.TITLE),
                               ),
                             ],
                           ))

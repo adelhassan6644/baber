@@ -39,28 +39,15 @@ class SuccessPage extends StatelessWidget {
                 padding:
                     const EdgeInsets.only(top: Dimensions.PADDING_SIZE_DEFAULT),
                 child: Text(
-                  "تم تأكيد طلبك بنجاح",
+                  getTranslated("to_confirm_your_order", context),
                   textAlign: TextAlign.center,
                   style: AppTextStyles.w600.copyWith(
                       fontSize: 22, color: ColorResources.PRIMARY_COLOR),
                 ),
               ),
-              "${FirebaseAuth.instance.currentUser?.phoneNumber?.replaceAll("+", "").trim()}" ==
-                      "966555666777"
-                  ? SizedBox(
-                      height: 24.h,
-                    )
-                  : Padding(
-                      padding: const EdgeInsets.only(
-                        bottom: Dimensions.PADDING_SIZE_DEFAULT,
-                      ),
-                      child: Text(
-                        "قم بإرسال طلبك عبر WhatsApp",
-                        textAlign: TextAlign.center,
-                        style: AppTextStyles.w500.copyWith(
-                            fontSize: 16, color: ColorResources.DETAILS_COLOR),
-                      ),
-                    ),
+              SizedBox(
+                height: 24.h,
+              ),
               Consumer<CartProvider>(builder: (_, provider, child) {
                 return CustomButton(
                   isLoading: provider.isOpen,
@@ -73,7 +60,7 @@ class SuccessPage extends StatelessWidget {
                       "${FirebaseAuth.instance.currentUser?.phoneNumber?.replaceAll("+", "").trim()}" ==
                               "966555666777"
                           ? getTranslated("home", context)
-                          : getTranslated("submit", context),
+                          : getTranslated("press_here", context),
                   onTap: () {
                     if ("${FirebaseAuth.instance.currentUser?.phoneNumber?.replaceAll("+", "").trim()}" ==
                         "966555666777") {

@@ -60,7 +60,7 @@ class CartProvider extends ChangeNotifier {
 
   void addToCart({required ItemModel item}) {
     if (_cartList.any((e) => e.id == item.id)) {
-      int index = _cartList.indexOf(item);
+      int index = _cartList.indexWhere((element) => element.id == item.id);
       _cartList.removeAt(index);
       _cartList.insert(index, item);
       cartRepo.saveNewItems(_cartList);
@@ -141,7 +141,7 @@ class CartProvider extends ChangeNotifier {
                 borderColor: Colors.transparent));
       }, (success) async {
         model = CheckOutModel.fromJson(success.data);
-        CustomNavigator.push(Routes.SUCCESS,replace: true);
+        CustomNavigator.push(Routes.SUCCESS, replace: true);
       });
       _isLoading = false;
       notifyListeners();
@@ -181,7 +181,8 @@ class CartProvider extends ChangeNotifier {
         });
       }
 
-      await launchWhatsApp(url: model?.url ?? "", id: model?.orderId?.toString() ?? "");
+      await launchWhatsApp(
+          url: model?.url ?? "", id: model?.orderId?.toString() ?? "");
       _isOpen = false;
       notifyListeners();
     } catch (e) {

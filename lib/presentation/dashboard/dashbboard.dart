@@ -70,32 +70,32 @@ class _DashBoardState extends State<DashBoard> {
           .getSettingsInfo();
     });
     _selectedIndex = widget.index ?? 0;
-    NetworkInfo.checkConnectivity(onVisible: () async {
-      await Provider.of<BannerProvider>(
-              CustomNavigator.navigatorState.currentContext!,
-              listen: false)
-          .getBannerList();
-      await Provider.of<HomeCategoryProvider>(
-              CustomNavigator.navigatorState.currentContext!,
-              listen: false)
-          .getHomeCategories();
-      await Provider.of<HomeVendorsProvider>(
-              CustomNavigator.navigatorState.currentContext!,
-              listen: false)
-          .getVendorList();
-      await Provider.of<CityProvider>(
-              CustomNavigator.navigatorState.currentContext!,
-              listen: false)
-          .getYourCity();
-      await Provider.of<OrdersProvider>(
-              CustomNavigator.navigatorState.currentContext!,
-              listen: false)
-          .getOrders();
-      await Provider.of<SettingsProvider>(
-              CustomNavigator.navigatorState.currentContext!,
-              listen: false)
-          .getSettingsInfo();
-    });
+    // NetworkInfo.checkConnectivity(onVisible: () async {
+    //   await Provider.of<BannerProvider>(
+    //           CustomNavigator.navigatorState.currentContext!,
+    //           listen: false)
+    //       .getBannerList();
+    //   await Provider.of<HomeCategoryProvider>(
+    //           CustomNavigator.navigatorState.currentContext!,
+    //           listen: false)
+    //       .getHomeCategories();
+    //   await Provider.of<HomeVendorsProvider>(
+    //           CustomNavigator.navigatorState.currentContext!,
+    //           listen: false)
+    //       .getVendorList();
+    //   await Provider.of<CityProvider>(
+    //           CustomNavigator.navigatorState.currentContext!,
+    //           listen: false)
+    //       .getYourCity();
+    //   await Provider.of<OrdersProvider>(
+    //           CustomNavigator.navigatorState.currentContext!,
+    //           listen: false)
+    //       .getOrders();
+    //   await Provider.of<SettingsProvider>(
+    //           CustomNavigator.navigatorState.currentContext!,
+    //           listen: false)
+    //       .getSettingsInfo();
+    // });
     super.initState();
   }
 

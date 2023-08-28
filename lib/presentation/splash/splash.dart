@@ -19,19 +19,28 @@ class Splash extends StatefulWidget {
 class _SplashState extends State<Splash> with WidgetsBindingObserver {
   @override
   void initState() {
-
     WidgetsBinding.instance.addObserver(this);
     Future.delayed(Duration.zero, () async {
-       Provider.of<CityProvider>(CustomNavigator.navigatorState.currentContext!, listen: false).getCities();
-       Provider.of<CityProvider>(CustomNavigator.navigatorState.currentContext!, listen: false).getYourCity();
+      Provider.of<CityProvider>(CustomNavigator.navigatorState.currentContext!,
+              listen: false)
+          .getCities();
+      Provider.of<CityProvider>(CustomNavigator.navigatorState.currentContext!,
+              listen: false)
+          .getYourCity();
     });
 
-    Future.delayed(const Duration(milliseconds: 4500), () async {
-      if (Provider.of<CityProvider>(CustomNavigator.navigatorState.currentContext!, listen: false).currentCity != null) {
-        CustomNavigator.push(Routes.DASHBOARD,replace: true);
-      }
-      else{
-        CustomNavigator.push(Routes.CITY,replace: true,);
+    Future.delayed(const Duration(milliseconds: 3000), () async {
+      if (Provider.of<CityProvider>(
+                  CustomNavigator.navigatorState.currentContext!,
+                  listen: false)
+              .currentCity !=
+          null) {
+        CustomNavigator.push(Routes.DASHBOARD, replace: true);
+      } else {
+        CustomNavigator.push(
+          Routes.CITY,
+          replace: true,
+        );
       }
     });
     super.initState();
@@ -46,30 +55,31 @@ class _SplashState extends State<Splash> with WidgetsBindingObserver {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: ColorResources.PRIMARY_COLOR,
+        backgroundColor: ColorResources.PRIMARY_COLOR,
         body: SafeArea(
           bottom: true,
           child: Stack(
             alignment: Alignment.center,
             children: [
               Container(
-                height: context.height,
-                width: context.width,
-                alignment: Alignment.center,
-                decoration: const BoxDecoration(
-                    color: ColorResources.PRIMARY_COLOR
-                ),
-                child:const SizedBox()),
+                  height: context.height,
+                  width: context.width,
+                  alignment: Alignment.center,
+                  decoration:
+                      const BoxDecoration(color: ColorResources.PRIMARY_COLOR),
+                  child: const SizedBox()),
               Image.asset(
                 Images.splashLogo,
-               fit: BoxFit.cover,
+                fit: BoxFit.cover,
                 width: context.width,
-                height: context.width*1.3,
-              ).animate()
+                height: context.width * 1.3,
+              )
+                  .animate()
                   // .scale(duration: 500.ms)
                   // .then(delay: 200.ms) // baseline=800ms
                   // .slide()  .scaleXY(duration: 600.ms)
-                  .then(delay: 200.ms).shimmer(duration: 1500.ms),
+                  .then(delay: 200.ms)
+                  .shimmer(duration: 1500.ms),
             ],
           ),
         ));

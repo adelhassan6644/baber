@@ -55,7 +55,8 @@ class ItemModel {
     phone = json['phone'];
     email = json['email'];
     body = json['body'];
-    active = (json['active'] == 0) ? false : true;
+    // active = (json['active'] == 0) ? false : true;
+    active = true;
     isAdded = json['is_add'] ?? false;
 
     if (json['store'] != null) {
