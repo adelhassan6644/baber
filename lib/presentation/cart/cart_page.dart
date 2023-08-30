@@ -145,16 +145,16 @@ class _CartPageState extends State<CartPage> {
                           text: "اتمام الطلب",
                           onTap: () async{
                             if (Provider.of<FirebaseAuthProvider>(context, listen: false).isLogin) {
-                             if(provider.cartList.first.store!.active!) {
+                             // if(provider.cartList.first.store!.active!) {
                                provider.checkOut();
-                            }else{
-                               CustomSnackBar.showSnackBar(
-                                   notification: AppNotification(
-                                       message: "الأسرة غير متاحة الأن",
-                                       isFloating: true,
-                                       backgroundColor: ColorResources.IN_ACTIVE,
-                                       borderColor: Colors.transparent));
-                            }
+                            // }else{
+                            //    CustomSnackBar.showSnackBar(
+                            //        notification: AppNotification(
+                            //            message: "الأسرة غير متاحة الأن",
+                            //            isFloating: true,
+                            //            backgroundColor: ColorResources.IN_ACTIVE,
+                            //            borderColor: Colors.transparent));
+                            // }
                              // provider.checkOut();
                           } else {
                               // Future.delayed(
